@@ -11,7 +11,7 @@ COPY ["compose/production/wp-config.d/", "/var/www/html/wp-config.d"]
 COPY ["composer.json", "/var/www/html/composer.json"]
 RUN mkdir vendor
 RUN composer install -v $composer
-COPY ["wp-content", "/var/www/html/wp-content"]
+#COPY ["wp-content", "/var/www/html/wp-content"]
 COPY ["plugins", "/var/www/html/plugins"]
 COPY ["themes", "/var/www/html/themes"]
 
