@@ -1,0 +1,176 @@
+/*--------------------------------------------------------------------------------------
+
+Redux metaboxes
+
+--------------------------------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+Tabs
+--------------------------------------------------------------*/
+
+/* Hide irrelevant tabs on WooCommerce product pages ************************************/
+
+.post-type-product .redux-group-menu li:nth-child(2n),
+.post-type-product .redux-group-menu li:nth-child(3n) {
+display: none !important;
+}
+
+/*--------------------------------------------------------------
+Main container
+--------------------------------------------------------------*/
+
+/* General ************************************/
+
+.postbox .redux-container .redux-section-title {
+margin: 0 0 5px 0;
+}
+.postbox .redux-container .redux-section-desc {
+margin: 0 0 5px 0;
+}
+.redux-metabox .redux-container .redux-main form-table, 
+.redux-metabox .redux-container .redux-main .form-table > thead, 
+.redux-metabox .redux-container .redux-main .form-table > tbody, 
+.redux-metabox .redux-container .redux-main .form-table > tbody > tr > th, 
+.redux-metabox .redux-container .redux-main .form-table > tbody > tr > td, 
+.redux-metabox .redux-container .redux-main .form-table > tbody > tr:not(.hide) {
+display: block !important;
+width: 100% !important;
+padding: 0 !important;
+}
+.redux-metabox .redux-no-sections .redux-main .redux_field_th {
+padding: 20px 10px 0 0px !important;
+}
+.redux-metabox .redux-container.redux-has-sections .redux-main span.description {
+position: relative;
+left: 0;
+padding-bottom: 10px;
+}
+.redux-container .redux-main .redux-field-container ul {
+margin: 0;
+}
+
+/* Section ************************************/
+
+.redux-metabox .redux-container .redux-main div.redux-section-indent-start {
+border-top: 1px solid #E7E7E7;
+}
+.redux-metabox .redux-container .redux-main .form-table > tbody > tr.redux-section-indent-start {
+display: none !important;
+}
+.redux-metabox .redux-container .redux-main .redux-group-tab h3 {
+margin: 0 !important;
+padding-top: 20px;
+font-size: 14px;
+line-height: 1.3em;
+border: 0;
+}
+.redux-metabox .redux-container .redux-main .form-table-section-indented {
+width: 100%;
+margin-left: 0% !important;
+}
+.redux-metabox .redux-container .redux-main .form-table-section-indented tbody {
+display: flex !important;
+}
+.redux-metabox .redux-container .redux-main .form-table-section-indented tbody tr:not(.hide) {
+padding-right: 30px !important;
+width: auto !important;
+flex: 1 1 auto;
+}
+.redux-metabox .redux-container .redux-main .form-table-section-indented tbody tr:first-child,
+.redux-metabox .redux-container .redux-main .form-table-section-indented tbody tr:last-child {
+position: absolute;
+padding: 0 !important;
+border: 0;
+}
+.redux-metabox .redux-container .redux-main .form-table-section-indented .redux_field_th {
+font-size: 13px;
+opacity: 0.8;
+}
+.redux-metabox .redux-container .redux-main .form-table-section-indented td img {
+padding: 0;
+}
+
+/* Image selection ************************************/
+
+.redux-container-image_select ul.redux-image-select li {
+margin: 0 10px 10px 0 !important;
+}
+.redux-container-image_select ul.redux-image-select li:last-child {
+margin-right: 0 !important;
+}
+.redux-container-image_select ul.redux-image-select li img {
+width: 82px !important;
+}
+
+
+/*--------------------------------------------------------------------------------------
+
+Media Queries
+
+--------------------------------------------------------------------------------------*/
+
+
+@media only screen and (max-width: 1082px) {
+
+	/*--------------------------------------------------------------
+	Tabs
+	--------------------------------------------------------------*/
+
+	.redux-metabox .redux-sidebar {
+	width: 100% !important;
+	float: none !important;
+	overflow: hidden !important;
+	}
+	.redux-metabox .redux-sidebar .redux-group-menu {
+	margin-bottom: 0;
+	}
+	.redux-metabox .redux-container .redux-sidebar, 
+	.redux-metabox .redux-container .redux-main {
+	min-height: 0 !important;
+	}
+	.redux-metabox .redux-sidebar .redux-group-menu li.active a, 
+	.redux-metabox .redux-sidebar .redux-group-menu li.active a:hover, 
+	.redux-metabox .redux-sidebar .redux-group-menu li.activeChild a, 
+	.redux-metabox .redux-sidebar .redux-group-menu li.activeChild a:hover {
+	width: 100% !important;
+	}
+	
+	/*--------------------------------------------------------------
+	Main container
+	--------------------------------------------------------------*/
+
+	.redux-metabox .redux-container .redux-main {
+	margin-left: 0 !important;
+	border-left: 0 !important;
+	}
+
+}
+
+@media screen and (max-width: 600px) {
+	
+	/*--------------------------------------------------------------
+	Tabs
+	--------------------------------------------------------------*/
+
+	.redux-sidebar .redux-group-tab-link-a i {
+	position: absolute;
+	}
+	.redux-sidebar .redux-group-tab-link-a span {
+	display: block;
+	position: relative;
+	top: auto;
+	left: auto;
+	width: auto;
+	padding: 0;
+	background: transparent;
+	border: 0;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+	z-index: 0;
+	}
+	.redux-sidebar .redux-group-tab-link-a:hover > span {
+	display: block;
+	}
+
+}

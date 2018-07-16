@@ -1,0 +1,192 @@
+/*--------------------------------------------------------------
+New theme options
+--------------------------------------------------------------*/
+
+.gp-new-option {
+display: inline !important;
+padding: 1px 5px !important;
+color: #C09853 !important;
+background: #FCF8E3 !important;
+font-weight: bold !important;
+border: 1px solid #E7E7E7 !important;
+border-radius: 3px !important;
+font-size: 12px !important;
+text-transform: uppercase !important;
+text-shadow: none !important;
+}
+
+/*--------------------------------------------------------------
+Remove Redux ads
+--------------------------------------------------------------*/
+
+.updated.redux-message.redux-notice.notice.is-dismissible.redux-notice {
+display: none;
+}
+
+/*--------------------------------------------------------------
+Visual Composer element icons
+--------------------------------------------------------------*/
+
+i.vc_element-icon[class*='gp-icon-'] {
+color: #fff;
+font-size: 20px;
+line-height: 32px;
+font-style: normal;
+font-weight: normal;
+border-radius: 6px;
+text-align: center;
+background-color: #39c8df;
+background-image: -webkit-linear-gradient(to right, #39c8df 0%, #00a0e3 100%);
+background-image: linear-gradient(to right, #39c8df 0%, #00a0e3 100%);
+}
+i.vc_element-icon[class*='gp-icon-']:before {
+font-family: 'FontAwesome';
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+}
+.gp-icon-bp-activity:before {
+content: '\f03a';
+}
+.gp-icon-bp-groups:before {
+content: '\f0c0';
+}
+.gp-icon-bp-members:before {
+content: '\f007';
+}
+.gp-icon-bp-profile-search:before {
+content: '\f002';
+}
+.gp-icon-bp-whos-online:before {
+content: '\f2be';
+}
+.gp-icon-carousel:before {
+content: '\f03e';
+}
+.gp-icon-courses:before {
+content: '\f19d';
+}
+.gp-icon-events:before {
+content: '\f073';
+}
+.gp-icon-featured-box:before {
+content: '\f00a';
+}
+.gp-icon-login-register-form:before {
+content: '\f023';
+}
+.gp-icon-particles:before {
+content: '\f20e';
+}
+.gp-icon-pmp-register-form:before {
+content: '\f023';
+}
+.gp-icon-posts:before {
+content: '\f0f6';
+}
+.gp-icon-post-submission-form:before {
+content: '\f298';
+}
+.gp-icon-pricing-column:before {
+content: '\f155';
+}
+.gp-icon-showcase:before {
+content: '\f145';
+}
+.gp-icon-statistics:before {
+content: '\f1fe';
+}
+.gp-icon-teachers:before {
+content: '\f19d';
+}
+.gp-icon-team:before {
+content: '\f0db';
+}
+.gp-icon-testimonial-slider:before {
+content: '\f08a';
+}
+
+/*--------------------------------------------------------------
+Visual Composer colour picker option
+--------------------------------------------------------------*/
+
+.wpb_edit_form_elements .wp-color-picker {
+width: 80px !important;
+height: 24px;
+}
+.wpb_edit_form_elements .wp-picker-clear {
+padding-bottom: 0;
+height: 24px;
+}
+
+/*--------------------------------------------------------------
+Visual Composer divider field
+--------------------------------------------------------------*/
+
+.gp-divider {
+clear: both;
+overflow: hidden;
+width: 100%;
+height: 1px;
+border-top: 1px solid #e6e6e6;
+}
+
+/*--------------------------------------------------------------
+Visual Composer date picker field
+--------------------------------------------------------------*/
+
+body div#ui-datepicker-div.ui-datepicker.ui-widget {
+z-index: 100001 !important;
+}
+
+/*--------------------------------------------------------------
+Visual Composer other
+--------------------------------------------------------------*/
+
+/* VC fix to constrain Text widgets to container width */
+.wpb_vc_wp_text.wpb_content_element.wpb_vc_wp_widget img {
+max-width: 100%;
+}
+
+/*--------------------------------------------------------------
+Theme converter
+--------------------------------------------------------------*/
+
+.gp-converter-box {
+background: #fff;
+border: 1px solid #eee;
+padding: 15px 30px 30px 30px;
+margin-bottom: 15px;
+}
+.gp-converter-box ul {
+margin-bottom: 20px;
+}
+.gp-converter-box .form-table tr {
+border-top: 1px solid #eee;
+}
+.gp-converter-box .form-table tr:first-child {
+border: 0;
+}
+.gp-converter-box .form-table th {
+width: 500px;
+}
+.gp-converter-box .form-table th .description {
+font-weight: normal;
+}
+.gp-converter-notice {
+font-weight: bold;
+color: #fff;
+background: #000;
+padding: 10px;
+}
+.gp-converter-success {
+font-weight: bold;
+color: #fff;
+background: #94ce56;
+padding: 10px;
+}
+.gp-converter-error {
+font-weight: bold;
+color: #fff;
+background: #ce5656;
+padding: 10px;
+}

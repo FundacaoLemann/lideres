@@ -1,0 +1,2922 @@
+/*--------------------------------------------------------------------------------------
+
+General
+
+--------------------------------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+Typography
+--------------------------------------------------------------*/
+
+.gp-theme #buddypress a.bp-secondary-action, 
+.gp-theme #buddypress span.highlight {
+font-size: 100%;
+}
+.gp-theme #buddypress ul.item-list li h3, 
+.gp-theme #buddypress ul.item-list li h4,
+.gp-theme #buddypress ul.item-list li h5 {
+clear: none;
+margin: 0;
+}
+
+/*--------------------------------------------------------------
+Tables
+--------------------------------------------------------------*/
+
+.gp-theme #buddypress table.forum tr td, 
+.gp-theme #buddypress table.forum tr th, 
+.gp-theme #buddypress table.messages-notices tr td, 
+.gp-theme #buddypress table.messages-notices tr th, 
+.gp-theme #buddypress table.notifications tr td, 
+.gp-theme #buddypress table.notifications tr th, 
+.gp-theme #buddypress table.notifications-settings tr td, 
+.gp-theme #buddypress table.notifications-settings tr th, 
+.gp-theme #buddypress table.profile-fields tr td, 
+.gp-theme #buddypress table.profile-fields tr th, 
+.gp-theme #buddypress table.profile-settings tr td, 
+.gp-theme #buddypress table.wp-profile-fields tr td, 
+.gp-theme #buddypress table.wp-profile-fields tr th {
+line-height: 120%;
+}
+
+/*--------------------------------------------------------------
+Fields and buttons
+--------------------------------------------------------------*/
+
+/* Misc  ************************************/
+
+.gp-theme #buddypress .standard-form label, 
+.gp-theme #buddypress .standard-form legend, 
+.gp-theme #buddypress .standard-form span.label {
+margin: 0 0 5px;
+font-weight: 500;
+}
+.gp-theme #buddypress .standard-form p.description {
+font-size: 100%;
+margin: 0 0 15px 0;
+line-height: 1;
+}
+.gp-theme #buddypress .wp-switch-editor {
+line-height: 1;
+}
+
+/* Input  ************************************/
+
+.gp-theme #buddypress .dir-search input[type=search], 
+.gp-theme #buddypress .dir-search input[type=text], 
+.gp-theme #buddypress .groups-members-search input[type=search], 
+.gp-theme #buddypress .groups-members-search input[type=text], 
+.gp-theme #buddypress .standard-form input[type='color'], 
+.gp-theme #buddypress .standard-form input[type=date], 
+.gp-theme #buddypress .standard-form input[type=datetime-local], 
+.gp-theme #buddypress .standard-form input[type=datetime], 
+.gp-theme #buddypress .standard-form input[type=email], 
+.gp-theme #buddypress .standard-form input[type=month], 
+.gp-theme #buddypress .standard-form input[type=number], 
+.gp-theme #buddypress .standard-form input[type=password], 
+.gp-theme #buddypress .standard-form input[type=range], 
+.gp-theme #buddypress .standard-form input[type=search], 
+.gp-theme #buddypress .standard-form input[type=tel], 
+.gp-theme #buddypress .standard-form input[type=text], 
+.gp-theme #buddypress .standard-form input[type=time], 
+#buddypress .standard-form input[type=url], 
+.gp-theme #buddypress .standard-form input[type=week], 
+.gp-theme #buddypress .standard-form select, 
+.gp-theme #buddypress .standard-form textarea {
+padding: 6px 12px;
+border-radius: 3px;
+}
+.gp-theme #buddypress .standard-form input[type='text'],
+.gp-theme #buddypress .standard-form input[type='url'],
+.gp-theme #buddypress .standard-form input[type='email'],
+.gp-theme #buddypress .standard-form input[type='password'],
+.gp-theme #buddypress .standard-form input[type='number'],
+.gp-theme #buddypress .standard-form select,
+.gp-theme #buddypress .standard-form textarea,
+.gp-theme #buddypress .standard-form .wp-editor-wrap {
+width: 100%;
+margin-bottom: 15px;
+}
+.gp-theme #buddypress .standard-form input {
+margin-bottom: 15px;
+}
+.gp-theme #buddypress .standard-form .wp-editor-wrap textarea {
+margin-bottom: 0;
+border: 0;
+}
+
+/* Select  ************************************/
+
+.gp-theme #buddypress .standard-form select:not([multiple]) {
+padding: 0 40px 0 10px;
+background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACMAAAAjCAQAAAC00HvSAAAAeklEQVRIx2O4//8HJfDjj7U/VBkYGCg0BgTf/1CnhjH/f6yljjGfqWPM/1FjRo0Z5sbM/78dzj73v4RcY979D/rfDGZt/6/8/yb5noIYRMgQIsIGZBAhQ4gK4ncEDRlNfqPGjBpDZWM+D6IWxfsfGpQa8wnY2lJnYAAA6pJTWSjyMvsAAAAASUVORK5CYII=);
+background-position: center right;
+background-repeat: no-repeat;
+}
+@-moz-document url-prefix() { /* FireFox fix */
+.gp-theme #buddypress .standard-form select:not([multiple]) {
+padding: 5px 8px;
+background-image: none;
+}
+}
+@media screen\0 { /* IE 8/9/10/11 Fix */
+.gp-theme #buddypress .standard-form select:not([multiple]) {
+padding: 5px 8px;
+background-image: none;
+}
+}
+ 				
+/* Buttons  ************************************/
+
+/* General buttons */
+.gp-theme #buddypress .comment-reply-link, 
+.gp-theme #buddypress .generic-button a, 
+.gp-theme #buddypress a.button,
+.gp-theme #buddypress input[type=button],
+.gp-theme #buddypress input[type=reset], 
+.gp-theme #buddypress input[type=submit], 
+.gp-theme #buddypress ul.button-nav li a, 
+a.bp-title-button {
+padding: 10px 14px;
+border: 0;
+border-radius: 3px;
+cursor: pointer;
+text-align: center;
+background-size: 200% 100%;
+-webkit-transition: all .2s ease-in-out !important;
+transition: all .2s ease-in-out !important;
+}
+.gp-theme #buddypress .comment-reply-link:hover,
+.gp-theme #buddypress div.generic-button a:hover,
+.gp-theme #buddypress input[type=button]:hover,
+.gp-theme #buddypress input[type=reset]:hover, 
+.gp-theme #buddypress input[type=submit]:hover, 
+.gp-theme #buddypress ul.button-nav li a:hover, 
+.gp-theme #buddypress ul.button-nav li.current a {
+border: 0;
+background-position: 100% 0;
+}
+
+/* Smaller buttons */
+.gp-theme #buddypress a.button {
+padding: 4px 8px;
+font-size: 12px;
+line-height: 1;
+font-weight: 400;
+background: none;
+color: #999;
+border: 1px solid #e6e6e6;
+}
+.gp-theme #buddypress a.button:hover {
+background: #f8f8f8;
+}
+
+/* Disabled buttons */
+.gp-theme #buddypress a.disabled, 
+.gp-theme #buddypress button.disabled, 
+.gp-theme #buddypress button.pending, 
+.gp-theme #buddypress div.pending a, 
+.gp-theme #buddypress input[type=button].disabled, 
+.gp-theme #buddypress input[type=button].pending, 
+.gp-theme #buddypress input[type=reset].disabled, 
+.gp-theme #buddypress input[type=reset].pending, 
+.gp-theme #buddypress input[type=submit].disabled, 
+.gp-theme #buddypress input[type=submit].pending, 
+.gp-theme  #buddypress input[type=submit][disabled=disabled],
+.gp-theme #buddypress a.disabled:hover, 
+.gp-theme #buddypress button.disabled:hover, 
+.gp-theme #buddypress button.pending:hover, 
+.gp-theme #buddypress div.pending a:hover, 
+.gp-theme #buddypress input[type=button].disabled:hover, 
+.gp-theme #buddypress input[type=button].pending:hover, 
+.gp-theme #buddypress input[type=reset].disabled:hover, 
+.gp-theme #buddypress input[type=reset].pending:hover, 
+.gp-theme #buddypress input[type=submit].disabled:hover, 
+.gp-theme #buddypress input[type=submit].pending:hover, 
+.gp-theme  #buddypress input[type=submit][disabled=disabled]:hover {
+opacity: 0.5;
+}
+
+/* Other buttons */
+.gp-theme #buddypress input[type=submit]:focus {
+border: 0;
+}
+.gp-theme #buddypress .standard-form .quicktags-toolbar input[type=button] {
+background: #fff;
+border: 1px solid #ccc;
+color: #767676;
+font-size: small;
+cursor: pointer;
+outline: 0;
+padding: 4px 10px;
+text-align: center;
+text-decoration: none;
+}
+.gp-theme #buddypress .standard-form .quicktags-toolbar input[type=button]:hover {
+background: #ededed;
+border: 1px solid #bbb;
+color: #555;
+outline: 0;
+text-decoration: none;
+}
+.gp-theme #buddypress .standard-form div.submit {
+padding-top: 0;
+}
+.gp-theme #buddypress .standard-form div.submit input {
+margin: 0;
+}
+
+/*--------------------------------------------------------------
+Avatars
+--------------------------------------------------------------*/
+
+.gp-theme .gp-bp-hover-effect {
+position: absolute;
+overflow: hidden;
+width: 100%;
+height: 100%;
+padding: 50% 0;
+border-radius: 100%;
+background: rgba(0,0,0,0.4);
+color: #fff;
+font-size: 24px;
+opacity: 0;
+transition: all 0.4s ease-in-out;
+transform: scale(0);
+}
+.gp-theme .gp-bp-hover-effect:before {
+content: '+';
+}
+.gp-theme a:hover .gp-bp-hover-effect {
+transform: scale(1);
+opacity: 1;
+}
+.gp-user-online,
+.gp-user-offline {
+position: absolute;
+bottom: 12px;
+right: 8px;
+width: 12px;
+height: 12px;
+border: 2px solid #fff;
+border-radius: 100%;
+}
+.gp-user-online {
+background-color: #39c8df;
+}
+.gp-user-offline {
+background-color: #999;
+}
+.gp-user-online .bp-tooltip,
+.gp-user-offline .bp-tooltip {
+width: 100%;
+height: 100%;
+}
+
+/*--------------------------------------------------------------
+Loading
+--------------------------------------------------------------*/
+
+@-webkit-keyframes loader-pulsate {
+from {
+color: inherit !important;
+-webkit-box-shadow: none;
+box-shadow: none;
+opacity: 1;
+}
+to {
+color: inherit !important;
+-webkit-box-shadow: none;
+box-shadow: none;
+opacity: 0.6;
+}
+}
+@-moz-keyframes loader-pulsate {
+from {
+color: inherit;
+-webkit-box-shadow: none;
+box-shadow: none;
+opacity: 1;
+}
+to {
+color: inherit;
+-webkit-box-shadow: none;
+box-shadow: none;
+opacity: 0.6;
+}
+}
+
+/*--------------------------------------------------------------
+Messages
+--------------------------------------------------------------*/
+
+.gp-theme #buddypress div.bp-avatar-status p.success, 
+.gp-theme #buddypress div.bp-cover-image-status p.success,
+.gp-theme #buddypress div#message p, 
+.gp-theme #buddypress #sitewide-notice p,
+.gp-theme #buddypress p.warning, 
+body.gp-theme.profile_page_bp-profile-edit.modal-open #TB_ajaxContent p.warning, 
+body.gp-theme.users_page_bp-profile-edit.modal-open #TB_ajaxContent p.warning {
+font-size: 100%;
+line-height: 120%;
+border-radius: 3px;
+}
+.gp-theme #gp-buddypress-header #message {
+margin-top: 25px;
+padding: 10px;
+background: rgba(0,0,0,0.5);
+border-radius: 4px;
+font-size: 14px;
+line-height: 16px; 
+}
+.gp-theme #gp-buddypress-header #message a {
+color: #fff;
+text-decoration: underline;
+}
+.gp-theme #gp-buddypress-header #message a:hover {
+text-decoration: none;
+}
+
+
+/*--------------------------------------------------------------------------------------
+
+BuddyPress Header
+
+--------------------------------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+General
+--------------------------------------------------------------*/
+
+.gp-theme.bp-user #buddypress #item-header,
+.gp-theme.single-item.groups #buddypress #item-header {
+display: none;
+}
+#gp-buddypress-header #gp-page-header {
+z-index: 2;
+background-position: center top;
+background-repeat: no-repeat;
+background-size: cover;
+}
+#gp-buddypress-header #gp-page-header .gp-container {
+height: auto !important;
+padding: 40px 30px !important;
+}
+#gp-buddypress-header #item-header-avatar {
+line-height: 0;
+text-align: center;
+}
+#gp-buddypress-header #item-header-avatar a {
+position: relative;
+}
+#gp-buddypress-header #item-header-avatar .gp-user-online,
+#gp-buddypress-header #item-header-avatar .gp-user-offline {
+bottom: 12px;
+right: 8px;
+width: 12px;
+height: 12px;
+}
+#gp-buddypress-header #item-header-avatar .avatar {
+border: 5px solid rgba(255,255,255,0.2);
+width: 80px;
+height: 80px;
+}
+#gp-buddypress-header #item-header-content {
+margin-top: 20px;
+text-align: center;
+}
+#gp-buddypress-header .gp-bp-header-title {
+margin-bottom: 10px;
+font-size: 26px;
+line-height: 1;
+letter-spacing: -0.5px;
+font-weight: 500;
+color: #fff;
+}
+#gp-buddypress-header .gp-bp-header-highlight {
+display: inline-block;
+margin: 0 15px 0 0;
+font-size: 18px;
+line-height: 1;
+font-weight: 400;
+color: #fff;
+letter-spacing: -0.5px;
+opacity: 1;
+}
+#gp-buddypress-header .activity {
+font-size: 14px;
+line-height: 1;
+font-weight: 400;
+color: #fff;
+}
+#gp-buddypress-header .gp-bp-header-desc {
+display: none;
+margin-top: 15px;
+font-size: 13px;
+line-height: 19px;
+}
+#gp-buddypress-header #item-header-content {
+color: #fff;
+}
+#gp-buddypress-header #item-header-content a {
+color: #fff;
+text-decoration: underline;
+}
+#gp-buddypress-header .gp-bp-header-desc a:hover {
+text-decoration: none;
+}
+#gp-buddypress-header .gp-bp-header-actions {
+text-align: center;
+}
+#gp-buddypress-header .generic-button {
+display: inline-block;
+margin: 15px 10px 0 0;
+}
+#gp-buddypress-header .generic-button a,
+#gp-buddypress-header #item-header-content .generic-button a {
+padding: 5px 8px;
+border-radius: 3px;
+background: rgba(0,0,0,0.6);
+font-size: 11px;
+line-height: 1;
+color: #fff;
+text-decoration: none;
+}
+#gp-buddypress-header .generic-button a:hover,
+#gp-buddypress-header #item-header-content .generic-button a:hover {
+border-radius: 3px;
+background: #fff;
+color: #000;
+}
+#gp-buddypress-header .gp-bp-header-members {
+display: inline-block;
+margin: 20px 10px 0 10px;
+}
+#gp-buddypress-header .gp-bp-header-members-title {
+margin-bottom: 10px;
+text-transform: uppercase;
+color: #fff;
+font-size: 12px;
+line-height: 1;
+}
+#gp-buddypress-header .gp-bp-header-members ul {
+margin: 0;
+text-align: center;
+}
+#gp-buddypress-header .gp-bp-header-members li {
+display: inline-block;
+list-style: none;
+margin-right: 5px;
+}
+#gp-buddypress-header .gp-bp-header-members li:last-child {
+margin-right: 0;
+}
+#gp-buddypress-header .gp-bp-header-members .avatar {
+width: 35px;
+height: 35px;
+border: 2px solid #fff;
+}
+#gp-buddypress-header .pmpro_bp_show_level_on_bp_profile {
+margin-top: 15px;
+}
+#gp-buddypress-header .pmpro_bp_show_level_on_bp_profile strong {
+padding: 5px 8px;
+border-radius: 3px;
+background: rgba(0,0,0,0.6);
+font-size: 14px;
+line-height: 1;
+color: #fff;
+}
+
+/* Social icons  ************************************/
+
+#gp-buddypress-header #gp-author-social-icons {
+margin-top: 20px;
+}
+#gp-buddypress-header #gp-author-social-icons a {
+display: inline-block;
+width: 30px;
+height: 30px;
+color: #fff;
+background: rgba(0,0,0,0.5);
+border-radius: 3px;
+text-align: center;
+line-height: 30px;
+text-decoration: none;
+}    
+#gp-buddypress-header #gp-author-social-icons a:first-child {
+margin-left: 0;
+}
+#gp-buddypress-header #gp-author-social-icons a:hover { 
+color: #fff;
+}
+#gp-buddypress-header #gp-author-social-icons .gp-twitter-icon:hover { 
+background: #4099FF;
+}
+#gp-buddypress-header #gp-author-social-icons .gp-facebook-icon:hover { 
+background: #3b5998;
+}
+#gp-buddypress-header #gp-author-social-icons .gp-google-plus-icon:hover { 
+background: #d34836;
+}
+#gp-buddypress-header #gp-author-social-icons .gp-pinterest-icon:hover { 
+background: #C92228;
+}
+#gp-buddypress-header #gp-author-social-icons .gp-youtube-icon:hover { 
+background: #ff0000;
+}
+#gp-buddypress-header #gp-author-social-icons .gp-vimeo-icon:hover { 
+background: #4EBBFF;
+}
+#gp-buddypress-header #gp-author-social-icons .gp-flickr-icon:hover { 
+background: #ff0084;
+}
+#gp-buddypress-header #gp-author-social-icons .gp-linkedin-icon:hover { 
+background: #007bb6;
+}
+#gp-buddypress-header #gp-author-social-icons .gp-instagram-icon:hover { 
+background: #fb3958;
+}
+
+/* Notices  ************************************/
+
+#gp-buddypress-header #template-notices {
+margin-top: 10px;
+color: #fff;
+}
+
+/* Background overlay  ************************************/
+
+#gp-bp-header-overlay {
+position: absolute;
+width: 100%;
+height: 100%;    
+top: 0;
+left: 0;
+background-color: rgba(0,0,0,0.4);
+}
+
+/*--------------------------------------------------------------
+Main Item Tabs
+--------------------------------------------------------------*/
+
+/* Standard nav  ************************************/
+
+.gp-theme #buddypress div.item-list-tabs {
+margin: 0;
+padding: 0 0 10px 0;
+overflow: hidden;
+border-bottom-width: 1px;
+border-style: solid;
+}
+.gp-theme #buddypress div.item-list-tabs ul {
+margin: 0;
+padding: 0;
+}
+.gp-theme #buddypress div.item-list-tabs ul li  {
+margin: 0 20px 10px 0;
+text-align: center;
+}
+.gp-theme #buddypress div.item-list-tabs ul li a,
+.gp-theme #buddypress div.item-list-tabs ul li > span {
+display: block;
+padding: 0;
+font-weight: normal;
+font-size: 14px;
+line-height: 1;
+cursor: pointer;
+opacity: 0.6;
+}
+.gp-theme #buddypress div.item-list-tabs ul li a:hover,
+.gp-theme #buddypress div.item-list-tabs ul li.current a,
+.gp-theme #buddypress div.item-list-tabs ul li.selected a {
+background: none;
+opacity: 1;
+font-weight: 500;
+}
+.gp-theme #buddypress div.item-list-tabs ul li a span {
+display: inline-block;
+margin-left: 4px;
+padding: 0;
+font-size: 12px;
+font-weight: 500;
+border: 0;
+background: transparent;
+}
+.gp-theme #buddypress div.item-list-tabs ul li a:hover span {
+background: transparent;
+}
+
+/* Object nav  ************************************/
+
+.gp-theme #buddypress div.item-list-tabs#object-nav {
+text-align: center;
+}
+.gp-theme #buddypress #gp-bp-tabs-button {
+display: inline-block;
+margin-bottom: 10px;
+font-size: 14px;
+line-height: 1;
+cursor: pointer;
+text-align: center;
+font-weight: 500;
+}
+.gp-theme #buddypress #gp-bp-tabs-button:before {
+content: '\f0c9';
+margin-right: 10px;
+font-family: 'FontAwesome';
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+}
+.gp-theme #buddypress #object-nav ul {
+display: none;
+}
+.gp-theme #buddypress #object-nav li {
+width: 100%;    
+text-align: left;
+} 
+.gp-theme #buddypress #object-nav li a {
+font-size: 14px;
+line-height: 1;
+}
+.gp-theme #buddypress #object-nav li a:before {
+display: inline-block;
+width: 25px;
+font-size: 14px;
+font-family: 'FontAwesome';
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+}
+.gp-theme #buddypress #object-nav li a:before {
+content: '\f1db';
+}
+.gp-theme #buddypress #object-nav #activity-personal-li a:before {
+content: '\f03a';
+}
+.gp-theme #buddypress #object-nav #xprofile-personal-li a:before {
+content: '\f2c0';
+}
+.gp-theme #buddypress #object-nav #blog-personal-li a:before,
+.gp-theme #buddypress #object-nav #blogs-personal-li a:before {
+content: '\f0e8';
+}
+.gp-theme #buddypress #object-nav #events-personal-li a:before {
+content: '\f073';
+}
+.gp-theme #buddypress #object-nav #notifications-personal-li a:before {
+content: '\f0a2';
+}
+.gp-theme #buddypress #object-nav #messages-personal-li a:before {
+content: '\f003';
+}
+.gp-theme #buddypress #object-nav #friends-personal-li a:before {
+content: '\f234';
+}
+.gp-theme #buddypress #object-nav #groups-personal-li a:before {
+content: '\f0c0';
+}
+.gp-theme #buddypress #object-nav #nav-forum-groups-li a:before,
+.gp-theme #buddypress #object-nav #forums-personal-li a:before {
+content: '\f27a';
+}
+.gp-theme #buddypress #object-nav #media-personal-li a:before {
+content: '\f008';
+}
+.gp-theme #buddypress #object-nav #settings-personal-li a:before {
+content: '\f013';
+}
+.gp-theme #buddypress #object-nav #home-groups-li a:before {
+content: '\f015';
+}
+.gp-theme #buddypress #object-nav #members-groups-li a:before {
+content: '\f2c0';
+}
+.gp-theme #buddypress #object-nav #invite-groups-li a:before {
+content: '\f0c0';
+}
+.gp-theme #buddypress #object-nav #media-groups-li a:before {
+content: '\f008';
+}
+.gp-theme #buddypress #object-nav #admin-groups-li a:before {
+content: '\f013';
+}
+.gp-theme #buddypress #object-nav #courses-personal-li a:before,
+.gp-theme #buddypress #object-nav #nav-experiences-groups-li a:before {
+content: '\f19d';
+}
+
+/*--------------------------------------------------------------
+Sub Nav Item Tabs
+--------------------------------------------------------------*/
+
+.gp-theme #buddypress div.item-list-tabs#subnav {
+margin: 20px 0 20px 0;
+padding: 0;
+border: 0;
+}
+.gp-theme #buddypress div.item-list-tabs#subnav ul {
+margin: 0;
+padding: 0;
+}
+.gp-theme #buddypress div.item-list-tabs#subnav ul li.current a, 
+.gp-theme #buddypress div.item-list-tabs#subnav ul li.selected a {
+background: none;
+opacity: 1;
+font-weight: 500;
+}
+.gp-theme #buddypress div.item-list-tabs#subnav ul li.last {
+width: 100%;
+margin: 0 0 10px 0;
+text-align: left;
+line-height: 1;
+}
+.gp-theme #buddypress div.item-list-tabs#subnav ul li.feed a:before {
+content: '\f09e';
+margin-right: 5px;
+font-family: 'FontAwesome';
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+}
+.gp-theme.directory #buddypress div.dir-search {
+margin: 0 0 20px 0;
+}
+.gp-theme.directory #buddypress div.dir-search form input[type=text], 
+.gp-theme.directory #buddypress div.message-search form input[type=text], 
+.gp-theme.directory #buddypress li.groups-members-search form input[type=text] {
+width: 100%;
+margin: 0;
+}
+.gp-theme.directory #buddypress div.dir-search form input[type=submit], 
+.gp-theme.directory #buddypress div.message-search form input[type=submit], 
+.gp-theme.directory #buddypress li.groups-members-search form input[type=submit] {
+display: none;
+}
+.gp-theme #buddypress #activity-filter-select select,
+.gp-theme #buddypress #groups-order-select select,
+.gp-theme #buddypress #members-order-select select {
+height: auto;
+margin: 0 0 0 5px;
+padding: 0 15px 0 0;
+background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAARUlEQVR4AWP4//8/2XjEawaCeiBOQFcEBA5AvJ6QZgEgPg/E85HEEoD4PRAb4NGMaQCmRkzNeAxAaCSsGdMAAyqG9qhmAKa/aMR+hqyBAAAAAElFTkSuQmCC);
+background-position: center right;
+background-repeat: no-repeat;
+border-width: 0;
+border-radius: 0;
+line-height: 1;
+font-weight: 500;
+}
+@-moz-document url-prefix() { /* FireFox fix */
+.gp-theme #buddypress #activity-filter-select select,
+.gp-theme #buddypress #groups-order-select select,
+.gp-theme #buddypress #members-order-select select {
+padding: 5px 8px;
+background-image: none;
+}
+}
+@media screen\0 { /* IE 8/9/10/11 Fix */
+.gp-theme #buddypress #activity-filter-select select,
+.gp-theme #buddypress #groups-order-select select,
+.gp-theme #buddypress #members-order-select select {
+padding: 5px 8px;
+background-image: none;
+}
+}
+.gp-theme #buddypress #item-body {
+padding: 0;
+}
+
+
+/*--------------------------------------------------------------------------------------
+
+Activity
+
+--------------------------------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+What's New Box
+--------------------------------------------------------------*/
+
+.gp-theme #buddypress form#whats-new-form #whats-new-content {
+padding-bottom: 20px !important;
+}
+.gp-theme #buddypress form#whats-new-form #whats-new-content.active #whats-new-options #whats-new-post-in-box {
+margin-top: 10px !important;
+}
+.gp-theme #buddypress #whats-new-form #whats-new-options select {    
+height: 29px;
+margin-left: 10px;
+padding: 0 40px 0 10px;
+}
+.gp-theme #buddypress #whats-new-form #whats-new-avatar img {
+width: 55px;
+height: 55px;
+}
+.gp-theme #buddypress #whats-new-form p.activity-greeting {
+line-height: 1;
+}
+.gp-theme #buddypress form#whats-new-form textarea {
+min-height: 0;
+}
+.gp-theme #buddypress #whats-new-submit #aw-whats-new-submit {
+font-size: 13px;
+line-height: 1;
+padding: 8px 12px;
+} 
+
+/*--------------------------------------------------------------
+rtMedia What's New Form
+--------------------------------------------------------------*/
+
+.gp-theme #buddypress #whats-new-form .rtmedia-add-media-button {
+padding: 5px 5px 4px 5px;
+}
+.gp-theme #buddypress .rtm-plupload-list {
+padding: 15px 0;
+}
+.gp-theme #buddypress .rtm-plupload-list li {
+padding: 0;
+background: transparent;
+}
+.gp-theme #buddypress .rtm-plupload-list .plupload_file_action {
+right: 0;
+background: rgba(0, 0, 0, 0.5);
+}
+.gp-theme #buddypress .rtm-plupload-list .plupload_file_action .dashicons {
+padding: 0;
+height: 18px;
+width: 18px;
+color: #fff;
+font-size: 16px;
+line-height: 12px;
+}
+.gp-theme #buddypress .rtm-plupload-list .dashicons-dismiss:before {
+content: '✕';
+font-family: 'FontAwesome';
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+}
+.gp-theme #buddypress .rtm-plupload-list canvas {
+width: 100%;
+}
+.gp-theme #buddypress .rtm-plupload-list .plupload_file_status {
+height: 5px;    
+margin-bottom: 5px;
+}
+.gp-theme #buddypress .rtm-plupload-list .plupload_file_name .dashicons {
+font-size: 12px;
+color: inherit;
+line-height: 1;
+}
+.gp-theme #buddypress .rtm-plupload-list .plupload_file_name .dashicons {
+background: #fff;
+padding: 0px 2px 0 6px;
+}
+.gp-theme #buddypress .rtm-plupload-list .plupload_file_name {
+font-weight: 400;
+font-size: 12px;
+line-height: 1;
+color: inherit;
+}
+.gp-theme #buddypress .rtm-plupload-list .plupload_file_size {
+margin-top: 5px;
+font-size: 12px;
+line-height: 1;
+color: inherit;
+}
+.gp-theme #buddypress .rtm-plupload-list .rtm-upload-edit-title-wrapper label {
+margin: 0 0 5px 0;
+font-weight: normal;
+font-size: 12px;
+}
+.gp-theme #buddypress .rtm-plupload-list .rtm-upload-edit-desc-wrapper label {
+margin: 10px 0 5px 0;    
+font-weight: normal;
+font-size: 12px;
+}
+ 
+/*--------------------------------------------------------------
+List
+--------------------------------------------------------------*/
+
+.gp-theme #buddypress #activity-stream {
+border: 0;
+}
+.gp-theme #buddypress #activity-stream {
+margin-top: 0;
+}
+.gp-theme #buddypress ul.activity-list li {
+border: 0;
+}
+.gp-theme #buddypress ul.activity-list > li {
+padding: 0 0 20px;
+}
+.gp-theme #buddypress .activity-list > li.mini {
+font-size: inherit;
+}
+.gp-theme #buddypress .activity-list .activity-content {
+margin-left: 0;
+padding: 20px;
+border-radius: 3px;
+}
+
+/*--------------------------------------------------------------
+Avatars
+--------------------------------------------------------------*/
+
+.gp-theme #buddypress .activity-list .activity-avatar {
+position: relative;
+z-index: 1;    
+top: 20px;
+left: 20px;
+}
+.gp-theme #buddypress #activity-stream li .activity-avatar a img.avatar,
+.gp-theme #buddypress .activity-list li.mini .activity-avatar img.FB_profile_pic,
+.gp-theme #buddypress #activity-stream li.mini .activity-avatar a img.avatar,
+.gp-theme #buddypress div.activity-comments form div.ac-reply-avatar img.avatar {
+width: 35px;
+height: 35px;
+margin: 0;
+}
+
+/*--------------------------------------------------------------
+Activity Headers
+--------------------------------------------------------------*/
+
+.gp-theme #buddypress .activity-list .activity-content .activity-header, 
+.gp-theme #buddypress .activity-list .activity-content .comment-header {
+margin: 0 30px 0 50px;
+line-height: 16px;
+}
+.gp-theme #buddypress .activity-list li.activity_updategroups .activity-header a img { 
+display: none; /* Hide avatar to fix BP avatar bug */
+}
+.gp-theme #buddypress .activity-list .activity-content .activity-header img.avatar {
+margin: 0 5px -6px 0 !important;
+}
+.gp-theme #buddypress #activity-stream .activity-header p,
+.gp-theme #buddypress #activity-stream li.mini .activity-header p {
+margin: 0;
+}
+.gp-theme #buddypress a.activity-time-since {
+display: table; 
+position: relative;
+margin-top: 8px;
+font-size: 12px;
+line-height: 1;
+}
+.gp-theme #buddypress a.activity-time-since .time-since {
+opacity: 0.6;
+}
+
+/*--------------------------------------------------------------
+Content
+--------------------------------------------------------------*/
+
+.gp-theme #buddypress .activity-list .activity-content .activity-inner {
+margin: 15px 0 0 0;
+}
+.gp-theme #buddypress .rtmedia-activity-container:first-child,
+.gp-theme #buddypress .rtmedia-activity-container .rtmedia-list.masonry {
+margin-top: 15px;
+}
+.gp-theme #buddypress #activity-stream .activity-inner p {
+margin-bottom: 10px;
+}
+.gp-theme #buddypress #activity-stream .activity-inner p:last-child {
+margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+Comment Buttons
+--------------------------------------------------------------*/
+
+.gp-theme #buddypress .gp-user-can-comment div.activity-meta {
+margin: 0;
+line-height: 1;
+}
+.gp-theme #buddypress div.activity-meta a,
+.gp-theme #buddypress div.activity-meta select,
+.gp-theme #buddypress div.activity-meta a:hover {
+margin: 10px 15px 0 0;
+padding: 0;
+font-size: 13px;
+line-height: 1;
+background: transparent;
+border: 0;
+}
+.gp-theme #buddypress div.activity-meta select {
+padding: 0 15px 0 0;
+background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAARUlEQVR4AWP4//8/2XjEawaCeiBOQFcEBA5AvJ6QZgEgPg/E85HEEoD4PRAb4NGMaQCmRkzNeAxAaCSsGdMAAyqG9qhmAKa/aMR+hqyBAAAAAElFTkSuQmCC);
+background-position: center right;
+background-repeat: no-repeat;
+}
+.gp-theme #buddypress div.activity-meta a:before,
+.gp-theme #buddypress div.acomment-options a:before {
+margin-right: 5px;
+font-family: 'FontAwesome';  
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+}
+.gp-theme #buddypress div.activity-meta .acomment-reply:before,
+.gp-theme #buddypress div.acomment-options .acomment-reply:before {
+content: '\f0e5';
+}
+.gp-theme #buddypress div.activity-meta .view:before {
+content: '\f06e';
+}
+.gp-theme #buddypress div.activity-meta .delete-activity:before,
+.gp-theme #buddypress div.activity-meta .delete-activity-single:before,
+.gp-theme #buddypress div.acomment-options .acomment-delete:before {
+content: '\f014';
+}
+.gp-theme #buddypress div.activity-meta .like:before,
+.gp-theme #buddypress div.activity-meta .unlike:before,
+.gp-theme #buddypress div.acomment-options .like:before,
+.gp-theme #buddypress div.acomment-options .unlike:before {
+content: '\f006';
+margin-right: 2px;
+}
+.gp-theme #buddypress #activity-stream div.activity-meta .like span,
+.gp-theme #buddypress #activity-stream div.activity-meta .unlike span,
+.gp-theme #buddypress #activity-stream div.acomment-options .like span,
+.gp-theme #buddypress #activity-stream div.acomment-options .unlike span { 
+margin-left: 5px;
+}
+.gp-theme #buddypress #activity-stream div.activity-meta p.users-who-like {
+margin-top: 15px;
+}
+.gp-theme #buddypress #activity-stream div.activity-meta .users-who-like small,
+.gp-theme #buddypress #activity-stream div.acomment-options small {
+font-size: 13px;
+line-height: 1;
+}
+.gp-theme #buddypress #activity-stream div.activity-meta .users-who-like small a {
+margin: 0;
+font-size: 13px;
+line-height: 1;
+}
+.gp-theme #buddypress div.activity-meta a.fav,
+.gp-theme #buddypress div.activity-meta a.unfav {
+position: absolute;
+top: 20px;
+right: 20px;
+width: 18px;
+height: 18px;
+margin: 0;
+font-size: 0 !important;
+}
+.gp-theme #buddypress div.activity-meta a.fav:before,
+.gp-theme #buddypress div.activity-meta a.unfav:before {
+content: '\f006';
+margin: 0;
+font-family: 'FontAwesome';    
+font-size: 18px !important;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+}
+.gp-theme #buddypress div.activity-meta a.unfav:before,
+.gp-theme #buddypress div.activity-meta a.fav:hover:before {
+content: '\f005';
+color: #f7be68;
+}
+.gp-theme #buddypress .gp-comments-disabled .acomment-reply {
+display: none;
+}
+.gp-theme #buddypress a.bp-primary-action span {
+margin: 0;
+padding: 0;
+background: transparent;
+font-size: inherit;
+color: inherit;
+}
+
+/*--------------------------------------------------------------
+Replies
+--------------------------------------------------------------*/
+
+/* List ************************************/
+
+.gp-theme #buddypress div.activity-comments {
+margin: 0;
+}
+.gp-theme #buddypress div.activity-comments:after {
+z-index: 1;
+bottom: calc(100% - 20px);
+left: 15px;
+content: ' ';
+height: 0;
+width: 0;
+position: absolute;
+pointer-events: none;
+border: solid rgba(0, 0, 0, 0);
+border-width: 10px;
+margin-left: 20px;
+}
+.gp-theme #buddypress .activity-list li.mini .activity-comments {
+font-size: inherit;
+}
+.gp-theme #buddypress ul.item-list.activity-list li.has-comments {
+padding-bottom: 20px;
+}
+.gp-theme #buddypress #activity-stream .activity-comments ul {
+margin-left: 20px;
+padding: 0 20px;
+border-radius: 3px;
+}
+.gp-theme #buddypress .activity-comments > ul {
+margin-top: 20px;
+}
+.gp-theme #buddypress #activity-stream .activity-comments ul li {
+padding: 20px 0;
+}
+.gp-theme #buddypress #activity-stream .activity-comments ul li > ul {
+margin: 0;
+padding: 20px 0 0 0;
+background: transparent;
+}
+.gp-theme #buddypress #activity-stream .activity-comments ul li > ul li {
+padding-left: 20px;
+}
+.gp-theme #buddypress #activity-stream .activity-comments ul li > ul li:last-child {
+padding-bottom: 0;
+}
+.gp-theme #buddypress .acomment-avatar img.avatar {
+margin: 0;
+}
+.gp-theme #buddypress div.activity-comments div.acomment-meta {
+margin: 0 0 15px 40px;
+font-size: inherit;
+line-height: 1;
+}  
+.gp-theme #buddypress div.activity-comments div.acomment-content {
+margin: 0;
+font-size: inherit;
+line-height: inherit;
+}
+.gp-theme #buddypress #activity-stream .activity-comments ul p {
+margin: 0 0 15px 0;
+}
+.gp-theme #buddypress #activity-stream .activity-comments ul p:last-child {
+margin-bottom: 0;
+}
+
+/* Reply Buttons ************************************/
+
+.gp-theme #buddypress .gp-user-can-comment .acomment-options {
+float: none;
+margin: 0;
+line-height: 1;
+}
+.gp-theme #buddypress .acomment-options a {
+display: inline-block;
+margin: 10px 15px 0 0;
+padding: 0;
+font-size: 13px !important;
+line-height: 1 !important;
+background: transparent !important;
+border-radius: 3px;
+}
+.gp-theme #buddypress .ac-reply-cancel {
+font-size: 13px;
+line-height: 1;
+}
+
+/* Comment Form ************************************/
+
+.gp-theme #buddypress div.activity-comments form.ac-form {
+margin: 20px 0 0 0;
+padding: 20px;
+border-radius: 3px;
+background: #f8f8f8;
+}
+.gp-theme #buddypress div.activity-comments li form.ac-form { 
+padding: 0;
+background: transparent;
+}
+.gp-theme #buddypress div.activity-comments form div.ac-reply-content {
+margin-left: 50px;
+padding: 0;
+}
+.gp-theme #buddypress div.activity-comments form .ac-textarea {    
+padding: 6px 12px;
+border-style: solid;
+border-radius: 3px;
+}
+.gp-theme #buddypress div.activity-comments form input,
+.gp-theme #buddypress div.activity-comments form input:hover {
+margin: 0;
+padding: 8px 12px;
+font-size: 13px;
+line-height: 1;
+}
+
+/*--------------------------------------------------------------
+rtMedia comment content
+--------------------------------------------------------------*/
+
+.gp-theme #buddypress #activity-stream .activity-comments .rtmedia-list,
+.gp-theme #buddypress #activity-stream .activity-comments .rtmedia-list .rtmedia-list-item {
+background: transparent;
+padding: 0;
+border: 0;
+margin: 0;
+}
+.gp-theme #buddypress .rtmedia-activity-container .media-type-photo .rtmedia-item-title {
+max-width: 320px;
+padding: 5px;
+}
+
+/*--------------------------------------------------------------
+rtMedia reply upload form
+--------------------------------------------------------------*/
+
+.gp-theme #buddypress .rtm-upload-button-wrapper button.rtmedia-comment-media-upload, 
+.gp-theme #buddypress button.rtmedia-comment-media-upload {
+float: left;
+margin-right: 10px;
+padding: 5px 5px 4px 5px;
+}
+.gp-theme #buddypress ul.activity-list li.activity-item .activity-comments .rtmedia-uploader-div {
+padding: 0;
+}
+.gp-theme #buddypress #activity-stream .activity-comments ul.rtm-plupload-list {
+padding: 15px 0 0 0;
+background: transparent;
+}
+.gp-theme #buddypress #activity-stream .activity-comments ul.rtm-plupload-list li {
+padding: 0;
+}
+.gp-theme #buddypress .rtm-plupload-list .rtm-upload-edit-desc {
+border-width: 1px;
+border-style: solid;
+}
+
+/*--------------------------------------------------------------
+Load more button
+--------------------------------------------------------------*/
+
+.gp-theme #buddypress .activity-list li.load-more, 
+.gp-theme #buddypress .activity-list li.load-newest {
+margin: 0;
+padding: 0;
+border: 0;
+background: none;    
+font-size: inherit;
+text-align: center;
+}
+.gp-theme #buddypress .activity-list li.load-more a, 
+.gp-theme #buddypress .activity-list li.load-newest a {
+cursor: pointer;
+padding: 0;
+font-size: inherit;
+text-align: left;
+cursor: pointer;
+color: inherit;
+}
+.gp-theme #buddypress .activity-list li.load-more.loading a, 
+.gp-theme #buddypress .activity-list li.load-newest.loading a {
+-webkit-animation: loader-pulsate 0.5s infinite ease-in-out alternate;
+-moz-animation: loader-pulsate 0.5s infinite ease-in-out alternate;
+}
+.gp-theme #buddypress .activity-list li.load-more a:after, 
+.gp-theme #buddypress .activity-list li.load-newest a:after {
+content: '\f107';
+margin-left: 10px;
+font-family: 'FontAwesome';
+font-weight: normal;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+}
+    
+/*--------------------------------------------------------------------------------------
+
+Members
+
+--------------------------------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+Profile tab
+--------------------------------------------------------------*/
+
+/* View page ************************************/
+
+.gp-theme #buddypress div.profile h2 {
+font-size: 20px;
+line-height: 28px;
+}
+.gp-theme.bp-user #buddypress .profile .bp-widget {
+margin-top: 40px;
+padding: 0 30px 30px 30px;
+border: 1px solid #e6e6e6;
+text-align: center;
+}
+.gp-theme.bp-user #buddypress .profile .bp-widget h2 {  
+display: inline;
+position: relative;
+top: -15px;
+margin: 0;
+padding: 0 15px;
+background: #fff;
+letter-spacing: 0;
+}
+.gp-theme.bp-user #buddypress .profile .profile-fields {
+text-align: left;
+}
+.gp-theme.bp-user #buddypress .profile .bp-widget table {
+margin-top: 0;
+}
+.gp-theme #buddypress table.profile-fields tr {
+display: block;
+padding: 0 0 20px 0;
+}
+.gp-theme #buddypress table.profile-fields tr:last-child {
+padding-bottom: 0;
+}
+.gp-theme #buddypress table.profile-fields tr td {
+display: block;
+width: 100%;
+padding: 0;
+border: 0;
+vertical-align: baseline;
+}
+.gp-theme #buddypress table.profile-fields tr td.label, 
+.gp-theme #buddypress table.wp-profile-fields tr td.label {
+border: 0;
+font-weight: 500;
+}
+.gp-theme #buddypress table.profile-fields tr.alt td {
+background: transparent;
+}
+.gp-theme #buddypress table.profile-fields p {
+margin-bottom: 12px;
+}
+.gp-theme #buddypress table.profile-fields p:last-child {
+margin-bottom: 0;
+}
+
+/* Edit page ************************************/
+
+.gp-theme #buddypress #profile-edit-form ul.button-nav {
+margin: 15px 0 0 0;
+}
+.gp-theme #buddypress #profile-edit-form ul.button-nav a {
+padding: 4px 8px;
+opacity: 0.7;
+}
+.gp-theme #buddypress #profile-edit-form ul.button-nav li:hover a,
+.gp-theme #buddypress #profile-edit-form ul.button-nav li.current a {
+opacity: 1;
+}
+.gp-theme #buddypress .current-visibility-level {
+font-weight: 500;
+}
+.gp-theme #buddypress .field-visibility-settings-notoggle,
+.gp-theme #buddypress .field-visibility-settings-toggle {
+margin: -15px 0 15px;
+}
+.gp-theme #buddypress .standard-form a.clear-value {
+position: absolute;
+right: 0;
+margin: -10px 0 0 0;
+line-height: 1;
+}
+.gp-theme #buddypress .field-visibility-settings {
+margin: -15px 0 15px 0;
+}
+.gp-theme #buddypress .standard-form .field-visibility-settings label {
+margin-bottom: 5px;
+line-height: 1;
+font-weight: 400;
+}
+.gp-theme #buddypress .visibility-toggle-link,
+.gp-theme #buddypress .field-visibility-settings-close { 
+padding: 2px 4px;    
+font-weight: 400;
+font-size: 11px;
+}
+.gp-theme #buddypress .tmce-active button.switch-tmce {
+line-height: 1;
+}
+
+/*--------------------------------------------------------------
+Notifications tab
+--------------------------------------------------------------*/
+
+/* List ************************************/
+
+.gp-theme #buddypress .item-list-tabs div.message-search {
+width: 100%;
+margin: 15px 0 0 0;
+}	
+.gp-theme #buddypress .item-list-tabs div.message-search form input[type=text] {
+width: auto;
+}
+.gp-theme #buddypress .item-list-tabs div.message-search form input[type=submit] {
+display: inline-block;
+}
+.gp-theme #buddypress table#message-threads tr.unread td {
+font-weight: 500;
+}
+.gp-theme #buddypress #message-threads img.avatar {
+display: none;
+}
+.gp-theme #buddypress .messages-options-nav,
+.gp-theme #buddypress .notifications-options-nav {
+margin-top: 15px;
+}
+.gp-theme #buddypress .notification-since,
+.gp-theme #buddypress .notification-actions {
+font-size: 13px;
+}
+
+/*--------------------------------------------------------------
+Messages tab
+--------------------------------------------------------------*/
+
+/* Compose ************************************/
+
+.gp-theme #buddypress #send_message_form ul.acfb-holder > li:not(.friend-tab) {
+width: 100%;
+}
+.gp-theme #buddypress #send_message_form ul.acfb-holder .friend-tab { 
+padding: 4px 8px; 
+font-weight: 500;
+font-size: 13px;
+line-height: 1;
+}
+.gp-theme #buddypress #send_message_form ul.acfb-holder .friend-tab a {    
+color: #8a7f48;
+}
+.gp-theme #buddypress #send_message_form ul.acfb-holder .friend-tab img { 
+float: left;
+border-radius: 100%;
+}
+.gp-theme #buddypress #send_message_form ul.acfb-holder .friend-tab span > img {
+margin-right: 5px;
+}
+.gp-theme #buddypress #send_message_form .send-to-input.ac_input {
+display: block;
+clear: left;
+}    
+.gp-theme #buddypress #send_message_form.standard-form #subject {
+margin-bottom: 15px;
+}    
+.ac_results {
+border-top: 0;
+}
+.ac_results li.ac_over,
+.ac_results li.ac_odd {
+background: transparent;
+color: inherit;
+}
+.ac_results li:hover {
+background: #f8f8f8;
+}
+.ac_results li img {
+float: left;
+border-radius: 100%;
+}
+
+/* Message ************************************/
+
+/* Conversation */
+.gp-theme #buddypress div#message-thread div.message-box {
+position: relative;
+margin-bottom: 20px;
+border-radius: 3px;
+}
+.gp-theme #buddypress div#message-thread div.message-box:after {
+z-index: 1;
+bottom: 100%;
+left: 15px;
+content: ' ';
+height: 0;
+width: 0;
+position: absolute;
+pointer-events: none;
+border: solid rgba(0, 0, 0, 0);
+border-width: 10px;
+margin-left: 20px;
+}
+.gp-theme #buddypress .message-metadata {
+margin-bottom: 15px;
+line-height: 1;
+}
+.gp-theme #buddypress .message-metadata span.activity {
+display: block;
+margin-top: 8px;
+font-size: 12px;
+line-height: 1;
+opacity: 0.6;
+}
+.gp-theme #buddypress div#message-thread div.message-content {
+margin-left: 0;
+}
+
+/* Send reply form */
+.gp-theme #buddypress #send-reply {
+margin-top: 30px;
+}
+.gp-theme #buddypress #send-reply img.avatar {
+margin-top: -8px;
+}
+.gp-theme #buddypress #send-reply div.message-box {
+padding: 0;
+}
+.gp-theme #buddypress #send-reply textarea {
+width: 100%;
+}
+
+/* Notices ************************************/
+
+.gp-theme #buddypress table#message-threads.sitewide-notices tr {
+display: block;
+position: relative;
+width: 100%;
+padding: 15px;
+margin-bottom: 20px;
+border-radius: 3px;
+}
+.gp-theme #buddypress table#message-threads.sitewide-notices tr:after {
+z-index: 1;
+bottom: 100%;
+left: 15px;
+content: ' ';
+height: 0;
+width: 0;
+position: absolute;
+pointer-events: none;
+border: solid rgba(0, 0, 0, 0);
+border-width: 10px;
+margin-left: 20px;
+}
+.gp-theme #buddypress table#message-threads.sitewide-notices td {
+display: block;
+width: 100%;
+padding: 0 0 15px 0;
+}
+#buddypress table.sitewide-notices tr.alt td {
+background: transparent;
+}
+.gp-theme #buddypress table#message-threads.sitewide-notices td:first-child,
+.gp-theme #buddypress table#message-threads.sitewide-notices td:last-child {
+padding: 0;
+}
+.gp-theme #buddypress table#message-threads.sitewide-notices strong {
+display: block;
+margin-bottom: 15px;
+}
+
+/*--------------------------------------------------------------
+Friends, Groups & Sites tabs
+--------------------------------------------------------------*/
+
+/* Invitation list ************************************/
+
+.gp-theme #buddypress ul#blogs-list.item-list li {
+padding-bottom: 30px;
+}
+.gp-theme #buddypress ul.invites.item-list li img.avatar,
+.gp-theme #buddypress ul#friend-list.item-list li img.avatar,
+.gp-theme #buddypress ul#blogs-list.item-list img.avatar {
+margin: 0;
+width: 35px;
+height: 35px;
+}
+.gp-theme #buddypress ul.invites.item-list li h4,
+.gp-theme #buddypress ul#friend-list.item-list li .item-title,
+.gp-theme #buddypress ul#friend-list.item-list li h3,
+.gp-theme #buddypress ul#blogs-list.item-list li .item-title {
+margin-left: 50px;
+font-size: 100%;
+line-height: 1;
+}
+.gp-theme #buddypress ul.invites.item-list li p {
+margin-bottom: 0;
+}
+.gp-theme #buddypress ul.invites.item-list li p,
+.gp-theme #buddypress ul#friend-list.item-list li .item-meta,
+.gp-theme #buddypress ul#blogs-list.item-list li .item-meta {
+margin: 8px 0 0 50px;    
+font-size: 12px;
+line-height: 14px;
+}
+/*Add unnecessary margin to active meta data in friend requests member list
+.gp-theme #buddypress ul#friend-list.item-list li .activity {
+margin-left: 15px;
+}*/
+.gp-theme #buddypress ul.invites.item-list li div.action {
+position: relative;
+top: auto;
+right: auto;
+margin: 8px 0 0 50px;    
+text-align: left;
+line-height: 1;
+}
+.gp-theme #buddypress ul.invites.item-list li div.action .meta {
+line-height: 1;
+}
+
+/*--------------------------------------------------------------
+Courses tab
+--------------------------------------------------------------*/
+
+.gp-theme #buddypress .bp_members.course {
+width: 100%;
+overflow: hidden;
+padding: 20px 0;
+border-bottom: 1px solid #e6e6e6;
+}
+.gp-theme #buddypress .bp_members.course:first-child {
+border-top: 1px solid #e6e6e6;
+}
+.gp-theme #buddypress .bp_members.course h2 {
+margin: 0 0 5px 0;
+clear: none;
+font-size: 18px;
+line-height: 22px;
+font-weight: 500;
+letter-spacing: 0;
+}
+.gp-theme #buddypress .bp_members.course .alignleft {
+float: left;
+margin: 0 20px 0 0;
+border-radius: 100%;
+width: 90px;
+height: 90px;
+}
+.gp-theme #buddypress .bp_members.course section.entry {
+overflow: hidden;
+}
+.gp-theme #buddypress .bp_members.course .sensei-course-meta {
+margin-bottom: 10px;
+}
+.gp-theme #buddypress .bp_members.course section.entry span:first-child {
+padding-left: 0;
+}
+.gp-theme #buddypress .bp_members.course .course-excerpt {
+display: none;
+}
+.gp-theme #buddypress .bp_members.course .meter {
+margin: 0 0 10px 0;
+border-radius: 3px;
+}
+.gp-theme #buddypress .bp_members.course .meter > span {    
+padding: 0 10px 0 0;
+line-height: 25px;
+border-radius: 3px;
+}    
+.gp-theme #buddypress .bp_members.course section.entry {
+overflow: hidden;
+}
+.gp-theme #buddypress .bp_members.course .entry-actions {
+width: 100%;
+text-align: right;
+}
+
+/*--------------------------------------------------------------
+Media tab
+--------------------------------------------------------------*/
+
+.gp-theme button.mfp-close,
+.gp-theme button.mfp-close:hover {
+background: #fff;
+color: #999;
+font-size: 24px;
+font-weight: 400;
+}
+.gp-theme #buddypress .media_search.media_search {
+width: 100%;
+margin: 15px 0 0 0;
+border-radius: 3px;
+border-width: 1px;
+border-style: solid;
+padding: 0 12px;
+}
+.gp-theme #buddypress .media_search.media_search .media_search_input {
+padding: 6px 0;
+}
+.gp-theme #buddypress .media_search.media_search .search_option {
+display: none;
+}
+.gp-theme #buddypress .media_search.media_search .media_search_remove.search_option i {
+margin-top: 4px;
+color: #999;
+font-size: 16px;
+}
+.gp-theme #buddypress .rtmedia-container .rtmedia-list .rtmedia_time,
+.gp-theme #buddypress .rtmedia-list-item .rtmedia-album-media-count {
+top: 5px;
+right: 5px;
+padding: 5px 8px;
+border-radius: 3px;
+background: rgba(0,0,0,0.6);
+font-size: 11px;
+line-height: 1;
+color: #fff;
+opacity: 1;
+}
+.gp-theme #buddypress .rtmedia-gallery-item-actions {
+line-height: 20px;
+}
+.gp-theme #buddypress .rtm-load-more {
+margin: 15px 0 0 0;
+padding: 0;
+border: 0;
+background: none;    
+font-size: inherit;
+}
+.gp-theme #buddypress .rtm-load-more a {
+display: block;
+cursor: pointer;
+padding: 0;
+font-size: inherit;
+text-align: left;
+cursor: pointer;
+color: inherit;
+}
+.gp-theme #buddypress .rtm-load-more a:after {
+content: '\f107';
+margin-left: 10px;
+font-family: 'FontAwesome';
+font-weight: normal;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+}
+.gp-theme #buddypress .rtm-tabs a {
+padding: 10px 15px;
+line-height: 1;
+}
+.gp-theme #buddypress a.button.rtm-button-back {
+padding: 10px 14px;
+border: 0;
+}
+
+/* Edit media ************************************/
+
+.gp-theme #buddypress .rtm-tabs .dashicons {
+line-height: 1;
+}
+.gp-theme #buddypress .rtmedia-editor-buttons {
+margin-top: 20px;
+}
+.gp-theme #buddypress .rtmedia-image-editor-cotnainer .imgedit-wait {
+height: 100%;
+background-image: none;
+}
+
+/*--------------------------------------------------------------
+Individual activity
+--------------------------------------------------------------*/
+
+body.gp-theme.activity-permalink #buddypress .activity-list li .activity-content {   
+margin-left: 0;
+padding: 20px;
+border-radius: 3px;
+}
+body.gp-theme.activity-permalink #buddypress .activity-list li .activity-header {
+margin-bottom: 10px;
+}
+body.gp-theme.activity-permalink #buddypress .activity-list li .activity-header > p {
+padding: 0;
+}
+body.gp-theme.activity-permalink #buddypress .activity-list li .activity-header .time-since {
+display: table;
+position: relative;
+margin-top: 8px;
+font-size: 12px;
+line-height: 1;
+}
+body.gp-theme.activity-permalink #buddypress div.activity-comments {
+margin: 0;
+font-size: 100%;
+}
+
+
+/*--------------------------------------------------------------------------------------
+
+Groups Directory
+
+--------------------------------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+Loop
+--------------------------------------------------------------*/
+
+/* Pagination ************************************/
+
+.gp-theme #buddypress div.pagination .pag-count {
+margin-left: 0;
+}
+.gp-theme #buddypress div.pagination .pagination-links {
+margin-rigth: 0;
+}
+.gp-theme #buddypress div.pagination .pagination-links a, 
+.gp-theme #buddypress div.pagination .pagination-links span {
+font-size: 100%;
+}
+
+/* Columns ************************************/
+
+.gp-bp-wrapper {
+position: relative;
+overflow: hidden;
+width: 100%;
+clear: both;
+margin: 0;
+list-style: none;
+}
+.gp-bp-wrapper.gp-posts-masonry {
+opacity: 0;
+}
+.gp-bp-wrapper .gp-post-thumbnail {
+display: block;
+height: 150px;
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center center;
+}
+.gp-bp-wrapper .gp-bp-col-cover-overlay {
+position: absolute;
+top: 5px;
+right: 5px;
+padding: 5px 8px;
+border-radius: 3px;
+background: rgba(0,0,0,0.6);
+font-size: 11px;
+line-height: 1;
+color: #fff;
+}
+.gp-bp-wrapper .gp-bp-col-cover-overlay:before {
+content: '\f2c0';
+margin-right: 5px;
+font-family: 'FontAwesome';
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+}
+.gp-bp-wrapper .gp-bp-col-avatar {
+display: inline-block;
+}
+.gp-bp-wrapper .gp-post-thumbnail .gp-bp-col-avatar {
+position: absolute;
+z-index: 1;
+bottom: -40px;
+left: 50%;
+line-height: 0;
+margin-left: -45px;
+text-align: center;
+}
+.gp-bp-wrapper .gp-no-cover-image .gp-bp-col-avatar {
+margin-bottom: 10px;
+}
+.gp-bp-wrapper .gp-bp-col-avatar a {
+display: block;
+position: relative;
+line-height: 0;
+}
+.gp-bp-wrapper .gp-bp-col-avatar img.avatar {
+float: none;
+margin: 0;
+border: 6px solid #fff;
+}
+.gp-bp-wrapper .gp-no-cover-image .gp-bp-col-avatar img.avatar {
+border-color: rgba(0,0,0,0.1);
+}
+.gp-bp-wrapper.gp-style-classic .gp-loop-content {
+padding-top: 48px;
+}
+.gp-bp-wrapper.gp-style-classic .gp-loop-content.gp-no-cover-image {
+padding-top: 25px;
+}
+.gp-bp-wrapper .gp-loop-text {
+margin: 0;
+}
+.gp-bp-wrapper .gp-bp-col-action {
+line-height: 1;
+}
+.gp-bp-wrapper .gp-bp-col-action .generic-button {
+display: inline-block;
+margin-top: 15px;
+}
+.gp-bp-wrapper .gp-bp-col-action .generic-button a,
+.gp-bp-wrapper .gp-bp-col-action .generic-button a:hover {
+padding: 4px 8px !important;
+font-size: 13px !important;
+font-weight: 400 !important;
+line-height: 1 !important;
+}
+.gp-bp-wrapper .gp-bp-col-action .generic-button .add,
+.gp-bp-wrapper .gp-bp-col-action .generic-button .join-group {
+background: #8cbe4b !important;
+}
+.gp-bp-wrapper .gp-bp-col-action .generic-button .add:hover,
+.gp-bp-wrapper .gp-bp-col-action .generic-button .join-group:hover {
+opacity: 0.8 !important;
+}
+.gp-bp-wrapper .gp-bp-col-action .generic-button .remove,
+.gp-bp-wrapper .gp-bp-col-action .generic-button .requested,
+.gp-bp-wrapper .gp-bp-col-action .generic-button .leave-group,
+.gp-bp-wrapper .gp-bp-col-action .generic-button .request-membership {
+border: 1px solid #e6e6e6 !important;
+background: transparent !important;
+color: #999 !important;
+}
+.gp-bp-wrapper .gp-bp-col-action .generic-button .remove:hover,
+.gp-bp-wrapper .gp-bp-col-action .generic-button .requested:hover,
+.gp-bp-wrapper .gp-bp-col-action .generic-button .leave-group:hover,
+.gp-bp-wrapper .gp-bp-col-action .generic-button .request-membership:hover {
+background: #f8f8f8 !important;
+}
+.gp-bp-wrapper .gp-bp-col-group-type {
+display: inline-block;
+margin-top: 15px;
+font-size: 13px;
+line-height: 1;
+margin-right: 10px;
+}
+
+
+/*--------------------------------------------------------------------------------------
+
+Single Group
+
+--------------------------------------------------------------------------------------*/
+
+/* General ************************************/
+
+.gp-theme #buddypress ul.item-list li .item .item-title .update {
+display: block;
+font-size: 14px;
+line-height: 20px;
+}
+
+/*--------------------------------------------------------------
+Manage tab
+--------------------------------------------------------------*/
+
+/* Navigation ************************************/
+
+.gp-theme #buddypress div.item-list-tabs ul li span {
+padding: 0;
+line-height: 1;
+}
+
+/* Photo tab ************************************/
+
+.gp-theme.group-avatar #buddypress form.standard-form .main-column {
+clear: both;
+width: 100%;
+margin: 0 0 30px 0;
+}
+.gp-theme.group-avatar #buddypress .left-menu .avatar {
+margin: 0 20px 20px 0;
+}
+.gp-theme #buddypress #avatar-crop-pane {
+border-radius: 0;
+}
+
+/* Invites tab ************************************/
+
+.gp-theme.group-invites #buddypress form.standard-form .left-menu,
+.gp-theme.group-invites #buddypress div#invite-list {
+width: 100%;
+}
+.gp-theme.group-invites #buddypress form.standard-form .main-column {
+margin-left: 0;
+}
+.gp-theme.group-invites #buddypress ul.item-list li img.avatar {
+width: 35px;
+height: 35px;
+}
+.gp-theme.group-invites #buddypress ul.item-list li h3 {
+line-height: 1;
+}
+.gp-theme.group-invites #buddypress span.activity {
+font-size: 12px;
+line-height: 1;
+opacity: 0.6;
+}
+
+/* Members tab ************************************/
+
+.gp-theme #buddypress .group-members-list ul.item-list li img.avatar {
+margin: 0;
+width: 35px;
+height: 35px;
+}
+.gp-theme #buddypress .group-members-list ul.item-list li img.avatar {
+margin: 0;
+width: 35px;
+height: 35px;
+}
+.gp-theme #buddypress .group-members-list ul.item-list li .item-title {
+margin-left: 50px;
+font-size: 100%;
+line-height: 1;
+}
+.gp-theme #buddypress .group-members-list ul.item-list li p {
+margin-bottom: 0;
+}
+.gp-theme #buddypress .group-members-list ul.item-list li p {
+margin: 8px 0 0 50px;    
+font-size: 12px;
+line-height: 14px;
+}
+.gp-theme #buddypress .group-members-list ul.item-list li div.action {
+position: relative;
+top: auto;
+right: auto;
+margin: 5px 0 0 50px;    
+text-align: left;
+line-height: 1;
+}
+.gp-theme #buddypress .group-members-list ul.item-list li div.action .button {
+margin-top: 3px;
+}
+
+/* Manage tab ************************************/
+
+.gp-theme.single-item.groups #buddypress div.dir-search {
+float: left;
+margin: 0 0 5px 0;
+}
+.gp-theme.single-item.groups #buddypress div.dir-search form input[type=text] {
+width: auto;
+}
+.gp-theme.single-item.groups #buddypress div.dir-search form input[type=submit] {
+display: inline-block;
+}
+
+/*--------------------------------------------------------------
+Forum tab
+--------------------------------------------------------------*/
+
+.gp-theme #buddypress #item-body #bbpress-forums h3 {
+margin: 20px 0;
+}
+.gp-theme .wp-core-ui .quicktags-toolbar .button {
+outline: 0;
+padding: .3em .5em !important;
+font-size: 11px !important;
+font-weight: 400 !important;
+color: #555 !important;
+border-color: #ccc !important;
+border-style: solid !important;
+border-width: 1px !important;
+background: #fff !important;
+box-shadow: 0 1px 0 #ccc !important;
+text-align: center !important;
+text-decoration: none !important;
+width: auto !important;
+}
+.gp-theme #bbpress-forums input#bbp_topic_title, 
+.gp-theme #bbpress-forums input#bbp_topic_tags {
+width: 95%;
+}
+.gp-theme .wp-core-ui .quicktags-toolbar .button:hover {
+background: #ededed !important;
+border-color: #999 !important;
+color: #333 !important;
+outline: 0 !important;
+text-decoration: none !important;
+}
+.gp-theme .wp-core-ui .quicktags-toolbar .button:focus {
+border-color: #5b9dd9 !important;
+box-shadow: 0 0 3px rgba(0,115,170,.8) !important;
+}
+
+/*--------------------------------------------------------------
+Course tab
+--------------------------------------------------------------*/
+
+/* Lessons ************************************/
+
+.gp-theme #buddypress .course-lessons h2 {
+margin: 20px 0 0 0;
+padding-bottom: 10px;
+border-bottom: 1px solid #e6e6e6;
+}
+.gp-theme #buddypress .bp_group.lesson {
+width: 100%;
+overflow: hidden;
+padding: 20px 0;
+border-bottom: 1px solid #e6e6e6;
+}
+.gp-theme #buddypress .bp_group.lesson h2 {
+clear: none;
+margin: 0 0 5px 0;
+font-size: 18px;
+line-height: 22px;
+font-weight: 500;
+letter-spacing: 0;
+}
+.gp-theme #buddypress .bp_group.lesson .lesson-meta {
+margin: 0 0 10px 0;
+}
+.gp-theme #buddypress .bp_group.lesson .lesson-meta span:after {
+content: '·';
+margin: 0 2px 0 5px;
+}
+.gp-theme #buddypress .bp_group.lesson .lesson-meta span:last-child:after {
+content: '';
+margin: 0;
+}
+.gp-theme #buddypress .bp_group.lesson .alignleft {
+float: left;
+margin: 0 20px 0 0;
+width: 215px;
+height: auto;
+} 
+
+/* Modules ************************************/
+
+.gp-theme.single-item.groups #buddypress #item-body .post.module:first-child {
+margin-top: 20px !important;
+}
+
+
+/*--------------------------------------------------------------------------------------
+
+Registration Page
+
+--------------------------------------------------------------------------------------*/
+
+.gp-theme #buddypress form fieldset {
+position: relative;
+}
+.gp-theme #buddypress .standard-form #basic-details-section, 
+.gp-theme #buddypress .standard-form #blog-details-section, 
+.gp-theme #buddypress .standard-form #profile-details-section {
+width: 100%;
+}
+.gp-theme #buddypress .standard-form#signup_form input[type='text'], 
+.gp-theme #buddypress .standard-form#signup_form input[type='email'], 
+.gp-theme #buddypress .standard-form#signup_form input[type='password'],
+.gp-theme  #buddypress .standard-form#signup_form textarea {
+width: 100%;
+}
+#buddypress .standard-form#signup_form div.submit {
+float: left;
+}
+
+
+/*--------------------------------------------------------------------------------------
+
+Widgets
+
+--------------------------------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+General widgets
+--------------------------------------------------------------*/
+
+.gp-theme .widget.buddypress div.item-options {
+margin: 0 0 12px 0;
+padding: 0;
+font-size: 90%;
+line-height: 1;
+}
+.gp-theme .widget.buddypress div.item-options a {
+display: inline-block;
+margin: 0 10px 4px 0;
+padding: 0;
+opacity: 0.6;
+}
+.gp-theme .widget.buddypress div.item-options a:last-child {
+margin: 0;
+}
+.gp-theme .widget.buddypress div.item-options a:hover,
+.gp-theme .widget.buddypress div.item-options a.selected {
+opacity: 1;
+}
+.gp-theme .widget.buddypress div.item-options .bp-separator {
+display: none;
+}
+.gp-theme .widget.buddypress li {
+padding: 15px 0;
+}
+.gp-theme .widget.buddypress div.item {
+margin: 0 0 0 50px;
+}
+.gp-theme .widget.buddypress .item-avatar a {
+margin: 0;
+line-height: 0;
+}
+.gp-theme .widget.buddypress div.item-avatar img {
+width: 35px;
+height: 35px;
+margin: 0;
+}
+.gp-theme .widget.buddypress li .item-title {
+margin-bottom: 5px;
+line-height: 130%;
+}
+.gp-theme .widget.buddypress li .item-meta {
+margin: 0;    
+font-size: 12px;
+line-height: 1;
+opacity: 0.6;
+}
+
+/*--------------------------------------------------------------
+BuddyPress Login Widget
+--------------------------------------------------------------*/
+
+.gp-theme .widget.buddypress #bp-login-widget-form label {
+margin: 0 0 5px 0;
+line-height: 1;
+}
+.gp-theme .widget.buddypress #bp-login-widget-form input[type='text'],
+.gp-theme .widget.buddypress #bp-login-widget-form input[type='password'] {
+width: 100%;
+margin: 0 0 15px 0;
+}
+.gp-theme .widget.buddypress #bp-login-widget-form .forgetmenot {
+margin-bottom: 15px;
+}
+.gp-theme .widget.buddypress .bp-login-widget-user-links > div {
+margin: 0 0 5px 55px;
+padding: 0;
+line-height: 1;
+}
+.widget.buddypress .bp-login-widget-user-links > div.bp-login-widget-user-link a {
+font-weight: 500;
+}
+.widget.buddypress .bp-login-widget-user-links > div.bp-login-widget-user-logout a {
+font-size: 90%;
+}
+
+/*--------------------------------------------------------------
+BuddyPress Recently Active Members/Who's Online Widgets
+--------------------------------------------------------------*/
+
+.gp-theme .widget.buddypress .avatar-block { 
+margin: -3px;    
+line-height: 0;
+font-size: 0;
+}
+.gp-theme .widget.buddypress .avatar-block .item-avatar {
+display: inline-block;
+margin: 3px;
+}
+
+
+/*--------------------------------------------------------------------------------------
+
+Elements
+
+--------------------------------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+BuddyPress Group/Members Element
+--------------------------------------------------------------*/
+
+/* General ************************************/
+
+.gp-theme .gp-bp-element:not(.gp-bp-posts-list) {
+text-align: center;
+}
+
+/* Filters ************************************/
+
+/* Normal display */
+.gp-theme .gp-bp-element:not(.gp-bp-posts-list) div.item-options {
+margin: 0 0 30px 0;
+padding: 0;
+text-align: center;
+}
+.gp-theme .gp-bp-element:not(.gp-bp-posts-list) div.item-options a {
+display: inline-block;
+margin: 0 15px;
+padding: 0;
+font-size: 18px;
+}
+.gp-theme .gp-bp-element div.item-options a {
+opacity: 0.6;
+}
+.gp-theme .gp-bp-element div.item-options a:hover,
+.gp-theme .gp-bp-element div.item-options a.selected {
+opacity: 1;
+}
+
+/* List display */
+.gp-theme .gp-bp-element.gp-bp-posts-list div.item-options {
+margin: 0 0 8px 0;
+padding: 0;
+font-size: 13px;
+line-height: 1;
+}
+.gp-theme .gp-bp-element.gp-bp-posts-list div.item-options a {
+display: inline-block;
+margin: 0 10px 4px 0;
+}
+.gp-theme .gp-bp-element.gp-bp-posts-list div.item-options a:last-child {
+margin: 0;
+padding: 0;
+}
+.gp-theme .gp-bp-element.gp-bp-posts-list .gp-bp-wrapper {
+margin: 0;
+}
+
+/* Round avatars ************************************/
+
+.gp-theme .gp-bp-round-avatars {
+display: inline-block;  
+margin: -3px 0;
+}
+.gp-theme .gp-bp-round-avatars li {
+display: inline-block;    
+float: none;
+clear: none;
+width: auto;
+margin: 3px 5px;
+padding: 0;
+border: 0;
+line-height: 0;
+list-style: none;
+transition: all 0.4s ease-in-out;
+}
+.gp-theme .gp-bp-round-avatars .gp-bp-avatar {
+display: block;
+position: relative;
+}
+.gp-theme .gp-bp-round-avatars .gp-bp-avatar img {
+width: 90px;
+height: 90px;
+margin: 0;
+border: 6px solid rgba(0,0,0,0.1);
+}
+
+/* Grid avatars ************************************/
+
+.gp-theme .gp-bp-grid-avatars {
+display: inline-block;  
+margin: 0;
+}
+.gp-theme .gp-bp-grid-avatars li {
+width: auto;
+float: left;
+list-style: none;
+}
+.gp-theme .gp-bp-grid-avatars li .gp-bp-avatar {
+position: relative;
+display: block;
+line-height: 0;
+}
+.gp-theme .gp-bp-grid-avatars .gp-bp-hover-effect {
+border-radius: 0;
+}
+.gp-theme .gp-bp-grid-avatars .gp-bp-avatar img {
+border-radius: 0;
+}
+
+/* Show hidden content that should not be hidden ************************************/
+
+.gp-theme .gp-post-item.is-admin.hidden {
+display: block;
+}
+.gp-theme .gp-post-item.is-member.hidden {
+display: block;
+}
+
+/*--------------------------------------------------------------
+BuddyPress Who's Online Element
+--------------------------------------------------------------*/
+
+.gp-theme .gp-bp-element.gp-small-avatars {
+text-align: left;
+}
+.gp-theme .gp-bp-element:not(.gp-bp-posts-list) .avatar-block {
+display: inline-block;  
+margin: -7px 0;
+}
+.gp-theme .gp-bp-element:not(.gp-bp-posts-list) .item-avatar {
+position: relative;
+display: inline-block;
+margin: 7px 10px;
+}
+.gp-theme .gp-bp-element:not(.gp-bp-posts-list) .item-avatar a {
+margin: 0;
+}
+.gp-theme .gp-bp-element:not(.gp-bp-posts-list) .item-avatar img {
+width: 90px;
+height: 90px;
+margin: 0;
+border: 6px solid #fff;
+}
+.gp-theme .gp-bp-element.gp-small-avatars .item-avatar img {
+width: 35px;
+height: 35px;
+border: 0;
+}
+
+
+/*--------------------------------------------------------------------------------------
+
+Plugins
+
+--------------------------------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+rtMedia Lightbox
+--------------------------------------------------------------*/
+
+/* Controls ************************************/
+
+.gp-theme #buddypress .mfp-close {
+background: rgba(0,0,0,0.8);
+color: #fff;
+right: 0;
+}
+.gp-theme #buddypress .mfp-arrow:before, 
+.gp-theme #buddypress .mfp-arrow:after, 
+.gp-theme #buddypress .mfp-arrow .mfp-b, 
+.gp-theme #buddypress .mfp-arrow .mfp-a {
+border: 0;
+margin: 0;
+}
+.gp-theme #buddypress .mfp-arrow-left {
+padding-right: 4px;
+}
+.gp-theme #buddypress .mfp-arrow-right {
+padding-left: 4px;
+}
+.gp-theme #buddypress .mfp-arrow-left:before,
+.gp-theme #buddypress .mfp-arrow-right:before {
+display: inline;
+position: relative;
+color: #fff;
+opacity: 1;
+}
+.gp-theme #buddypress .mfp-arrow-left:before {
+content: '\f104';
+}
+.gp-theme #buddypress .mfp-arrow-right:before {    
+content: '\f105';
+}
+.gp-theme #buddypress .mfp-arrow {
+width: 40px;
+height: 60px;
+margin: -30px 0 0 0;
+background: rgba(0,0,0,0.8);
+font-family: 'FontAwesome';
+font-size: 30px;
+line-height: 60px;
+cursor: pointer;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+}
+
+/* Image ************************************/
+
+.gp-theme #buddypress .rtm-single-media {
+line-height: 0;
+}
+
+/* Right comments panel ************************************/
+
+.gp-theme #buddypress .rtm-time-privacy {
+line-height: 1;
+}
+.gp-theme #buddypress .rtm-time-privacy .dashicons {
+margin-top: -5px;
+}
+.gp-theme #buddypress .rtmedia-actions-before-comments .rtmedia-comment-link, 
+.gp-theme #buddypress .rtmedia-actions-before-comments .rtmedia-view-conversation, 
+.gp-theme #buddypress .rtmedia-actions-before-comments .rtmedia-like {
+border: 0;
+background: transparent;
+font-weight: 500;
+line-height: 1;
+color: inherit;
+}
+.gp-theme #buddypress .rtmedia-actions-before-comments .rtmedia-like:hover {
+color: inherit;
+font-size: 13px;
+line-height: 1;
+}
+.gp-theme #buddypress .rtmedia-like .rtm-like-loading {
+margin-right: 5px;
+}
+.gp-theme #buddypress .rtm-like-comments-info {
+margin-top: 15px;
+}
+.gp-theme #buddypress .rtm-comment-wrap .rtmedia-comment-author {
+font-weight: 400;
+}
+.gp-theme #buddypress .rtmedia-comment-media-list {
+margin: 0;
+}
+.gp-theme #buddypress .rtmedia-list-item {
+/*max-width: 32%;
+padding-left: 0;
+padding-right: 10px;
+padding-bottom: 0;*/
+}
+.rtmedia-activity-container .rtmedia-item-title, 
+.rtmedia-activity-container .rtmedia-item-title a {
+line-height: 17px;
+}
+.gp-theme #buddypress .rtm-media-single-comments {
+padding: 15px 0;
+}
+.gp-theme #buddypress #rt_media_comment_submit {
+float: left;
+font-size: 13px;
+line-height: 1;
+padding: 8px 12px;
+}
+.gp-theme #buddypress #rt_media_comment_submit:hover {
+font-size: 13px;
+line-height: 1;
+}
+
+/*--------------------------------------------------------------
+BuddyPress Global Search plugin
+--------------------------------------------------------------*/
+
+.gp-theme #buddypress .search_results ul.item-list li div.item-desc {
+display: none;
+}
+
+/*--------------------------------------------------------------
+BP Profile search plugin
+--------------------------------------------------------------*/
+
+/* Member page form ************************************/
+
+.gp-theme #buddypress .bps_filters {
+margin-bottom: 30px;
+padding: 20px 0 20px 20px;
+border-width: 1px;
+border-style: solid;
+}
+.gp-theme #buddypress .gp-bps-wrapper {
+width: 100%;
+overflow: hidden;
+clear: both;
+margin-bottom: 30px;
+padding: 20px 0 20px 20px;
+border-width: 1px;
+border-style: solid;
+}
+.gp-theme #buddypress .gp-bps-header {  
+width: 100%;
+overflow: hidden;
+clear: both; 
+}
+.gp-theme #buddypress .gp-bps-title {    
+float: left;
+margin: 5px 0 0 0;
+}
+.gp-theme #buddypress .gp-bps-toggle-button {    
+float: right;
+margin-right: 20px;
+}
+.gp-theme #buddypress .gp-bps-form {
+margin-top: 30px;
+}
+.gp-theme #buddypress .gp-bps-form.bps-toggle-form {
+display: none;
+}
+.gp-theme #buddypress .gp-bps-field {
+float: left;
+width: 100%;
+padding-right: 20px;
+}
+.gp-theme #buddypress .gp-bps-field [id*='field_'] {
+width: 100%;
+}
+.gp-theme #buddypress .gp-bps-button { 
+clear: both;
+display: block;
+width: auto;   
+}
+
+/* Widget form ************************************/
+
+.gp-theme .widget .gp-bps-form { 
+padding: 20px;
+border-width: 1px;
+border-style: solid;
+}
+
+/* WPBakery Page Builder element ************************************/
+
+.gp-theme .gp-bps-wrapper {
+padding: 30px 20px;
+background: rgba(255,255,255,0.5);
+border: 10px solid rgba(0,0,0,0.1);
+color: #232323;
+}
+.gp-bps-title {    
+margin-bottom: 36px;
+font-weight: 500;
+font-size: 18px;
+line-height: 22px;
+text-align: center;
+}
+.gp-bps-field {
+float: left;
+line-height: 1;
+}
+.gp-bps-field {
+width: 100%;
+padding: 0 0 20px 0;
+}
+.gp-small .gp-bps-field {
+width: 50%;
+padding: 0 20px 20px 0;
+}
+.gp-small .gp-bps-field:nth-of-type(2n) {
+padding-right: 0;
+}
+.gp-small .gp-bps-field:nth-of-type(2n+1) {
+clear: left;
+}
+.gp-bps-field label {
+display: block;
+margin-bottom: 10px;
+font-size: 14px;
+font-weight: 500;
+}
+.gp-bps-field input,
+.gp-bps-field textarea,
+.gp-bps-field select {
+width: 100%;
+}
+.gp-bps-field [name*='_range_min'],
+.gp-bps-field [name*='_range_max'] {
+width: 45% !important;
+}
+.gp-bps-desc {
+margin-top: 5px;
+opacity: 0.7;
+font-size: 13px;
+line-height: 17px;
+}
+.gp-bps-button {    
+width: 100%;
+}
+
+/*--------------------------------------------------------------
+Events Manager
+--------------------------------------------------------------*/
+
+/* Events profile tab ************************************/
+
+.em-warning.em-warning-infos.updated {
+padding: 0;
+}
+.em-events-list {
+margin: 0;
+list-style: none;
+}
+.em-events-list ul {
+margin: 0;
+list-style: none;
+font-size: 13px;
+line-height: 16px;
+}
+.em-events-list > li {
+margin-bottom: 12px;
+}
+.em-events-list > li:last-child {
+margin-bottom: 20px;
+}
+#event-form .event-extra-details select {
+width: 100%;
+}
+.wp-core-ui #wp-em-editor-content-editor-container .button {
+padding: 5px !important;
+color: #555 !important;
+border-color: #ccc !important;
+background: #f7f7f7 !important;
+box-shadow: 0 1px 0 #ccc !important;
+vertical-align: top !important;
+border-style: solid !important;
+border-width: 1px !important;
+}
+.wp-core-ui #wp-em-editor-content-editor-container .button.hover, 
+.wp-core-ui #wp-em-editor-content-editor-container .button:focus, 
+.wp-core-ui #wp-em-editor-content-editor-container .button:hover {
+background: #fafafa !important;
+border-color: #999 !important;
+color: #23282d !important;
+} 
+.wp-core-ui #wp-em-editor-content-editor-container .button.focus, 
+.wp-core-ui #wp-em-editor-content-editor-container .button:focus {
+border-color: #5b9dd9 !important;
+box-shadow: 0 0 3px rgba(0,115,170,.8) !important;
+}
+div.time-picker li {
+padding: 10px 3px;
+}
+
+/*--------------------------------------------------------------------------------------
+
+Media Queries
+
+--------------------------------------------------------------------------------------*/
+
+/* Custom, iPhone Retina */ 
+@media only screen and (max-width : 768px) {
+
+	.gp-theme #buddypress ul#blogs-list.item-list li {
+	padding-bottom: 15px;
+	}
+	.gp-theme #buddypress li div.item {
+	margin-left: 0;
+	}
+	.gp-theme #buddypress ul.item-list li div.action {
+	position: relative;
+    top: auto;
+	float: none;
+	margin-top: 10px;
+	margin-left: 50px;
+	margin-bottom: 0;
+    text-align: left;
+	}
+	.gp-theme #buddypress ul#blogs-list.item-list li div.action .meta {
+	margin-top: 10px;
+	} 
+
+}
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (min-width : 480px) {
+
+	.gp-theme #buddypress form#whats-new-form #whats-new-content.active #whats-new-options #whats-new-post-in-box {
+	margin-top: 0 !important;
+	}
+	.gp-theme #bbpress-forums input#bbp_topic_title, 
+	.gp-theme #bbpress-forums input#bbp_topic_tags {
+	width: auto;
+	}
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+
+	#gp-buddypress-header #gp-page-header .gp-container {
+	-webkit-display: flex;
+	display: flex;
+	-webkit-align-items: center;
+	align-items: center;
+	}
+	#gp-buddypress-header #item-header-avatar {
+	margin-right: 40px;
+	text-align: left;
+	-webkit-flex-shrink: 0;
+	flex-shrink: 0;
+	}	
+	#gp-buddypress-header #item-header-avatar .gp-user-online,
+	#gp-buddypress-header #item-header-avatar .gp-user-offline {
+	bottom: 40px;
+	right: 16px;
+	width: 16px;
+	height: 16px;
+	}
+	#gp-buddypress-header #item-header-avatar .avatar {
+	width: 210px;
+	height: 210px;
+	}
+	#gp-buddypress-header #item-header-content {
+	margin-top: 0;
+	text-align: left;
+	}
+	#gp-buddypress-header .gp-bp-header-title {
+	font-size: 36px;
+	}
+	#gp-buddypress-header .gp-bp-header-desc {
+	display: block;
+	}
+	#gp-buddypress-header .gp-bp-header-actions {
+	text-align: left;
+	}	
+	#gp-buddypress-header .gp-bp-header-members {
+	margin: 20px 20px 0 0;
+	}
+	#gp-buddypress-header .gp-bp-header-members ul {
+	text-align: left;
+	}
+	#gp-buddypress-header .generic-button a {
+	font-size: 13px;
+	}
+	.gp-theme #buddypress div.item-list-tabs#subnav ul li.last {
+	width: auto;
+	text-align: right;
+	}
+	.gp-theme #buddypress #gp-bp-tabs-button {
+	display: none;
+	}
+	.gp-theme #buddypress #object-nav ul {
+	display: block;
+	}
+	.gp-theme #buddypress #object-nav li  {
+	width: auto;
+	margin-right: 25px;
+	text-align: center;
+	}
+	.gp-theme #buddypress #object-nav li a {
+	font-weight: 500;
+	}
+	.gp-theme #buddypress #object-nav li a:before {
+	display: block;
+	width: auto;
+	margin: 0 0 15px 0;
+	font-size: 36px;    
+	font-weight: 400;
+	}
+	.gp-theme #buddypress .media_search.media_search {
+	width: auto;
+	margin: 0 0 15px 0;
+	}	
+	.gp-theme .gp-bp-masonry li {
+	width: 50%;
+	}
+	.gp-theme.group-avatar #buddypress form.standard-form .main-column {
+	clear: none;
+	width: auto;
+	}	
+	.gp-theme.group-invites #buddypress form.standard-form .left-menu,
+	.gp-theme.group-invites #buddypress div#invite-list {
+	width: 160px;
+	}
+	.gp-theme.group-invites #buddypress form.standard-form .main-column {
+	margin-left: 190px;
+	}
+	.gp-theme #buddypress table.profile-fields tr {
+	display: table-row;
+	padding-bottom: 0;
+	}
+	.gp-theme #buddypress table.profile-fields tr td {
+	display: table-cell;
+	padding-bottom: 20px;
+	}
+	.gp-theme #buddypress table.profile-fields tr td.label {
+	width: 25%;
+	}
+	.gp-theme #buddypress table.profile-fields tr:last-child td {
+	padding-bottom: 0;
+	}
+	.gp-theme #buddypress .standard-form #basic-details-section, 
+	.gp-theme #buddypress .standard-form #blog-details-section, 
+	.gp-theme #buddypress .standard-form #profile-details-section {
+	width: 48%;
+	}
+	.gp-theme #buddypress .bp_members.course .course-excerpt {
+	display: block;
+	}
+	.gp-theme #buddypress .gp-bps-field {
+	width: 33.333%;
+	}
+
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+
+	.gp-theme #buddypress .standard-form input[type='text'],
+	.gp-theme #buddypress .standard-form input[type='url'],
+	.gp-theme #buddypress .standard-form input[type='email'],
+	.gp-theme #buddypress .standard-form input[type='password'],
+	.gp-theme #buddypress .standard-form input[type='number'],
+	.gp-theme #buddypress .standard-form select {
+	width: auto;
+	}
+	.gp-theme.gp-fullwidth .gp-bp-masonry li,
+	.gp-theme.gp-no-sidebar .gp-bp-masonry li {
+	width: 32.667%;
+	}
+		
+}
+
+/* rtMedia Breakpoint */
+@media only screen and (min-width : 1025px) {
+
+	.gp-theme #buddypress .mfp-close {
+	background: #fff;
+	color: #999;
+	}
+
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+
+	.gp-theme .gp-bp-masonry li,
+	.gp-theme .gp-bp-masonry li {
+	width: 33.333%;
+	}
+	.gp-theme.gp-fullwidth .gp-bp-masonry li,
+	.gp-theme.gp-no-sidebar .gp-bp-masonry li {
+	width: 25%;
+	}
+	
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1470px) {
+}

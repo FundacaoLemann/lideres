@@ -1,0 +1,406 @@
+/*--------------------------------------------------------------
+Page
+--------------------------------------------------------------*/
+
+.appearance_page_aardvark-setup .updated,
+.appearance_page_aardvark-setup .update-nag,
+.appearance_page_aardvark-setup .notice,
+.appearance_page_aardvark-setup #message.updated,
+.appearance_page_aardvark-setup #setting-error-tgmpa,
+.appearance_page_ghostpool-importer .updated,
+.appearance_page_ghostpool-importer .update-nag,
+.appearance_page_ghostpool-importer .notice,
+.appearance_page_ghostpool-importer #message.updated,
+.appearance_page_ghostpool-importer #setting-error-tgmpa {
+display: none;
+}
+
+/*--------------------------------------------------------------
+Tabs
+--------------------------------------------------------------*/
+
+.gp-tabs {
+position: relative;
+margin: 0;
+}
+.gp-tabs nav {
+overflow: auto;
+-webkit-overflow-scrolling: touch;
+}
+.gp-tabs .count-tab {
+border-radius: 50%;
+border: 1px solid #c3c2b9;
+padding: 5px;
+width: 8px;
+display: inline-block;
+height: 8px;
+line-height: 8px;
+}
+.gp-tabs .selected .count-tab {
+border: 1px solid #333;
+}
+.gp-tabs-navigation {
+width: auto;
+margin: 30px 0 0 0;
+}
+.gp-tabs::after {
+display: none;
+}
+.gp-tabs-navigation:after {
+content: "";
+display: table;
+clear: both;
+}
+.gp-tabs-navigation li {
+float: left;
+margin-bottom:0;
+}
+.gp-tabs-navigation a {
+position: relative;
+display: block;
+width: auto;
+height: 60px;
+text-align: center;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+font-weight: 700;
+color: #777;
+text-decoration: none;
+line-height: 60px;
+text-align: left;
+font-size: 14px;
+padding: 0 2em 0 2em;
+}
+.no-touch .gp-tabs-navigation a:hover {
+color: #29324e;
+}
+.gp-tabs-navigation a.selected {
+background-color: #f1f1f1 !important;
+box-shadow: inset 0 3px 0 #1dbbd4;
+color: #29324e;
+border: 1px solid #ccc;
+border-top: 0;
+border-bottom: 0;
+}
+.gp-tabs-navigation a::before {
+top: 50%;
+margin-top: -10px;
+margin-left: 0;
+left: 38px;
+}
+.gp-tabs-content {
+margin-top: -1px;
+padding: 30px 0;
+border-top: 1px solid #ccc;
+}
+.gp-tabs-content > li {
+display: none;
+padding: 0;
+}
+.gp-tabs-content li.selected {
+display: block;
+-webkit-animation: gp-fade-in 0.5s;
+-moz-animation: gp-fade-in 0.5s;
+animation: gp-fade-in 0.5s;
+}
+.gp-tabs-content {
+min-height: 0;
+}
+@-webkit-keyframes gp-fade-in {
+0% {
+opacity: 0;
+}
+100% {
+opacity: 1;
+}
+}
+@-moz-keyframes gp-fade-in {
+0% {
+opacity: 0;
+}
+100% {
+opacity: 1;
+}
+}
+@keyframes gp-fade-in {
+0% {
+opacity: 0;
+}
+100% {
+opacity: 1;
+}
+}
+
+/*--------------------------------------------------------------
+Content
+--------------------------------------------------------------*/
+
+/* Text  ************************************/
+
+.gp-primary-header {
+font-size: 14px;
+padding: 8px 12px;
+margin: 0;
+line-height: 1.4;
+border-bottom: 1px solid #eee;
+}
+.gp-secondary-header {
+font-size: 20px; 
+margin: 0; 
+font-weight: 300; 
+line-height: 1;
+}
+.gp-primary-text {
+margin-bottom: 30px;
+font-size: 14px;
+line-height: 20px;
+color: #646464;
+}
+.gp-primary-text {
+font-size: 14px;
+line-height: 20px;
+color: #646464;
+}
+.gp-demo-boxes {
+margin-bottom: 30px;
+}
+
+/* Rows/columns  ************************************/
+
+.clearfix:after {
+clear: both;
+}
+.gp-col-7, 
+.gp-col-6, 
+.gp-col-5 { 
+float: left; 
+padding: 0 15px; 
+}
+.gp-col-7 {
+width: 58.33333333%;
+}
+.gp-col-6 { 
+width: 49.99%; 
+}
+.gp-col-5 {
+width: 41.66666667%;
+}
+@media only screen and (max-width: 998px) {
+.gp-col-7, 
+.gp-col-6, 
+.gp-col-5 {
+width: 50%;
+}
+}
+@media only screen and (max-width: 767px) {
+.gp-col-7, 
+.gp-col-6, 
+.gp-col-5 {
+width: 100%;
+}
+.gp-col-7, 
+.gp-col-6, 
+.gp-col-5 {
+margin-bottom: 30px;
+}
+}
+
+/*--------------------------------------------------------------
+Welcome tab
+--------------------------------------------------------------*/
+
+.gp-server-stats-wrapper { 
+display: table;
+width: 100%;
+border-collapse: collapse; 
+}
+.gp-server-stats-row { 
+display: table-row;
+}
+.gp-server-stats-col { 
+display: table-cell; 
+padding: 10px; 
+vertical-align: middle; 
+}
+.gp-server-stats-col-name { 
+width: 30%;
+font-weight: 700;
+}
+.gp-server-stats-col-icon { 
+width: 5%;
+cursor:pointer; 
+padding: 5px; 
+}
+.gp-server-stats-ok, 
+.gp-server-stats-col-icon.dashicons-yes { 
+color: #9ac364; 
+}
+.gp-server-stats-notok, 
+.gp-server-stats-col-icon.dashicons-warning { 
+color: #e42362; 
+}
+.gp-server-stats-col-icon.dashicons-no { 
+color: #fff; 
+background: #e42362; 
+border-radius: 50%; 
+}
+.gp-server-stats-col-value {
+width: 65%;
+}
+
+/*--------------------------------------------------------------
+Updates tab
+--------------------------------------------------------------*/
+
+.gp-setup-form-field label { 
+display: block; 
+font-weight: 600;
+margin-bottom: 10px; 
+}
+.gp-setup-form-field input { 
+max-width: 100%;
+padding: 8px 12px;
+margin-bottom: 20px; 
+}
+.gp-setup-label-desc {
+margin-bottom: 10px;
+}
+.gp-submitting .gp-theme-updates-form-submit { 
+background: #BFBFBF;
+}
+.gp-theme-updates-form-error input[type='text'] { 
+border: 1px solid #e42362; 
+}
+.gp-theme-updates-form .gp-response-area {
+margin-bottom: 20px;
+font-weight: 600;
+color: #000;
+}
+
+/*--------------------------------------------------------------
+Theme Addons tab
+--------------------------------------------------------------*/
+
+/* Wrapper  ************************************/
+
+.gp-addons-list { 
+list-style: none; 
+overflow: hidden;
+margin: 0;
+}
+
+/* Box  ************************************/
+
+.gp-addon {
+position: relative;
+overflow: hidden;
+float: left;
+width: 100%;
+height: 130px;
+margin: 1% 0;
+padding: 15px;
+box-sizing: border-box;
+text-align: center;
+}
+.gp-has-update.gp-addon {
+background-color: rgba(245, 219, 36, 0.1)
+}
+.gp-active.gp-addon {
+background-color: rgba(29, 187, 212, 0.1);
+}
+
+/* Info  ************************************/
+
+.gp-addon-title {
+font-size: 14px;
+margin: 0 0 5px;
+}
+.gp-addon-extra {
+color: #999;
+margin: 0 0 5px;
+}
+.gp-addon-extra.gp-required-addon {
+color: #e42362;
+}
+.gp-addon-desc {
+position: absolute;
+top: 10px;
+right: 10px;
+}
+
+/* Buttons  ************************************/
+
+.gp-addon-button {
+
+}
+.gp-is-active.gp-addon-button {
+opacity: 0.5;
+}
+.gp-addon-button + .spinner {
+display: none;
+}
+.gp-is-active.gp-addon-button + .spinner {
+display: inline-block;
+visibility: visible;
+float: none;
+margin-top: -3px;
+}
+.gp-active .gp-addon-button,
+.gp-active .gp-addon-button:hover,
+.gp-active .gp-addon-button:focus {
+color: #555;
+border-color: #ccc;
+background: #f7f7f7;
+box-shadow: 0 1px 0 #ccc;
+text-shadow: none;
+}
+
+/*--------------------------------------------------------------
+Importer
+--------------------------------------------------------------*/
+
+.radium-importer-wrap .spinner {
+visibility: visible; 
+display: block; 
+float: left;
+margin: 2px 5px 0 0;
+}
+
+
+/*--------------------------------------------------------------------------------------
+
+Media queries
+
+--------------------------------------------------------------------------------------*/
+
+@media only screen and (max-width: 998px) {
+
+	.gp-tabs-navigation li {
+	float: none;
+	width: 100%
+	}
+
+}
+
+@media only screen and (min-width: 960px) {
+
+	.gp-tabs nav {
+	position: relative;
+	float: none;
+	background: transparent;
+	box-shadow: none;
+	}
+	
+}
+
+@media only screen and (min-width : 992px) {
+
+	.gp-addons-list {
+	margin: 0 -2% 0 -1%;
+	}
+	.gp-addon {
+	width: 31%;
+	margin: 1%;
+	}
+
+}
