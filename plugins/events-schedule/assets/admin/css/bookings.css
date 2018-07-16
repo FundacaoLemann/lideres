@@ -1,0 +1,56 @@
+#wcs-bookings__app {
+  flex-wrap: wrap;
+  margin: 20px auto 0; }
+  #wcs-bookings__app[v-cloak] {
+    display: none; }
+  #wcs-bookings__app h1 {
+    margin-bottom: 10px;
+    flex-grow: 1; }
+  #wcs-bookings__app .el-switch input {
+    display: none; }
+  #wcs-bookings__app input {
+    background-color: white;
+    box-shadow: none !important; }
+  #wcs-bookings__app .main-table {
+    margin-top: 20px;
+    width: 100%; }
+  #wcs-bookings__app .el-pagination {
+    background-color: white;
+    padding-top: 15px;
+    padding-bottom: 15px; }
+  #wcs-bookings__app .header-options {
+    text-align: right;
+    float: right;
+    padding-top: 2px; }
+    #wcs-bookings__app .header-options .el-switch {
+      margin-right: 5px;
+      margin-top: -2px; }
+  #wcs-bookings__app .el-progress__text.el-progress__text.el-progress__text.el-progress__text {
+    font-size: 12px !important;
+    float: right !important;
+    margin-top: 2px; }
+  #wcs-bookings__app .el-progress-bar {
+    padding-right: 40px; }
+  #wcs-bookings__app .order-status {
+    text-transform: capitalize;
+    text-align: center; }
+
+.el-table__expanded-cell {
+  padding: 30px 50px; }
+
+.el-table-filter__content {
+  min-width: 300px;
+  max-width: 900px;
+  overflow: hidden;
+  padding-bottom: 10px;
+  padding-top: 5px; }
+  .el-table-filter__content::after {
+    content: '';
+    clear: both; }
+  .el-table-filter__content .el-checkbox {
+    float: left;
+    width: 170px;
+    margin-bottom: 10px; }
+
+.el-table-filter__bottom {
+  text-align: right; }

@@ -1,0 +1,89 @@
+#wcs-bookings__app{
+  flex-wrap: wrap;
+  margin: 20px auto 0;
+
+  &[v-cloak]{
+    display: none;
+  }
+
+  h1{
+    margin-bottom: 10px;
+    flex-grow: 1;
+  }
+
+  .el-switch {
+    input{
+      display: none;
+    }
+  }
+
+  input{
+    background-color: white;
+    box-shadow: none !important;
+  }
+
+  .main-table{
+    margin-top: 20px;
+    width: 100%;
+  }
+  .el-pagination{
+    background-color: white;
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  .header-options{
+    text-align: right;
+    float: right;
+    padding-top: 2px;
+
+    .el-switch{
+      margin-right: 5px;
+      margin-top: -2px;
+    }
+  }
+
+  .el-progress__text.el-progress__text.el-progress__text.el-progress__text{
+    font-size: 12px !important;
+    float: right !important;
+    margin-top: 2px;
+  }
+
+  .el-progress-bar{
+    padding-right: 40px;
+  }
+
+  .order-status{
+    text-transform: capitalize;
+    text-align: center;
+  }
+
+
+}
+.el-table__expanded-cell{
+  padding: 30px 50px;
+}
+.el-table .el-table{
+
+}
+.el-table-filter__content{
+  min-width: 300px;
+  max-width: 900px;
+  overflow: hidden;
+  padding-bottom: 10px;
+  padding-top: 5px;
+
+  &::after{
+    content: '';
+    clear: both;
+  }
+
+  .el-checkbox{
+    float: left;
+    width: 170px;
+    margin-bottom: 10px;
+  }
+}
+.el-table-filter__bottom{
+  text-align: right;
+}
