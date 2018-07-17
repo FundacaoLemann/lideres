@@ -13,7 +13,7 @@ RUN mkdir vendor
 RUN composer install -v $composer
 #COPY ["wp-content", "/var/www/html/wp-content"]
 COPY ["plugins", "/var/www/html/plugins"]
-COPY ["themes", "/var/www/html/themes"]
+COPY ["themes", "/var/www/html/wp-content/themes"]
 
 
 # Fix file permissions
