@@ -16,6 +16,7 @@ services:
       WORDPRESS_DEBUG: 'true'
     volumes:
       - ./wp-content:/var/www/html/wp-content
+      - ./wp-content/plugins:/var/www/html/wp-content/plugins
       - ./plugins:/var/www/html/plugins
       - ./themes:/var/www/html/themes
       - ./compose/local/wp-config.d:/var/www/html/wp-config.d
