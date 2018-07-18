@@ -1,0 +1,19 @@
+{
+  "name": "lemann-lideres",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "scss": "node-sass --watch 'wp-content/themes/lemann-lideres/assets/scss' -o 'wp-content/themes/lemann-lideres/assets/css'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.hacklab.com.br/lemann/lemann-lideres.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-sass": "^4.9.2"
+  }
+}
