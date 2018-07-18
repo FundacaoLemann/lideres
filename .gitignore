@@ -6,4 +6,5 @@ wp-content/uploads/*
 wp-content/mu-plugins/*
 vendor/*
 
+node_modules/*
 mariadb_data/
