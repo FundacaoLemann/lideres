@@ -1,4 +1,4 @@
 <?php
 defined( 'ABSPATH' ) || exit;
 
-require 'conferencia.php';
+// require 'oportunidade.php';
