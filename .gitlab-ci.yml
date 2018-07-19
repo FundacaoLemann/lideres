@@ -53,7 +53,7 @@ deploy to production:
   stage: deploy
   image: cdrx/rancher-gitlab-deploy
   script:
-    - upgrade --environment Shared --stack lemann-lideres-dev --service web --no-finish-upgrade
+    - upgrade --environment Shared --stack lemann-lideres-prod --service web --no-finish-upgrade
   only:
     - tags
   environment: production
