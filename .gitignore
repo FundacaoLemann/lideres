@@ -1,4 +1,5 @@
 # ignore all dependencies by default
+wp-content/languages/*
 wp-content/plugins/*
 wp-content/upgrade/*
 wp-content/uploads/*
