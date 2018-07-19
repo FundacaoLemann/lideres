@@ -15,6 +15,14 @@ function lemann_roles_capabilities() {
 		'delete_published_posts'  => true,
 		'candidatar_oportunidade' => true,
     ));
+	add_role( 'palestrante', 'Palestrante', array(
+		'read'                    => true,
+		'edit_posts'              => true,
+		'publish_posts'           => true,
+		'edit_published_posts'    => true,
+        'delete_posts'            => true,
+		'delete_published_posts'  => true,
+    ));
 	add_role( 'contratante', 'Contratante', array(
 		'read'                    => true,
 		'edit_posts'              => true,
