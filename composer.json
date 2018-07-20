@@ -12,7 +12,8 @@
         "wpackagist-plugin/cmb2":"2.4.*",
         "wpackagist-plugin/wordpress-seo": "*",
         "wpackagist-plugin/google-analytics-dashboard-for-wp": "*",
-        "wpackagist-plugin/buddypress": "3.1.*"
+        "wpackagist-plugin/buddypress": "3.1.*",
+        "wpackagist-plugin/wp-instagram-widget": "2.0.*"
     },
     "require-dev":{
         "wpackagist-plugin/query-monitor":"*"

@@ -1,0 +1,10 @@
+.widget .instagram-pics {
+	display: flex;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+}
+.widget .instagram-pics li {
+	border: none;
+	padding: 0 10px 10px;
+	width: 50%;
+}
