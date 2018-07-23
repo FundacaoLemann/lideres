@@ -1,0 +1,161 @@
+<?php
+/**
+ * BuddyPress - Users Header
+ *
+ * @package BuddyPress
+ * @subpackage bp-legacy
+ */
+
+/**
+ * Fires before the display of a member's header.
+ *
+ * @since 1.2.0
+ */
+do_action( 'bp_before_member_header' );
+?>
+
+<div id="item-header-avatar">
+	<a href="<?php bp_displayed_user_link(); ?>">
+		<?php echo ghostpool_is_user_online( bp_displayed_user_id(), bp_get_last_activity( bp_displayed_user_id() ) ); ?>
+		<?php bp_displayed_user_avatar( 'type=full' ); ?>
+	</a>
+</div>
+
+<div id="item-header-content">
+	<div class="vc_row">
+		<div class="vc_col-md-8">
+			<div class="gp-bp-header-title">
+				<?php echo bp_core_get_user_displayname( bp_displayed_user_id() ); ?>
+			</div>
+
+			<?php
+			$cargo   = xprofile_get_field_data( 'Cargo' );
+			$empresa = xprofile_get_field_data( 'Organização na qual trabalha' );
+			if ( ! empty( $cargo ) || ! empty( $empresa ) ) {
+				?>
+				<div class="header-cargo-empresa">
+					<span class="header-cargo"><?php echo $cargo; ?></span>
+					<?php if ( ! empty( $cargo ) && ! empty( $empresa ) ) { ?>
+						na empresa
+					<?php } ?>
+					<span class="header-empresa"><?php echo $empresa; ?></span>
+				</div>
+				<?php
+			}
+
+			$descricao = xprofile_get_field_data( 'Subtítulo descritivo' );
+			if ( $descricao ) {
+				?>
+				<div class="header-descricao">
+					<?php echo $descricao; ?>
+				</div>
+				<?php
+			}
+
+			?>
+
+			<?php do_action( 'bp_before_member_header_meta' ); ?>
+
+			<div id="gp-author-social-icons">
+
+				<?php
+
+				// Profile fields.
+				$redes_sociais = [
+					'twitter'    => [
+						'name'      => 'Twitter',
+						'css_class' => 'twitter',
+					],
+					'facebook'   => [
+						'name'      => 'Facebook',
+						'css_class' => 'facebook',
+					],
+					'linkedin'   => [
+						'name'      => 'Linkedin',
+						'css_class' => 'linkedin',
+					],
+					'googleplus' => [
+						'name'      => 'Google+',
+						'css_class' => 'google-plus',
+					],
+				];
+				foreach ( $redes_sociais as $slug => $data ) {
+					$url = bp_get_profile_field_data( array( 'field' => $data['name'] ) );
+					if ( ! $url ) {
+						$url = get_the_author_meta( $slug, bp_displayed_user_id() );
+					}
+					if ( $url ) {
+						?>
+						<a href="<?php echo esc_url( $url ); ?>" class="gp-<?php echo $data['css_class']; ?>-icon"></a>
+						<?php
+					}
+				}
+				?>
+			</div>
+
+			<div class="gp-bp-header-actions">
+				<?php
+				function lemann_bp_get_add_friend_button( $button ) {
+					if ( 'not_friends' == $button['id'] ) {
+						$button['link_text'] = 'Adicionar amizade';
+					}
+					return $button;
+				}
+				add_filter( 'bp_get_add_friend_button', 'lemann_bp_get_add_friend_button' );
+				do_action( 'bp_member_header_actions' );
+				?>
+			</div>
+
+			<?php do_action( 'bp_profile_header_meta' ); /* Display custom profile fields */ ?>
+		</div>
+
+		<div class="vc_col-md-4">
+			<?php
+			$telefone = xprofile_get_field_data( 'Telefone' );
+			$email    = xprofile_get_field_data( 'Email' );
+			if ( $telefone || $email ) {
+				?>
+				<h2>Contato</h2>
+				<ul>
+					<?php
+					if ( $telefone ) {
+						echo "<li>{$telefone}</li>";
+					}
+					if ( $email ) {
+						echo "<li>{$email}</li>";
+					}
+					?>
+				</ul>
+				<?php
+			}
+
+			$rede = xprofile_get_field_data( 'Rede' );
+			if ( $rede ) {
+				?>
+				<h2>Rede</h2>
+				<?php
+				echo $rede;
+			}
+			?>
+		</div>
+	</div>
+	<div class="vc_row">
+		<?php
+		/**
+		 * Fires after the display of a member's header.
+		 *
+		 * @since 1.2.0
+		 */
+		do_action( 'bp_after_member_header' );
+		?>
+		<div id="template-notices" role="alert" aria-atomic="true">
+			<?php
+			/** This action is documented in bp-templates/bp-legacy/buddypress/activity/index.php */
+			do_action( 'template_notices' );
+			?>
+
+		</div>
+	</div>
+
+</div>
+
