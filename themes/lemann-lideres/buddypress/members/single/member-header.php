@@ -52,46 +52,20 @@ do_action( 'bp_before_member_header' );
 				<?php
 			}
 
+			$temas = xprofile_get_field_data( 'Temas de Interesse' );
+			if ( ! empty( $temas ) ) {
+				?>
+				<div class="header-temas-interesse">
+					<?php foreach ( $temas as $tema ) { ?>
+						<span class="lemann-tag header-tema-interesse"><?php echo $tema; ?></span>
+					<?php } ?>
+				</div>
+				<?php
+			}
+
 			?>
 
 			<?php do_action( 'bp_before_member_header_meta' ); ?>
-
-			<div id="gp-author-social-icons">
-
-				<?php
-
-				// Profile fields.
-				$redes_sociais = [
-					'twitter'    => [
-						'name'      => 'Twitter',
-						'css_class' => 'twitter',
-					],
-					'facebook'   => [
-						'name'      => 'Facebook',
-						'css_class' => 'facebook',
-					],
-					'linkedin'   => [
-						'name'      => 'Linkedin',
-						'css_class' => 'linkedin',
-					],
-					'googleplus' => [
-						'name'      => 'Google+',
-						'css_class' => 'google-plus',
-					],
-				];
-				foreach ( $redes_sociais as $slug => $data ) {
-					$url = bp_get_profile_field_data( array( 'field' => $data['name'] ) );
-					if ( ! $url ) {
-						$url = get_the_author_meta( $slug, bp_displayed_user_id() );
-					}
-					if ( $url ) {
-						?>
-						<a href="<?php echo esc_url( $url ); ?>" class="gp-<?php echo $data['css_class']; ?>-icon"></a>
-						<?php
-					}
-				}
-				?>
-			</div>
 
 			<div class="gp-bp-header-actions">
 				<?php
@@ -137,6 +111,43 @@ do_action( 'bp_before_member_header' );
 				echo $rede;
 			}
 			?>
+
+			<div id="gp-author-social-icons">
+
+				<?php
+
+				// Profile fields.
+				$redes_sociais = [
+					'linkedin'   => [
+						'name'      => 'Linkedin',
+						'css_class' => 'linkedin',
+					],
+					'facebook'   => [
+						'name'      => 'Facebook',
+						'css_class' => 'facebook',
+					],
+					'twitter'    => [
+						'name'      => 'Twitter',
+						'css_class' => 'twitter',
+					],
+					'googleplus' => [
+						'name'      => 'Google+',
+						'css_class' => 'google-plus',
+					],
+				];
+				foreach ( $redes_sociais as $slug => $data ) {
+					$url = bp_get_profile_field_data( array( 'field' => $data['name'] ) );
+					if ( ! $url ) {
+						$url = get_the_author_meta( $slug, bp_displayed_user_id() );
+					}
+					if ( $url ) {
+						?>
+						<a href="<?php echo esc_url( $url ); ?>" class="gp-<?php echo $data['css_class']; ?>-icon"></a>
+						<?php
+					}
+				}
+				?>
+			</div>
 		</div>
 	</div>
 	<div class="vc_row">
