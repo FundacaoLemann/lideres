@@ -1,6 +1,7 @@
 # ignore all dependencies by default
 wp-content/languages/*
 wp-content/plugins/*
+wp-content/themes/*
 wp-content/upgrade/*
 wp-content/uploads/*
 wp-content/mu-plugins/*
