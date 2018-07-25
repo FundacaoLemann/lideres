@@ -1,0 +1,95 @@
+#gp-buddypress-header {
+
+    .vc_col-md-8 {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 230px;
+    }
+
+    .header-cargo-empresa {
+        font-size: 18px;
+
+        .header-cargo, .header-empresa {
+            font-weight: 600;
+        }
+    }
+
+    .header-temas-interesse {
+        &--titulo {
+            display: block;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .header-tema-interesse {
+            border-radius: 3px;
+            margin: 15px 10px 0 0;
+        }
+    }
+
+    .generic-button {
+        a {
+            background-color: rgba($c_primary-bg, 0.8) !important;
+            border-radius: 4px !important;
+            font-size: 14px !important;
+            padding: 10px 15px !important;
+
+            &:before {
+                font-family: 'FontAwesome';
+                font-size: 18px;
+                margin-right: 5px;
+            }
+
+            &.friendship-button.is_friend {
+                &:before {
+                    content: '\f234';
+                }
+
+                &.remove:before {
+                    content: '\f235';
+                }
+            }
+
+            &.activity-button.mention:before {
+                content: '\f0e5';
+            }
+
+            &.send-message:before {
+                content: '\f003';
+            }
+        }
+    }
+
+    .vc_col-md-4 {
+        padding-top: 20px;
+
+        @media screen and (min-width: 992px) {
+            text-align: right;
+            padding-top: initial;
+        }
+
+        h2 {
+            color: white;
+            font-size: 22px;
+            font-weight: 600;
+
+            &:not(:first-child) {
+                margin-top: 30px;
+            }
+        }
+
+        a {
+            text-decoration: none !important;
+        }
+
+        li {
+            list-style-type: none;
+            line-height: 1.25;
+        }
+
+        #gp-author-social-icons {
+            margin-top: 10px;
+        }
+    }
+}

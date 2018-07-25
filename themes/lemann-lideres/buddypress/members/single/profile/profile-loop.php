@@ -12,7 +12,7 @@ do_action( 'bp_before_profile_loop_content' ); ?>
 <?php
 $args = [
 	'exclude_groups' => '1 4',
-	'exclude_fields' => '254 255 256',
+	'exclude_fields' => '80 254 255 256',
 ];
 if ( bp_has_profile( $args ) ) : ?>
 
