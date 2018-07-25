@@ -4,7 +4,7 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        height: 230px;
+        min-height: 230px;
     }
 
     .header-cargo-empresa {
@@ -23,11 +23,8 @@
         }
 
         .header-tema-interesse {
-            background-color: rgba($c_secondary-bg, 0.8);
-            box-shadow: 0 3px 0 0 $c_primary;
             border-radius: 3px;
             margin: 15px 10px 0 0;
-            padding: 5px 8px;
         }
     }
 
@@ -65,7 +62,12 @@
     }
 
     .vc_col-md-4 {
-        text-align: right;
+        padding-top: 20px;
+
+        @media screen and (min-width: 992px) {
+            text-align: right;
+            padding-top: initial;
+        }
 
         h2 {
             color: white;

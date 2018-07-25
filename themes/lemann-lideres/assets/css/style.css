@@ -201,7 +201,7 @@ body a {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 230px;
+  min-height: 230px;
 }
 #gp-buddypress-header .header-cargo-empresa {
   font-size: 18px;
@@ -215,11 +215,8 @@ body a {
   font-weight: 600;
 }
 #gp-buddypress-header .header-temas-interesse .header-tema-interesse {
-  background-color: rgba(44, 183, 129, 0.8);
-  box-shadow: 0 3px 0 0 #083050;
   border-radius: 3px;
   margin: 15px 10px 0 0;
-  padding: 5px 8px;
 }
 #gp-buddypress-header .generic-button a {
   background-color: rgba(0, 181, 175, 0.8) !important;
@@ -245,7 +242,13 @@ body a {
   content: "";
 }
 #gp-buddypress-header .vc_col-md-4 {
-  text-align: right;
+  padding-top: 20px;
+}
+@media screen and (min-width: 992px) {
+  #gp-buddypress-header .vc_col-md-4 {
+    text-align: right;
+    padding-top: initial;
+  }
 }
 #gp-buddypress-header .vc_col-md-4 h2 {
   color: white;
