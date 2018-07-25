@@ -24,24 +24,27 @@ do_action( 'bp_before_member_header' );
 <div id="item-header-content">
 	<div class="vc_row">
 		<div class="vc_col-md-8">
-			<div class="gp-bp-header-title">
-				<?php echo bp_core_get_user_displayname( bp_displayed_user_id() ); ?>
+			<div>
+				<div class="gp-bp-header-title">
+					<?php echo bp_core_get_user_displayname( bp_displayed_user_id() ); ?>
+				</div>
+
+				<?php
+				$cargo   = xprofile_get_field_data( 'Cargo' );
+				$empresa = xprofile_get_field_data( 'Organização na qual trabalha' );
+				if ( ! empty( $cargo ) || ! empty( $empresa ) ) {
+					?>
+					<div class="header-cargo-empresa">
+						<span class="header-cargo"><?php echo $cargo; ?></span>
+						<?php if ( ! empty( $cargo ) && ! empty( $empresa ) ) { ?>
+							na empresa
+						<?php } ?>
+						<span class="header-empresa"><?php echo $empresa; ?></span>
+					</div>
+				<?php } ?>
 			</div>
 
 			<?php
-			$cargo   = xprofile_get_field_data( 'Cargo' );
-			$empresa = xprofile_get_field_data( 'Organização na qual trabalha' );
-			if ( ! empty( $cargo ) || ! empty( $empresa ) ) {
-				?>
-				<div class="header-cargo-empresa">
-					<span class="header-cargo"><?php echo $cargo; ?></span>
-					<?php if ( ! empty( $cargo ) && ! empty( $empresa ) ) { ?>
-						na empresa
-					<?php } ?>
-					<span class="header-empresa"><?php echo $empresa; ?></span>
-				</div>
-				<?php
-			}
 
 			$descricao = xprofile_get_field_data( 'Subtítulo descritivo' );
 			if ( $descricao ) {

@@ -1,0 +1,73 @@
+#gp-buddypress-header {
+
+    .vc_col-md-8 {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 230px;
+    }
+
+    .header-temas-interesse {
+        .header-tema-interesse {
+            background-color: rgba($c_primary, 0.8);
+            border-radius: 3px;
+            margin: 15px 10px 0 0;
+            padding: 5px 8px;
+        }
+    }
+
+    .generic-button {
+        a {
+            background-color: rgba($c_primary_bg, 0.8) !important;
+            border-radius: 4px !important;
+            font-size: 14px !important;
+            padding: 10px 15px !important;
+            vertical-align: middle;
+
+            &:before {
+                font-family: 'FontAwesome';
+                font-size: 18px;
+                margin-right: 5px;
+            }
+
+            &.friendship-button.is_friend {
+                &:before {
+                    content: '\f234';
+                }
+
+                &.remove:before {
+                    content: '\f235';
+                }
+            }
+
+            &.activity-button.mention:before {
+                content: '\f0e5';
+            }
+
+            &.send-message:before {
+                content: '\f003';
+            }
+        }
+    }
+
+    .vc_col-md-4 {
+        text-align: right;
+
+        h2 {
+            color: white;
+        }
+
+        a {
+            text-decoration: none !important;
+        }
+
+        li {
+            list-style-type: none;
+            line-height: 1.25;
+        }
+
+        #gp-author-social-icons {
+            margin-top: 10px;
+        }
+    }
+}

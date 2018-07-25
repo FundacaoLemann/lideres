@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .widget-title, .widgettitle, .profile .bp-widget h2 {
   color: #083050 !important;
   font-family: "Effra" !important;
@@ -194,6 +195,59 @@ body a {
   display: flex;
   justify-content: center;
   flex-direction: column;
+}
+
+#gp-buddypress-header .vc_col-md-8 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 230px;
+}
+#gp-buddypress-header .header-temas-interesse .header-tema-interesse {
+  background-color: rgba(8, 48, 80, 0.8);
+  border-radius: 3px;
+  margin: 15px 10px 0 0;
+  padding: 5px 8px;
+}
+#gp-buddypress-header .generic-button a {
+  background-color: rgba(0, 181, 175, 0.8) !important;
+  border-radius: 4px !important;
+  font-size: 14px !important;
+  padding: 10px 15px !important;
+  vertical-align: middle;
+}
+#gp-buddypress-header .generic-button a:before {
+  font-family: "FontAwesome";
+  font-size: 18px;
+  margin-right: 5px;
+}
+#gp-buddypress-header .generic-button a.friendship-button.is_friend:before {
+  content: "";
+}
+#gp-buddypress-header .generic-button a.friendship-button.is_friend.remove:before {
+  content: "";
+}
+#gp-buddypress-header .generic-button a.activity-button.mention:before {
+  content: "";
+}
+#gp-buddypress-header .generic-button a.send-message:before {
+  content: "";
+}
+#gp-buddypress-header .vc_col-md-4 {
+  text-align: right;
+}
+#gp-buddypress-header .vc_col-md-4 h2 {
+  color: white;
+}
+#gp-buddypress-header .vc_col-md-4 a {
+  text-decoration: none !important;
+}
+#gp-buddypress-header .vc_col-md-4 li {
+  list-style-type: none;
+  line-height: 1.25;
+}
+#gp-buddypress-header .vc_col-md-4 #gp-author-social-icons {
+  margin-top: 10px;
 }
 
 body * {
