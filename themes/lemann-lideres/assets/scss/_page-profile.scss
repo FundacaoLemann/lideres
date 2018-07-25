@@ -7,9 +7,24 @@
         height: 230px;
     }
 
+    .header-cargo-empresa {
+        font-size: 18px;
+
+        .header-cargo, .header-empresa {
+            font-weight: 600;
+        }
+    }
+
     .header-temas-interesse {
+        &--titulo {
+            display: block;
+            font-size: 18px;
+            font-weight: 600;
+        }
+
         .header-tema-interesse {
-            background-color: rgba($c_primary, 0.8);
+            background-color: rgba($c_secondary-bg, 0.8);
+            box-shadow: 0 3px 0 0 $c_primary;
             border-radius: 3px;
             margin: 15px 10px 0 0;
             padding: 5px 8px;
@@ -18,11 +33,10 @@
 
     .generic-button {
         a {
-            background-color: rgba($c_primary_bg, 0.8) !important;
+            background-color: rgba($c_primary-bg, 0.8) !important;
             border-radius: 4px !important;
             font-size: 14px !important;
             padding: 10px 15px !important;
-            vertical-align: middle;
 
             &:before {
                 font-family: 'FontAwesome';
@@ -55,6 +69,12 @@
 
         h2 {
             color: white;
+            font-size: 22px;
+            font-weight: 600;
+
+            &:not(:first-child) {
+                margin-top: 30px;
+            }
         }
 
         a {

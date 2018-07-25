@@ -59,6 +59,7 @@ do_action( 'bp_before_member_header' );
 			if ( ! empty( $temas ) ) {
 				?>
 				<div class="header-temas-interesse">
+					<span class="header-temas-interesse--titulo">Áreas de interesse</span>
 					<?php foreach ( $temas as $tema ) { ?>
 						<span class="lemann-tag header-tema-interesse"><?php echo $tema; ?></span>
 					<?php } ?>

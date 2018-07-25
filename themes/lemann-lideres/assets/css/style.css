@@ -203,8 +203,20 @@ body a {
   justify-content: space-between;
   height: 230px;
 }
+#gp-buddypress-header .header-cargo-empresa {
+  font-size: 18px;
+}
+#gp-buddypress-header .header-cargo-empresa .header-cargo, #gp-buddypress-header .header-cargo-empresa .header-empresa {
+  font-weight: 600;
+}
+#gp-buddypress-header .header-temas-interesse--titulo {
+  display: block;
+  font-size: 18px;
+  font-weight: 600;
+}
 #gp-buddypress-header .header-temas-interesse .header-tema-interesse {
-  background-color: rgba(8, 48, 80, 0.8);
+  background-color: rgba(44, 183, 129, 0.8);
+  box-shadow: 0 3px 0 0 #083050;
   border-radius: 3px;
   margin: 15px 10px 0 0;
   padding: 5px 8px;
@@ -214,7 +226,6 @@ body a {
   border-radius: 4px !important;
   font-size: 14px !important;
   padding: 10px 15px !important;
-  vertical-align: middle;
 }
 #gp-buddypress-header .generic-button a:before {
   font-family: "FontAwesome";
@@ -238,6 +249,11 @@ body a {
 }
 #gp-buddypress-header .vc_col-md-4 h2 {
   color: white;
+  font-size: 22px;
+  font-weight: 600;
+}
+#gp-buddypress-header .vc_col-md-4 h2:not(:first-child) {
+  margin-top: 30px;
 }
 #gp-buddypress-header .vc_col-md-4 a {
   text-decoration: none !important;
