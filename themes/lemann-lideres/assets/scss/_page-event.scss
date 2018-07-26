@@ -1,0 +1,48 @@
+#menu-encontro-anual {
+    border-bottom: 2px solid #eee;
+
+    a {
+        color: #888;
+    }
+
+    li {
+        border: none;
+        display: inline-block;
+        margin-right: 50px;
+    }
+}
+
+.wcs-timetable__container {
+    padding-top: 0;
+
+    .wcs-timetable__carousel .wcs-class {
+        background-color: $c_lightergray !important;
+
+        p {
+            line-height: 1.5;
+        }
+
+        .wcs-class__title {
+            color: $c_primary;
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 0 !important;
+        }
+    }
+}
+
+.ti-time:before, .ti-calendar:before {
+    color: red;
+    font-family: 'FontAwesome';
+    font-size: 20px;
+    vertical-align: middle;
+}
+
+.ti-time:before {
+    content: '\f017';
+    margin-right: 7.5px;
+}
+
+.ti-calendar:before {
+    content: '\f073';
+}
