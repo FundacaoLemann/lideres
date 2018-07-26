@@ -124,7 +124,7 @@ class Lemann_Em_Widget extends WP_Widget {
 		 *
 		 * @see http://wp-events-plugin.com/documentation/event-search-attributes/
 		 */
-		$eventos = EM_Events::get( [] );
+		// $eventos = EM_Events::get( [] );
 		$dia     = null;
 		foreach ( $eventos as $evento ) {
 			if ( $evento->start_date != $dia ) {
