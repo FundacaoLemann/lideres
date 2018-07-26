@@ -34,7 +34,7 @@ if ( get_post_format() == 'link' ) {
 	if ( has_post_thumbnail() ) {
 
 		if ( $gp_counter % 5 == 1 ) {
-			$image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'gp_featured_box_large_image' );
+			$image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'gp_featured_box_full_image' );
 		} else {
 
 			$image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'gp_featured_box_small_image' );
