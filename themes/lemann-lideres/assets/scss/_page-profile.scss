@@ -4,7 +4,7 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        min-height: 230px;
+        min-height: 225px;
     }
 
     .header-cargo-empresa {
@@ -91,5 +91,53 @@
         #gp-author-social-icons {
             margin-top: 10px;
         }
+    }
+}
+ #buddypress .profile .bp-widget {
+    border: none !important;
+    border-top: 1px dotted #2CB781 !important;
+    margin-top: 50px;
+    padding: 0 0 0 0 !important;
+    
+}
+#buddypress .profile .plus, #buddypress .profile .experiencia, 
+#buddypress .profile .formacao-academica {
+    
+    .label {
+        font-size: 19px;
+        position: relative;
+        background-color: #F5F5F5;
+        padding: 10px;
+
+        &:before {
+            content:'';
+            width: 0; 
+            height: 0; 
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent; 
+            border-left: 8px solid #2CB781; 
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 3px;
+            margin-bottom: 3px;
+        }
+        
+    }
+    .data {
+        line-height: 1.6;
+        font-size: 16px;
+        padding-left: 10px;
+    }
+}
+#gp-sidebar-right {
+    margin-top: 150px;
+    
+    table {
+        border-color: none !important;
+    }
+    
+
+    .label {
+        line-height: 1.2;
     }
 }
