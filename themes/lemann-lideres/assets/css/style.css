@@ -281,6 +281,9 @@ body a {
 .wcs-events-schedule .wcs-timetable__agenda-nav-item.active {
   color: #0C9B4A !important;
 }
+.wcs-events-schedule .wcs-timetable__agenda-data .wcs-class {
+  padding-top: 1.5vh;
+}
 .wcs-events-schedule .wcs-class__image {
   width: 100%;
 }
