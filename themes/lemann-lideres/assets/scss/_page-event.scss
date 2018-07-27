@@ -9,6 +9,11 @@
         border: none;
         display: inline-block;
         margin-right: 50px;
+
+        &.current-menu-item a {
+            color: $c_primary;
+            font-weight: 500;
+        }
     }
 }
 
@@ -27,6 +32,18 @@
             font-size: 20px;
             font-weight: 500;
             margin-bottom: 0 !important;
+        }
+    }
+}
+
+.wcs-modal {
+    background-color: rgba($c_primary, 0.9);
+    overflow: hidden;
+
+    &__content {
+        h2 {
+            color: $c_primary;
+            font-weight: 500;
         }
     }
 }
@@ -77,20 +94,4 @@
         color: $c_primary !important;
         font-size: initial;
     }
-}
-
-.ti-time:before, .ti-calendar:before {
-    color: red;
-    font-family: 'FontAwesome';
-    font-size: 20px;
-    vertical-align: middle;
-}
-
-.ti-time:before {
-    content: '\f017';
-    margin-right: 7.5px;
-}
-
-.ti-calendar:before {
-    content: '\f073';
 }

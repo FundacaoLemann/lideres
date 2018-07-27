@@ -95,6 +95,30 @@ body a {
   font-weight: bold;
   font-style: italic;
 }
+.ti-close:before {
+  content: "";
+  font-family: "FontAwesome";
+}
+.ti-calendar:before, .ti-location-arrow:before, .ti-time:before, .ti-user:before {
+  color: red;
+  font-family: "FontAwesome";
+  font-size: 20px;
+  vertical-align: middle;
+}
+.ti-calendar:before {
+  content: "";
+}
+.ti-location-arrow:before {
+  content: "";
+}
+.ti-time:before {
+  content: "";
+  margin-right: 7.5px;
+}
+.ti-user:before {
+  content: "";
+}
+
 .gp-theme #buddypress .activity-list .activity-content {
   background-color: #F5F5F5 !important;
 }
@@ -135,6 +159,10 @@ body a {
   display: inline-block;
   margin-right: 50px;
 }
+#menu-encontro-anual li.current-menu-item a {
+  color: #083050;
+  font-weight: 500;
+}
 
 .wcs-timetable__container {
   padding-top: 0;
@@ -150,6 +178,15 @@ body a {
   font-size: 20px;
   font-weight: 500;
   margin-bottom: 0 !important;
+}
+
+.wcs-modal {
+  background-color: rgba(8, 48, 80, 0.9);
+  overflow: hidden;
+}
+.wcs-modal__content h2 {
+  color: #083050;
+  font-weight: 500;
 }
 
 .wcs-timetable__compact-list .wcs-day__date {
@@ -183,22 +220,6 @@ body a {
 .wcs-filters__container .wcs-filters__title {
   color: #083050 !important;
   font-size: initial;
-}
-
-.ti-time:before, .ti-calendar:before {
-  color: red;
-  font-family: "FontAwesome";
-  font-size: 20px;
-  vertical-align: middle;
-}
-
-.ti-time:before {
-  content: "";
-  margin-right: 7.5px;
-}
-
-.ti-calendar:before {
-  content: "";
 }
 
 .page-login {
