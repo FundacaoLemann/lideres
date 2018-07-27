@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Aardvark\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-07-24 11:25-0300\n"
-"PO-Revision-Date: 2018-07-24 11:33-0300\n"
+"PO-Revision-Date: 2018-07-27 11:25-0300\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -3804,7 +3804,7 @@ msgstr ""
 #: ../lib/sections/login/login-form.php:17
 #: ../lib/sections/login/login-form.php:128
 msgid "Password"
-msgstr ""
+msgstr "Senha"
 
 #: ../lib/framework/page-builder/pmp-register-form-options.php:24
 #: ../lib/sections/login/login-form.php:130
@@ -8512,44 +8512,46 @@ msgstr ""
 #: ../lib/sections/login/login-form.php:98
 #: ../lib/sections/login/login-form.php:152
 msgid "Sign In"
-msgstr ""
+msgstr "Acessar"
 
 #: ../lib/sections/login/login-form.php:15
 msgid "Username Or Email"
-msgstr ""
+msgstr "Nome de usuário ou e-mail"
 
 #: ../lib/sections/login/login-form.php:19
 msgid "Remember Me"
-msgstr ""
+msgstr "Manter conectado"
 
 #: ../lib/sections/login/login-form.php:35
 msgid "or"
-msgstr ""
+msgstr "ou"
 
 #: ../lib/sections/login/login-form.php:44
 #: ../lib/sections/login/login-form.php:87
 #: ../lib/sections/login/login-form.php:148
 msgid "Verifying..."
-msgstr ""
+msgstr "Verificando..."
 
 #: ../lib/sections/login/login-form.php:55
 #: ../lib/sections/login/login-form.php:77
 msgid "Lost Password"
-msgstr ""
+msgstr "Esqueci minha senha"
 
 #: ../lib/sections/login/login-form.php:81
 msgid ""
 "Please enter your username or email address. You will receive a link to "
 "create a new password via email."
 msgstr ""
+"Digite seu nome de usuário ou endereço de e-mail. Você receberá em seu e-"
+"mail um link para criar uma nova senha."
 
 #: ../lib/sections/login/login-form.php:83
 msgid "Username or Email"
-msgstr ""
+msgstr "Nome de usuário ou e-mail"
 
 #: ../lib/sections/login/login-form.php:85
 msgid "Reset Password"
-msgstr ""
+msgstr "Redefinir senha"
 
 #: ../lib/sections/post-submission/post-edit-form.php:11
 msgid "Thanks for editing your post!"

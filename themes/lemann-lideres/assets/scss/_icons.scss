@@ -1,0 +1,36 @@
+// Override Themify icons with Font-Awesome
+
+.ti {
+    &-close:before {
+        content: '\f00d';
+        font-family: 'FontAwesome';
+    }
+
+    // Event-related
+    &-calendar:before,
+    &-location-arrow:before,
+    &-time:before,
+    &-user:before {
+        color: red;
+        font-family: 'FontAwesome';
+        font-size: 20px;
+        vertical-align: middle;
+    }
+
+    &-calendar:before {
+        content: '\f073';
+    }
+
+    &-location-arrow:before {
+        content: '\f041';
+    }
+
+    &-time:before {
+        content: '\f017';
+        margin-right: 7.5px;
+    }
+
+    &-user:before {
+        content: '\f2c0';
+    }
+}

@@ -82,6 +82,24 @@ body a {
   src: url("../fonts/Effra-BoldItalic.woff2") format("woff2"), url("../fonts/Effra-BoldItalic.woff") format("woff");
   font-weight: bold;
   font-style: italic; }
+.ti-close:before {
+  content: '\f00d';
+  font-family: 'FontAwesome'; }
+.ti-calendar:before, .ti-location-arrow:before, .ti-time:before, .ti-user:before {
+  color: red;
+  font-family: 'FontAwesome';
+  font-size: 20px;
+  vertical-align: middle; }
+.ti-calendar:before {
+  content: '\f073'; }
+.ti-location-arrow:before {
+  content: '\f041'; }
+.ti-time:before {
+  content: '\f017';
+  margin-right: 7.5px; }
+.ti-user:before {
+  content: '\f2c0'; }
+
 .gp-theme #buddypress .activity-list .activity-content {
   background-color: #F5F5F5 !important; }
 
@@ -109,11 +127,14 @@ body a {
 #menu-encontro-anual {
   border-bottom: 2px solid #eee; }
   #menu-encontro-anual a {
-    color: #888; }
+    color: #888888; }
   #menu-encontro-anual li {
     border: none;
     display: inline-block;
     margin-right: 50px; }
+    #menu-encontro-anual li.current-menu-item a {
+      color: #083050;
+      font-weight: 500; }
 
 .wcs-timetable__container {
   padding-top: 0; }
@@ -127,18 +148,36 @@ body a {
       font-weight: 500;
       margin-bottom: 0 !important; }
 
-.ti-time:before, .ti-calendar:before {
-  color: red;
-  font-family: 'FontAwesome';
-  font-size: 20px;
-  vertical-align: middle; }
+.wcs-modal {
+  background-color: rgba(8, 48, 80, 0.9);
+  overflow: hidden; }
+  .wcs-modal__content h2 {
+    color: #083050;
+    font-weight: 500; }
 
-.ti-time:before {
-  content: '\f017';
-  margin-right: 7.5px; }
+.wcs-timetable__compact-list .wcs-day__date {
+  color: #0C9B4A;
+  font-weight: 500; }
+  .wcs-timetable__compact-list .wcs-day__date small {
+    color: #888888;
+    font-weight: initial; }
+.wcs-timetable__compact-list .wcs-class__time {
+  align-self: flex-start; }
+  .wcs-timetable__compact-list .wcs-class__time span {
+    font-size: 110%; }
+  .wcs-timetable__compact-list .wcs-class__time small {
+    color: #888888; }
+.wcs-timetable__compact-list .wcs-class__content h3.wcs-class__title {
+  color: #083050;
+  font-size: 125%; }
+.wcs-timetable__compact-list .wcs-class__content h4.wcs-class__title {
+  color: #0C9B4A; }
+.wcs-timetable__compact-list .wcs-timetable__classes:before {
+  color: #b3c135 !important; }
 
-.ti-calendar:before {
-  content: '\f073'; }
+.wcs-filters__container .wcs-filters__title {
+  color: #083050 !important;
+  font-size: initial; }
 
 .page-login {
   width: 100vw;

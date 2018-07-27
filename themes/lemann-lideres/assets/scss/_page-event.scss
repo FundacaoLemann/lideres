@@ -2,13 +2,18 @@
     border-bottom: 2px solid #eee;
 
     a {
-        color: #888;
+        color: $c_lightgray;
     }
 
     li {
         border: none;
         display: inline-block;
         margin-right: 50px;
+
+        &.current-menu-item a {
+            color: $c_primary;
+            font-weight: 500;
+        }
     }
 }
 
@@ -31,18 +36,62 @@
     }
 }
 
-.ti-time:before, .ti-calendar:before {
-    color: red;
-    font-family: 'FontAwesome';
-    font-size: 20px;
-    vertical-align: middle;
+.wcs-modal {
+    background-color: rgba($c_primary, 0.9);
+    overflow: hidden;
+
+    &__content {
+        h2 {
+            color: $c_primary;
+            font-weight: 500;
+        }
+    }
 }
 
-.ti-time:before {
-    content: '\f017';
-    margin-right: 7.5px;
+.wcs-timetable__compact-list {
+    .wcs-day__date {
+        color: $c_secondary;
+        font-weight: 500;
+
+        small {
+            color: $c_lightgray;
+            font-weight: initial;
+        }
+    }
+
+    .wcs-class {
+        &__time {
+            align-self: flex-start;
+
+            span {
+                font-size: 110%;
+            }
+
+            small {
+                color: $c_lightgray;
+            }
+        }
+
+        &__content {
+            h3.wcs-class__title {
+                color: $c_primary;
+                font-size: 125%;
+            }
+
+            h4.wcs-class__title {
+                color: $c_secondary;
+            }
+        }
+    }
+
+    .wcs-timetable__classes:before {
+        color: $c_link !important;
+    }
 }
 
-.ti-calendar:before {
-    content: '\f073';
+.wcs-filters__container {
+    .wcs-filters__title {
+        color: $c_primary !important;
+        font-size: initial;
+    }
 }
