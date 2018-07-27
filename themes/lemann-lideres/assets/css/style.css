@@ -100,6 +100,50 @@ body a {
 #item-header-content {
   flex-grow: 1; }
 
+#menu-encontro-anual {
+  border-bottom: 2px solid #eee;
+}
+#menu-encontro-anual a {
+  color: #888;
+}
+#menu-encontro-anual li {
+  border: none;
+  display: inline-block;
+  margin-right: 50px;
+}
+
+.wcs-timetable__container {
+  padding-top: 0;
+}
+.wcs-timetable__container .wcs-timetable__carousel .wcs-class {
+  background-color: #F5F5F5 !important;
+}
+.wcs-timetable__container .wcs-timetable__carousel .wcs-class p {
+  line-height: 1.5;
+}
+.wcs-timetable__container .wcs-timetable__carousel .wcs-class .wcs-class__title {
+  color: #083050;
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 0 !important;
+}
+
+.ti-time:before, .ti-calendar:before {
+  color: red;
+  font-family: "FontAwesome";
+  font-size: 20px;
+  vertical-align: middle;
+}
+
+.ti-time:before {
+  content: "";
+  margin-right: 7.5px;
+}
+
+.ti-calendar:before {
+  content: "";
+}
+
 .page-login {
   width: 100vw;
   height: 100vh;
