@@ -4,11 +4,17 @@
   font-size: 24px !important;
   font-weight: 500 !important; }
 
+#gp-sidebar-right .bp-widget h2 {
+  font-size: 22px !important;
+  border-bottom: 1px dotted #2CB781 !important;
+  padding-bottom: 10px; }
+
 body a {
   color: #b3c135; }
 
 #gp-standard-header .menu > .menu-item > a, #gp-standard-header .menu > .menu-item .gp-more-menu-items-icon {
-  color: #083050 !important; }
+  color: #083050 !important;
+  font-size: 1em; }
 #gp-standard-header .menu > .menu-item.current-menu-item a, #gp-standard-header .menu > .menu-item > a:hover {
   color: #0C9B4A !important; }
 
@@ -101,48 +107,38 @@ body a {
   flex-grow: 1; }
 
 #menu-encontro-anual {
-  border-bottom: 2px solid #eee;
-}
-#menu-encontro-anual a {
-  color: #888;
-}
-#menu-encontro-anual li {
-  border: none;
-  display: inline-block;
-  margin-right: 50px;
-}
+  border-bottom: 2px solid #eee; }
+  #menu-encontro-anual a {
+    color: #888; }
+  #menu-encontro-anual li {
+    border: none;
+    display: inline-block;
+    margin-right: 50px; }
 
 .wcs-timetable__container {
-  padding-top: 0;
-}
-.wcs-timetable__container .wcs-timetable__carousel .wcs-class {
-  background-color: #F5F5F5 !important;
-}
-.wcs-timetable__container .wcs-timetable__carousel .wcs-class p {
-  line-height: 1.5;
-}
-.wcs-timetable__container .wcs-timetable__carousel .wcs-class .wcs-class__title {
-  color: #083050;
-  font-size: 20px;
-  font-weight: 500;
-  margin-bottom: 0 !important;
-}
+  padding-top: 0; }
+  .wcs-timetable__container .wcs-timetable__carousel .wcs-class {
+    background-color: #F5F5F5 !important; }
+    .wcs-timetable__container .wcs-timetable__carousel .wcs-class p {
+      line-height: 1.5; }
+    .wcs-timetable__container .wcs-timetable__carousel .wcs-class .wcs-class__title {
+      color: #083050;
+      font-size: 20px;
+      font-weight: 500;
+      margin-bottom: 0 !important; }
 
 .ti-time:before, .ti-calendar:before {
   color: red;
-  font-family: "FontAwesome";
+  font-family: 'FontAwesome';
   font-size: 20px;
-  vertical-align: middle;
-}
+  vertical-align: middle; }
 
 .ti-time:before {
-  content: "";
-  margin-right: 7.5px;
-}
+  content: '\f017';
+  margin-right: 7.5px; }
 
 .ti-calendar:before {
-  content: "";
-}
+  content: '\f073'; }
 
 .page-login {
   width: 100vw;
@@ -267,7 +263,7 @@ body a {
 #buddypress .profile .formacao-academica .label {
   font-size: 19px;
   position: relative;
-  background-color: #F5F5F5;
+  background-color: #f6f7ef;
   padding: 10px; }
   #buddypress .profile .plus .label:before, #buddypress .profile .experiencia .label:before,
   #buddypress .profile .formacao-academica .label:before {
@@ -285,14 +281,38 @@ body a {
 #buddypress .profile .formacao-academica .data {
   line-height: 1.6;
   font-size: 16px;
-  padding-left: 10px; }
+  padding-left: 15px; }
 
-#gp-sidebar-right {
-  margin-top: 150px; }
-  #gp-sidebar-right table {
-    border-color: none !important; }
-  #gp-sidebar-right .label {
-    line-height: 1.2; }
+.profile .gp-right-sidebar #gp-content {
+  width: 65%; }
+
+.profile .gp-sidebar {
+  padding: 5px;
+  width: 30%;
+  margin-top: 150px !important;
+  border-color: transparent; }
+  .profile .gp-sidebar table {
+    border-color: transparent; }
+    .profile .gp-sidebar table td, .profile .gp-sidebar table tr {
+      border-color: transparent; }
+    .profile .gp-sidebar table .label {
+      line-height: 1.2;
+      font-weight: 500;
+      padding: 10px;
+      background-color: #f6f7ef; }
+      .profile .gp-sidebar table .label:before {
+        content: '';
+        width: 0;
+        height: 0;
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        border-left: 5px solid #2CB781;
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 3px;
+        margin-bottom: 3px; }
+    .profile .gp-sidebar table .data {
+      line-height: 1.2; }
 
 body * {
   font-family: 'Effra' !important; }

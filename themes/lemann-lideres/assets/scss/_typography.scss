@@ -5,7 +5,11 @@
 	font-size: 24px !important;
 	font-weight: 500 !important;
 }
-
+#gp-sidebar-right .bp-widget h2 {
+    font-size: 22px !important;
+    border-bottom: 1px dotted $c_secondary-bg !important;
+    padding-bottom: 10px;
+}
 body a {
     color: $c_link;
 }
@@ -13,6 +17,7 @@ body a {
 #gp-standard-header .menu > .menu-item {
     > a, .gp-more-menu-items-icon{
         color: $c_primary !important;
+        font-size: 1em;
     }
 
     &.current-menu-item a, > a:hover{

@@ -95,7 +95,7 @@
 }
  #buddypress .profile .bp-widget {
     border: none !important;
-    border-top: 1px dotted #2CB781 !important;
+    border-top: 1px dotted $c_secondary-bg !important;
     margin-top: 50px;
     padding: 0 0 0 0 !important;
     
@@ -106,7 +106,7 @@
     .label {
         font-size: 19px;
         position: relative;
-        background-color: #F5F5F5;
+        background-color:  #f6f7ef;
         padding: 10px;
 
         &:before {
@@ -115,7 +115,7 @@
             height: 0; 
             border-top: 8px solid transparent;
             border-bottom: 8px solid transparent; 
-            border-left: 8px solid #2CB781; 
+            border-left: 8px solid $c_secondary-bg; 
             display: inline-block;
             vertical-align: middle;
             margin-right: 3px;
@@ -126,18 +126,46 @@
     .data {
         line-height: 1.6;
         font-size: 16px;
-        padding-left: 10px;
+        padding-left: 15px;
     }
 }
-#gp-sidebar-right {
-    margin-top: 150px;
-    
+.profile .gp-right-sidebar #gp-content {
+    width: 65%;
+}
+.profile .gp-sidebar {
+    padding: 5px;
+    width: 30%;
+    margin-top: 150px !important;
+    border-color: transparent;
+  
     table {
-        border-color: none !important;
-    }
-    
+        border-color: transparent;
 
-    .label {
-        line-height: 1.2;
+        td, tr {
+            border-color: transparent;
+        }
+        .label {
+            line-height: 1.2;
+            font-weight: 500;
+            padding: 10px;
+            background-color: #f6f7ef;
+            
+            &:before {
+                content:'';
+                width: 0; 
+                height: 0; 
+                border-top: 5px solid transparent;
+                border-bottom: 5px solid transparent; 
+                border-left: 5px solid $c_secondary-bg; 
+                display: inline-block;
+                vertical-align: middle;
+                margin-right: 3px;
+                margin-bottom: 3px;
+            }
+        }
+         .data {
+            line-height: 1.2;
+        }
     }
+     
 }
