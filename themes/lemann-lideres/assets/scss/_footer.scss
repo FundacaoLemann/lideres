@@ -1,0 +1,34 @@
+#gp-footer {
+    background-color: $c_primary !important;
+}
+#gp-footer-widgets {
+    border-color: transparent !important;
+}
+.gp-footer-widget .widget {
+    color: $c_lightergray !important;
+ 
+    a {
+        color: $c_lightergray !important;
+    }
+    .current_page_item a, a:hover {
+        color: $c_secondary-bg !important;
+    }
+   
+    .menu {
+        text-align: right;
+    }
+}
+#gp-copyright-text {
+    color: $c_lightergray !important;
+     .container-logo {
+         float: right;
+     }
+
+     .logo-hack {
+         font-weight: 500;
+     }
+     .red {
+         color: red;
+     }
+
+}

@@ -9,6 +9,9 @@
   border-bottom: 1px dotted #2CB781 !important;
   padding-bottom: 10px; }
 
+body {
+  font-size: 15px; }
+
 body a {
   color: #b3c135; }
 
@@ -123,6 +126,30 @@ body a {
 
 #item-header-content {
   flex-grow: 1; }
+
+#gp-footer {
+  background-color: #083050 !important; }
+
+#gp-footer-widgets {
+  border-color: transparent !important; }
+
+.gp-footer-widget .widget {
+  color: #F5F5F5 !important; }
+  .gp-footer-widget .widget a {
+    color: #F5F5F5 !important; }
+  .gp-footer-widget .widget .current_page_item a, .gp-footer-widget .widget a:hover {
+    color: #2CB781 !important; }
+  .gp-footer-widget .widget .menu {
+    text-align: right; }
+
+#gp-copyright-text {
+  color: #F5F5F5 !important; }
+  #gp-copyright-text .container-logo {
+    float: right; }
+  #gp-copyright-text .logo-hack {
+    font-weight: 500; }
+  #gp-copyright-text .red {
+    color: red; }
 
 #menu-encontro-anual {
   border-bottom: 2px solid #eee; }
@@ -299,13 +326,13 @@ body a {
   padding: 0 0 0 0 !important; }
 
 #buddypress .profile .plus .label, #buddypress .profile .experiencia .label,
-#buddypress .profile .formacao-academica .label {
+#buddypress .profile .formacao-academica .label, #buddypress .profile .resumo .label {
   font-size: 19px;
   position: relative;
   background-color: #f6f7ef;
   padding: 10px; }
   #buddypress .profile .plus .label:before, #buddypress .profile .experiencia .label:before,
-  #buddypress .profile .formacao-academica .label:before {
+  #buddypress .profile .formacao-academica .label:before, #buddypress .profile .resumo .label:before {
     content: '';
     width: 0;
     height: 0;
@@ -317,7 +344,7 @@ body a {
     margin-right: 3px;
     margin-bottom: 3px; }
 #buddypress .profile .plus .data, #buddypress .profile .experiencia .data,
-#buddypress .profile .formacao-academica .data {
+#buddypress .profile .formacao-academica .data, #buddypress .profile .resumo .data {
   line-height: 1.6;
   font-size: 16px;
   padding-left: 15px; }

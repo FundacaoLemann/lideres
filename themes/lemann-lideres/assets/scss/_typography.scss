@@ -10,6 +10,9 @@
     border-bottom: 1px dotted $c_secondary-bg !important;
     padding-bottom: 10px;
 }
+body {
+    font-size: 15px;
+}
 body a {
     color: $c_link;
 }
