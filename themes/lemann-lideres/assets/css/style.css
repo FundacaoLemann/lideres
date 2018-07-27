@@ -131,21 +131,24 @@ body a {
   background-color: #083050 !important; }
 
 #gp-footer-widgets {
-  border-color: transparent !important; }
+  border-color: transparent !important;
+  padding: 20px 0 0 0; }
 
-.gp-footer-widget .widget {
-  color: #F5F5F5 !important; }
-  .gp-footer-widget .widget a {
+.gp-footer-widget .widget, .gp-footer-widget .widget:last-child {
+  color: #F5F5F5 !important;
+  margin-bottom: 10px; }
+  .gp-footer-widget .widget a, .gp-footer-widget .widget:last-child a {
     color: #F5F5F5 !important; }
-  .gp-footer-widget .widget .current_page_item a, .gp-footer-widget .widget a:hover {
+  .gp-footer-widget .widget .current_page_item a, .gp-footer-widget .widget a:hover, .gp-footer-widget .widget:last-child .current_page_item a, .gp-footer-widget .widget:last-child a:hover {
     color: #2CB781 !important; }
-  .gp-footer-widget .widget .menu {
+  .gp-footer-widget .widget .menu, .gp-footer-widget .widget:last-child .menu {
     text-align: right; }
+
+#gp-copyright {
+  padding: 10px 0; }
 
 #gp-copyright-text {
   color: #F5F5F5 !important; }
-  #gp-copyright-text .container-logo {
-    float: right; }
   #gp-copyright-text .logo-hack {
     font-weight: 500; }
   #gp-copyright-text .red {
@@ -325,14 +328,13 @@ body a {
   margin-top: 50px;
   padding: 0 0 0 0 !important; }
 
-#buddypress .profile .plus .label, #buddypress .profile .experiencia .label,
-#buddypress .profile .formacao-academica .label, #buddypress .profile .resumo .label {
+#buddypress .profile .bp-widget .label {
+  width: 30% !important;
   font-size: 19px;
   position: relative;
   background-color: #f6f7ef;
-  padding: 10px; }
-  #buddypress .profile .plus .label:before, #buddypress .profile .experiencia .label:before,
-  #buddypress .profile .formacao-academica .label:before, #buddypress .profile .resumo .label:before {
+  padding: 10px 5px; }
+  #buddypress .profile .bp-widget .label:before {
     content: '';
     width: 0;
     height: 0;
@@ -341,10 +343,9 @@ body a {
     border-left: 8px solid #2CB781;
     display: inline-block;
     vertical-align: middle;
-    margin-right: 3px;
+    margin-right: 4px;
     margin-bottom: 3px; }
-#buddypress .profile .plus .data, #buddypress .profile .experiencia .data,
-#buddypress .profile .formacao-academica .data, #buddypress .profile .resumo .data {
+#buddypress .profile .bp-widget .data {
   line-height: 1.6;
   font-size: 16px;
   padding-left: 15px; }
@@ -362,9 +363,10 @@ body a {
     .profile .gp-sidebar table td, .profile .gp-sidebar table tr {
       border-color: transparent; }
     .profile .gp-sidebar table .label {
+      width: 30%;
       line-height: 1.2;
       font-weight: 500;
-      padding: 10px;
+      padding: 10px 5px;
       background-color: #f6f7ef; }
       .profile .gp-sidebar table .label:before {
         content: '';
@@ -375,7 +377,7 @@ body a {
         border-left: 5px solid #2CB781;
         display: inline-block;
         vertical-align: middle;
-        margin-right: 3px;
+        margin-right: 4px;
         margin-bottom: 3px; }
     .profile .gp-sidebar table .data {
       line-height: 1.2; }
