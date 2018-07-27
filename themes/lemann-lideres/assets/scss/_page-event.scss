@@ -2,7 +2,7 @@
     border-bottom: 2px solid #eee;
 
     a {
-        color: #888;
+        color: $c_lightgray;
     }
 
     li {
@@ -28,6 +28,54 @@
             font-weight: 500;
             margin-bottom: 0 !important;
         }
+    }
+}
+
+.wcs-timetable__compact-list {
+    .wcs-day__date {
+        color: $c_secondary;
+        font-weight: 500;
+
+        small {
+            color: $c_lightgray;
+            font-weight: initial;
+        }
+    }
+
+    .wcs-class {
+        &__time {
+            align-self: flex-start;
+
+            span {
+                font-size: 110%;
+            }
+
+            small {
+                color: $c_lightgray;
+            }
+        }
+
+        &__content {
+            h3.wcs-class__title {
+                color: $c_primary;
+                font-size: 125%;
+            }
+
+            h4.wcs-class__title {
+                color: $c_secondary;
+            }
+        }
+    }
+
+    .wcs-timetable__classes:before {
+        color: $c_link !important;
+    }
+}
+
+.wcs-filters__container {
+    .wcs-filters__title {
+        color: $c_primary !important;
+        font-size: initial;
     }
 }
 
