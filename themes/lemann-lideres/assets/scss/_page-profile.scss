@@ -93,6 +93,14 @@
         }
     }
 }
+.notifications.gp-right-sidebar, .activity.gp-right-sidebar, .settings.gp-right-sidebar, .friends.gp-right-sidebar, .messages.gp-right-sidebar {
+    #gp-content {
+        width: 100% !important;
+    }
+    .gp-sidebar {
+        width: 0;
+    }
+  }
  #buddypress .profile .bp-widget {
     border: none !important;
     border-top: 1px dotted $c_secondary-bg !important;
@@ -100,13 +108,16 @@
     padding: 0 0 0 0 !important;
     
 }
+#buddypress table.profile-fields tr.alt td {
+    color: #333333 !important;
+}
 #buddypress .profile .bp-widget  {
-    
+   
     .label {
         width: 30% !important;
         font-size: 19px;
         position: relative;
-        background-color:  #f6f7ef;
+
         padding: 10px 5px;
 
         &:before {
@@ -136,7 +147,7 @@
     padding: 5px;
     width: 30%;
     margin-top: 150px !important;
-    border-color: transparent;
+    border: 1px dotted #2CB781 !important;
   
     table {
         border-color: transparent;
@@ -149,7 +160,6 @@
             line-height: 1.2;
             font-weight: 500;
             padding: 10px 5px;
-            background-color: #f6f7ef;
             
             &:before {
                 content:'';

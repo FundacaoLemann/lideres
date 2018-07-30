@@ -1,12 +1,18 @@
 // THEME STYLE OVERWRITES
-.widget-title, .widgettitle, .profile .bp-widget h2 {
+.widget-title, .profile .bp-widget h2 {
 	color: $c_primary !important;
 	font-family: 'Effra' !important;
 	font-size: 24px !important;
 	font-weight: 500 !important;
 }
+.widgettitle {
+    color: $c_primary !important;
+	font-family: 'Effra' !important;
+	font-size: 20px !important;
+	font-weight: 500 !important;
+}
 #gp-sidebar-right .bp-widget h2 {
-    font-size: 22px !important;
+    font-size: 20px !important;
     border-bottom: 1px dotted $c_secondary-bg !important;
     padding-bottom: 10px;
 }
@@ -20,7 +26,7 @@ body a {
 #gp-standard-header .menu > .menu-item {
     > a, .gp-more-menu-items-icon{
         color: $c_primary !important;
-        font-size: 1em;
+        font-size: 1.1em;
     }
 
     &.current-menu-item a, > a:hover{
@@ -37,7 +43,18 @@ body a {
         color: $c_secondary !important;
     }
 }
-
+@media only screen and (min-width: 1200px) {
+    .gp-featured-large .gp-featured-caption-title {
+        font-size: 30px;
+        line-height: 32px;
+    }
+}
+@media only screen and (min-width: 1200px) {
+    .gp-featured-small .gp-featured-caption-title {
+        font-size: 22px;
+        line-height: 24px;
+    }
+}
 .gp-featured-box-cats a{
     font-size: 10px;
     font-weight: 500;
@@ -47,6 +64,9 @@ body a {
 .tagcloud a{
     background-color: $c_secondary-bg !important;
     background-image: none !important;
+}
+.gp-search-button:before {
+    font-size: 18px !important;
 }
 
 // CUSTOM FONT FACES

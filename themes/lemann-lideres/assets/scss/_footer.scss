@@ -1,19 +1,22 @@
 #gp-footer {
-    background-color: $c_primary !important;
+    background-color: $c_lightgray !important;
 }
 #gp-footer-widgets {
     border-color: transparent !important;
-    padding: 20px 0 0 0;
+    padding: 15px 0 0 0;
 }
 .gp-footer-widget .widget, .gp-footer-widget .widget:last-child {
     color: $c_lightergray !important;
-    margin-bottom: 10px;
+    margin-bottom:5px;
+    li {
+        padding: 3px 0;
+    }
  
     a {
         color: $c_lightergray !important;
     }
     .current_page_item a, a:hover {
-        color: $c_secondary-bg !important;
+        color: $c_primary !important;
     }
    
     .menu {
@@ -21,10 +24,13 @@
     }
 }
 #gp-copyright  {
-    padding: 10px 0;
+    padding: 5px 0;
 }
 #gp-copyright-text {
     color: $c_lightergray !important;
+     a {
+         color:black !important;
+     }
 
      .logo-hack {
          font-weight: 500;

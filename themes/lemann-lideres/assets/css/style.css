@@ -1,11 +1,17 @@
-.widget-title, .widgettitle, .profile .bp-widget h2 {
+.widget-title, .profile .bp-widget h2 {
   color: #083050 !important;
   font-family: 'Effra' !important;
   font-size: 24px !important;
   font-weight: 500 !important; }
 
+.widgettitle {
+  color: #083050 !important;
+  font-family: 'Effra' !important;
+  font-size: 20px !important;
+  font-weight: 500 !important; }
+
 #gp-sidebar-right .bp-widget h2 {
-  font-size: 22px !important;
+  font-size: 20px !important;
   border-bottom: 1px dotted #2CB781 !important;
   padding-bottom: 10px; }
 
@@ -17,7 +23,7 @@ body a {
 
 #gp-standard-header .menu > .menu-item > a, #gp-standard-header .menu > .menu-item .gp-more-menu-items-icon {
   color: #083050 !important;
-  font-size: 1em; }
+  font-size: 1.1em; }
 #gp-standard-header .menu > .menu-item.current-menu-item a, #gp-standard-header .menu > .menu-item > a:hover {
   color: #0C9B4A !important; }
 
@@ -26,6 +32,14 @@ body a {
 .gp-theme #buddypress ul.activity-list > li a {
   color: #0C9B4A !important; }
 
+@media only screen and (min-width: 1200px) {
+  .gp-featured-large .gp-featured-caption-title {
+    font-size: 30px;
+    line-height: 32px; } }
+@media only screen and (min-width: 1200px) {
+  .gp-featured-small .gp-featured-caption-title {
+    font-size: 22px;
+    line-height: 24px; } }
 .gp-featured-box-cats a {
   font-size: 10px;
   font-weight: 500;
@@ -34,6 +48,9 @@ body a {
 .tagcloud a {
   background-color: #2CB781 !important;
   background-image: none !important; }
+
+.gp-search-button:before {
+  font-size: 18px !important; }
 
 @font-face {
   font-family: 'Effra';
@@ -128,27 +145,31 @@ body a {
   flex-grow: 1; }
 
 #gp-footer {
-  background-color: #083050 !important; }
+  background-color: #888888 !important; }
 
 #gp-footer-widgets {
   border-color: transparent !important;
-  padding: 20px 0 0 0; }
+  padding: 15px 0 0 0; }
 
 .gp-footer-widget .widget, .gp-footer-widget .widget:last-child {
   color: #F5F5F5 !important;
-  margin-bottom: 10px; }
+  margin-bottom: 5px; }
+  .gp-footer-widget .widget li, .gp-footer-widget .widget:last-child li {
+    padding: 3px 0; }
   .gp-footer-widget .widget a, .gp-footer-widget .widget:last-child a {
     color: #F5F5F5 !important; }
   .gp-footer-widget .widget .current_page_item a, .gp-footer-widget .widget a:hover, .gp-footer-widget .widget:last-child .current_page_item a, .gp-footer-widget .widget:last-child a:hover {
-    color: #2CB781 !important; }
+    color: #083050 !important; }
   .gp-footer-widget .widget .menu, .gp-footer-widget .widget:last-child .menu {
     text-align: right; }
 
 #gp-copyright {
-  padding: 10px 0; }
+  padding: 5px 0; }
 
 #gp-copyright-text {
   color: #F5F5F5 !important; }
+  #gp-copyright-text a {
+    color: black !important; }
   #gp-copyright-text .logo-hack {
     font-weight: 500; }
   #gp-copyright-text .red {
@@ -344,17 +365,24 @@ body a {
   #gp-buddypress-header .vc_col-md-4 #gp-author-social-icons {
     margin-top: 10px; }
 
+.notifications.gp-right-sidebar #gp-content, .activity.gp-right-sidebar #gp-content, .settings.gp-right-sidebar #gp-content, .friends.gp-right-sidebar #gp-content, .messages.gp-right-sidebar #gp-content {
+  width: 100% !important; }
+.notifications.gp-right-sidebar .gp-sidebar, .activity.gp-right-sidebar .gp-sidebar, .settings.gp-right-sidebar .gp-sidebar, .friends.gp-right-sidebar .gp-sidebar, .messages.gp-right-sidebar .gp-sidebar {
+  width: 0; }
+
 #buddypress .profile .bp-widget {
   border: none !important;
   border-top: 1px dotted #2CB781 !important;
   margin-top: 50px;
   padding: 0 0 0 0 !important; }
 
+#buddypress table.profile-fields tr.alt td {
+  color: #333333 !important; }
+
 #buddypress .profile .bp-widget .label {
   width: 30% !important;
   font-size: 19px;
   position: relative;
-  background-color: #f6f7ef;
   padding: 10px 5px; }
   #buddypress .profile .bp-widget .label:before {
     content: '';
@@ -379,7 +407,7 @@ body a {
   padding: 5px;
   width: 30%;
   margin-top: 150px !important;
-  border-color: transparent; }
+  border: 1px dotted #2CB781 !important; }
   .profile .gp-sidebar table {
     border-color: transparent; }
     .profile .gp-sidebar table td, .profile .gp-sidebar table tr {
@@ -388,8 +416,7 @@ body a {
       width: 30%;
       line-height: 1.2;
       font-weight: 500;
-      padding: 10px 5px;
-      background-color: #f6f7ef; }
+      padding: 10px 5px; }
       .profile .gp-sidebar table .label:before {
         content: '';
         width: 0;

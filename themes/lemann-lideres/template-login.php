@@ -19,7 +19,9 @@ wp_head();
         </div>
         <div class="col-md-6">
             <?php wp_login_form(); ?>
+            <p> "Em caso de dúvidas, entre em contato via lideres@fundacaolemann.org.br"</p>
         </div>
+        
     </div>
     <?php wp_footer();  ?>
 </div>
