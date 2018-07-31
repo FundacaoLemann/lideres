@@ -16,11 +16,12 @@ wp_head();
         <div class="col-md-6 align-center">
             <h1>Boas vindas à plataforma de líderes da Fundação Lemann</h1>
             <h3>acesse a plataforma e participe da comunidade Lemann</h3>
+            <p> * Em caso de dúvidas, entre em contato via <a href="mailto:lideres@fundacaolemann.org.br">lideres@fundacaolemann.org.br</a></p>
         </div>
         <div class="col-md-6">
             <?php wp_login_form(); ?>
-            <p> "Em caso de dúvidas, entre em contato via lideres@fundacaolemann.org.br"</p>
         </div>
+        
         
     </div>
     <?php wp_footer();  ?>

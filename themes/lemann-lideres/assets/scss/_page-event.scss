@@ -23,8 +23,7 @@
 }
 
 .wcs-timetable__container {
-    padding-top: 0;
-
+    
     .wcs-timetable__carousel .wcs-class {
         background-color: $c_lightergray !important;
 
@@ -98,5 +97,20 @@
     .wcs-filters__title {
         color: $c_primary !important;
         font-size: initial;
+    }
+}
+.ti-calendar:before, .ti-location-arrow:before, .ti-time:before, 
+.ti-user:before, .wcs-timetable--1 .wcs-timetable__carousel .owl-dots .active {
+    color: $c_secondary-bg !important;
+}
+.wcs-timetable__carousel .owl-nav {
+    position: absolute;
+    width: 100%;
+    top: -100px;
+    margin: 6vh 0 6vh 0;
+    
+    .owl-prev::before, .owl-next::before {
+        font-size: 150%;
+        color: $c_primary;
     }
 }

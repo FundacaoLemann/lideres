@@ -1,7 +1,7 @@
 .widget-title, .profile .bp-widget h2 {
   color: #083050 !important;
   font-family: 'Effra' !important;
-  font-size: 24px !important;
+  font-size: 20px !important;
   font-weight: 500 !important; }
 
 .widgettitle {
@@ -191,17 +191,15 @@ body a {
   animation: none;
   -webkit-animation: none; }
 
-.wcs-timetable__container {
-  padding-top: 0; }
-  .wcs-timetable__container .wcs-timetable__carousel .wcs-class {
-    background-color: #F5F5F5 !important; }
-    .wcs-timetable__container .wcs-timetable__carousel .wcs-class p {
-      line-height: 1.5; }
-    .wcs-timetable__container .wcs-timetable__carousel .wcs-class .wcs-class__title {
-      color: #083050;
-      font-size: 20px;
-      font-weight: 500;
-      margin-bottom: 0 !important; }
+.wcs-timetable__container .wcs-timetable__carousel .wcs-class {
+  background-color: #F5F5F5 !important; }
+  .wcs-timetable__container .wcs-timetable__carousel .wcs-class p {
+    line-height: 1.5; }
+  .wcs-timetable__container .wcs-timetable__carousel .wcs-class .wcs-class__title {
+    color: #083050;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 0 !important; }
 
 .wcs-modal {
   background-color: rgba(8, 48, 80, 0.9);
@@ -233,6 +231,19 @@ body a {
 .wcs-filters__container .wcs-filters__title {
   color: #083050 !important;
   font-size: initial; }
+
+.ti-calendar:before, .ti-location-arrow:before, .ti-time:before,
+.ti-user:before, .wcs-timetable--1 .wcs-timetable__carousel .owl-dots .active {
+  color: #2CB781 !important; }
+
+.wcs-timetable__carousel .owl-nav {
+  position: absolute;
+  width: 100%;
+  top: -100px;
+  margin: 6vh 0 6vh 0; }
+  .wcs-timetable__carousel .owl-nav .owl-prev::before, .wcs-timetable__carousel .owl-nav .owl-next::before {
+    font-size: 150%;
+    color: #083050; }
 
 .wcs-events-schedule h3 {
   margin-bottom: 0; }
@@ -274,6 +285,16 @@ body a {
     font-size: 19px;
     font-weight: 500;
     line-height: 23px; }
+  .page-login p {
+    color: #F5F5F5;
+    line-height: 1.6;
+    font-size: 18px;
+    padding-top: 30px; }
+    .page-login p a {
+      color: #F5F5F5;
+      font-weight: 500; }
+      .page-login p a:hover {
+        color: #083050; }
   .page-login #loginform {
     padding: 30px;
     box-shadow: 0 0 0px 10px rgba(8, 48, 80, 0.3);
@@ -301,8 +322,8 @@ body a {
     position: relative; }
     .page-login .row .col-md-6 {
       margin: 0 15px;
-      flex: 0 0 50%;
-      max-width: 0 0 50%; }
+      flex: 0 0 60%;
+      max-width: 0 0 60%; }
       @media screen and (max-width: 640px) {
         .page-login .row .col-md-6 {
           flex: 0 0 100%;
@@ -381,7 +402,7 @@ body a {
 
 #buddypress .profile .bp-widget .label {
   width: 30% !important;
-  font-size: 19px;
+  font-size: 16px;
   position: relative;
   padding: 10px 5px; }
   #buddypress .profile .bp-widget .label:before {
@@ -430,6 +451,25 @@ body a {
         margin-bottom: 3px; }
     .profile .gp-sidebar table .data {
       line-height: 1.2; }
+
+.gp-team-member .gp-team-image {
+  border-color: #00B5AF;
+  border-width: 2px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2); }
+.gp-team-member .gp-team-name {
+  font-size: 22px;
+  color: #083050; }
+.gp-team-member .gp-team-position {
+  color: #333333;
+  font-size: 18px;
+  border-bottom: 1px dotted #2CB781;
+  padding-bottom: 10px; }
+.gp-team-member .gp-team-description {
+  text-align: justify;
+  font-size: 16px; }
+@media only screen and (max-width: 767px) {
+  .gp-team-member .gp-team-description {
+    padding: 10px 50px; } }
 
 body * {
   font-family: 'Effra' !important; }

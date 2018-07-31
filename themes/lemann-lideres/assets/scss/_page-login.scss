@@ -1,11 +1,11 @@
-.page-login{
+.page-login {
     width: 100vw;
     height: 100vh;
     padding: 40px;
     background-image: url('/wp-content/themes/lemann-lideres/assets/images/login_bg.png');
     background-size: cover;
 
-    .logo img{
+    .logo img {
         margin: 0 auto;
         display: block;
         width: 160px;
@@ -20,11 +20,29 @@
         margin-bottom: 40px;
     }
 
-    h3{
+    h3 {
         color: #FFFFFF;
         font-size: 19px;
         font-weight: 500;
         line-height: 23px;
+        
+    }
+
+    p {
+        color: $c_lightergray;
+        line-height: 1.6;
+        font-size: 18px;
+        padding-top: 30px;
+        
+        a {
+            color: $c_lightergray;
+            font-weight: 500;
+
+            &:hover {
+                color: $c_primary;
+            }
+        }
+        
     }
 
     #loginform {
@@ -46,7 +64,7 @@
 
         .button{
             display: block;
-            background: #083050;
+            background: $c_primary;
             width: 100%;
             padding: 13px;
         }
@@ -63,8 +81,8 @@
 
         .col-md-6{
             margin: 0 15px;
-            flex: 0 0 50%;
-            max-width: 0 0 50%;
+            flex: 0 0 60%;
+            max-width: 0 0 60%;
 
             @media screen and (max-width: 640px){
                 flex: 0 0 100%;

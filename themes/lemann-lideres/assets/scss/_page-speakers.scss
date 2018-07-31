@@ -1,0 +1,29 @@
+
+.gp-team-member {
+
+    .gp-team-image {
+     border-color: $c_primary-bg;
+     border-width: 2px;
+     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    }
+    .gp-team-name {
+    font-size: 22px;
+    color: $c_primary;
+    }
+    .gp-team-position {
+    color: $c_darkgray;
+    font-size: 18px;
+    border-bottom: 1px dotted $c_secondary-bg;
+    padding-bottom: 10px;
+    }
+    .gp-team-description {
+    text-align: justify;
+    font-size: 16px;
+    }
+    @media only screen and (max-width: 767px) {
+        .gp-team-description {
+        padding: 10px 50px;
+        }
+    }
+
+}
