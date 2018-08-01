@@ -1,0 +1,405 @@
+# Copyright (C) 2018 rtCamp
+# This file is distributed under the GPLv2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: rtMedia Sidebar Widgets 1.3.6\n"
+"Report-Msgid-Bugs-To: http://community.rtcamp.com/c/rtmedia/\n"
+"POT-Creation-Date: 2018-02-07 05:53:41+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2018-08-01 20:16-0300\n"
+"Last-Translator: rtMedia <rtmedia@rtcamp.com>\n"
+"Language-Team: rtMedia <rtmedia@rtcamp.com>\n"
+"X-Generator: Poedit 1.8.7.1\n"
+"X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;"
+"_n_noop:1,2;_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;"
+"esc_attr_x:1,2c;esc_html_x:1,2c\n"
+"Language: pt_BR\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: ..\n"
+"X-Textdomain-Support: yes\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: app/main/controllers/media/RTMediaWidgetUploaderView.php:76
+msgid "File Upload"
+msgstr "Envio de arquivos"
+
+#: app/main/controllers/media/RTMediaWidgetUploaderView.php:76
+msgid "Select"
+msgstr "Selecione"
+
+#: app/main/controllers/media/RTMediaWidgetUploaderView.php:79
+msgid "Insert from URL"
+msgstr "Inserir de uma URL"
+
+#: app/main/widgets/RTMediaGalleryWidget.php:20
+msgid "rtMedia Gallery widget"
+msgstr "Widget de galeria do rtMedia"
+
+#: app/main/widgets/RTMediaGalleryWidget.php:23
+msgid "rtMedia Gallery Widget"
+msgstr "Widget de galeria do rtMedia"
+
+#: app/main/widgets/RTMediaGalleryWidget.php:169
+#: app/main/widgets/RTMediaUploaderWidget.php:154
+msgid "All"
+msgstr "Tudo"
+
+#: app/main/widgets/RTMediaGalleryWidget.php:170
+msgid "Music"
+msgstr "Música"
+
+#: app/main/widgets/RTMediaGalleryWidget.php:171
+msgid "Videos"
+msgstr "Vídeos"
+
+#: app/main/widgets/RTMediaGalleryWidget.php:172
+msgid "Photos"
+msgstr "Fotos"
+
+#: app/main/widgets/RTMediaGalleryWidget.php:193
+msgid ""
+"Please configure this widget <a href=\"%s\" target=\"_blank\" title="
+"\"Configure BuddyPress Media Widget\">here</a>."
+msgstr ""
+"Configure este widget <a href=\"%s\" target=\"_blank\" title="
+"\"Configure BuddyPress Media Widget\">aqui</a>."
+
+#: app/main/widgets/RTMediaGalleryWidget.php:379
+msgid "Widget Type:"
+msgstr "Tipo de widget:"
+
+#: app/main/widgets/RTMediaGalleryWidget.php:381
+msgid "Most Rated Media"
+msgstr "Mídia melhor avaliada"
+
+#: app/main/widgets/RTMediaGalleryWidget.php:382
+msgid "Recent Media"
+msgstr "Mídia recente"
+
+#: app/main/widgets/RTMediaGalleryWidget.php:383
+msgid "Popular Media"
+msgstr "Mídias populares"
+
+#: app/main/widgets/RTMediaGalleryWidget.php:384
+msgid "Most Viewed Media"
+msgstr "Mídias mais vistas"
+
+#: app/main/widgets/RTMediaGalleryWidget.php:388
+msgid "Media Uploaded Time:"
+msgstr ""
+
+#: app/main/widgets/RTMediaGalleryWidget.php:390
+msgid "Today"
+msgstr ""
+
+#: app/main/widgets/RTMediaGalleryWidget.php:391
+msgid "This Week"
+msgstr ""
+
+#: app/main/widgets/RTMediaGalleryWidget.php:392
+msgid "This Month"
+msgstr ""
+
+#: app/main/widgets/RTMediaGalleryWidget.php:393
+msgid "All Time"
+msgstr ""
+
+#: app/main/widgets/RTMediaGalleryWidget.php:397
+#: app/main/widgets/RTMediaUploaderWidget.php:137
+msgid "Title:"
+msgstr ""
+
+#: app/main/widgets/RTMediaGalleryWidget.php:401
+msgid "Number of posts to show:"
+msgstr ""
+
+#: app/main/widgets/RTMediaGalleryWidget.php:406
+msgid "Show All"
+msgstr ""
+
+#: app/main/widgets/RTMediaGalleryWidget.php:410
+msgid "Show Photos"
+msgstr ""
+
+#: app/main/widgets/RTMediaGalleryWidget.php:414
+msgid "Show Music"
+msgstr ""
+
+#: app/main/widgets/RTMediaGalleryWidget.php:418
+msgid "Show Videos"
+msgstr ""
+
+#: app/main/widgets/RTMediaGalleryWidget.php:433
+msgid "Thumbnail Width:"
+msgstr ""
+
+#: app/main/widgets/RTMediaGalleryWidget.php:438
+msgid "Thumbnail Height:"
+msgstr ""
+
+#: app/main/widgets/RTMediaGalleryWidget.php:449
+msgid "Show Most Rated Albums"
+msgstr ""
+
+#: app/main/widgets/RTMediaGalleryWidget.php:452
+msgid "Tab title:"
+msgstr ""
+
+#: app/main/widgets/RTMediaUploaderWidget.php:19
+msgid "rtMedia Sidebar uploader widget"
+msgstr ""
+
+#: app/main/widgets/RTMediaUploaderWidget.php:22
+msgid "rtMedia Sidebar Uploader Widget"
+msgstr ""
+
+#: app/main/widgets/RTMediaUploaderWidget.php:70
+msgid "You are not allowed to upload/attach media."
+msgstr "Sem permissão para enviar mídia."
+
+#: app/main/widgets/RTMediaUploaderWidget.php:122
+msgid "Profile"
+msgstr "Perfil"
+
+#: app/main/widgets/RTMediaUploaderWidget.php:123
+msgid "Group"
+msgstr "Grupo"
+
+#: app/main/widgets/RTMediaUploaderWidget.php:141
+msgid "Context:"
+msgstr "Contexto:"
+
+#: app/main/widgets/RTMediaUploaderWidget.php:143
+msgid "Default"
+msgstr "Padrão"
+
+#: app/main/widgets/RTMediaUploaderWidget.php:148
+msgid "Context ID:"
+msgstr "ID do contexto:"
+
+#: app/main/widgets/RTMediaUploaderWidget.php:152
+msgid "Media Type:"
+msgstr "Tipo de mídia:"
+
+#: app/main/widgets/RTMediaUploaderWidget.php:159
+msgid "Album:"
+msgstr "Álbum:"
+
+#: app/main/widgets/RTMediaUploaderWidget.php:161
+#: app/main/widgets/RTMediaUploaderWidget.php:168
+msgid "Let User Select"
+msgstr "Permitir que o usuário selecione"
+
+#: app/main/widgets/RTMediaUploaderWidget.php:166
+msgid "Privacy:"
+msgstr "Privacidade:"
+
+#: app/main/widgets/RTMediaUploaderWidget.php:178
+msgid "Redirect:"
+msgstr "Redirecionar:"
+
+#: app/main/widgets/RTMediaUploaderWidget.php:180
+msgid "True"
+msgstr "Verdadeiro"
+
+#: app/main/widgets/RTMediaUploaderWidget.php:182
+msgid "False"
+msgstr "Falso"
+
+#: index.php:180
+msgid "Docs"
+msgstr "Documentação"
+
+#: lib/plugin-installer/RTMPluginInstaller.php:34
+#: lib/plugin-installer/RTMPluginInstaller.php:40
+msgid "rtMedia for WordPress, BuddyPress and bbPress"
+msgstr ""
+
+#: lib/plugin-installer/RTMPluginInstaller.php:54
+msgid "rtMedia Add-on(s)"
+msgstr ""
+
+#: lib/plugin-installer/RTMPluginInstaller.php:54
+msgid "won't work if rtMedia is"
+msgstr ""
+
+#: lib/plugin-installer/RTMPluginInstaller.php:58
+msgid "not installed. Click"
+msgstr ""
+
+#: lib/plugin-installer/RTMPluginInstaller.php:59
+#: lib/plugin-installer/RTMPluginInstaller.php:67
+#: lib/plugin-installer/RTMPluginInstaller.php:75
+msgid "here"
+msgstr ""
+
+#: lib/plugin-installer/RTMPluginInstaller.php:60
+msgid "to install rtMedia."
+msgstr ""
+
+#: lib/plugin-installer/RTMPluginInstaller.php:66
+#: lib/plugin-installer/RTMPluginInstaller.php:74
+msgid "not activated. Click"
+msgstr ""
+
+#: lib/plugin-installer/RTMPluginInstaller.php:68
+#: lib/plugin-installer/RTMPluginInstaller.php:76
+msgid "to activate rtMedia."
+msgstr ""
+
+#: lib/plugin-installer/RTMPluginInstaller.php:90
+#: lib/plugin-installer/RTMPluginInstaller.php:107
+msgid "ERROR: No slug was passed to the AJAX callback."
+msgstr ""
+
+#: lib/plugin-installer/RTMPluginInstaller.php:96
+msgid "ERROR: You lack permissions to install and/or activate plugins."
+msgstr ""
+
+#: lib/plugin-installer/RTMPluginInstaller.php:113
+msgid "ERROR: You lack permissions to activate plugins."
+msgstr ""
+
+#: lib/plugin-installer/RTMPluginInstaller.php:128
+#: lib/plugin-installer/RTMPluginInstaller.php:161
+msgid "ERROR: Error fetching plugin information: %s"
+msgstr ""
+
+#: lib/plugin-installer/RTMPluginInstaller.php:139
+msgid "Please ensure the file system is writable"
+msgstr ""
+
+#: lib/plugin-installer/RTMPluginInstaller.php:145
+msgid "ERROR: Failed to install plugin: %s"
+msgstr ""
+
+#: lib/plugin-installer/RTMPluginInstaller.php:151
+#: lib/plugin-installer/RTMPluginInstaller.php:184
+#: lib/plugin-installer/RTMPluginInstaller.php:192
+msgid "ERROR: Failed to activate plugin: %s"
+msgstr ""
+
+#: lib/plugin-installer/RTMPluginInstaller.php:172
+msgid "Please ensure the file system is writeable"
+msgstr ""
+
+#: lib/plugin-installer/RTMPluginInstaller.php:178
+msgid "ERROR: Failed to update plugin: %s"
+msgstr ""
+
+#: lib/rt-edd-license/RTEDDSLPluginUpdater.php:177
+msgid ""
+"There is a new version of %1$s available. <a target=\"_blank\" class="
+"\"thickbox\" href=\"%2$s\">View version %3$s details</a>."
+msgstr ""
+
+#: lib/rt-edd-license/RTEDDSLPluginUpdater.php:179
+msgid ""
+"There is a new version of %1$s available. <a target=\"_blank\" class="
+"\"thickbox\" href=\"%2$s\">View version %3$s details</a> or <a href="
+"\"%4$s\">update now</a>."
+msgstr ""
+
+#: lib/rt-edd-license/RTEDDSLPluginUpdater.php:296
+msgid "You do not have permission to install plugin updates"
+msgstr ""
+
+#: lib/rt-edd-license/RTEDDSLPluginUpdater.php:296
+msgid "Error"
+msgstr ""
+
+#: templates/sidebar-gallery.php:84
+msgid "No recent photo found"
+msgstr "Nenhuma foto recente encontrada"
+
+#: templates/sidebar-gallery.php:86
+msgid "No recent music found"
+msgstr "Nenhuma música recente encontrada"
+
+#: templates/sidebar-gallery.php:88
+msgid "No recent video found"
+msgstr "Nenhum vídeo recente encontrado"
+
+#: templates/sidebar-gallery.php:90
+msgid "No recent media found"
+msgstr "Nenhuma mídia recente encontrada"
+
+#: templates/sidebar-gallery.php:96
+msgid "No most rated photo found"
+msgstr "Nenhuma foto com avaliação encontrada"
+
+#: templates/sidebar-gallery.php:98
+msgid "No most rated music found"
+msgstr "Nenhuma música com avaliação encontrada"
+
+#: templates/sidebar-gallery.php:100
+msgid "No most rated video found"
+msgstr "Nenhum vídeo com avaliação encontrado"
+
+#: templates/sidebar-gallery.php:102
+msgid "No most rated media found"
+msgstr "Nenhuma mídia com avaliação encontrada"
+
+#: templates/sidebar-gallery.php:108
+msgid "No most viewed photo found"
+msgstr "Nenhuma foto com visualizações encontrada"
+
+#: templates/sidebar-gallery.php:110
+msgid "No most viewed music found"
+msgstr "Nenhuma música com reproduções encontrada"
+
+#: templates/sidebar-gallery.php:112
+msgid "No most viewed video found"
+msgstr "Nenhum vídeo com visualizações encontrado"
+
+#: templates/sidebar-gallery.php:114
+msgid "No most viewed media found"
+msgstr "Nenhuma mídia com visualizações encontrada"
+
+#: templates/sidebar-gallery.php:120
+msgid "No popular photo found"
+msgstr "Nenhuma foto popular encontrada"
+
+#: templates/sidebar-gallery.php:122
+msgid "No popular music found"
+msgstr "Nenhuma música popular encontrada"
+
+#: templates/sidebar-gallery.php:124
+msgid "No popular video found"
+msgstr "Nenhum vídeo popular encontrado"
+
+#: templates/sidebar-gallery.php:126
+msgid "No popular media found"
+msgstr "Nenhuma mídia popular encontrada"
+
+#: templates/sidebar-gallery.php:166
+msgid "No most rated album found"
+msgstr "Nenhuma mídia popular encontrada"
+
+#. Plugin Name of the plugin/theme
+msgid "rtMedia Sidebar Widgets"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "https://rtmedia.io/products/rtmedia-sidebar-widgets/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"This plugin will let you display a gallery or an uploader in a sidebar. "
+"Several of them can be used in a single sidebar."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "rtCamp"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid ""
+"http://rtcamp.com/?"
+"utm_source=dashboard&utm_medium=plugin&utm_campaign=rtmedia-sidebar-"
+"widgets"
+msgstr ""
