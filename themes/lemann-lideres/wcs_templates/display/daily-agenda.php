@@ -12,11 +12,13 @@
 			</ol>
 			<ol class="wcs-timetable__agenda-data wcs-timetable__parent-data">
 				<li v-if="events_by_day[active_day]" class="wcs-day wcs-timetable__parent active" :class="'wcs-day--' + events_by_day[active_day].date | moment('D', false) ">
-					<div v-for="event in events_by_day[active_day].events" class="wcs-class wcs-class--filterable"  :class="event | eventCSS">
-						<div v-if="event.thumbnail" class="wcs-class__image"><img class='wcs-modal-call' :src="event.thumbnail" :title="event.title"></div>
+					<div v-for="event in events_by_day[active_day].events" class="wcs-class wcs-class--filterable" :class="event | eventCSS">
+						<div v-if="event.thumbnail" class="wcs-class__image wcs-modal-call" v-on:click="openModal( event, options, $event )">
+							<img :src="event.thumbnail" :title="event.title">
+						</div>
 						<div v-if="filter_var(options.show_duration)" class="wcs-class__duration"><span>{{event.duration}}</span></div>
 						<div class="wcs-class__title-meta">
-							<div class="wcs-class__title wcs-modal-call" :title="event.title">
+							<div class="wcs-class__title wcs-modal-call" :title="event.title" v-on:click="openModal( event, options, $event )">
 								<span v-html="event.title"></span>
 								<template v-if="filter_var(options.show_wcs_room)">
 									<template v-for="(room, index) in event.terms.wcs_room">
