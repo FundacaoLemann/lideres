@@ -162,6 +162,10 @@ body a {
     color: #083050 !important; }
   .gp-footer-widget .widget .menu, .gp-footer-widget .widget:last-child .menu {
     text-align: right; }
+    @media only screen and (max-width: 600px) {
+      .gp-footer-widget .widget .menu, .gp-footer-widget .widget:last-child .menu {
+        text-align: left;
+        padding-top: 10px; } }
 
 #gp-copyright {
   padding: 5px 0; }
@@ -416,6 +420,9 @@ body a {
     vertical-align: middle;
     margin-right: 4px;
     margin-bottom: 3px; }
+  @media only screen and (max-width: 767px) {
+    #buddypress .profile .bp-widget .label {
+      width: 100% !important; } }
 #buddypress .profile .bp-widget .data {
   line-height: 1.6;
   font-size: 16px;
