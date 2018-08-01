@@ -25,15 +25,14 @@
         font-size: 19px;
         font-weight: 500;
         line-height: 23px;
-        
+
     }
 
     p {
         color: $c_lightergray;
         line-height: 1.6;
         font-size: 18px;
-        padding-top: 30px;
-        
+
         a {
             color: $c_lightergray;
             font-weight: 500;
@@ -42,7 +41,7 @@
                 color: $c_primary;
             }
         }
-        
+
     }
 
     #loginform {
@@ -67,6 +66,31 @@
             background: $c_primary;
             width: 100%;
             padding: 13px;
+        }
+    }
+
+    .lost-password{
+        display: block;
+        width: 380px;
+        text-align: center;
+        color: white;
+        margin-top: 10px;
+        text-decoration: underline;
+    }
+
+    .login-error{
+        margin-bottom: 25px;
+        color: black;
+        padding: 0 5px;
+        box-shadow: 0 0 0px 7px rgba(181, 21, 21, 0.58);
+        font-size: 13px;
+        width: 380px;
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.8);
+
+        a{
+            color: #026db1;
+            text-decoration: underline;
         }
     }
 

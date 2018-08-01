@@ -102,6 +102,16 @@ body a {
   src: url("../fonts/Effra-BoldItalic.woff2") format("woff2"), url("../fonts/Effra-BoldItalic.woff") format("woff");
   font-weight: bold;
   font-style: italic; }
+#wpadminbar .ab-icon,
+#wpadminbar .ab-item:before, #wpadminbar > #wp-toolbar > #wp-admin-bar-root-default .ab-icon {
+  font-family: 'dashicons' !important; }
+
+.dashicons {
+  font-family: 'dashicons' !important; }
+
+.fa {
+  font-family: 'FontAwesome' !important; }
+
 .ti-close:before {
   content: '\f00d';
   font-family: 'FontAwesome'; }
@@ -292,8 +302,7 @@ body a {
   .page-login p {
     color: #F5F5F5;
     line-height: 1.6;
-    font-size: 18px;
-    padding-top: 30px; }
+    font-size: 18px; }
     .page-login p a {
       color: #F5F5F5;
       font-weight: 500; }
@@ -316,6 +325,25 @@ body a {
       background: #083050;
       width: 100%;
       padding: 13px; }
+  .page-login .lost-password {
+    display: block;
+    width: 380px;
+    text-align: center;
+    color: white;
+    margin-top: 10px;
+    text-decoration: underline; }
+  .page-login .login-error {
+    margin-bottom: 25px;
+    color: black;
+    padding: 0 5px;
+    box-shadow: 0 0 0px 7px rgba(181, 21, 21, 0.58);
+    font-size: 13px;
+    width: 380px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.8); }
+    .page-login .login-error a {
+      color: #026db1;
+      text-decoration: underline; }
   .page-login .row {
     width: 100%;
     max-width: 1024px;
