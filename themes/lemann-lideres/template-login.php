@@ -20,6 +20,7 @@ wp_head();
         </div>
         <div class="col-md-6">
             <?php wp_login_form(); ?>
+            <a href="/#lost-password/" class="lost-password lost-password_block">Esqueceu sua senha?</a>
         </div>
         
         
