@@ -1,5 +1,16 @@
 // Override Themify icons with Font-Awesome
 
+#wpadminbar {
+    .ab-icon,
+    .ab-item:before,
+    & > #wp-toolbar > #wp-admin-bar-root-default .ab-icon {
+        font-family: 'dashicons' !important;
+    }
+}
+.dashicons {
+    font-family: 'dashicons' !important;
+}
+
 .ti {
     &-close:before {
         content: '\f00d';

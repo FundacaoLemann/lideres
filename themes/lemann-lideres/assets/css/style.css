@@ -102,6 +102,13 @@ body a {
   src: url("../fonts/Effra-BoldItalic.woff2") format("woff2"), url("../fonts/Effra-BoldItalic.woff") format("woff");
   font-weight: bold;
   font-style: italic; }
+#wpadminbar .ab-icon,
+#wpadminbar .ab-item:before, #wpadminbar > #wp-toolbar > #wp-admin-bar-root-default .ab-icon {
+  font-family: 'dashicons' !important; }
+
+.dashicons {
+  font-family: 'dashicons' !important; }
+
 .ti-close:before {
   content: '\f00d';
   font-family: 'FontAwesome'; }
