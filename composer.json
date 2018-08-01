@@ -13,7 +13,6 @@
         "wpackagist-plugin/wordpress-seo": "*",
         "wpackagist-plugin/google-analytics-dashboard-for-wp": "*",
         "wpackagist-plugin/buddypress": "3.1.*",
-        "wpackagist-plugin/wp-instagram-widget": "2.0.*",
         "wpackagist-plugin/activity-reactions-for-buddypress": "*",
         "wpackagist-plugin/bp-activity-shortcode": "*",
         "wpackagist-plugin/google-analytics-for-wordpress": "*",
