@@ -1,0 +1,13 @@
+#buddypress ul.activity-list li.activity-item .activity-comments .rtmedia-uploader-div {
+    margin-left: 0 !important;
+}
+.rtmedia-uploader  {
+    margin-left: 200px;
+    margin-top: -30px;
+    position: relative;
+    
+    @media only screen and (max-width: 400px) {
+        margin-left: 50px;
+        margin-top: 10px;
+    }
+}

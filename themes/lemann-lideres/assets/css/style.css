@@ -1,3 +1,9 @@
+body {
+  font-size: 16px !important; }
+
+body a {
+  color: #b3c135; }
+
 .widget-title, .profile .bp-widget h2 {
   color: #083050 !important;
   font-family: 'Effra' !important;
@@ -15,11 +21,14 @@
   border-bottom: 1px dotted #2CB781 !important;
   padding-bottom: 10px; }
 
-body {
-  font-size: 15px !important; }
+.home-events-titlle {
+  font-weight: 500 !important;
+  font-size: 20px !important;
+  padding-bottom: 20px; }
 
-body a {
-  color: #b3c135; }
+.activity-greeting {
+  font-size: 20px;
+  font-weight: 300; }
 
 #gp-standard-header .menu > .menu-item > a, #gp-standard-header .menu > .menu-item .gp-more-menu-items-icon {
   color: #083050 !important;
@@ -154,6 +163,18 @@ body a {
 #item-header-content {
   flex-grow: 1; }
 
+#buddypress ul.activity-list li.activity-item .activity-comments .rtmedia-uploader-div {
+  margin-left: 0 !important; }
+
+.rtmedia-uploader {
+  margin-left: 200px;
+  margin-top: -30px;
+  position: relative; }
+  @media only screen and (max-width: 400px) {
+    .rtmedia-uploader {
+      margin-left: 50px;
+      margin-top: 10px; } }
+
 #gp-footer {
   background-color: #888888 !important; }
 
@@ -188,6 +209,9 @@ body a {
     font-weight: 500; }
   #gp-copyright-text .red {
     color: red; }
+
+#gp-mobile-header img {
+  max-width: 80%; }
 
 #menu-encontro-anual {
   border-bottom: 2px solid #eee; }
@@ -272,8 +296,9 @@ body a {
 .wcs-events-schedule .wcs-class__title-meta {
   padding-left: 10px; }
   .wcs-events-schedule .wcs-class__title-meta .wcs-class__title {
-    color: #083050;
-    font-weight: 500; }
+    color: #2CB781;
+    font-weight: 500;
+    line-height: 1.2; }
   .wcs-events-schedule .wcs-class__title-meta .ti-time:before {
     display: none; }
 

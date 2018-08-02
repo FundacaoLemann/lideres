@@ -1,3 +1,4 @@
+
 .wcs-events-schedule {
 
     h3 {
@@ -29,8 +30,9 @@
             padding-left: 10px;
 
             .wcs-class__title {
-                color: $c_primary;
+                color: $c_secondary-bg;
                 font-weight: 500;
+                line-height: 1.2;
             }
 
             .ti-time:before {
