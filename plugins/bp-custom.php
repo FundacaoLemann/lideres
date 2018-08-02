@@ -30,13 +30,9 @@ add_action( 'wp', 'lemann_remove_admin_bar' );
  * para a página inicial do site.
  */
 function lemann_group_home_redirect() {
-	if ( bp_is_group_home() ) {
-		$user_id  = get_current_user_id();
-		$group_id = bp_get_group_id();
-		if ( groups_is_user_mod( $user_id, $group_id ) ) {
-			wp_redirect( home_url( '/' ) );
-			exit;
-		}
+	if ( bp_is_group_home() && ! bp_group_is_admin() && ! bp_group_is_mod() ) {
+		wp_redirect( home_url( '/' ) );
+		exit;
 	}
 }
 add_action( 'wp', 'lemann_group_home_redirect' );
