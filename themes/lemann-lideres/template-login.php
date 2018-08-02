@@ -25,14 +25,14 @@ wp_head();
             <?php
             if ( ! empty( $_SESSION["login_error"] ) ) { ?>
                 <div class="login-error">
-                    <?= isset($_SESSION["login_error"]) ? str_replace('<strong>ERRO</strong>: ', '', $_SESSION["login_error"]) : 'Usuário ou senha inválido. <a href="#lost-password/">Esqueceu sua senha?</a>' ?>
+                    <?php echo $_SESSION["login_error"]; ?>
                 </div>
                 <?php
-                unset($_SESSION['login_error']);
+                unset( $_SESSION['login_error'] );
             }
             ?>
             <?php wp_login_form(); ?>
-            <a href="#lost-password" class="lost-password lost-password_block">Esqueceu sua senha?</a>
+            <a href="#lost-password" class="lost-password lost-password-trigger lost-password_block">Esqueceu sua senha?</a>
         </div>
 
 
@@ -43,7 +43,7 @@ wp_head();
     ?>
     <script>
         jQuery( document ).ready(function( $ ) {
-            $( '.lost-password' ).click(function() {
+            $( '.lost-password-trigger' ).click(function() {
                 $( '#login' ).show();
                 $( '#gp-login-modal .gp-lost-password-form-wrapper' ).show();
                 return false;

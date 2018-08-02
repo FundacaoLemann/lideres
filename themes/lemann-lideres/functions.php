@@ -31,7 +31,11 @@ add_filter( 'authenticate', function( $user, $username, $password ) {
             session_start();
         }
 
-        $_SESSION["login_error"] = $user->get_error_message();
+        if ( empty( $username ) || empty( $password ) ) {
+            $_SESSION["login_error"] = 'Usuário e senha são obrigatórios.';
+        } else {
+            $_SESSION["login_error"] = 'Usuário ou senha inválidos. <a href="#lost-password/"  class="lost-password-trigger">Esqueceu sua senha?</a>';
+        }
 
         wp_redirect( get_permalink( 100000179 ) );
         exit;
