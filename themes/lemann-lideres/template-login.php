@@ -32,10 +32,22 @@ wp_head();
             }
             ?>
             <?php wp_login_form(); ?>
-            <a href="#lost-password/" class="lost-password lost-password_block">Esqueceu sua senha?</a>
+            <a href="#lost-password" class="lost-password lost-password_block">Esqueceu sua senha?</a>
         </div>
 
 
     </div>
-    <?php wp_footer();  ?>
+    <?php
+    get_template_part( 'lib/sections/login/login-modal' );
+    wp_footer();
+    ?>
+    <script>
+        jQuery( document ).ready(function( $ ) {
+            $( '.lost-password' ).click(function() {
+                $( '#login' ).show();
+                $( '#gp-login-modal .gp-lost-password-form-wrapper' ).show();
+                return false;
+            });
+        });
+    </script>
 </div>
