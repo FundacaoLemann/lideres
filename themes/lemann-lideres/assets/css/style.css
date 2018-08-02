@@ -115,8 +115,12 @@ body a {
 #wpadminbar .ab-item:before, #wpadminbar > #wp-toolbar > #wp-admin-bar-root-default .ab-icon {
   font-family: 'dashicons' !important; }
 
-.dashicons {
+.dashicons,
+.mce-ico {
   font-family: 'dashicons' !important; }
+
+.mce-i-resize {
+  font-family: 'tinymce' !important; }
 
 .fa {
   font-family: 'FontAwesome' !important; }

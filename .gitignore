@@ -5,6 +5,7 @@ wp-content/themes/*
 wp-content/upgrade/*
 wp-content/uploads/*
 wp-content/mu-plugins/*
+wp-content/wflogs/*
 vendor/*
 
 node_modules/*
