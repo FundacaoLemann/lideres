@@ -25,7 +25,7 @@ wp_head();
             <?php
             if ( ! empty( $_SESSION["login_error"] ) ) { ?>
                 <div class="login-error">
-                    <?= isset($_SESSION["login_error"]) ? str_replace('<strong>ERRO</strong>: ', '', $_SESSION["login_error"]) : 'Usuário ou senha inválido. <a href="#lost-password/">Esqueceu sua senha?</a>' ?>
+                    <?= isset($_SESSION["login_error"]) ? str_replace('<strong>ERRO</strong>: ', '', $_SESSION["login_error"]) : 'Usuário ou senha inválido. <a href="#lost-password/"> Esqueceu sua senha?</a>' ?>
                 </div>
                 <?php
                 unset($_SESSION['login_error']);

@@ -14,7 +14,7 @@
     h1 {
         color: #FFFFFF;
         font-family: 'Effra';
-        font-size: 36px;
+        font-size: 38px;
         font-weight: 300;
         line-height: 43px;
         margin-bottom: 40px;
@@ -22,7 +22,7 @@
 
     h3 {
         color: #FFFFFF;
-        font-size: 19px;
+        font-size: 22px;
         font-weight: 500;
         line-height: 23px;
 
@@ -51,13 +51,13 @@
         border-radius: 5px;
         background-color: rgba(#FFF, 0.8);
 
-        label{
+        label {
             display: block;
-            font-size: 12px;
+            font-size: 14px;
             color: $c_primary;
         }
 
-        input[type=text], input[type=password]{
+        input[type=text], input[type=password] {
             width: 100%;
         }
 
@@ -66,10 +66,11 @@
             background: $c_primary;
             width: 100%;
             padding: 13px;
+            font-size: 19px;
         }
     }
 
-    .lost-password{
+    .lost-password {
         display: block;
         width: 380px;
         text-align: center;
@@ -78,23 +79,35 @@
         text-decoration: underline;
     }
 
-    .login-error{
+    .login-error {
         margin-bottom: 25px;
         color: black;
-        padding: 0 5px;
-        box-shadow: 0 0 0px 7px rgba(181, 21, 21, 0.58);
-        font-size: 13px;
+        padding: 10px 30px;
+        box-shadow: 0 0 0px 10px rgba(181, 21, 21, 0.30);
+        font-size: 14px;
+        font-weight: 500;
         width: 380px;
         border-radius: 5px;
         background-color: rgba(255, 255, 255, 0.8);
 
         a{
-            color: #026db1;
+            color: #083050;
             text-decoration: underline;
         }
     }
-
-    .row{
+    .gp-login-title {
+        color: $c_primary;
+    }
+    .gp-login-desc {
+        color: $c_darkgray;
+        font-size: 16px;
+    }
+    .gp-lost-password-form input[type="submit"] {
+        background-color: $c_primary;
+        background-image: none;
+        font-size: 19px;
+    }
+    .row {
         width: 100%;
         max-width: 1024px;
         display: flex;

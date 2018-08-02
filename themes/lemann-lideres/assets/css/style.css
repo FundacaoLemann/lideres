@@ -214,7 +214,7 @@ body a {
   #gp-copyright-text .red {
     color: red; }
 
-#gp-mobile-header img {
+#gp-mobile-header .gp-logo img {
   max-width: 80%; }
 
 #menu-encontro-anual {
@@ -319,13 +319,13 @@ body a {
   .page-login h1 {
     color: #FFFFFF;
     font-family: 'Effra';
-    font-size: 36px;
+    font-size: 38px;
     font-weight: 300;
     line-height: 43px;
     margin-bottom: 40px; }
   .page-login h3 {
     color: #FFFFFF;
-    font-size: 19px;
+    font-size: 22px;
     font-weight: 500;
     line-height: 23px; }
   .page-login p {
@@ -345,7 +345,7 @@ body a {
     background-color: rgba(255, 255, 255, 0.8); }
     .page-login #loginform label {
       display: block;
-      font-size: 12px;
+      font-size: 14px;
       color: #083050; }
     .page-login #loginform input[type=text], .page-login #loginform input[type=password] {
       width: 100%; }
@@ -353,7 +353,8 @@ body a {
       display: block;
       background: #083050;
       width: 100%;
-      padding: 13px; }
+      padding: 13px;
+      font-size: 19px; }
   .page-login .lost-password {
     display: block;
     width: 380px;
@@ -364,15 +365,25 @@ body a {
   .page-login .login-error {
     margin-bottom: 25px;
     color: black;
-    padding: 0 5px;
-    box-shadow: 0 0 0px 7px rgba(181, 21, 21, 0.58);
-    font-size: 13px;
+    padding: 10px 30px;
+    box-shadow: 0 0 0px 10px rgba(181, 21, 21, 0.3);
+    font-size: 14px;
+    font-weight: 500;
     width: 380px;
     border-radius: 5px;
     background-color: rgba(255, 255, 255, 0.8); }
     .page-login .login-error a {
-      color: #026db1;
+      color: #083050;
       text-decoration: underline; }
+  .page-login .gp-login-title {
+    color: #083050; }
+  .page-login .gp-login-desc {
+    color: #333333;
+    font-size: 16px; }
+  .page-login .gp-lost-password-form input[type="submit"] {
+    background-color: #083050;
+    background-image: none;
+    font-size: 19px; }
   .page-login .row {
     width: 100%;
     max-width: 1024px;
@@ -534,6 +545,17 @@ body a {
 @media only screen and (max-width: 767px) {
   .gp-team-member .gp-team-description {
     padding: 10px 50px; } }
+
+.members .gp-theme.directory #buddypress div.dir-search form input[type=text] {
+  border: 1px dotted #2CB781;
+  padding: 20px;
+  margin: 30px 30px 30px 0;
+  color: #333333 !important; }
+.members .item-list-tabs {
+  border: 1px dotted #2CB781; }
+  .members .item-list-tabs ul li a {
+    font-size: 19px;
+    color: #083050; }
 
 body * {
   font-family: 'Effra' !important; }
