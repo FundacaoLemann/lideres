@@ -66,21 +66,34 @@ function lemann_user_can_see_group( $group_id, $user_id = null ) {
         $user_id = get_current_user_id();
     }
 
-    // Administradores sempre veem tudo.
-    if ( is_super_admin( $user_id ) ) {
+    $profile_user_id = bp_displayed_user_id();
+
+    // Administradores (e o próprio usuário) sempre veem tudo.
+    if ( is_super_admin( $user_id ) || $user_id == $profile_user_id ) {
         return true;
     }
 
+    $group_fields_visibility = [
+        8  => 420,
+        9  => 422,
+        10 => 424,
+        11 => 426,
+    ];
+
+    $visible_to_friends = false;
+    if (
+        isset( $group_fields_visibility[ $group_id ] ) &&
+        'sim' == xprofile_get_field_data( $group_fields_visibility[ $group_id ], $profile_user_id ) &&
+        friends_check_friendship( $user_id, $profile_user_id )
+        ) {
+        $visible_to_friends = true;
+    }
+
     $user = get_userdata( $user_id );
-
-    $profile_user_id = bp_displayed_user_id();
-    $is_friend       = friends_check_friendship( $user_id, $profile_user_id );
-
-    // Previne algum caso onde o usuário não foi encontrado.
     if ( ! empty( $user ) ) {
         switch ( $group_id ) {
             case 9: // Disponibilidade para Oportunidade.
-                if ( in_array( 'contratante', $user->roles ) || $is_friend ) {
+                if ( in_array( 'contratante', $user->roles ) || $visible_to_friends ) {
                     return true;
                 }
                 break;
@@ -88,7 +101,7 @@ function lemann_user_can_see_group( $group_id, $user_id = null ) {
             case 8: // Evento Anual.
             case 10: // Contribuição/Apoio para a Rede de Lideres Lemann.
             case 11: // Contribuição/Apoio da Fundação Lemann.
-                if ( $is_friend ) {
+                if ( $visible_to_friends ) {
                     return true;
                 }
                 break;
