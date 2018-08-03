@@ -343,14 +343,15 @@ body a {
 .page-login {
   width: 100vw;
   height: 100vh;
-  padding: 40px;
   background-image: url("/wp-content/themes/lemann-lideres/assets/images/login_bg.png");
   background-size: cover;
   background-attachment: fixed;
   overflow: auto; }
-  @media screen and (max-width: 768px) {
-    .page-login {
-      padding: 10px; } }
+  .page-login .row {
+    padding: 40px; }
+    @media screen and (max-width: 768px) {
+      .page-login .row {
+        padding: 10px; } }
   .page-login .logo img {
     margin: 0 auto;
     display: block;
@@ -417,13 +418,14 @@ body a {
     margin: 10px auto;
     text-decoration: underline; }
   .page-login .login-error {
-    margin-bottom: 25px;
     color: black;
     padding: 10px 30px;
     box-shadow: 0 0 0px 10px rgba(181, 21, 21, 0.3);
     font-size: 14px;
     font-weight: 500;
-    width: 380px;
+    max-width: 380px;
+    width: 100%;
+    margin: 0 auto 25px auto;
     border-radius: 5px;
     background-color: rgba(255, 255, 255, 0.8); }
     .page-login .login-error a {
