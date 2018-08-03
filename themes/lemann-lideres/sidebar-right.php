@@ -4,11 +4,18 @@
 
 		<?php
 		if ( bp_is_user_profile() ) {
-			$args = [
-				'profile_group_id' => 8,
-			];
-			if ( bp_has_profile( $args ) ) {
-				bp_get_template_part( 'members/single/profile/profile-group-loop' );
+			$groups = [ 9, 10, 11 ];
+			// Se estamos no mês do evento, apresenta o grupo sobre o evento anual primeiro.
+			if ( is_event_month() ) {
+				array_unshift( $groups, 8 );
+			}
+			foreach ( $groups as $group ) {
+				$args = [
+					'profile_group_id' => $group,
+				];
+				if ( bp_has_profile( $args ) ) {
+					bp_get_template_part( 'members/single/profile/profile-group-loop' );
+				}
 			}
 		}
 		?>

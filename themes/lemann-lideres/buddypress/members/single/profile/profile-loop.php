@@ -10,8 +10,13 @@
 do_action( 'bp_before_profile_loop_content' ); ?>
 
 <?php
+$exclude_groups = [ 1, 4, 9, 10, 11 ];
+if ( is_event_month() ) {
+	$exclude_groups[] = 8;
+}
+
 $args = [
-	'exclude_groups' => '1 4 8',
+	'exclude_groups' => implode( ',', $exclude_groups ),
 	'exclude_fields' => '80 254 255 256',
 ];
 if ( bp_has_profile( $args ) ) {

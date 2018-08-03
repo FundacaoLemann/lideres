@@ -43,3 +43,12 @@ add_filter( 'authenticate', function( $user, $username, $password ) {
     }
     return $user;
 }, 9999, 3 );
+
+/**
+ * Útil para determinar se estamos ou não no mês do evento.
+ *
+ * @return boolean
+ */
+function is_event_month() {
+    return 8 == date_i18n( 'n' );
+}
