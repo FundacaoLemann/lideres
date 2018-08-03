@@ -8,7 +8,6 @@
         }
     ],
     "require": {
-        "wpackagist-plugin/all-in-one-wp-security-and-firewall":"*",
         "wpackagist-plugin/cmb2":"2.4.*",
         "wpackagist-plugin/wordpress-seo": "*",
         "wpackagist-plugin/google-analytics-dashboard-for-wp": "*",
@@ -20,7 +19,7 @@
         "wpackagist-plugin/onesignal-free-web-push-notifications": "*",
         "wpackagist-plugin/wp-sentry-integration": "*",
         "wpackagist-plugin/w3-total-cache": "*",
-        "wpackagist-plugin/wordfence": "*",
+        "wpackagist-plugin/sucuri-scanner": "*",
         "wpackagist-plugin/google-captcha": "*"
     },
     "require-dev":{
