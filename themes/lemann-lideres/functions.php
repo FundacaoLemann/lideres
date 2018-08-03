@@ -112,3 +112,20 @@ function lemann_user_can_see_group( $group_id, $user_id = null ) {
 
     return false;
 }
+
+function redirect_on_first_login( $to, $requested, $user ){
+    if( !isset( $user->user_login ) ){ // we only want this to run when credentials have been supplied
+        return $to;
+    }
+    $regtime = strtotime($user->user_registered);
+    $now = strtotime("now");
+    $diff = $now - $regtime;
+    $hours = $diff / 60 / 60;
+
+    if( $hours < 1 ){
+        return "/conheca-a-rede/".$user->user_login."/settings/";
+    } else {
+        return "/";
+    }
+}
+add_filter('login_redirect', 'redirect_on_first_login', 10, 3);
