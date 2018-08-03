@@ -10,11 +10,13 @@
 				array_unshift( $groups, 8 );
 			}
 			foreach ( $groups as $group ) {
-				$args = [
-					'profile_group_id' => $group,
-				];
-				if ( bp_has_profile( $args ) ) {
-					bp_get_template_part( 'members/single/profile/profile-group-loop' );
+				if ( lemann_user_can_see_group( $group ) ) {
+					$args = [
+						'profile_group_id' => $group,
+					];
+					if ( bp_has_profile( $args ) ) {
+						bp_get_template_part( 'members/single/profile/profile-group-loop' );
+					}
 				}
 			}
 		}
