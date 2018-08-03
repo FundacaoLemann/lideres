@@ -5,6 +5,20 @@ body {
 body a {
     color: $c_link;
 }
+#gp-page-title {
+    margin-top: 30px;
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+    border-bottom: none !important;
+    background-color: #ffffff !important;
+
+    h1 {
+        color: $c_primary !important;
+        font-size: 28px !important;
+        font-weight: 500 !important;
+        line-height: 1.5;
+    }
+}
 .widget-title, .profile .bp-widget h2 {
 	color: $c_primary !important;
 	font-family: 'Effra' !important;
@@ -19,10 +33,9 @@ body a {
 }
 #gp-sidebar-right .bp-widget h2 {
     font-size: 20px !important;
-    border-bottom: 1px dotted $c_secondary-bg !important;
-    padding-bottom: 10px;
+    text-align: center;
 }
-.home-events-titlle {
+.home-events-title {
     font-weight: 500 !important;
     font-size: 20px !important;
     padding-bottom: 20px;
@@ -31,7 +44,6 @@ body a {
     font-size: 20px;
     font-weight: 300;
 }
-
 #gp-standard-header .menu > .menu-item {
     > a, .gp-more-menu-items-icon{
         color: $c_primary !important;

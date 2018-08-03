@@ -11,7 +11,7 @@
         }
 
         &-item.active {
-            color: $c_secondary !important;
+            color: $c_secondary-bg !important;
         }
     }
 
@@ -23,15 +23,16 @@
 
     .wcs-class {
         &__image {
-            width: 75px;
-            height: 75px;
+            width: 75px !important;
+            height: 75px !important;
+            object-fit: contain;
             background-size: cover;
             background-position: center center;
         }
 
         &__title-meta {
             padding-left: 10px;
-
+            width: 60%;
             .wcs-class__title {
                 color: $c_secondary-bg;
                 font-weight: 500;
@@ -43,4 +44,11 @@
             }
         }
     }
+}
+#recent-media-tabs-photo-rtmediagallerywidget-2 li:first-child {
+    border-top-width: 0 !important;
+    border-style: none !important;
+}
+.wcs-timetable__agenda .wcs-timetable__agenda-data .wcs-class__title-meta {
+    width: auto !important;
 }
