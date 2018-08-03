@@ -281,8 +281,9 @@ body a {
 .wcs-timetable__carousel .owl-nav {
   position: absolute;
   width: 100%;
-  top: -100px;
   margin: 6vh 0 6vh 0; }
+  .wcs-timetable__carousel .owl-nav.top {
+    bottom: 100%; }
   .wcs-timetable__carousel .owl-nav .owl-prev::before, .wcs-timetable__carousel .owl-nav .owl-next::before {
     font-size: 150%;
     color: #083050; }

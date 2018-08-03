@@ -18,6 +18,8 @@ add_action( 'wp_enqueue_scripts', function () {
     wp_enqueue_style( 'custom-style', get_stylesheet_directory_uri() . '/assets/css/style.css' );
 
     wp_enqueue_style( 'js_composer_front' );
+
+    wp_enqueue_script( 'lemann-scripts', get_stylesheet_directory_uri() . '/assets/js/scripts.js', array( 'jquery' ), null, true );
 });
 
 /**
