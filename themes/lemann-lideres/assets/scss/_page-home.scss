@@ -23,7 +23,10 @@
 
     .wcs-class {
         &__image {
-            width: 100%;
+            width: 75px;
+            height: 75px;
+            background-size: cover;
+            background-position: center center;
         }
 
         &__title-meta {
