@@ -113,19 +113,24 @@ function lemann_user_can_see_group( $group_id, $user_id = null ) {
     return false;
 }
 
-function redirect_on_first_login( $to, $requested, $user ){
-    if( !isset( $user->user_login ) ){ // we only want this to run when credentials have been supplied
-        return $to;
-    }
-    $regtime = strtotime($user->user_registered);
-    $now = strtotime("now");
-    $diff = $now - $regtime;
-    $hours = $diff / 60 / 60;
+add_filter('wp_login', function($user_login, $user) {
+    if(in_array('inativo', $user->roles)){
+        if(false) $user = new WP_User;
 
-    if( $hours < 1 ){
-        return "/conheca-a-rede/".$user->user_login."/settings/";
-    } else {
-        return "/";
+        $user->remove_role('inativo');
+
+        groups_join_group( 46, $user->ID ); //@TODO id do grupo ser definido de alguma forma
+
+        wp_redirect(get_bloginfo('url') . "/conheca-a-rede/{$user->user_login}/settings/");
+        exit;
+//        $_SESSION['first_login'] = true;
+        
     }
+    wp_redirect(get_bloginfo('url'));
+
+}, 10, 2);
+
+
+if(isset($_SESSION['first_login']) && $_SESSION['first_login']){
+    unset($_SESSION['first_login']);
 }
-add_filter('login_redirect', 'redirect_on_first_login', 10, 3);
