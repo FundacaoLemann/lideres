@@ -95,8 +95,24 @@ class LinkedIn_Api {
 		);
 
 		if ( ! is_wp_error( $response ) ) {
-			$field_data = json_decode( $response['body'] );
-			return $field_data->$field;
+			$field_data = json_decode( $response['body'], true );
+			switch ( $field ) {
+				case 'positions':
+					$return    = '';
+					$positions = $field_data['positions'];
+					foreach ( $positions['values'] as $position ) {
+						$return .= $position['title'] . ' em ' . $position['company']['name'] . '<br>';
+						if ( ! empty( $position['summary'] ) ) {
+							$return .= $position['summary'];
+						}
+					}
+					break;
+
+				default:
+					$return = ( ! empty( $field_data ) ) ? $field_data : 'EMPTY_FIELD';
+					break;
+			}
+			return $return;
 		}
 		return false;
 	}

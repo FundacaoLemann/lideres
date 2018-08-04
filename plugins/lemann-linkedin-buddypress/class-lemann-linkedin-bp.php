@@ -20,6 +20,11 @@ class Lemann_Linkedin_Bp {
 
 	private $linkedin_api = null;
 
+	private $fields = [
+		'Principais Resultados' => 'positions',
+		'Graduação'             => 'specialties',
+	];
+
 	/**
 	 * Construtor. Executado apenas uma vez (singleton).
 	 */
@@ -45,13 +50,16 @@ class Lemann_Linkedin_Bp {
 
 	public function ajax_handler() {
 		check_ajax_referer( 'lemann-linkedin-bp', 'nonce' );
+		if ( empty( $_POST['field'] ) || ! in_array( $_POST['field'], $this->fields ) ) {
+			wp_die();
+		}
 
 		$user_id = get_current_user_id();
 
 		$user_auth_token = get_user_meta( $user_id, 'lemann_linkedin_bp_token', true );
 
 		if ( ! empty( $user_auth_token ) ) {
-			$field = $this->linkedin_api->get_field( 'summary' );
+			$field = $this->linkedin_api->get_field( $_POST['field'] );
 			if ( $field ) {
 				echo json_encode( [
 					'status'  => 'success',
@@ -71,9 +79,15 @@ class Lemann_Linkedin_Bp {
 
 	public function add_linkedin_button() {
 		global $field;
-		?>
-		<button type="button" class="linkedin-bp__button">Importar do LinkedIn</button>
-		<?php
+		$field_name = trim( $field->name );
+		if ( in_array( $field_name, array_keys( $this->fields ) ) ) {
+			?>
+			<div class="linkedin-bp__wrapper">
+				<button type="button" class="linkedin-bp__button" data-field="<?php echo $this->fields[ $field_name ]; ?>">Importar do LinkedIn</button>
+				<img src="<?php echo plugins_url( '/assets/img/loading.gif', LEMANN_LINKEDIN_BP_FILE ); ?>" class="linkedin-bp__loading" style="display:none;" alt="">
+			</div>
+			<?php
+		}
 	}
 
 	/**
