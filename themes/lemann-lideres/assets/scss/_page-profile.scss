@@ -93,7 +93,9 @@
         }
     }
 }
-.notifications.gp-right-sidebar, .activity.gp-right-sidebar, .settings.gp-right-sidebar, .friends.gp-right-sidebar, .messages.gp-right-sidebar {
+.notifications.gp-right-sidebar, .activity.gp-right-sidebar, 
+.settings.gp-right-sidebar, .friends.gp-right-sidebar, 
+.messages.gp-right-sidebar {
     #gp-content {
         width: 100% !important;
     }
@@ -101,23 +103,21 @@
         width: 0;
     }
   }
- #buddypress .profile .bp-widget {
-    border: none !important;
-    border-top: 1px dotted $c_secondary-bg !important;
-    margin-top: 50px;
-    padding: 0 0 0 0 !important;
-    
-}
+
 #buddypress table.profile-fields tr.alt td {
     color: #333333 !important;
 }
 #buddypress .profile .bp-widget  {
-   
+    border: none !important;
+    border-top: 1px solid $c_primary-bg !important;
+    box-shadow: 0px 2px 3px $c_lightergray;
+    margin-top: 50px;
+    // padding: 0 0 0 0 !important;
+    
     .label {
         width: 30% !important;
         font-size: 16px;
         position: relative;
-
         padding: 10px 5px;
 
         &:before {
@@ -129,7 +129,7 @@
             border-left: 8px solid $c_secondary-bg; 
             display: inline-block;
             vertical-align: middle;
-            margin-right: 4px;
+            margin-right: 6px;
             margin-bottom: 3px;
         }
         @media only screen and (max-width: 767px)  {
@@ -149,16 +149,24 @@
     padding: 5px;
     width: 30%;
     margin-top: 150px !important;
-    border: 1px dotted #2CB781 !important;
   
     table {
         border-color: transparent;
+        border-top: 1px solid $c_primary-bg !important;
+        padding-bottom: 20px;
 
-        td, tr {
-            border-color: transparent;
+        tr {
+            border: none !important;
+            border-bottom: 1px solid $c_lightergray !important;
+            box-shadow: 0px 2px 3px $c_lightergray;
+        }
+
+        td  {
+            border: none !important;
+            border-bottom: 1px solid $c_lightergray !important;
         }
         .label {
-            width: 30%;
+            width: 40%;
             line-height: 1.2;
             font-weight: 500;
             padding: 10px 5px;
@@ -172,7 +180,7 @@
                 border-left: 5px solid $c_secondary-bg; 
                 display: inline-block;
                 vertical-align: middle;
-                margin-right: 4px;
+                margin-right: 6px;
                 margin-bottom: 3px;
             }
         }

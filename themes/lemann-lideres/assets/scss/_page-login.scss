@@ -1,9 +1,18 @@
 .page-login {
     width: 100vw;
     height: 100vh;
-    padding: 40px;
     background-image: url('/wp-content/themes/lemann-lideres/assets/images/login_bg.png');
     background-size: cover;
+    background-attachment: fixed;
+    overflow: auto;
+
+    .row{
+        padding: 40px;
+
+        @media screen and (max-width: 768px){
+            padding: 10px;
+        }
+    }
 
     .logo img {
         margin: 0 auto;
@@ -18,6 +27,12 @@
         font-weight: 300;
         line-height: 43px;
         margin-bottom: 40px;
+
+        @media screen and (max-width: 768px){
+            font-size: 30px;
+            line-height: 32px;
+            margin-bottom: 10px;
+        }
     }
 
     h3 {
@@ -33,6 +48,11 @@
         line-height: 1.6;
         font-size: 18px;
 
+        @media screen and (max-width: 768px){
+            font-size: 14px;
+            line-height: 16px;
+        }
+
         a {
             color: $c_lightergray;
             font-weight: 500;
@@ -47,9 +67,15 @@
     #loginform {
         padding: 30px;
         box-shadow: 0 0 0px 10px rgba(8, 48, 80, 0.3);
-        width: 380px;
+        max-width: 380px;
+        width: 100%;
         border-radius: 5px;
         background-color: rgba(#FFF, 0.8);
+        margin: 0 auto;
+
+        @media screen and (max-width: 768px){
+            padding: 15px;
+        }
 
         label {
             display: block;
@@ -72,21 +98,23 @@
 
     .lost-password {
         display: block;
-        width: 380px;
+        max-width: 380px;
+        width: 100%;
         text-align: center;
         color: white;
-        margin-top: 10px;
+        margin: 10px auto;
         text-decoration: underline;
     }
 
     .login-error {
-        margin-bottom: 25px;
         color: black;
         padding: 10px 30px;
         box-shadow: 0 0 0px 10px rgba(181, 21, 21, 0.30);
         font-size: 14px;
         font-weight: 500;
-        width: 380px;
+        max-width: 380px;
+        width: 100%;
+        margin: 0 auto 25px auto;
         border-radius: 5px;
         background-color: rgba(255, 255, 255, 0.8);
 
@@ -115,15 +143,18 @@
         top: 50%;
         transform: translateY(-50%);
         position: relative;
+        flex-wrap: wrap;
 
         .col-md-6{
             margin: 0 15px;
-            flex: 0 0 60%;
-            max-width: 0 0 60%;
+            flex: 0 0 calc(50% - 60px);
+            max-width: 0 0 calc(50% - 60px);
 
-            @media screen and (max-width: 640px){
+            @media screen and (max-width: 768px){
                 flex: 0 0 100%;
                 max-width: 100%;
+                margin: 0px;
+                padding: 10px;
             }
 
             &.align-center{
@@ -132,5 +163,30 @@
                 flex-direction: column;
             }
         }
+    }
+}
+
+.hide-for-desktop{
+    display: none;
+}
+
+@media screen and (max-width: 768px){
+    .hide-for-mobile{
+        display: none;
+    }
+
+    .hide-for-desktop{
+        display: block;
+    }
+}
+
+
+.mt-15{
+    margin-top: 15px;
+}
+
+@media screen and (min-width: 430px) and (max-width: 768px){
+    .page-login{
+        h1, p, h3{ text-align: center; }
     }
 }
