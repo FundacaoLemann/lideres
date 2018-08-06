@@ -12,6 +12,7 @@
 			foreach ( $groups as $group ) {
 				if ( lemann_user_can_see_group( $group ) ) {
 					$args = [
+						'exclude_fields'   => '420 422 424 426', // Campos usados para visibilidade.
 						'profile_group_id' => $group,
 					];
 					if ( bp_has_profile( $args ) ) {
