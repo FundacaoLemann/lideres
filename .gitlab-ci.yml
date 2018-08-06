@@ -27,7 +27,7 @@ deploy to homolog:
   stage: deploy
   image: cdrx/rancher-gitlab-deploy
   script:
-    - upgrade --environment Shared --stack lemann-lideres-dev --service web --no-finish-upgrade
+    - upgrade --environment Lemann --stack lemann-lideres-dev --service web --no-finish-upgrade
   only:
     - /master/
   environment: homolog
@@ -52,8 +52,8 @@ build to production:
 deploy to production:
   stage: deploy
   image: cdrx/rancher-gitlab-deploy
-  script:
-    - upgrade --environment Shared --stack lemann-lideres-prod --service web --no-finish-upgrade
+  script: 
+    - upgrade --environment Lemann --stack lemann-lideres-prod --service web --no-finish-upgrade
   only:
     - tags
   environment: production

@@ -38,3 +38,5 @@ then
         -mindepth 1 \
         -exec ln -sf {} $WP_THEMES \;
 fi
+
+cp -r /var/www/html/languages/. /var/www/html/wp-content/languages/

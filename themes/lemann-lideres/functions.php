@@ -334,3 +334,12 @@ function lemann_valor_campo_outros( $value, $type, $field_id ) {
     return $value;
 }
 add_filter( 'bp_get_the_profile_field_value', 'lemann_valor_campo_outros', 0, 3 );
+
+/**
+ * Exibe a descrição do campo *antes* do input e evita que ela seja repetida depois dele.
+ */
+function lemann_bp_edit_show_description() {
+    global $field;
+    echo apply_filters( 'bp_get_the_profile_field_description', $field->description );
+    $field->description = '';
+}
