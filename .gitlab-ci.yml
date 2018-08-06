@@ -52,8 +52,8 @@ build to production:
 deploy to production:
   stage: deploy
   image: cdrx/rancher-gitlab-deploy
-  script:
-    - upgrade --environment Shared --stack lemann-lideres-prod --service web --no-finish-upgrade
+  script: 
+    - upgrade --rancher-key $RANCHER_ACCESS_KEY_PROD --rancher-secret $RANCHER_SECERT_KEY_PROD --environment 'Shared' --stack lemann-lideres-prod --service web --no-finish-upgrade --debug
   only:
     - tags
   environment: production
