@@ -42,7 +42,7 @@
 
 .wcs-modal {
     background-color: rgba($c_primary, 0.9);
-    overflow: hidden;
+    overflow-y: auto;
 
     &__content {
         h2 {

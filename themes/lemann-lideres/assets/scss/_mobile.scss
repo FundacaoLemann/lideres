@@ -3,3 +3,21 @@
         max-width: 80%;
     }
 }
+@media only screen and (min-width: 1200px){
+    #gp_featured_box_wrapper_1 .gp-featured-large-col {
+        width: 80% !important;
+        height: auto !important;
+    }
+}
+@media only screen and (min-width: 992px) {
+    #gp_featured_box_wrapper_1 .gp-featured-large-col {
+        width: 80% !important;
+        height: auto !important;
+    }
+}
+@media only screen and (min-width: 768px) {
+    #gp_featured_box_wrapper_1 .gp-featured-large-col {
+        width: 80% !important;
+        height: auto !important;
+    }
+}
