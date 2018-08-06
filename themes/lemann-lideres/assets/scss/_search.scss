@@ -1,4 +1,10 @@
 .gp-search-box{
+
+    form.searchform {
+        background: transparent;
+        border: 0;
+    }
+
     input.gp-search-bar {
         background-color: $c_lightergray;
         padding: 10px;
@@ -6,15 +12,27 @@
 
     .search-result {
         ul {
+            background-color: white;
             border: 0.5px solid $c_lightergray;
             margin-left: 0;
             max-height: 50vh;
             overflow-x: hidden;
             overflow-y: auto;
+            padding: 10px;
 
             li {
                 list-style: none;
                 padding: 5px 10px;
+
+                a {
+                    display: table;
+
+                    strong {
+                        display: table-cell;
+                        padding-left: 10px;
+                        vertical-align: middle;
+                    }
+                }
             }
 
             &::-webkit-scrollbar-track
