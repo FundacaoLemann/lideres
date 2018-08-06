@@ -18,9 +18,9 @@ wp_head();
     <div class="logo"><img src="<?= get_stylesheet_directory_uri(); ?>/assets/images/logo_negativo_branco.png" alt=""></div>
     <div class="row">
         <div class="col-md-6 align-center">
-            <h1>Boas vindas à plataforma de líderes da Fundação Lemann</h1>
-            <h3>acesse a plataforma e participe da comunidade Lemann</h3>
-            <p class="hide-for-mobile"> * Em caso de dúvidas, entre em contato via <a href="mailto:lideres@fundacaolemann.org.br">lideres@fundacaolemann.org.br</a></p>
+            <h1>Bem-vindos à plataforma de líderes da Fundação Lemann!</h1>
+            <h3>Acessa a plataforma para conhecer melhor a rede e ter acesso a oportunidades</h3>
+            <p class="hide-for-mobile"> * Em caso de dúvidas, entre em contato via <a href="mailto:lideres@fundacaolemann.org.br">lideres@fundacaolemann.org.br</a> ou via o WhatsApp +55 11 969-401-624</p>
         </div>
         <div class="col-md-6">
             <?php
