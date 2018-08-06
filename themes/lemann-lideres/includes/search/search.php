@@ -11,8 +11,12 @@ add_action('wp_ajax_nopriv_fl_search', 'fl_search');
 function fl_search() {
     global $wpdb;
     if(false) $wpdb = new wpdb;
+
+    if(!isset($_GET['search']) || !trim($_GET['search'])){
+        echo "";
+    }
     
-    $text = @$_GET['search'];
+    $text = esc_sql(@$_GET['search']);
 
     $sql = "
         SELECT
@@ -31,6 +35,14 @@ function fl_search() {
     $result = $wpdb->get_results($sql);
 
     include __DIR__ . '/user-template.php';
+
+    $posts = get_posts([
+        's' => $text,
+        'post_type' => ['post', 'page'],
+        'numberposts' => -1,
+    ]);
+
+    include __DIR__ . '/posts-template.php';
     
     exit;
 }
