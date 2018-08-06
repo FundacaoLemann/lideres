@@ -93,19 +93,25 @@ do_action( 'bp_before_member_header' );
 			$email    = xprofile_get_field_data( 'Email' );
 			if ( $telefone || $email ) {
 				?>
-				<h2>Contato</h2>
-				<ul>
-					<?php
-					if ( $telefone ) {
-						echo "<li>{$telefone}</li>";
-					}
-					if ( $email ) {
-						echo "<li>{$email}</li>";
-					}
-					?>
-				</ul>
+				<div class="responsive-column">
+					<h2>Contato</h2>
+					<ul>
+						<?php
+						if ( $telefone ) {
+							echo "<li>{$telefone}</li>";
+						}
+						if ( $email ) {
+							echo "<li>{$email}</li>";
+						}
+						?>
+					</ul>
+				</div>
 				<?php
 			}
+			?>
+
+			<div class="responsive-column">
+			<?php
 
 			$rede = xprofile_get_field_data( 'Rede' );
 			if ( $rede ) {
@@ -151,6 +157,7 @@ do_action( 'bp_before_member_header' );
 					}
 				}
 				?>
+			</div>
 			</div>
 		</div>
 	</div>
