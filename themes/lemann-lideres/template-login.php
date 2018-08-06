@@ -35,7 +35,7 @@ wp_head();
             <?php wp_login_form(); ?>
             <a href="#lost-password" class="lost-password lost-password-trigger lost-password_block">Esqueceu sua senha?</a>
 
-            <p class="hide-for-desktop mt-15"> * Em caso de dúvidas, entre em contato via <a href="mailto:lideres@fundacaolemann.org.br">lideres@fundacaolemann.org.br</a></p>
+            <p class="hide-for-desktop mt-15"> * Em caso de dúvidas, entre em contato via <a href="mailto:lideres@fundacaolemann.org.br">lideres@fundacaolemann.org.br</a> ou via o WhatsApp +55 11 969-401-624</p>
         </div>
 
 
