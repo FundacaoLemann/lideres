@@ -112,7 +112,7 @@ do_action( 'bp_before_member_header' );
 				?>
 				<h2>Rede</h2>
 				<?php
-				echo $rede;
+				echo is_array($rede) ? implode(', ', $rede) : $rede;
 			}
 			?>
 
