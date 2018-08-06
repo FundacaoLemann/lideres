@@ -1,6 +1,5 @@
 <?php if($posts): ?>
 <div>
-    <h4>Mais resultados: </h4>
     <ul>
         <?php foreach($posts as $post): ?>
         <li>
