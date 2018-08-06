@@ -1,0 +1,39 @@
+.gp-search-box{
+    input.gp-search-bar {
+        background-color: $c_lightergray;
+        padding: 10px;
+    }
+
+    .search-result {
+        ul {
+            border: 0.5px solid $c_lightergray;
+            margin-left: 0;
+            max-height: 50vh;
+            overflow-x: hidden;
+            overflow-y: auto;
+
+            li {
+                list-style: none;
+                padding: 5px 10px;
+            }
+
+            &::-webkit-scrollbar-track
+            {
+                border-radius: 10px;
+                background-color: $c_lightergray;
+            }
+
+            &::-webkit-scrollbar
+            {
+                width: 12px;
+                background-color: $c_lightergray;
+            }
+
+            &::-webkit-scrollbar-thumb
+            {
+                border-radius: 10px;
+                background-color: #ddd;
+            }
+        }
+    }
+}
