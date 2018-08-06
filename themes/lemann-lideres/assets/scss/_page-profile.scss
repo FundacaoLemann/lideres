@@ -16,6 +16,8 @@
     }
 
     .header-temas-interesse {
+        margin-top: 20px;
+
         &--titulo {
             display: block;
             font-size: 18px;
@@ -41,6 +43,15 @@
                 margin-right: 5px;
             }
 
+            @media screen and (max-width: 767px) {
+                display: inline-block;
+                font-size: 0 !important;
+
+                &:before {
+                    margin: 0;
+                }
+            }
+
             &.friendship-button.is_friend {
                 &:before {
                     content: '\f234';
@@ -64,6 +75,14 @@
     .vc_col-md-4 {
         padding-top: 20px;
 
+        @media screen and (min-width: 400px) and (max-width: 991px) {
+            display: flex;
+
+            .responsive-column {
+                width: 50%;
+            }
+        }
+
         @media screen and (min-width: 992px) {
             text-align: right;
             padding-top: initial;
@@ -81,6 +100,10 @@
 
         a {
             text-decoration: none !important;
+        }
+
+        ul {
+            margin-left: 0;
         }
 
         li {
@@ -146,9 +169,14 @@
     width: 65%;
 }
 .profile .gp-sidebar {
+    border-top: 0;
+    display: block;
     padding: 5px;
     width: 30%;
-    margin-top: 150px !important;
+
+    @media screen and (min-width: 992px) {
+        margin-top: 150px !important;
+    }
 
     table {
         border-color: transparent;
