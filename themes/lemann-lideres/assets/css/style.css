@@ -375,6 +375,11 @@ body a {
 .wcs-timetable__agenda .wcs-timetable__agenda-data .wcs-class__title-meta {
   width: auto !important; }
 
+@media screen and (max-width: 768px) {
+  #gp-content #gp_featured_box_wrapper_1 .gp-featured-small {
+    width: 50vw;
+    height: calc(50vw / 1.25); } }
+
 .page-login {
   width: 100vw;
   height: 100vh;
