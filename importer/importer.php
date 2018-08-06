@@ -40,6 +40,8 @@ $perfil_rede = [
 
 $columns = array_shift($array_data);
 
+$logins = [];
+
 foreach($array_data as $data){
     
     if(!$data || !count($data)){
@@ -148,7 +150,23 @@ foreach($array_data as $data){
 
     $user_meta['nickname'] = "{$first_name} {$last_name}";
 
-    $user_data['user_login'] = strtolower(sanitize_title("{$first_name}-{$last_name}"));
+    $login = strtolower(sanitize_title("{$first_name}-{$last_name}"));
+
+    if(in_array($login, $logins)){
+        $login = strtolower(sanitize_title("{$first_name}{$last_name}"));
+    }
+
+    if(in_array($login, $logins)){
+        $login = strtolower(sanitize_title("{$first_name}-{$last_name}2"));
+    }
+
+    if(in_array($login, $logins)){
+        $login = strtolower(sanitize_title("{$first_name}{$last_name}2"));
+    }
+
+    $logins[] = $login;
+    
+    $user_data['user_login'] = $login;
     
     $user_id = wp_insert_user($user_data);
 
