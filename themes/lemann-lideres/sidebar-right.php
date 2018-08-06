@@ -3,7 +3,7 @@
 	<aside id="gp-sidebar-right" class="gp-sidebar">
 
 		<?php
-		if ( bp_is_user_profile() ) {
+		if ( bp_is_profile_component() && bp_is_current_action( 'public' ) ) {
 			$groups = [ 9, 10, 11 ];
 			// Se estamos no mês do evento, apresenta o grupo sobre o evento anual primeiro.
 			if ( is_event_month() ) {
@@ -21,7 +21,6 @@
 			}
 		}
 		?>
-
 
 		<?php get_template_part( 'lib/sections/sensei/sensei-details' ); ?>
 
