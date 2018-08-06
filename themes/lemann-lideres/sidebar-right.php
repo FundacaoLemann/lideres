@@ -11,8 +11,10 @@
 			}
 			foreach ( $groups as $group ) {
 				if ( lemann_user_can_see_group( $group ) ) {
+					$visibility_fields = [ 420, 422, 424, 426 ]; // Campos usados para determinar a visibilidade e não precisam ser exibidos.
+					$fields_to_exclude = implode( ' ', array_merge( $visibility_fields, LEMANN_BP_OUTROS ) );
 					$args = [
-						'exclude_fields'   => '420 422 424 426', // Campos usados para visibilidade.
+						'exclude_fields'   => $fields_to_exclude,
 						'profile_group_id' => $group,
 					];
 					if ( bp_has_profile( $args ) ) {
