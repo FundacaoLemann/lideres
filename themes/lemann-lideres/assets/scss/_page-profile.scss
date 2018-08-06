@@ -16,6 +16,8 @@
     }
 
     .header-temas-interesse {
+        margin-top: 20px;
+
         &--titulo {
             display: block;
             font-size: 18px;
@@ -41,6 +43,15 @@
                 margin-right: 5px;
             }
 
+            @media screen and (max-width: 767px) {
+                display: inline-block;
+                font-size: 0 !important;
+
+                &:before {
+                    margin: 0;
+                }
+            }
+
             &.friendship-button.is_friend {
                 &:before {
                     content: '\f234';
@@ -64,6 +75,14 @@
     .vc_col-md-4 {
         padding-top: 20px;
 
+        @media screen and (min-width: 400px) and (max-width: 991px) {
+            display: flex;
+
+            .responsive-column {
+                width: 50%;
+            }
+        }
+
         @media screen and (min-width: 992px) {
             text-align: right;
             padding-top: initial;
@@ -83,6 +102,10 @@
             text-decoration: none !important;
         }
 
+        ul {
+            margin-left: 0;
+        }
+
         li {
             list-style-type: none;
             line-height: 1.25;
@@ -93,8 +116,8 @@
         }
     }
 }
-.notifications.gp-right-sidebar, .activity.gp-right-sidebar, 
-.settings.gp-right-sidebar, .friends.gp-right-sidebar, 
+.notifications.gp-right-sidebar, .activity.gp-right-sidebar,
+.settings.gp-right-sidebar, .friends.gp-right-sidebar,
 .messages.gp-right-sidebar {
     #gp-content {
         width: 100% !important;
@@ -113,7 +136,7 @@
     box-shadow: 0px 2px 3px $c_lightergray;
     margin-top: 50px;
     // padding: 0 0 0 0 !important;
-    
+
     .label {
         width: 30% !important;
         font-size: 16px;
@@ -122,11 +145,11 @@
 
         &:before {
             content:'';
-            width: 0; 
-            height: 0; 
+            width: 0;
+            height: 0;
             border-top: 8px solid transparent;
-            border-bottom: 8px solid transparent; 
-            border-left: 8px solid $c_secondary-bg; 
+            border-bottom: 8px solid transparent;
+            border-left: 8px solid $c_secondary-bg;
             display: inline-block;
             vertical-align: middle;
             margin-right: 6px;
@@ -146,10 +169,15 @@
     width: 65%;
 }
 .profile .gp-sidebar {
+    border-top: 0;
+    display: block;
     padding: 5px;
     width: 30%;
-    margin-top: 150px !important;
-  
+
+    @media screen and (min-width: 992px) {
+        margin-top: 150px !important;
+    }
+
     table {
         border-color: transparent;
         border-top: 1px solid $c_primary-bg !important;
@@ -170,14 +198,14 @@
             line-height: 1.2;
             font-weight: 500;
             padding: 10px 5px;
-            
+
             &:before {
                 content:'';
-                width: 0; 
-                height: 0; 
+                width: 0;
+                height: 0;
                 border-top: 5px solid transparent;
-                border-bottom: 5px solid transparent; 
-                border-left: 5px solid $c_secondary-bg; 
+                border-bottom: 5px solid transparent;
+                border-left: 5px solid $c_secondary-bg;
                 display: inline-block;
                 vertical-align: middle;
                 margin-right: 6px;
@@ -188,5 +216,24 @@
             line-height: 1.2;
         }
     }
-     
+
+}
+
+#buddypress .profile #profile-edit-form{
+    ul.button-nav{
+        overflow: hidden;
+        border-bottom: 2px solid #7ecad1;
+        margin-bottom: 20px !important;
+
+        li:not(.current) a {
+            opacity: 1 !important;
+            background-image: none !important;
+            background: #eaeaea !important;
+            color: #5aafc0 !important;
+        }
+    }
+
+    .editfield.field_1{
+        margin-top: 20px;
+    }
 }
