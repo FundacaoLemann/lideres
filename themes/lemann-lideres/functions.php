@@ -1,6 +1,21 @@
 <?php
 defined( 'ABSPATH' ) || exit;
 
+/**
+ * Campos do BuddyPress usado como "Outros (especifique)".
+ * Indexado pelo ID do campo original, valorado com o ID do campo outros.
+ */
+define( 'LEMANN_BP_OUTROS', [
+    83  => 257,
+    90  => 258,
+    108 => 259,
+    144 => 260,
+    163 => 261,
+    207 => 263,
+    235 => 264,
+    245 => 265,
+] );
+
 // Cria as roles e capabilities personalizadas do site.
 require get_stylesheet_directory() . '/includes/roles-capabilities.php';
 
@@ -294,3 +309,28 @@ function ghostpool_bp_activity( $atts, $content = null ) {
     return $output_string;
 
 }
+
+/**
+ * Filtra os campos exibidos pelo BuddyPress
+ *
+ * @param string $value    Valor a ser exibido.
+ * @param string $type     Tipo do campo.
+ * @param int    $field_id ID do campo.
+ * @return string
+ */
+function lemann_valor_campo_outros( $value, $type, $field_id ) {
+    if ( in_array( $field_id, array_keys( LEMANN_BP_OUTROS ) ) ) {
+        $outros_especifique = xprofile_get_field_data( LEMANN_BP_OUTROS[ $field_id ] );
+        if ( ! empty( $outros_especifique ) ) {
+            if ( empty( $value ) ) {
+                $value = $outros_especifique;
+            } else {
+                $separador = ( false === strpos( $value, ',' ) ) ? ' ' : ', ';
+                $value     = preg_replace( '/,?\s*Outros?\s*/', '', $value );
+                $value    .= $separador . $outros_especifique;
+            }
+        }
+    }
+    return $value;
+}
+add_filter( 'bp_get_the_profile_field_value', 'lemann_valor_campo_outros', 0, 3 );
