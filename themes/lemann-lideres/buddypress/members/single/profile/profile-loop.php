@@ -17,7 +17,7 @@ if ( is_event_month() ) {
 
 $args = [
 	'exclude_groups' => implode( ',', $exclude_groups ),
-	'exclude_fields' => '80 254 255 256',
+	'exclude_fields' => '80 254 255 256 ' . implode( ' ', LEMANN_BP_OUTROS ),
 ];
 if ( bp_has_profile( $args ) ) {
 	bp_get_template_part( 'members/single/profile/profile-group-loop' );
