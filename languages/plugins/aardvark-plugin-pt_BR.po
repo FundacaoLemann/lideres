@@ -1,0 +1,468 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Aardvark Plugin\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-08-06 14:47-0300\n"
+"PO-Revision-Date: 2018-08-06 14:49-0300\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;esc_attr_e;_n_noop:1,2;esc_html__;esc_html_e;esc_attr__\n"
+"X-Poedit-Basepath: .\n"
+"X-Generator: Poedit 1.8.7.1\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Last-Translator: \n"
+"Language: pt_BR\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../inc/share-icons.php:7
+msgid "Share This Post"
+msgstr ""
+
+#: ../inc/share-icons.php:12
+msgid "Twitter"
+msgstr ""
+
+#: ../inc/share-icons.php:14
+msgid "Facebook"
+msgstr ""
+
+#: ../inc/share-icons.php:16
+msgid "Google+"
+msgstr ""
+
+#: ../inc/share-icons.php:18
+msgid "Pinterest"
+msgstr ""
+
+#: ../inc/share-icons.php:20
+msgid "LinkedIn"
+msgstr ""
+
+#: ../inc/share-icons.php:22
+msgid "Reddit"
+msgstr ""
+
+#: ../inc/share-icons.php:24
+msgid "Tumblr"
+msgstr ""
+
+#: ../inc/share-icons.php:26 ../shortcodes/pmp-register-form.php:45
+msgid "Email"
+msgstr ""
+
+#: ../inc/voting-functions.php:44
+msgid "Vote Up"
+msgstr ""
+
+#: ../inc/voting-functions.php:46
+msgid "Vote Down"
+msgstr ""
+
+#: ../inc/voting-functions.php:56
+msgid "You already voted!"
+msgstr ""
+
+#: ../inc/voting-functions.php:126 ../inc/voting-functions.php:151
+msgid "likes"
+msgstr ""
+
+#: ../inc/voting-functions.php:128 ../inc/voting-functions.php:153
+msgid "like"
+msgstr ""
+
+#: ../index.php:56
+msgid "Twitter URL"
+msgstr ""
+
+#: ../index.php:57
+msgid "Facebook URL"
+msgstr ""
+
+#: ../index.php:58
+msgid "Google+ URL"
+msgstr ""
+
+#: ../index.php:59
+msgid "Pinterest URL"
+msgstr ""
+
+#: ../index.php:60
+msgid "YouTube URL"
+msgstr ""
+
+#: ../index.php:61
+msgid "Vimeo URL"
+msgstr ""
+
+#: ../index.php:62
+msgid "Flickr URL"
+msgstr ""
+
+#: ../index.php:63
+msgid "LinkedIn URL"
+msgstr ""
+
+#: ../index.php:64
+msgid "Instagram URL"
+msgstr ""
+
+#: ../index.php:191
+#, php-format
+msgid "New user registration on your blog %s:"
+msgstr ""
+
+#: ../index.php:192 ../index.php:204
+#, php-format
+msgid "Username: %s"
+msgstr ""
+
+#: ../index.php:193
+#, php-format
+msgid "Email: %s"
+msgstr ""
+
+#: ../index.php:195
+#, php-format
+msgid "[%s] New User Registration"
+msgstr ""
+
+#: ../index.php:202
+msgid "Hi there,"
+msgstr ""
+
+#: ../index.php:203
+#, php-format
+msgid "Welcome to %s."
+msgstr ""
+
+#: ../index.php:205
+msgid "Password: [use the password you entered when signing up]"
+msgstr ""
+
+#: ../index.php:208
+#, php-format
+msgid "[%s] Your username and password"
+msgstr ""
+
+#: ../shortcodes/bp-activity.php:125
+msgid "Load More"
+msgstr "Carregar mais"
+
+#: ../shortcodes/bp-activity.php:141
+msgid "Sorry, there was no activity found. Please try a different filter."
+msgstr ""
+
+#: ../shortcodes/bp-groups.php:78 ../shortcodes/bp-members.php:77
+msgid "Newest"
+msgstr ""
+
+#: ../shortcodes/bp-groups.php:79 ../shortcodes/bp-members.php:78
+msgid "Active"
+msgstr ""
+
+#: ../shortcodes/bp-groups.php:80 ../shortcodes/bp-members.php:80
+msgid "Popular"
+msgstr ""
+
+#: ../shortcodes/bp-groups.php:81
+msgid "Alphabetical"
+msgstr ""
+
+#: ../shortcodes/bp-groups.php:82
+msgid "My Groups"
+msgstr ""
+
+#: ../shortcodes/bp-groups.php:103 ../shortcodes/bp-groups.php:152
+#: ../shortcodes/bp-groups.php:257 ../shortcodes/bp-groups.php:306
+#, php-format
+msgid "created %s"
+msgstr ""
+
+#: ../shortcodes/bp-groups.php:107 ../shortcodes/bp-groups.php:156
+#: ../shortcodes/bp-groups.php:261 ../shortcodes/bp-groups.php:310
+#, php-format
+msgid "active %s"
+msgstr ""
+
+#: ../shortcodes/bp-groups.php:181
+msgid "There are no groups to display."
+msgstr ""
+
+#: ../shortcodes/bp-groups.php:329
+msgid "There were no groups found, please try another filter."
+msgstr ""
+
+#: ../shortcodes/bp-members.php:183
+msgid "There are no members to display."
+msgstr ""
+
+#: ../shortcodes/bp-members.php:336
+msgid "There were no members found, please try another filter."
+msgstr ""
+
+#: ../shortcodes/carousel-posts.php:199 ../shortcodes/featured-box.php:105
+#: ../shortcodes/posts.php:160 ../shortcodes/showcase.php:186
+msgid "No items found."
+msgstr ""
+
+#: ../shortcodes/events-calendar.php:7
+msgid "Events Calendar"
+msgstr ""
+
+#: ../shortcodes/events.php:7
+msgid "Events"
+msgstr ""
+
+#: ../shortcodes/events.php:15
+msgid "all events"
+msgstr ""
+
+#: ../shortcodes/events.php:16
+msgid "No events"
+msgstr ""
+
+#: ../shortcodes/pmp-register-form.php:8
+msgid "Sign Up"
+msgstr ""
+
+#: ../shortcodes/pmp-register-form.php:39
+msgid "Username"
+msgstr ""
+
+#: ../shortcodes/pmp-register-form.php:51
+msgid "Confirm Email"
+msgstr ""
+
+#: ../shortcodes/pmp-register-form.php:57
+msgid "Password"
+msgstr ""
+
+#: ../shortcodes/pmp-register-form.php:63
+msgid "Confirm Password"
+msgstr ""
+
+#: ../shortcodes/post-submission-form.php:49
+msgid "Thanks for submitting your post!"
+msgstr ""
+
+#: ../shortcodes/post-submission-form.php:51
+msgid "Your post was succesfully added. You can view your post"
+msgstr ""
+
+#: ../shortcodes/post-submission-form.php:51
+#: ../shortcodes/post-submission-form.php:60
+msgid "here"
+msgstr ""
+
+#: ../shortcodes/post-submission-form.php:58
+msgid "Your post is currently being reviewed. "
+msgstr ""
+
+#: ../shortcodes/post-submission-form.php:60
+msgid "You can check the status of your post"
+msgstr ""
+
+#: ../shortcodes/post-submission-form.php:67
+msgid "Enter title"
+msgstr ""
+
+#: ../shortcodes/post-submission-form.php:68
+msgid "A post title is required."
+msgstr ""
+
+#: ../shortcodes/post-submission-form.php:74
+msgid "Add image"
+msgstr ""
+
+#: ../shortcodes/post-submission-form.php:74
+msgid "Image added"
+msgstr ""
+
+#: ../shortcodes/post-submission-form.php:74
+msgid "Can you only upload 1 image"
+msgstr ""
+
+#: ../shortcodes/post-submission-form.php:82
+msgid "Enter name"
+msgstr ""
+
+#: ../shortcodes/post-submission-form.php:83
+msgid "A name is required."
+msgstr ""
+
+#: ../shortcodes/post-submission-form.php:93
+msgid "Enter email"
+msgstr ""
+
+#: ../shortcodes/post-submission-form.php:94
+msgid "An email is required."
+msgstr ""
+
+#: ../shortcodes/post-submission-form.php:126
+msgid "Select a category"
+msgstr ""
+
+#: ../shortcodes/post-submission-form.php:134
+msgid "A category is required."
+msgstr ""
+
+#: ../shortcodes/post-submission-form.php:141
+msgid "Standard"
+msgstr ""
+
+#: ../shortcodes/post-submission-form.php:147
+msgid "A post format required."
+msgstr ""
+
+#: ../shortcodes/post-submission-form.php:153
+msgid "Enter text"
+msgstr ""
+
+#: ../shortcodes/post-submission-form.php:154
+msgid "Content is required."
+msgstr ""
+
+#: ../shortcodes/post-submission-form.php:160
+msgid "Separate tags with commas"
+msgstr ""
+
+#: ../shortcodes/post-submission-form.php:161
+msgid "Post tags are required."
+msgstr ""
+
+#: ../shortcodes/post-submission-form.php:167
+msgid "I agree with the"
+msgstr ""
+
+#: ../shortcodes/post-submission-form.php:167
+msgid "terms and conditions"
+msgstr ""
+
+#: ../shortcodes/post-submission-form.php:168
+msgid "Please accept the terms and conditions."
+msgstr ""
+
+#: ../shortcodes/post-submission-form.php:173
+msgid "Submit Post"
+msgstr ""
+
+#: ../shortcodes/post-submission-form.php:207
+#, php-format
+msgid "To login to submit a post please click <a href=\"%s\">here</a>."
+msgstr ""
+
+#: ../shortcodes/posts.php:39 ../shortcodes/showcase.php:48
+msgid "See All Items"
+msgstr ""
+
+#: ../shortcodes/pricing-column.php:63
+msgid "Per "
+msgstr ""
+
+#: ../shortcodes/pricing-column.php:152
+msgid "Select"
+msgstr ""
+
+#: ../shortcodes/pricing-column.php:158
+msgid "Renew"
+msgstr ""
+
+#: ../shortcodes/pricing-column.php:160
+msgid "Your Level"
+msgstr ""
+
+#: ../shortcodes/statistics.php:11
+msgid "Posts"
+msgstr ""
+
+#: ../shortcodes/statistics.php:17
+msgid "Comments"
+msgstr ""
+
+#: ../shortcodes/statistics.php:23
+msgid "Activity"
+msgstr ""
+
+#: ../shortcodes/statistics.php:29
+msgid "Blogs"
+msgstr ""
+
+#: ../shortcodes/statistics.php:35
+msgid "Members"
+msgstr ""
+
+#: ../shortcodes/statistics.php:41
+msgid "Online"
+msgstr ""
+
+#: ../shortcodes/statistics.php:47
+msgid "Groups"
+msgstr ""
+
+#: ../shortcodes/statistics.php:53
+msgid "Forums"
+msgstr ""
+
+#: ../shortcodes/statistics.php:59
+msgid "Topics"
+msgstr ""
+
+msgid "Large Background"
+msgstr ""
+
+msgid "Hub Category"
+msgstr ""
+
+msgid "All Hub Categories"
+msgstr ""
+
+msgid "Add New Hub Category"
+msgstr ""
+
+msgid "Edit Hub Category"
+msgstr ""
+
+msgid "New Hub Category"
+msgstr ""
+
+msgid "View Hub Category"
+msgstr ""
+
+msgid "Search Hub Categories"
+msgstr ""
+
+msgid "No user reviews found"
+msgstr ""
+
+msgid "No user reviews found in Trash"
+msgstr ""
+
+msgid "Video Category"
+msgstr ""
+
+msgid "All Video Categories"
+msgstr ""
+
+msgid "Add New Video Category"
+msgstr ""
+
+msgid "Edit Video Category"
+msgstr ""
+
+msgid "New Video Category"
+msgstr ""
+
+msgid "View Video Category"
+msgstr ""
+
+msgid "Search Video Categories"
+msgstr ""
+
+msgid "Page Title Settings"
+msgstr ""
+
+msgid "Page Title Height"
+msgstr ""
