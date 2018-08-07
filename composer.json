@@ -20,7 +20,8 @@
         "wpackagist-plugin/wp-sentry-integration": "*",
         "wpackagist-plugin/w3-total-cache": "*",
         "wpackagist-plugin/sucuri-scanner": "*",
-        "wpackagist-plugin/google-captcha": "*"
+        "wpackagist-plugin/google-captcha": "*",
+        "wpackagist-plugin/multiple-roles": "1.2.*"
     },
     "require-dev":{
         "wpackagist-plugin/query-monitor":"*"

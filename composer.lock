@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "273886b19ec865919cf63324bb1c190c",
+    "content-hash": "b7b9d46df2d90bab4b2ddb0ca678dea2",
     "packages": [
         {
             "name": "composer/installers",
@@ -139,26 +139,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/activity-reactions-for-buddypress/"
-        },
-        {
-            "name": "wpackagist-plugin/all-in-one-wp-security-and-firewall",
-            "version": "4.2.7",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/all-in-one-wp-security-and-firewall/",
-                "reference": "trunk"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/all-in-one-wp-security-and-firewall.zip?timestamp=1492216430",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/all-in-one-wp-security-and-firewall/"
         },
         {
             "name": "wpackagist-plugin/bp-activity-shortcode",
@@ -301,6 +281,26 @@
             "homepage": "https://wordpress.org/plugins/mailgun/"
         },
         {
+            "name": "wpackagist-plugin/multiple-roles",
+            "version": "1.2.0",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/multiple-roles/",
+                "reference": "tags/1.2.0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/multiple-roles.1.2.0.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/multiple-roles/"
+        },
+        {
             "name": "wpackagist-plugin/onesignal-free-web-push-notifications",
             "version": "1.16.7",
             "source": {
@@ -321,6 +321,26 @@
             "homepage": "https://wordpress.org/plugins/onesignal-free-web-push-notifications/"
         },
         {
+            "name": "wpackagist-plugin/sucuri-scanner",
+            "version": "1.8.18",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/sucuri-scanner/",
+                "reference": "tags/1.8.18"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/sucuri-scanner.1.8.18.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/sucuri-scanner/"
+        },
+        {
             "name": "wpackagist-plugin/w3-total-cache",
             "version": "0.9.7",
             "source": {
@@ -339,26 +359,6 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/w3-total-cache/"
-        },
-        {
-            "name": "wpackagist-plugin/wordfence",
-            "version": "7.1.10",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/wordfence/",
-                "reference": "tags/7.1.10"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/wordfence.7.1.10.zip",
-                "reference": null,
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/wordfence/"
         },
         {
             "name": "wpackagist-plugin/wordpress-seo",
@@ -403,6 +403,26 @@
     ],
     "packages-dev": [
         {
+            "name": "wpackagist-plugin/all-in-one-wp-security-and-firewall",
+            "version": "4.2.7",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/all-in-one-wp-security-and-firewall/",
+                "reference": "trunk"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/all-in-one-wp-security-and-firewall.zip?timestamp=1492216430",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/all-in-one-wp-security-and-firewall/"
+        },
+        {
             "name": "wpackagist-plugin/query-monitor",
             "version": "2.13.4",
             "source": {
@@ -421,6 +441,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/query-monitor/"
+        },
+        {
+            "name": "wpackagist-plugin/wordfence",
+            "version": "7.1.10",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/wordfence/",
+                "reference": "tags/7.1.10"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wordfence.7.1.10.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wordfence/"
         },
         {
             "name": "wpackagist-theme/twentyseventeen",

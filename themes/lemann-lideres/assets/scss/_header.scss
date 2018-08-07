@@ -1,0 +1,35 @@
+#gp-standard-header {
+	.gp-header-buttons {
+		a.gp-notification-required-fields {
+			background-color: $c_warning !important;
+			border-radius: 100%;
+			color: white !important;
+			line-height: 25px;
+			height: 20px;
+			padding: 0;
+			text-align: center;
+			width: 20px;
+		}
+
+		.gp-profile-required-fields-warning {
+			background-color: $c_warning !important;
+			color: white !important;
+			line-height: 1.3em;
+			margin: -10px 0 10px;
+			padding: 1em;
+			text-align: center;
+
+			a {
+				color: inherit;
+				text-decoration: underline;
+			}
+		}
+
+		#gp-profile-menu {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+
+	}
+}

@@ -19,6 +19,9 @@ define( 'LEMANN_BP_OUTROS', [
 // Cria as roles e capabilities personalizadas do site.
 require get_stylesheet_directory() . '/includes/roles-capabilities.php';
 
+// Verifica se o usuário preencheu os campos obrigatórios e exibe msg.
+require get_stylesheet_directory() . '/includes/bd-required-fields.php';
+
 // RT Media Gallery.
 require get_stylesheet_directory() . '/includes/rt-media-gallery.php';
 
@@ -139,7 +142,7 @@ add_filter('wp_login', function($user_login, $user) {
 
         groups_join_group( 46, $user->ID ); //@TODO id do grupo ser definido de alguma forma
 
-        wp_redirect(get_bloginfo('url') . "/conheca-a-rede/{$user->user_login}/settings/");
+        wp_redirect(get_bloginfo('url') . "/conheca-a-rede/{$user->user_login}/profile/edit/group/1/#buddypress");
         exit;
 //        $_SESSION['first_login'] = true;
 
