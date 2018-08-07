@@ -11,20 +11,25 @@
     li {
         padding: 3px 0;
     }
- 
+
     a {
         color: $c_lightergray !important;
     }
     .current_page_item a, a:hover {
         color: $c_primary !important;
     }
-   
+
     .menu {
         text-align: right;
         @media only screen and (max-width: 600px)  {
             text-align: left;
             padding-top: 10px;
         }
+    }
+}
+.gp-footer-widget:nth-child(2) {
+    @media screen and (max-width: 767px) {
+        display: none;
     }
 }
 #gp-copyright  {
