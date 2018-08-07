@@ -346,3 +346,20 @@ function lemann_bp_edit_show_description() {
     echo apply_filters( 'bp_get_the_profile_field_description', $field->description );
     $field->description = '';
 }
+
+/**
+ * Verifica se o campo realmente pode ser exibido para o usuário.
+ *
+ * @param mixed $value    Valor a ser exibido.
+ * @param int   $field_id ID do campo.
+ * @param int   $user_id  ID do usuário.
+ * @return mixed
+ */
+function lemann_bp_check_field_visibility( $value, $field_id, $user_id ) {
+    $hidden_fields = bp_xprofile_get_hidden_fields_for_user();
+    if ( in_array( $field_id, $hidden_fields ) ) {
+        return '';
+    }
+    return $value;
+}
+add_filter( 'xprofile_get_field_data', 'lemann_bp_check_field_visibility', 10, 3 );
