@@ -272,6 +272,12 @@ body a {
   }
 }
 
+@media screen and (max-width: 767px) {
+  .gp-footer-widget:nth-child(2) {
+    display: none;
+  }
+}
+
 #gp-copyright {
   padding: 5px 0;
 }
