@@ -81,6 +81,20 @@
             display: block;
             font-size: 14px;
             color: $c_primary;
+
+            // Hack for replacing label text
+            &[for="user_login"] {
+                font-size: 0 !important;
+                left: 1000000px;
+                position: relative;
+
+                &:after {
+                    content: 'Endereço de e-mail';
+                    font-size: 14px;
+                    left: -1000000px;
+                    position: relative;
+                }
+            }
         }
 
         input[type=text], input[type=password] {
