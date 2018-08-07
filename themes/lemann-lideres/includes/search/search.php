@@ -8,15 +8,42 @@ add_action('wp_enqueue_scripts', function () {
 add_action('wp_ajax_fl_search', 'fl_search');
 add_action('wp_ajax_nopriv_fl_search', 'fl_search');
 
+function fl_sanitize_term($term){
+    return esc_sql(strtolower(trim($term)));
+}
+
 function fl_search() {
-    global $wpdb;
-    if(false) $wpdb = new wpdb;
 
     if(!isset($_GET['search']) || !trim($_GET['search'])){
         echo "";
     }
+
+    $term = @$_GET['search'];
+
+    echo fl_get_search_result($term);
+    exit;
+}
+
+function fl_get_search_result($term){
+    $members = fl_get_search_members($term);
+    include __DIR__ . '/user-template.php';
+
+    $posts = fl_get_search_posts($term);
+    include __DIR__ . '/posts-template.php';
+
+}
+
+function fl_get_search_members($term){
+    global $wpdb;
+    if(false) $wpdb = new wpdb;
     
-    $text = esc_sql(@$_GET['search']);
+    $term = fl_sanitize_term($term);
+
+    $cache_key = __METHOD__ . ':' . $term;
+
+    if(apcu_exists($cache_key)){
+        return apcu_fetch($cache_key);
+    }
 
     $sql = "
         SELECT
@@ -26,23 +53,49 @@ function fl_search() {
         WHERE
             user_status = 0 AND
             (
-                display_name LIKE '%{$text}%' OR
+                display_name LIKE '%{$term}%' OR
                 ID IN (
-                    SELECT user_id FROM {$wpdb->prefix}bp_xprofile_data WHERE value LIKE '%{$text}%'
+                    SELECT user_id FROM {$wpdb->prefix}bp_xprofile_data WHERE value LIKE '%{$term}%'
                 )
             )";
-    
+
+
     $result = $wpdb->get_results($sql);
+    $base_permalink = get_bloginfo('url') . "/conheca-a-rede/";
+    foreach($result as &$user){
+        $user->permalink = $base_permalink . $user->user_nicename;
+    }
+    
+    apcu_store($cache_key, $result, 300);
 
-    include __DIR__ . '/user-template.php';
+    return $result;
 
-    $posts = get_posts([
-        's' => $text,
+}
+
+function fl_get_search_posts($term){
+    $term = fl_sanitize_term($term);
+
+    $cache_key = __METHOD__ . ':' . $term;
+
+    if(apcu_exists($cache_key)){
+        return apcu_fetch($cache_key);
+    }
+
+    $result = get_posts([
+        's' => $term,
         'post_type' => ['post', 'page'],
         'numberposts' => -1,
     ]);
 
-    include __DIR__ . '/posts-template.php';
-    
-    exit;
+    apcu_store($cache_key, $result, 300);
+
+    return $result;
 }
+
+
+
+add_action( 'pre_get_posts', function($query){
+    if($query->is_search()){
+        $query->set('post_type', ['post', 'page']);
+    }
+});

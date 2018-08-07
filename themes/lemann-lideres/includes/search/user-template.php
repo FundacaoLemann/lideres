@@ -1,9 +1,9 @@
-<?php if($result): ?>
+<?php if($members): ?>
 <div>
     <ul>
-        <?php foreach($result as $user): ?>
+        <?php foreach($members as $user): ?>
         <li>
-            <a href="<?= get_bloginfo('url') ?>/conheca-a-rede/<?= $user->user_nicename ?>">
+            <a href="<?= $member->permalink ?>">
             <?= get_avatar($user->ID, 35) ?>
             <strong><?= $user->display_name ?></strong>
             </a>
