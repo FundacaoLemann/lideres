@@ -3,7 +3,7 @@
     <ul>
         <?php foreach($members as $user): ?>
         <li>
-            <a href="<?= $member->permalink ?>">
+            <a href="<?= $user->permalink ?>">
             <?= get_avatar($user->ID, 35) ?>
             <strong><?= $user->display_name ?></strong>
             </a>
