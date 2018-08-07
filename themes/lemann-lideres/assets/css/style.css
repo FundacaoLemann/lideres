@@ -311,20 +311,34 @@ body a {
     height: auto !important;
   }
 }
+.gp-search-box form.searchform {
+  background: transparent;
+  border: 0;
+}
 .gp-search-box input.gp-search-bar {
   background-color: #F5F5F5;
   padding: 10px;
 }
 .gp-search-box .search-result ul {
+  background-color: white;
   border: 0.5px solid #F5F5F5;
   margin-left: 0;
   max-height: 50vh;
   overflow-x: hidden;
   overflow-y: auto;
+  padding: 10px;
 }
 .gp-search-box .search-result ul li {
   list-style: none;
   padding: 5px 10px;
+}
+.gp-search-box .search-result ul li a {
+  display: table;
+}
+.gp-search-box .search-result ul li a strong {
+  display: table-cell;
+  padding-left: 10px;
+  vertical-align: middle;
 }
 .gp-search-box .search-result ul::-webkit-scrollbar-track {
   border-radius: 10px;

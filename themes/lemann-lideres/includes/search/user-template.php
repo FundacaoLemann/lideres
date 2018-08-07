@@ -4,7 +4,7 @@
         <?php foreach($result as $user): ?>
         <li>
             <a href="<?= get_bloginfo('url') ?>/conheca-a-rede/<?= $user->user_nicename ?>">
-            <?= get_avatar($user->ID, 40) ?>
+            <?= get_avatar($user->ID, 35) ?>
             <strong><?= $user->display_name ?></strong>
             </a>
         </li>
