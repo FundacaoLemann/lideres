@@ -768,21 +768,19 @@ GhostPoolScripts = {
 
 			jQuery( '.pagination-links a' ).on( 'click', function() {	
 				jQuery( document ).ajaxComplete( function( e, xhr, settings ) {
-					jQuery.ajax({
-						success: function() {
-							GhostPoolScripts.gpIsotope();
-						}
-					});
+                                    setTimeout(function(){
+                                        GhostPoolScripts.gpIsotope();
+
+                                    },200);
 				});	
 			});
 		
 			jQuery( '.item-list-tabs' ).on( 'click', function() {
 				jQuery( document ).ajaxComplete( function( e, xhr, settings ) {
-					jQuery.ajax({
-						success: function() {		
-							GhostPoolScripts.gpIsotope();
-						}
-					});
+                                    setTimeout(function(){
+                                        GhostPoolScripts.gpIsotope();
+
+                                    },200);
 				});	
 			});	
 	
