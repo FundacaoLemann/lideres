@@ -1,16 +1,45 @@
 .page-login {
     width: 100vw;
     height: 100vh;
-    background-image: url('/wp-content/themes/lemann-lideres/assets/images/login_bg.png');
+    background-image: url('/wp-content/themes/lemann-lideres/assets/images/login_bg_2.png');
     background-size: cover;
     background-attachment: fixed;
+    background-position: 0 center;
     overflow: auto;
 
-    .row{
-        padding: 40px;
+    .logo {
+        padding: 40px 0 10px 0;
+    }
 
-        @media screen and (max-width: 768px){
-            padding: 10px;
+    .row {
+        width: 100%;
+        max-width: 1024px;
+        display: flex;
+        margin: 0 auto;
+        padding: 40px;
+        top: 50%;
+        transform: translateY(-50%);
+        position: relative;
+        flex-wrap: wrap;
+        overflow: hidden;
+
+        .col-md-6{
+            margin: 0 15px;
+            flex: 0 0 calc(50% - 60px);
+            max-width: 0 0 calc(50% - 60px);
+
+            @media screen and (max-width: 768px){
+                flex: 0 0 100%;
+                max-width: 100%;
+                margin: 0px;
+                padding: 10px;
+            }
+
+            &.align-center{
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+            }
         }
     }
 
@@ -135,35 +164,7 @@
         background-image: none;
         font-size: 19px;
     }
-    .row {
-        width: 100%;
-        max-width: 1024px;
-        display: flex;
-        margin: 0 auto;
-        top: 50%;
-        transform: translateY(-50%);
-        position: relative;
-        flex-wrap: wrap;
-
-        .col-md-6{
-            margin: 0 15px;
-            flex: 0 0 calc(50% - 60px);
-            max-width: 0 0 calc(50% - 60px);
-
-            @media screen and (max-width: 768px){
-                flex: 0 0 100%;
-                max-width: 100%;
-                margin: 0px;
-                padding: 10px;
-            }
-
-            &.align-center{
-                display: flex;
-                justify-content: center;
-                flex-direction: column;
-            }
-        }
-    }
+    
 }
 
 .hide-for-desktop{
