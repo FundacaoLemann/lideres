@@ -584,6 +584,8 @@ body.search ul#members-list li.gp-post-item {
   #gp-buddypress-header .header-temas-interesse .header-tema-interesse {
     border-radius: 3px;
     margin: 15px 10px 0 0; }
+#gp-buddypress-header #gp-author-social-icons .gp-linkedin-icon {
+  background: #007bb6 !important; }
 #gp-buddypress-header .generic-button a {
   background-color: rgba(0, 181, 175, 0.8) !important;
   border-radius: 4px !important;
