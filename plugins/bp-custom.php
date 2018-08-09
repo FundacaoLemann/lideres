@@ -17,6 +17,10 @@ function lemann_bp_setup_nav() {
 	bp_core_remove_nav_item( 'forums' );
 	bp_core_remove_nav_item( 'groups' );
 	bp_core_remove_nav_item( 'events' );
+
+	bp_core_remove_subnav_item( 'activity', 'favorites' );
+	bp_core_remove_subnav_item( 'activity', 'friends' );
+	bp_core_remove_subnav_item( 'activity', 'groups' );
 }
 add_action( 'bp_setup_nav', 'lemann_bp_setup_nav', 999 );
 
