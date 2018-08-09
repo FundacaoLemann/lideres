@@ -37,7 +37,7 @@ do_action( 'bp_before_member_header' );
 					<div class="header-cargo-empresa">
 						<span class="header-cargo"><?php echo $cargo; ?></span>
 						<?php if ( ! empty( $cargo ) && ! empty( $empresa ) ) { ?>
-							na empresa
+							em
 						<?php } ?>
 						<span class="header-empresa"><?php echo $empresa; ?></span>
 					</div>
