@@ -50,10 +50,22 @@ body a {
         font-size: 1.1em;
     }
 
-    &.current-menu-item a, > a:hover{
+    &.current-menu-item a, > a:hover {
         color: $c_secondary !important;
     }
 }
+#gp-main-header-secondary-nav > .menu > .menu-item > a {
+
+    &:hover {
+    border-top: 2px solid $c_link !important;
+    border-bottom: 2px solid $c_link !important;
+    border-left: 2px solid $c_link !important;
+    border-right: 2px solid $c_link !important;
+    color: $c_link !important;
+   }
+}
+        
+
 
 .gp-theme #buddypress {
     ul.activity-list > li, .activity-list .activity-content .activity-header, .activity-list .activity-content .comment-header, a.activity-time-since{
