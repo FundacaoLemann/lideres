@@ -15,7 +15,7 @@ RUN composer install -v $composer
 COPY ["plugins", "/var/www/html/plugins"]
 COPY ["themes", "/var/www/html/wp-content/themes"]
 COPY ["importer", "/importer"]
-
+COPY ["languages", "/var/www/html/languages"]
 
 # Fix file permissions
 USER root
