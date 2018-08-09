@@ -55,14 +55,29 @@ do_action( 'bp_before_member_header' );
 				<?php
 			}
 
-			$temas = xprofile_get_field_data( 'Temas de Interesse' );
-			if ( ! empty( $temas ) ) {
+			$temas_id = xprofile_get_field_id_from_name( 'Temas de Interesse' );
+			$temas    = xprofile_get_field_data( $temas_id );
+			if ( isset( LEMANN_BP_OUTROS[ $temas_id ] ) ) {
+				$temas_outros = xprofile_get_field_data( LEMANN_BP_OUTROS[ $temas_id ] );
+			}
+			if ( ! empty( $temas ) || ! empty( $temas_outros ) ) {
 				?>
 				<div class="header-temas-interesse">
 					<span class="header-temas-interesse--titulo">Áreas de interesse</span>
-					<?php foreach ( $temas as $tema ) { ?>
-						<span class="lemann-tag header-tema-interesse"><?php echo $tema; ?></span>
-					<?php } ?>
+					<?php
+					$temas = ( ! empty( $temas ) ) ? $temas : [];
+					if ( ! empty( $temas_outros ) ) {
+						$temas_outros = explode( ',', $temas_outros );
+						$temas        = array_merge( $temas, $temas_outros );
+					}
+					foreach ( $temas as $tema ) {
+						if ( 'Outros' != $tema ) {
+							?>
+							<span class="lemann-tag header-tema-interesse"><?php echo $tema; ?></span>
+							<?php
+						}
+					}
+					?>
 				</div>
 				<?php
 			}
