@@ -6,6 +6,7 @@ defined( 'ABSPATH' ) || exit;
  * Indexado pelo ID do campo original, valorado com o ID do campo outros.
  */
 define( 'LEMANN_BP_OUTROS', [
+    32  => 574,
     83  => 257,
     90  => 258,
     108 => 259,
