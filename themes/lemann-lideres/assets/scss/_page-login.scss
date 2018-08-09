@@ -23,6 +23,10 @@
         flex-wrap: wrap;
         overflow: hidden;
 
+       @media only screen and (max-width: 380px) {
+         padding: 100px 10px 20px;
+       }
+
         .col-md-6{
             margin: 0 15px;
             flex: 0 0 calc(50% - 60px);

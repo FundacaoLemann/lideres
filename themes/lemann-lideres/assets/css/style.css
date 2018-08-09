@@ -437,6 +437,9 @@ body.search ul#members-list li.gp-post-item {
     position: relative;
     flex-wrap: wrap;
     overflow: hidden; }
+    @media only screen and (max-width: 380px) {
+      .page-login .row {
+        padding: 100px 10px 20px; } }
     .page-login .row .col-md-6 {
       margin: 0 15px;
       flex: 0 0 calc(50% - 60px);
