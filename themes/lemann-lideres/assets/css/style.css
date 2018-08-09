@@ -46,11 +46,14 @@ body a {
   color: #083050 !important;
   font-size: 1.1em; }
 #gp-standard-header .menu > .menu-item.current-menu-item a, #gp-standard-header .menu > .menu-item > a:hover {
-  color: #b3c135 !important;
+  color: #0C9B4A !important; }
+
+#gp-main-header-secondary-nav > .menu > .menu-item > a:hover {
   border-top: 2px solid #b3c135 !important;
   border-bottom: 2px solid #b3c135 !important;
   border-left: 2px solid #b3c135 !important;
-  border-right: 2px solid #b3c135 !important; }
+  border-right: 2px solid #b3c135 !important;
+  color: #b3c135 !important; }
 
 .gp-theme #buddypress ul.activity-list > li, .gp-theme #buddypress .activity-list .activity-content .activity-header, .gp-theme #buddypress .activity-list .activity-content .comment-header, .gp-theme #buddypress a.activity-time-since {
   color: #333333 !important; }
