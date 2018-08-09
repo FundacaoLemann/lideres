@@ -113,12 +113,12 @@ do_action( 'bp_before_member_header' );
 			<div class="responsive-column">
 			<?php
 
-			$rede = xprofile_get_field_data( 'Rede' );
-			if ( $rede ) {
+			$_perfil = xprofile_get_field_data( 'Perfil' );
+			if ( $_perfil ) {
 				?>
-				<h2>Rede</h2>
+				<h2>Perfil</h2>
 				<?php
-				echo is_array($rede) ? implode(', ', $rede) : $rede;
+				echo is_array($_perfil) ? implode(', ', $_perfil) : $_perfil;
 			}
 			?>
 
