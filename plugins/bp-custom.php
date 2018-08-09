@@ -2,6 +2,11 @@
 defined( 'ABSPATH' ) || exit;
 
 /**
+ * Altera a aba padrão de visualização do usuário.
+ */
+define( 'BP_DEFAULT_COMPONENT', 'profile' );
+
+/**
  * Altera a navegação do BuddyPress.
  */
 function lemann_bp_setup_nav() {
