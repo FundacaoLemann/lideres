@@ -30,8 +30,8 @@ do_action( 'bp_before_member_header' );
 				</div>
 
 				<?php
-				$cargo   = xprofile_get_field_data( 'Cargo' );
-				$empresa = xprofile_get_field_data( 'Organização na qual trabalha' );
+				$cargo   = xprofile_get_field_data( 'Cargo em' );
+				$empresa = xprofile_get_field_data( 'Organização em que trabalha' );
 				if ( ! empty( $cargo ) || ! empty( $empresa ) ) {
 					?>
 					<div class="header-cargo-empresa">
