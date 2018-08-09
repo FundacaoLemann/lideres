@@ -75,7 +75,7 @@ do_action( 'bp_before_member_header' );
 				<?php
 				function lemann_bp_get_add_friend_button( $button ) {
 					if ( 'not_friends' == $button['id'] ) {
-						$button['link_text'] = 'Adicionar amizade';
+						$button['link_text'] = 'Adicionar contato';
 					}
 					return $button;
 				}

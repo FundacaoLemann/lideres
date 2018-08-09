@@ -36,3 +36,11 @@ function lemann_group_home_redirect() {
 	}
 }
 add_action( 'wp', 'lemann_group_home_redirect' );
+
+/**
+ * Faz o WP não carregar a tradução padrão (e usar a nossa).
+ */
+add_filter( 'buddypress_locale_locations', function ( $val ) {
+	unload_textdomain( 'buddypress' );
+	return $val;
+});
