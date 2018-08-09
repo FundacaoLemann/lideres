@@ -66,7 +66,7 @@ do_action( 'bp_before_directory_members_page' ); ?>
 				<?php if ( is_user_logged_in() && bp_is_active( 'friends' ) && bp_get_total_friend_count( bp_loggedin_user_id() ) ) : ?>
 					<li id="members-personal">
 						<a href="<?php echo esc_url( bp_loggedin_user_domain() . bp_get_friends_slug() . '/my-friends/' ); ?>">
-							Meus amigos
+							Meus contatos
 						</a>
 					</li>
 				<?php endif; ?>

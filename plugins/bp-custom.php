@@ -2,6 +2,11 @@
 defined( 'ABSPATH' ) || exit;
 
 /**
+ * Altera a aba padrão de visualização do usuário.
+ */
+define( 'BP_DEFAULT_COMPONENT', 'profile' );
+
+/**
  * Altera a navegação do BuddyPress.
  */
 function lemann_bp_setup_nav() {
@@ -36,3 +41,11 @@ function lemann_group_home_redirect() {
 	}
 }
 add_action( 'wp', 'lemann_group_home_redirect' );
+
+/**
+ * Faz o WP não carregar a tradução padrão (e usar a nossa).
+ */
+add_filter( 'buddypress_locale_locations', function ( $val ) {
+	unload_textdomain( 'buddypress' );
+	return $val;
+});
