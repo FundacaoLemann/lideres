@@ -360,10 +360,14 @@ function lemann_bp_edit_show_description() {
  * @return mixed
  */
 function lemann_bp_check_field_visibility( $value, $field_id, $user_id ) {
-    $hidden_fields = bp_xprofile_get_hidden_fields_for_user();
-    if ( in_array( $field_id, $hidden_fields ) ) {
-        return '';
-    }
+    
+        $field_level = xprofile_get_field_visibility_level($field_id, $user_id);
+        $hidden_levels = bp_xprofile_get_hidden_field_types_for_user($user_id, get_current_user_id());
+
+        if(in_array($field_level, $hidden_levels) ){
+            return '';
+        }
+  
     return $value;
 }
 add_filter( 'xprofile_get_field_data', 'lemann_bp_check_field_visibility', 10, 3 );
