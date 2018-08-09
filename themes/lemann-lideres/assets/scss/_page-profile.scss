@@ -34,6 +34,8 @@
     }
 
     .generic-button {
+        vertical-align: middle;
+
         a {
             background-color: rgba($c_primary-bg, 0.8) !important;
             border-radius: 4px !important;
@@ -55,14 +57,10 @@
                 }
             }
 
-            &.friendship-button.is_friend {
-                &:before {
-                    content: '\f234';
-                }
-
-                &.remove:before {
-                    content: '\f235';
-                }
+            &.friendship-button:before {
+                content: url(../images/icon_user_add.svg);
+                display: inline-block;
+                vertical-align: middle;
             }
 
             &.activity-button.mention:before {

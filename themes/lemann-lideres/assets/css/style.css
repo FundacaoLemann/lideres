@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   font-size: 16px !important; }
 
@@ -532,6 +533,15 @@ a.btn-ver-mais {
       display: block;
       font-size: 14px;
       color: #083050; }
+      .page-login #loginform label[for="user_login"] {
+        font-size: 0 !important;
+        left: 1000000px;
+        position: relative; }
+        .page-login #loginform label[for="user_login"]:after {
+          content: 'Endereço de e-mail';
+          font-size: 14px;
+          left: -1000000px;
+          position: relative; }
     .page-login #loginform input[type=text], .page-login #loginform input[type=password] {
       width: 100%; }
     .page-login #loginform .button {
@@ -609,29 +619,31 @@ a.btn-ver-mais {
     margin: 15px 10px 0 0; }
 #gp-buddypress-header #gp-author-social-icons .gp-linkedin-icon {
   background: #007bb6 !important; }
-#gp-buddypress-header .generic-button a {
-  background-color: rgba(0, 181, 175, 0.8) !important;
-  border-radius: 4px !important;
-  font-size: 14px !important;
-  padding: 10px 15px !important; }
-  #gp-buddypress-header .generic-button a:before {
-    font-family: 'FontAwesome';
-    font-size: 18px;
-    margin-right: 5px; }
-  @media screen and (max-width: 767px) {
-    #gp-buddypress-header .generic-button a {
+#gp-buddypress-header .generic-button {
+  vertical-align: middle; }
+  #gp-buddypress-header .generic-button a {
+    background-color: rgba(0, 181, 175, 0.8) !important;
+    border-radius: 4px !important;
+    font-size: 14px !important;
+    padding: 10px 15px !important; }
+    #gp-buddypress-header .generic-button a:before {
+      font-family: 'FontAwesome';
+      font-size: 18px;
+      margin-right: 5px; }
+    @media screen and (max-width: 767px) {
+      #gp-buddypress-header .generic-button a {
+        display: inline-block;
+        font-size: 0 !important; }
+        #gp-buddypress-header .generic-button a:before {
+          margin: 0; } }
+    #gp-buddypress-header .generic-button a.friendship-button:before {
+      content: url(../images/icon_user_add.svg);
       display: inline-block;
-      font-size: 0 !important; }
-      #gp-buddypress-header .generic-button a:before {
-        margin: 0; } }
-  #gp-buddypress-header .generic-button a.friendship-button.is_friend:before {
-    content: '\f234'; }
-  #gp-buddypress-header .generic-button a.friendship-button.is_friend.remove:before {
-    content: '\f235'; }
-  #gp-buddypress-header .generic-button a.activity-button.mention:before {
-    content: '\f0e5'; }
-  #gp-buddypress-header .generic-button a.send-message:before {
-    content: '\f003'; }
+      vertical-align: middle; }
+    #gp-buddypress-header .generic-button a.activity-button.mention:before {
+      content: '\f0e5'; }
+    #gp-buddypress-header .generic-button a.send-message:before {
+      content: '\f003'; }
 #gp-buddypress-header .vc_col-md-4 {
   padding-top: 20px; }
   @media screen and (min-width: 400px) and (max-width: 991px) {

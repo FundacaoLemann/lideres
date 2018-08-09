@@ -30,14 +30,14 @@ do_action( 'bp_before_member_header' );
 				</div>
 
 				<?php
-				$cargo   = xprofile_get_field_data( 'Cargo' );
-				$empresa = xprofile_get_field_data( 'Organização na qual trabalha' );
+				$cargo   = xprofile_get_field_data( 'Cargo em' );
+				$empresa = xprofile_get_field_data( 'Organização em que trabalha' );
 				if ( ! empty( $cargo ) || ! empty( $empresa ) ) {
 					?>
 					<div class="header-cargo-empresa">
 						<span class="header-cargo"><?php echo $cargo; ?></span>
 						<?php if ( ! empty( $cargo ) && ! empty( $empresa ) ) { ?>
-							na empresa
+							em
 						<?php } ?>
 						<span class="header-empresa"><?php echo $empresa; ?></span>
 					</div>
@@ -55,14 +55,29 @@ do_action( 'bp_before_member_header' );
 				<?php
 			}
 
-			$temas = xprofile_get_field_data( 'Temas de Interesse' );
-			if ( ! empty( $temas ) ) {
+			$temas_id = xprofile_get_field_id_from_name( 'Temas de Interesse' );
+			$temas    = xprofile_get_field_data( $temas_id );
+			if ( isset( LEMANN_BP_OUTROS[ $temas_id ] ) ) {
+				$temas_outros = xprofile_get_field_data( LEMANN_BP_OUTROS[ $temas_id ] );
+			}
+			if ( ! empty( $temas ) || ! empty( $temas_outros ) ) {
 				?>
 				<div class="header-temas-interesse">
 					<span class="header-temas-interesse--titulo">Áreas de interesse</span>
-					<?php foreach ( $temas as $tema ) { ?>
-						<span class="lemann-tag header-tema-interesse"><?php echo $tema; ?></span>
-					<?php } ?>
+					<?php
+					$temas = ( ! empty( $temas ) ) ? $temas : [];
+					if ( ! empty( $temas_outros ) ) {
+						$temas_outros = explode( ',', $temas_outros );
+						$temas        = array_merge( $temas, $temas_outros );
+					}
+					foreach ( $temas as $tema ) {
+						if ( 'Outros' != $tema ) {
+							?>
+							<span class="lemann-tag header-tema-interesse"><?php echo $tema; ?></span>
+							<?php
+						}
+					}
+					?>
 				</div>
 				<?php
 			}
@@ -80,6 +95,7 @@ do_action( 'bp_before_member_header' );
 					return $button;
 				}
 				add_filter( 'bp_get_add_friend_button', 'lemann_bp_get_add_friend_button' );
+				remove_action( 'bp_member_header_actions', 'bp_send_public_message_button', 20 );
 				do_action( 'bp_member_header_actions' );
 				?>
 			</div>
@@ -113,12 +129,12 @@ do_action( 'bp_before_member_header' );
 			<div class="responsive-column">
 			<?php
 
-			$rede = xprofile_get_field_data( 'Rede' );
-			if ( $rede ) {
+			$_perfil = xprofile_get_field_data( 'Perfil' );
+			if ( $_perfil ) {
 				?>
-				<h2>Rede</h2>
+				<h2>Perfil</h2>
 				<?php
-				echo is_array($rede) ? implode(', ', $rede) : $rede;
+				echo is_array($_perfil) ? implode(', ', $_perfil) : $_perfil;
 			}
 			?>
 
