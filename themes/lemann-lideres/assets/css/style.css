@@ -589,29 +589,31 @@ body.search ul#members-list li.gp-post-item {
     margin: 15px 10px 0 0; }
 #gp-buddypress-header #gp-author-social-icons .gp-linkedin-icon {
   background: #007bb6 !important; }
-#gp-buddypress-header .generic-button a {
-  background-color: rgba(0, 181, 175, 0.8) !important;
-  border-radius: 4px !important;
-  font-size: 14px !important;
-  padding: 10px 15px !important; }
-  #gp-buddypress-header .generic-button a:before {
-    font-family: 'FontAwesome';
-    font-size: 18px;
-    margin-right: 5px; }
-  @media screen and (max-width: 767px) {
-    #gp-buddypress-header .generic-button a {
+#gp-buddypress-header .generic-button {
+  vertical-align: middle; }
+  #gp-buddypress-header .generic-button a {
+    background-color: rgba(0, 181, 175, 0.8) !important;
+    border-radius: 4px !important;
+    font-size: 14px !important;
+    padding: 10px 15px !important; }
+    #gp-buddypress-header .generic-button a:before {
+      font-family: 'FontAwesome';
+      font-size: 18px;
+      margin-right: 5px; }
+    @media screen and (max-width: 767px) {
+      #gp-buddypress-header .generic-button a {
+        display: inline-block;
+        font-size: 0 !important; }
+        #gp-buddypress-header .generic-button a:before {
+          margin: 0; } }
+    #gp-buddypress-header .generic-button a.friendship-button:before {
+      content: url(../images/icon_user_add.svg);
       display: inline-block;
-      font-size: 0 !important; }
-      #gp-buddypress-header .generic-button a:before {
-        margin: 0; } }
-  #gp-buddypress-header .generic-button a.friendship-button.is_friend:before {
-    content: '\f234'; }
-  #gp-buddypress-header .generic-button a.friendship-button.is_friend.remove:before {
-    content: '\f235'; }
-  #gp-buddypress-header .generic-button a.activity-button.mention:before {
-    content: '\f0e5'; }
-  #gp-buddypress-header .generic-button a.send-message:before {
-    content: '\f003'; }
+      vertical-align: middle; }
+    #gp-buddypress-header .generic-button a.activity-button.mention:before {
+      content: '\f0e5'; }
+    #gp-buddypress-header .generic-button a.send-message:before {
+      content: '\f003'; }
 #gp-buddypress-header .vc_col-md-4 {
   padding-top: 20px; }
   @media screen and (min-width: 400px) and (max-width: 991px) {

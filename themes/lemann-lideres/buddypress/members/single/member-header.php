@@ -80,6 +80,7 @@ do_action( 'bp_before_member_header' );
 					return $button;
 				}
 				add_filter( 'bp_get_add_friend_button', 'lemann_bp_get_add_friend_button' );
+				remove_action( 'bp_member_header_actions', 'bp_send_public_message_button', 20 );
 				do_action( 'bp_member_header_actions' );
 				?>
 			</div>
