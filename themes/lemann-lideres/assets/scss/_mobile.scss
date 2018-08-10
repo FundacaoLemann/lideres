@@ -21,3 +21,11 @@
         height: auto !important;
     }
 }
+@media only screen and (max-width: 782px) {
+    #wcs-events-schedule-2 {
+        display: none;
+    }
+    #custom_html-3 {
+        display: none;
+    }
+}
