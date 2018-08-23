@@ -32,7 +32,7 @@
 		 * @see https://github.com/buddypress/BuddyPress/blob/master/src/bp-templates/bp-legacy/buddypress/activity/post-form.php
 		 */
 		printf(
-			'%s, compartilhe sua opinião e participe de Rede de Líderes',
+			'%s, compartilhe sua opinião e participe da Rede',
 			bp_get_user_firstname( bp_get_loggedin_user_fullname() )
 		);
 		?>
