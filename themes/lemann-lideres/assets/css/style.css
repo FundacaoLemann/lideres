@@ -388,6 +388,8 @@ body.search ul#members-list li.gp-post-item {
 
 .widget.buddypress .avatar-block {
   padding-top: 20px; }
+.widget.buddypress.widget_bp_groups_widget .item-options {
+  display: none; }
 
 .wcs-events-schedule {
   margin-bottom: 0 !important; }

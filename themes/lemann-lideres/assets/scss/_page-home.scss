@@ -1,11 +1,19 @@
 
 
- .widget.buddypress .avatar-block {
-     padding-top: 20px;
+ .widget.buddypress {
+    .avatar-block {
+        padding-top: 20px;
+    }
+
+    &.widget_bp_groups_widget {
+        .item-options {
+            display: none;
+        }
+    }
  }
  .wcs-events-schedule {
     margin-bottom: 0 !important;
-    
+
     .wcs-timetable__container {
         padding: 3vh 0;
     }
@@ -56,7 +64,7 @@
 }
 #wcs-app-6 {
     margin-bottom: 0 !important;
-    
+
     .wcs-timetable__container {
         padding: 3vh 0;
     }
@@ -134,7 +142,7 @@ a.btn-ver-mais {
         vertical-align: middle;
         margin-left: 6px;
         margin-bottom: 3px;
-        
+
         &:hover {
             color: $c_primary-bg !important;
         }
