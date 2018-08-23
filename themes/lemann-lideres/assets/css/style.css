@@ -264,16 +264,8 @@ body a {
 #gp-mobile-header .gp-logo img {
   max-width: 80%; }
 
-@media only screen and (min-width: 1200px) {
-  #gp_featured_box_wrapper_1 .gp-featured-large-col {
-    width: 80% !important;
-    height: auto !important; } }
-@media only screen and (min-width: 992px) {
-  #gp_featured_box_wrapper_1 .gp-featured-large-col {
-    width: 80% !important;
-    height: auto !important; } }
 @media only screen and (min-width: 768px) {
-  #gp_featured_box_wrapper_1 .gp-featured-large-col {
+  #gp_featured_box_wrapper_1.gp-featured-box-1-2 .gp-featured-large-col {
     width: 80% !important;
     height: auto !important; } }
 @media only screen and (max-width: 782px) {
@@ -396,6 +388,8 @@ body.search ul#members-list li.gp-post-item {
 
 .widget.buddypress .avatar-block {
   padding-top: 20px; }
+.widget.buddypress.widget_bp_groups_widget .item-options {
+  display: none; }
 
 .wcs-events-schedule {
   margin-bottom: 0 !important; }
