@@ -35,18 +35,6 @@ function lemann_remove_admin_bar() {
 add_action( 'wp', 'lemann_remove_admin_bar' );
 
 /**
- * Redireciona usuários que não são moderadores de um grupo
- * para a página inicial do site.
- */
-function lemann_group_home_redirect() {
-	if ( bp_is_group_home() && ! bp_group_is_admin() && ! bp_group_is_mod() ) {
-		wp_redirect( home_url( '/' ) );
-		exit;
-	}
-}
-add_action( 'wp', 'lemann_group_home_redirect' );
-
-/**
  * Faz o WP não carregar a tradução padrão (e usar a nossa).
  */
 add_filter( 'buddypress_locale_locations', function ( $val ) {
