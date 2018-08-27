@@ -5,7 +5,7 @@ global $wpdb;
 
 if(false){ $wpdb = new wpdb; }
 
-$raw = file_get_contents('/importer/participantes.csv');
+$raw = file_get_contents('/importer/lideres-nao-cadastrados.csv');
 
 $lines = explode("\n", $raw);
 
@@ -15,7 +15,7 @@ $array_data = array_map(function ($line) { return str_getcsv($line, ';'); }, $li
             [0] => Nome Completo
             [1] => Biografia
             [2] => Cargo atual
-            [3] => Organiza��o
+            [3] => Organização
             [4] => E-mail
             [5] => Linkedin
             [6] => CPF
@@ -48,7 +48,7 @@ foreach($array_data as $data){
         continue;
     }
     $user_data = [
-        'user_pass' => $data[2]
+        'user_pass' => uniqid()
     ];
     $user_meta = [
         'show_admin_bar_front' => false
@@ -64,24 +64,27 @@ foreach($array_data as $data){
     /*
     0 Nome completo
     1 Email
-    2 Senha (CPF)
+    2 CPF
     3 Perfil
     4 Celular
     5 Mini-bio
     6 Linkedin
     7 Cargo atual
     8 Organização
-    9 CPF
     */
 
     $data[0] = ucwords(strtolower($data[0]));
 
     if(isset($data[0])){
         $user_data['display_name'] = $data[0];
+    } else {
+        continue;
     }
 
     if(isset($data[1])){
         $user_data['user_email'] = $data[1];
+    } else {
+        continue;
     }
 
     $roles = ['inativo'];
@@ -112,6 +115,10 @@ foreach($array_data as $data){
         $profile_meta['perfil'] = array_filter($perfis);
     }
 
+    if(!count($roles) < 2){
+        $roles[] = 'lider';
+    }
+
     if(isset($data[4])){
         $profile_meta['telefone'] = $data[4];
     }
@@ -133,8 +140,8 @@ foreach($array_data as $data){
         $profile_meta['organizacao'] = $data[8];
     }
 
-    if(isset($data[9])){
-        $user_meta['CPF'] = $data[9];
+    if(isset($data[2])){
+        $user_meta['CPF'] = $data[2];
     }
 
     echo "\n";
