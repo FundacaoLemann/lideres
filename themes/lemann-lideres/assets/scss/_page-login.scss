@@ -143,6 +143,14 @@
         }
     }
 
+    .first-access {
+        background-color: rgba(white, 0.8);
+        border-radius: 5px;
+        color: $c_primary;
+        padding: 10px;
+        text-decoration: none;
+    }
+
     .lost-password {
         display: block;
         max-width: 380px;
@@ -182,7 +190,7 @@
         background-image: none;
         font-size: 19px;
     }
-    
+
 }
 
 .hide-for-desktop{
