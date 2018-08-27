@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Aardvark Plugin\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-08-06 14:47-0300\n"
-"PO-Revision-Date: 2018-08-06 14:49-0300\n"
+"PO-Revision-Date: 2018-08-27 15:42-0300\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../inc/share-icons.php:7
 msgid "Share This Post"
-msgstr ""
+msgstr "Compartilhe"
 
 #: ../inc/share-icons.php:12
 msgid "Twitter"
@@ -51,7 +51,7 @@ msgstr ""
 
 #: ../inc/share-icons.php:26 ../shortcodes/pmp-register-form.php:45
 msgid "Email"
-msgstr ""
+msgstr "E-mail"
 
 #: ../inc/voting-functions.php:44
 msgid "Vote Up"
