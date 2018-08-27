@@ -746,13 +746,6 @@ a.btn-ver-mais:after:hover {
   padding: 13px;
   font-size: 19px;
 }
-.page-login .first-access {
-  background-color: rgba(255, 255, 255, 0.8);
-  border-radius: 5px;
-  color: #083050;
-  padding: 10px;
-  text-decoration: none;
-}
 .page-login .lost-password {
   display: block;
   max-width: 380px;
@@ -761,6 +754,13 @@ a.btn-ver-mais:after:hover {
   color: white;
   margin: 10px auto;
   text-decoration: underline;
+}
+.page-login .first-access {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 5px;
+  color: #083050;
+  padding: 10px;
+  text-decoration: none;
 }
 .page-login .login-error {
   color: black;
