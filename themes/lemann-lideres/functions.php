@@ -393,6 +393,6 @@ function ghostpool_custom_init_variables() {
 
     // Exibe o conteúdo das oportunidades no layout certo.
     if ( is_singular( 'oportunidade' ) ) {
-        $ghostpool_layout = 'gp-no-sidebar';
+        $ghostpool_layout = 'gp-sidebar-right';
     }
 }
