@@ -31,10 +31,18 @@
 		 *
 		 * @see https://github.com/buddypress/BuddyPress/blob/master/src/bp-templates/bp-legacy/buddypress/activity/post-form.php
 		 */
-		printf(
-			'%s, compartilhe sua opinião e participe da cobertura do evento',
-			bp_get_user_firstname( bp_get_loggedin_user_fullname() )
-		);
+		if ( is_home() || is_front_page() ) {
+			printf(
+				'%s, compartilhe sua opinião e participe da Rede',
+				bp_get_user_firstname( bp_get_loggedin_user_fullname() )
+			);
+		} else {
+			printf(
+				'%s, compartilhe sua opinião e participe do grupo %s',
+				bp_get_user_firstname( bp_get_loggedin_user_fullname() ),
+				bp_get_group_name()
+			);
+		}
 		?>
 	</p>
 
@@ -74,10 +82,6 @@
 					</select>
 				</div>
 
-				<div id="whats-new-submit">
-					<input type="submit" name="aw-whats-new-submit" id="aw-whats-new-submit" value="<?php esc_attr_e( 'Post Update', 'buddypress' ); ?>" />
-				</div>
-
 				<input type="hidden" id="whats-new-post-object" name="whats-new-post-object" value="groups" />
 
 			<?php elseif ( bp_is_group_activity() ) : ?>
@@ -86,6 +90,10 @@
 				<input type="hidden" id="whats-new-post-in" name="whats-new-post-in" value="<?php bp_group_id(); ?>" />
 
 			<?php endif; ?>
+
+			<div id="whats-new-submit">
+				<input type="submit" name="aw-whats-new-submit" id="aw-whats-new-submit" value="<?php esc_attr_e( 'Post Update', 'buddypress' ); ?>" />
+			</div>
 
 			<?php
 			/**

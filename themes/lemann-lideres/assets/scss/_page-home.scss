@@ -1,17 +1,72 @@
 
 
- .widget.buddypress .avatar-block {
-     padding-top: 20px;
+ .widget.buddypress {
+    .avatar-block {
+        padding-top: 20px;
+    }
+
+    &.widget_bp_groups_widget {
+        .item-options {
+            display: none;
+        }
+    }
  }
  .wcs-events-schedule {
     margin-bottom: 0 !important;
-    
+
     .wcs-timetable__container {
         padding: 3vh 0;
     }
 
     h3 {
         margin-bottom: 0;
+    }
+
+    .wcs-timetable__agenda-nav {
+        li:first-child {
+            border-top: 0;
+        }
+
+        &-item.active {
+            color: $c_secondary-bg !important;
+        }
+    }
+
+    .wcs-timetable__agenda-data {
+        .wcs-class {
+            padding-top: 1.5vh;
+        }
+    }
+
+    .wcs-class {
+        &__image {
+            width: 75px !important;
+            height: 75px !important;
+            object-fit: contain;
+            background-size: cover;
+            background-position: center center;
+        }
+
+        &__title-meta {
+            padding-left: 10px;
+            width: 60%;
+            .wcs-class__title {
+                color: $c_secondary-bg;
+                font-weight: 500;
+                line-height: 1.2;
+            }
+
+            .ti-time:before {
+                display: none;
+            }
+        }
+    }
+}
+#wcs-app-6 {
+    margin-bottom: 0 !important;
+
+    .wcs-timetable__container {
+        padding: 3vh 0;
     }
 
     .wcs-timetable__agenda-nav {
@@ -87,7 +142,7 @@ a.btn-ver-mais {
         vertical-align: middle;
         margin-left: 6px;
         margin-bottom: 3px;
-        
+
         &:hover {
             color: $c_primary-bg !important;
         }

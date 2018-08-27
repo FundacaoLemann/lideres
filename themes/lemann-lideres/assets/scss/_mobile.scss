@@ -3,21 +3,17 @@
         max-width: 80%;
     }
 }
-@media only screen and (min-width: 1200px){
-    #gp_featured_box_wrapper_1 .gp-featured-large-col {
-        width: 80% !important;
-        height: auto !important;
-    }
-}
-@media only screen and (min-width: 992px) {
-    #gp_featured_box_wrapper_1 .gp-featured-large-col {
-        width: 80% !important;
-        height: auto !important;
-    }
-}
 @media only screen and (min-width: 768px) {
-    #gp_featured_box_wrapper_1 .gp-featured-large-col {
+    #gp_featured_box_wrapper_1.gp-featured-box-1-2 .gp-featured-large-col {
         width: 80% !important;
         height: auto !important;
+    }
+}
+@media only screen and (max-width: 782px) {
+    #wcs-events-schedule-2 {
+        display: none;
+    }
+    #custom_html-3 {
+        display: none;
     }
 }
