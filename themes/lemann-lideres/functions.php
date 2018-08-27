@@ -360,14 +360,39 @@ function lemann_bp_edit_show_description() {
  * @return mixed
  */
 function lemann_bp_check_field_visibility( $value, $field_id, $user_id ) {
-    
+
         $field_level = xprofile_get_field_visibility_level($field_id, $user_id);
         $hidden_levels = bp_xprofile_get_hidden_field_types_for_user($user_id, get_current_user_id());
 
         if(in_array($field_level, $hidden_levels) ){
             return '';
         }
-  
+
     return $value;
 }
 add_filter( 'xprofile_get_field_data', 'lemann_bp_check_field_visibility', 10, 3 );
+
+
+add_action( 'widgets_init', function() {
+    register_sidebar( array(
+        'name'          => 'Oportunidades',
+        'id'            => 'oportunidades',
+        'description'   => 'Barra lateral da área de oportunidades',
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h3 class="widgettitle">',
+        'after_title'   => '</h3>',
+    ) );
+} );
+
+/**
+ * Sobrescreve as variáveis do tema.
+ */
+function ghostpool_custom_init_variables() {
+    global $ghostpool_layout;
+
+    // Exibe o conteúdo das oportunidades no layout certo.
+    if ( is_singular( 'oportunidade' ) ) {
+        $ghostpool_layout = 'gp-no-sidebar';
+    }
+}
