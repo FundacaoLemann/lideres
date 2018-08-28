@@ -396,3 +396,44 @@ function ghostpool_custom_init_variables() {
         $ghostpool_layout = 'gp-sidebar-right';
     }
 }
+
+/**
+ * E-mail de redefinição de senha: altera o assunto (padrão WP).
+ */
+add_filter( 'retrieve_password_title', function( $title ) {
+    if ( is_multisite() ) {
+        $site_name = get_network()->site_name;
+    } else {
+        $site_name = wp_specialchars_decode( get_option( 'blogname' ), ENT_QUOTES );
+    }
+
+    return sprintf(
+        /* translators: Site name */
+        __( '[%s] Solicitação de Primeiro Acesso ou Redefinição de senha', 'lemann-lideres' ),
+        $site_name
+    );
+} );
+
+/**
+ * E-mail de redefinição de senha: altera a mensagem (padrão WP e Aardvark).
+ *
+ * @param string  $message    Mensagem original.
+ * @param string  $key        Chave para redefinição de senha.
+ * @param string  $user_login Login do usuário.
+ * @param WP_User $user_data  Dados do usuário.
+ * @return sring
+ */
+function lemann_retrieve_password_message( $message, $key, $user_login, $user_data ) {
+    $new_message   = [];
+    $new_message[] = __( 'Foi feita uma solicitação para que a senha da seguinte conta fosse redefinida ou para primeiro acesso do usuário na plataforma', 'lemann-lideres' );
+    $new_message[] = network_site_url();
+    $new_message[] = sprintf( __( 'Nome de usuário: %s'), $user_login );
+    $new_message[] = __( 'Se foi um engano, apenas ignore este e-mail e nada acontecerá.', 'lemann-lideres' );
+    $new_message[] = __( 'Para fazer o primeiro acesso ou redefinir sua senha, visite o seguinte endereço:', 'lemann-lideres' );
+    $new_message[] = network_site_url( "wp-login.php?action=rp&key=$key&login=" . rawurlencode( $user_login ), 'login' );
+    $new_message[] = __( 'Você receberá um outro e-mail com a sua nova ou primeira senha.', 'lemann-lideres' );
+
+    return implode( "\r\n\r\n", $new_message );
+}
+add_filter( 'retrieve_password_message', 'lemann_retrieve_password_message', 10, 4 );
+add_filter( 'ghostpool_retrieve_password_message', 'lemann_retrieve_password_message', 10, 4 );
