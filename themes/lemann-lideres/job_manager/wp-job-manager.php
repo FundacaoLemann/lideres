@@ -41,6 +41,7 @@ function lemann_wjm_custom_fields() {
 				'Democracia e Política'     => 'Democracia e Política',
 				'Sustentabilidade'          => 'Sustentabilidade',
 				'Desenvolvimento Econômico' => 'Desenvolvimento Econômico',
+				'Outros'                    => 'Outros',
 			],
 		],
 		'disponibilidade'    => [
