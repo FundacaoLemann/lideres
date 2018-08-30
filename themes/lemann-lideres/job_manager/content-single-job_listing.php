@@ -83,3 +83,10 @@ global $post;
 		?>
 	<?php endif; ?>
 </div>
+
+<script>
+	window.addEventListener('load', function() {
+		var header = document.querySelector('#gp-page-header');
+		header.style.display = 'none';
+	});
+</script>
