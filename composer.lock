@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b7b9d46df2d90bab4b2ddb0ca678dea2",
+    "content-hash": "9336c1b53f2b685a644b22584ec791b1",
     "packages": [
         {
             "name": "composer/installers",
@@ -379,6 +379,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/wordpress-seo/"
+        },
+        {
+            "name": "wpackagist-plugin/wp-job-manager",
+            "version": "1.31.3",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/wp-job-manager/",
+                "reference": "tags/1.31.3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/wp-job-manager.1.31.3.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/wp-job-manager/"
         },
         {
             "name": "wpackagist-plugin/wp-sentry-integration",

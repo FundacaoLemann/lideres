@@ -21,7 +21,8 @@
         "wpackagist-plugin/w3-total-cache": "*",
         "wpackagist-plugin/sucuri-scanner": "*",
         "wpackagist-plugin/google-captcha": "*",
-        "wpackagist-plugin/multiple-roles": "1.2.*"
+        "wpackagist-plugin/multiple-roles": "1.2.*",
+        "wpackagist-plugin/wp-job-manager": "1.31.*"
     },
     "require-dev":{
         "wpackagist-plugin/query-monitor":"*"
