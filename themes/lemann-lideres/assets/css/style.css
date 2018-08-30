@@ -615,6 +615,40 @@ a.btn-ver-mais:after:hover {
   color: #00B5AF !important;
 }
 
+.single_job_listing .job-listing-meta.meta a {
+  color: #999;
+}
+.single_job_listing .company {
+  align-items: center;
+  border-radius: 5px;
+  display: flex;
+  height: 130px;
+}
+.single_job_listing .company img.company_logo {
+  border: 5px solid #F5F5F5;
+  border-radius: 50%;
+  height: 100px;
+  margin-left: 10px;
+  width: 100px;
+}
+.single_job_listing .company p.name {
+  color: #083050;
+  margin: 0 0 0 130px;
+  padding: 0;
+  width: 100%;
+}
+.single_job_listing .company p.name a.website {
+  color: #083050;
+  float: right;
+  font-weight: 500;
+}
+.single_job_listing .job_description, .single_job_listing .job_additional_info {
+  color: #888888;
+}
+.single_job_listing .application .application_button {
+  background: #FFA600;
+}
+
 .page-login {
   width: 100vw;
   height: 100vh;

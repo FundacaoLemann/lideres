@@ -1,0 +1,45 @@
+.single_job_listing {
+    .job-listing-meta.meta {
+        a {
+            color: #999;
+        }
+    }
+
+    .company {
+        align-items: center;
+        border-radius: 5px;
+        display: flex;
+        height: 130px;
+
+        img.company_logo {
+            border: 5px solid $c_lightergray;
+            border-radius: 50%;
+            height: 100px;
+            margin-left: 10px;
+            width: 100px;
+        }
+
+        p.name {
+            color: $c_primary;
+            margin: 0 0 0 130px;
+            padding: 0;
+            width: 100%;
+
+            a.website {
+                color: $c_primary;
+                float: right;
+                font-weight: 500;
+            }
+        }
+    }
+
+    .job_description, .job_additional_info {
+        color: $c_lightgray;
+    }
+
+    .application {
+        .application_button {
+            background: #FFA600;
+        }
+    }
+}
