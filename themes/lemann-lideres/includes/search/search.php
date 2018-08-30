@@ -36,7 +36,7 @@ function fl_get_search_result($term){
 function fl_get_search_members($term){
     global $wpdb;
     if(false) $wpdb = new wpdb;
-    
+
     $term = fl_sanitize_term($term);
 
     $cache_key = __METHOD__ . ':' . $term;
@@ -65,7 +65,7 @@ function fl_get_search_members($term){
     foreach($result as &$user){
         $user->permalink = $base_permalink . $user->user_nicename;
     }
-    
+
     apcu_store($cache_key, $result, 300);
 
     return $result;
@@ -92,10 +92,8 @@ function fl_get_search_posts($term){
     return $result;
 }
 
-
-
-add_action( 'pre_get_posts', function($query){
-    if($query->is_search()){
-        $query->set('post_type', ['post', 'page']);
+add_action( 'pre_get_posts', function( $query ) {
+    if ( $query->is_search() && 'job_listing' != $query->get( 'post_type' ) ) {
+        $query->set( 'post_type', [ 'post', 'page' ] );
     }
 });
