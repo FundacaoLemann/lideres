@@ -1,0 +1,7 @@
+#rtm_other_extensions {
+  width: 85%;
+  margin-right: 5px;
+}
+#rtm_other_extensions + .description {
+  display: block;
+}

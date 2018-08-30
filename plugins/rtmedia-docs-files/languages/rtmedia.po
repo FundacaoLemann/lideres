@@ -1,0 +1,276 @@
+# Copyright (C) 2018 rtCamp
+# This file is distributed under the GPLv2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: rtMedia Docs and Other files 1.3.2\n"
+"Report-Msgid-Bugs-To: http://community.rtcamp.com/c/rtmedia/\n"
+"POT-Creation-Date: 2018-02-07 06:24:03+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2018-MO-DA HO:MI+ZONE\n"
+"Last-Translator: rtMedia <rtmedia@rtcamp.com>\n"
+"Language-Team: rtMedia <rtmedia@rtcamp.com>\n"
+"X-Generator: grunt-wp-i18n 0.5.4\n"
+"X-Poedit-KeywordsList: "
+"__;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;_nx_noop:1,2,3c;esc_"
+"attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;esc_html_x:1,2c;\n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Country: United States\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-Bookmarks: \n"
+"X-Textdomain-Support: yes\n"
+
+#: app/RTMediaOtherFiles.php:119
+msgid "Following file is not allowed and can't be attached"
+msgstr ""
+
+#: app/RTMediaOtherFiles.php:120
+msgid "Following files are not allowed and can't be attached"
+msgstr ""
+
+#: app/RTMediaOtherFiles.php:121
+msgid "Something went wrong while deleting the media. Please try again"
+msgstr ""
+
+#: app/RTMediaOtherFiles.php:122 templates/media/document-list.php:89
+msgid "Oops !! There's no media found for the request !!"
+msgstr ""
+
+#: app/admin/RTMediaOtherFilesAdmin.php:34
+msgid "Please provide some extensions for the Other file type."
+msgstr ""
+
+#: app/admin/RTMediaOtherFilesAdmin.php:35
+msgid "Please provide extensions seperated by commas. Ex: "
+msgstr ""
+
+#: app/admin/RTMediaOtherFilesAdmin.php:70
+msgid ""
+"Display documents and other files in table style (only for Document and "
+"Others tab)"
+msgstr ""
+
+#: app/admin/RTMediaOtherFilesAdmin.php:75
+msgid "In Document and Others tab, all files can be displayed in tabular format."
+msgstr ""
+
+#: app/admin/RTMediaOtherFilesAdmin.php:79
+msgid "Enable Google Docs for documents and files."
+msgstr ""
+
+#: app/admin/RTMediaOtherFilesAdmin.php:84
+msgid ""
+"In lightbox media view, display the docs, pdf, excel and other office "
+"documents in Google Docs. "
+msgstr ""
+
+#: app/main/controllers/media/RTMediaDocSupport.php:110
+msgid "Google docs service has been disabled. This file can't be loaded."
+msgstr ""
+
+#: app/main/controllers/media/RTMediaDocSupport.php:141
+msgid "Document"
+msgstr ""
+
+#: app/main/controllers/media/RTMediaDocSupport.php:142
+#: app/main/controllers/template/rtm-other-files-functions.php:543
+msgid "Documents"
+msgstr ""
+
+#: app/main/controllers/media/RTMediaOtherTypeSupport.php:93
+msgid "You can also upload file with following formats : "
+msgstr ""
+
+#: app/main/controllers/media/RTMediaOtherTypeSupport.php:138
+#: app/main/controllers/media/RTMediaOtherTypeSupport.php:159
+msgid ""
+"Provide comma seperated values for other file types. Allowing other file "
+"types for upload could be dangerous."
+msgstr ""
+
+#: app/main/controllers/media/RTMediaOtherTypeSupport.php:156
+msgid "File Extensions"
+msgstr ""
+
+#: app/main/controllers/media/RTMediaOtherTypeSupport.php:210
+msgid "No preview available"
+msgstr ""
+
+#: app/main/controllers/media/RTMediaOtherTypeSupport.php:246
+msgid "Other"
+msgstr ""
+
+#: app/main/controllers/media/RTMediaOtherTypeSupport.php:247
+#: app/main/controllers/template/rtm-other-files-functions.php:544
+msgid "Others"
+msgstr ""
+
+#: app/main/controllers/template/rtm-other-files-functions.php:388
+msgid "Invalid media."
+msgstr ""
+
+#: app/main/controllers/template/rtm-other-files-functions.php:393
+msgid "Sorry, your nonce did not verify."
+msgstr ""
+
+#: index.php:190
+msgid "Docs"
+msgstr ""
+
+#: lib/plugin-installer/RTMPluginInstaller.php:34
+#: lib/plugin-installer/RTMPluginInstaller.php:40
+msgid "rtMedia for WordPress, BuddyPress and bbPress"
+msgstr ""
+
+#: lib/plugin-installer/RTMPluginInstaller.php:54
+msgid "rtMedia Add-on(s)"
+msgstr ""
+
+#: lib/plugin-installer/RTMPluginInstaller.php:54
+msgid "won't work if rtMedia is"
+msgstr ""
+
+#: lib/plugin-installer/RTMPluginInstaller.php:58
+msgid "not installed. Click"
+msgstr ""
+
+#: lib/plugin-installer/RTMPluginInstaller.php:59
+#: lib/plugin-installer/RTMPluginInstaller.php:67
+#: lib/plugin-installer/RTMPluginInstaller.php:75
+msgid "here"
+msgstr ""
+
+#: lib/plugin-installer/RTMPluginInstaller.php:60
+msgid "to install rtMedia."
+msgstr ""
+
+#: lib/plugin-installer/RTMPluginInstaller.php:66
+#: lib/plugin-installer/RTMPluginInstaller.php:74
+msgid "not activated. Click"
+msgstr ""
+
+#: lib/plugin-installer/RTMPluginInstaller.php:68
+#: lib/plugin-installer/RTMPluginInstaller.php:76
+msgid "to activate rtMedia."
+msgstr ""
+
+#: lib/plugin-installer/RTMPluginInstaller.php:90
+#: lib/plugin-installer/RTMPluginInstaller.php:107
+msgid "ERROR: No slug was passed to the AJAX callback."
+msgstr ""
+
+#: lib/plugin-installer/RTMPluginInstaller.php:96
+msgid "ERROR: You lack permissions to install and/or activate plugins."
+msgstr ""
+
+#: lib/plugin-installer/RTMPluginInstaller.php:113
+msgid "ERROR: You lack permissions to activate plugins."
+msgstr ""
+
+#: lib/plugin-installer/RTMPluginInstaller.php:128
+#: lib/plugin-installer/RTMPluginInstaller.php:161
+msgid "ERROR: Error fetching plugin information: %s"
+msgstr ""
+
+#: lib/plugin-installer/RTMPluginInstaller.php:139
+msgid "Please ensure the file system is writable"
+msgstr ""
+
+#: lib/plugin-installer/RTMPluginInstaller.php:145
+msgid "ERROR: Failed to install plugin: %s"
+msgstr ""
+
+#: lib/plugin-installer/RTMPluginInstaller.php:151
+#: lib/plugin-installer/RTMPluginInstaller.php:184
+#: lib/plugin-installer/RTMPluginInstaller.php:192
+msgid "ERROR: Failed to activate plugin: %s"
+msgstr ""
+
+#: lib/plugin-installer/RTMPluginInstaller.php:172
+msgid "Please ensure the file system is writeable"
+msgstr ""
+
+#: lib/plugin-installer/RTMPluginInstaller.php:178
+msgid "ERROR: Failed to update plugin: %s"
+msgstr ""
+
+#: lib/rt-edd-license/RTEDDSLPluginUpdater.php:178
+msgid ""
+"There is a new version of %1$s available. <a target=\"_blank\" "
+"class=\"thickbox\" href=\"%2$s\">View version %3$s details</a>."
+msgstr ""
+
+#: lib/rt-edd-license/RTEDDSLPluginUpdater.php:180
+msgid ""
+"There is a new version of %1$s available. <a target=\"_blank\" "
+"class=\"thickbox\" href=\"%2$s\">View version %3$s details</a> or <a "
+"href=\"%4$s\">update now</a>."
+msgstr ""
+
+#: lib/rt-edd-license/RTEDDSLPluginUpdater.php:297
+msgid "You do not have permission to install plugin updates"
+msgstr ""
+
+#: lib/rt-edd-license/RTEDDSLPluginUpdater.php:297
+msgid "Error"
+msgstr ""
+
+#: templates/media/document-list-item.php:32
+msgid "Edit this media"
+msgstr ""
+
+#: templates/media/document-list-item.php:32
+msgid "Edit"
+msgstr ""
+
+#: templates/media/document-list-item.php:38
+msgid "Delete this media"
+msgstr ""
+
+#: templates/media/document-list-item.php:38
+msgid "Delete"
+msgstr ""
+
+#: templates/media/document-list.php:23 templates/media/document-list.php:33
+msgid "Media Gallery"
+msgstr ""
+
+#: templates/media/document-list.php:60
+msgid "Title"
+msgstr ""
+
+#: templates/media/document-list.php:61
+msgid "Uploaded"
+msgstr ""
+
+#: templates/media/document-list.php:62
+msgid "Size"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "rtMedia Docs and Other files"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "https://rtmedia.io/products/rtmedia-docs-files/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"This plugin provides Documents and Other file types uploading support with "
+"rtMedia."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "rtCamp"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid ""
+"http://rtcamp.com/?utm_source=dashboard&utm_medium=plugin&utm_campaign="
+"rtmedia-docs-files"
+msgstr ""
