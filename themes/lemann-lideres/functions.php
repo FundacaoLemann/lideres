@@ -394,9 +394,11 @@ add_action( 'widgets_init', function() {
 function ghostpool_custom_init_variables() {
     global $ghostpool_layout;
 
-    // Exibe o conteúdo das oportunidades no layout certo.
+    // Exibe o conteúdo das oportunidades e das vagas no layout certo.
     if ( is_singular( 'oportunidade' ) ) {
         $ghostpool_layout = 'gp-sidebar-right';
+    } elseif ( is_singular( 'job_listing' ) ) {
+        $ghostpool_layout = 'gp-no-sidebar';
     }
 }
 

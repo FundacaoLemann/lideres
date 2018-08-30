@@ -62,19 +62,24 @@ $display_image = ghostpool_option( 'image' ) == 'default' ? ghostpool_option( 'p
 			the_tags( '<div class="gp-entry-tags">' . esc_html__( 'Tags: ', 'aardvark' ), ', ', '</div>' );
 		} ?>
 
-		<?php if ( function_exists( 'ghostpool_share_icons' ) && ghostpool_option( 'post_meta', 'share_icons' ) == '1' ) {
+		<?php
+		/*
+		Tire do comentário para exibir uma barra de compartilhar.
+		if ( function_exists( 'ghostpool_share_icons' ) && ghostpool_option( 'post_meta', 'share_icons' ) == '1' ) {
 			echo ghostpool_share_icons();
-		} ?>
+		}
+		*/
+		?>
 
 		<?php if ( ghostpool_option( 'post_author_info' ) == 'enabled' ) {
 			get_template_part( 'lib/sections/post/author-info' );
 		} ?>
 
-		<?php if ( ! is_singular( 'oportunidade' ) && function_exists( 'ghostpool_voting' ) && ghostpool_option( 'post_voting' ) == 'enabled' ) {
+		<?php if ( ! is_singular( [ 'oportunidade', 'job_listing' ] ) && function_exists( 'ghostpool_voting' ) && ghostpool_option( 'post_voting' ) == 'enabled' ) {
 			echo ghostpool_voting( '', '', ghostpool_option( 'post_voting_title' ) );
 		} ?>
 
-		<?php if ( ghostpool_option( 'post_meta', 'post_nav' ) == '1' ) {
+		<?php if ( ! is_singular( 'job_listing' ) && ghostpool_option( 'post_meta', 'post_nav' ) == '1' ) {
 			echo ghostpool_post_navigation();
 		} ?>
 

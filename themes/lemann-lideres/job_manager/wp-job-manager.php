@@ -3,18 +3,18 @@ defined( 'ABSPATH' ) || exit;
 
 function lemann_wjm_custom_fields() {
 	return [
-		'responsavel_nome' => [
+		'responsavel_nome'   => [
 			'label'    => __( 'Responsável pela postagem (nome completo)', 'lemann-lideres' ),
 			'type'     => 'text',
 			'required' => true,
 		],
-		'responsavel_email' => [
+		'responsavel_email'  => [
 			'label'     => __( 'Contato do responsável (e-mail)', 'lemann-lideres' ),
 			'type'      => 'email',
 			'required'  => true,
 			'sanitizer' => 'email',
 		],
-		'setor_atuacao'     => [
+		'setor_atuacao'      => [
 			'label'    => __( 'Setor de atuação', 'lemann-lideres' ),
 			'type'     => 'multiselect',
 			'required' => true,
@@ -26,7 +26,7 @@ function lemann_wjm_custom_fields() {
 				'Outros'                 => 'Outros',
 			],
 		],
-		'area_atuacao'      => [
+		'area_atuacao'       => [
 			'label'    => __( 'Área de atuação', 'lemann-lideres' ),
 			'type'     => 'multiselect',
 			'required' => true,
@@ -43,7 +43,7 @@ function lemann_wjm_custom_fields() {
 				'Desenvolvimento Econômico' => 'Desenvolvimento Econômico',
 			],
 		],
-		'disponibilidade'   => [
+		'disponibilidade'    => [
 			'label'    => __( 'Disponibilidade de início', 'lemann-lideres' ),
 			'type'     => 'select',
 			'required' => true,
@@ -53,7 +53,7 @@ function lemann_wjm_custom_fields() {
 				'Longo prazo (6 meses)' => 'Longo prazo (6 meses)',
 			],
 		],
-		'graduacao'         => [
+		'graduacao'          => [
 			'label'    => __( 'Nível de Graduação', 'lemann-lideres' ),
 			'type'     => 'select',
 			'required' => true,
@@ -66,11 +66,11 @@ function lemann_wjm_custom_fields() {
 				'Outros'        => 'Outros',
 			],
 		],
-		'graduacao_outros'  => [
+		'graduacao_outros'   => [
 			'label' => __( 'Outros (especifique)', 'lemann-lideres' ),
 			'type'  => 'text',
 		],
-		'experiencia'       => [
+		'experiencia'        => [
 			'label'    => __( 'Experiência profissional', 'lemann-lideres' ),
 			'type'     => 'select',
 			'required' => false,
@@ -122,7 +122,6 @@ add_filter( 'submit_job_form_fields', function( $fields ) {
 	$custom_fields = lemann_wjm_custom_fields();
 	foreach ( $custom_fields as $key => $field ) {
 		$field['priority']     = 2;
-		$field['type']         = ( 'email' != $field['type'] ) ? $field['type'] : 'text';
 		$fields['job'][ $key ] = $field;
 	}
 
@@ -139,6 +138,7 @@ add_filter( 'job_manager_job_listing_data_fields', function( $fields ) {
 	$i = 0;
 	foreach ( $custom_fields as $key => $field ) {
 		$field['priority']    = 20 + $i++;
+		$field['type']        = ( 'email' != $field['type'] ) ? $field['type'] : 'text';
 		$fields[ '_' . $key ] = $field;
 	}
 
