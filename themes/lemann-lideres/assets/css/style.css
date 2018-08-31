@@ -615,6 +615,18 @@ a.btn-ver-mais:after:hover {
   color: #00B5AF !important;
 }
 
+div.job_listings ul.job_listings li.job_listing {
+  border: 1px solid #eee;
+  margin: 10px 0;
+}
+div.job_listings ul.job_listings li.job_listing img.company_logo {
+  border: 2px solid #F5F5F5;
+  border-radius: 50%;
+}
+div.job_listings ul.job_listings li.job_listing .position h3 {
+  color: #083050;
+}
+
 .single_job_listing .job-listing-meta.meta a {
   color: #999;
 }
