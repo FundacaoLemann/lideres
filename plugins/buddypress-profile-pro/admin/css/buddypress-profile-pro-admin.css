@@ -1,0 +1,372 @@
+/**
+ * All of the CSS for your admin-specific functionality should be
+ * included in this file.
+ */
+
+/*----------  Active tab design  ----------*/
+ .nav-tab.active{
+  border-bottom: 1px solid #f1f1f1;
+  background: #f1f1f1;
+  color: #000;
+ }
+
+ /*----------  Style tabbed settings  ----------*/
+ .container{
+  width: 60%;
+  margin-top: 20px;
+  margin-left:5px;
+ }
+
+ ul.bprm-tabs{
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+ }
+ ul.bprm-tabs li{
+  background: none;
+  color: #555;
+  display: inline-block;
+  padding: 10px 15px;
+  cursor: pointer;
+  margin-bottom:0;
+ }
+
+ ul.bprm-tabs li.current{
+  background: lightgrey;
+  color: #555;
+  font-weight: bold;
+ }
+
+ .bprm-tab-content{
+  display: none;
+  background: #fff;
+  padding: 15px;
+  padding-top:2px;
+ }
+
+ .bprm-tab-content.current{
+  display: inherit;
+  background-color: lightgrey;
+ }
+
+ /*----------  Style label and checkboxes  ----------*/
+ .checkbox-inline{
+  display: inline-block;
+  padding-left: 0;
+  margin-bottom: 10px;
+ }
+
+ /*----------  Support Style  ----------*/
+.bprm-admin-col-12 {
+  float: left;
+  padding: 10px 0;
+  width: 100%;
+}
+ .bprm-adming-setting{
+  float: left;
+  width: 90%;
+}
+button.bprm-accordion {
+  background-color: hsl(0, 0%, 87%);
+  border: medium none;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  color: hsl(0, 0%, 27%);
+  cursor: pointer;
+  font-size: 15px;
+  margin: 0 5%;
+  outline: medium none;
+  padding: 15px 20px;
+  text-align: left;
+  transition: all 0.4s ease 0s;
+  width: 90%;
+}
+button.bprm-accordion.active, button.bprm-accordion:hover {
+  background-color: hsl(207, 90%, 54%);
+  color:white;
+}
+div.wbbpp-panel {
+  background-color: white;
+  margin:0px 5%;
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 18px;
+  transition: max-height 0.2s ease-out;
+}
+button.bprm-accordion::after {
+  color: hsl(0, 0%, 47%);
+  content: "+";
+  float: right;
+  font-size: 13px;
+  font-weight: bold;
+  margin-left: 5px;
+}
+button.bprm-accordion::after:hover {
+  color: white;
+}
+button.bprm-accordion.active::after {
+  content: "−";
+  color:white;
+}
+.bprm-admin-row{
+  border-top: 1px solid #ddd;
+  clear: both;
+  overflow: hidden;
+  padding-bottom: 5px;
+}
+
+.bprm-tab-3-title {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.bprm-tab-content .form-table td {
+  padding: 0;
+}
+
+/*Dynamic field settings container 11-nov-2017*/
+.bprm-gen-settings-wrap{
+  margin:10px 20px 0 2px;
+}
+.bprm-gen-settings-container{
+  width:100%;
+}
+.bprm-group-field-container{
+  width:55%;
+  margin-right:5%;
+  float:left;
+}
+.bprm-add-new-field-container{
+  width:40%;
+  float:right;
+}
+.clear{
+  clear:both;
+}
+
+/*jquery toggle content css*/
+div.bprm-group-tab-link-container{
+  margin-bottom:20px;
+}
+div.bprm-group-tabs-content {
+  border: 1px solid #ddd;
+  border-radius: 0 0 3px 3px;
+  padding: 20px;
+  display: none;
+}
+div.bprm-group-tabs-link, div.bprm-gp-tabs-link{
+  width: 100%;
+  color: #444;
+  font-size: 12px;
+  padding: 8px 15px;
+  background: #fefefe;
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fefefe), to(#f5f5f5));
+  background: -moz-linear-gradient(0% 0% 270deg,#fefefe, #f5f5f5);
+  border: 1px solid #ddd;
+  border-radius: 3px 3px 0 0;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  font-weight: bold;
+}
+div.bprm-group-tabs-link.active{
+  border-bottom: 0;
+}
+div.bprm-group-tabs-link::after {
+  font-family: FontAwesome;
+  color: hsl(0, 0%, 47%);
+  content: "\f055";
+  float: right;
+  font-size: 13px;
+  font-weight: bold;
+  margin-left: 5px;
+}
+.bprm-group-actions {
+  float: right;
+  text-align: right;
+}
+div.bprm-group-tabs-link::after:hover {
+  color: white;
+}
+div.bprm-group-tabs-link.active::after {
+  content: "\f056";
+}
+span.bprm-description{
+  margin-left:1%;
+  font-size: 12px;
+  color: #ccc;
+}
+span.bprm-tab-description{
+  margin-left:1%;
+}
+
+/*start add new field style*/
+.bprm-settings-field-btn{
+	border-radius: 3px;
+	color: #fff!important;
+	text-shadow: none;
+	box-shadow: none;
+	border: 1px solid #353535;
+	background: #444;
+	display: inline-block;
+	text-decoration: none;
+	font-size: 13px;
+	line-height: 26px;
+	height: 28px;
+	margin: 0;
+	padding: 0 10px 1px;
+	cursor: pointer;
+	border-width: 1px;
+	border-style: solid;
+	-webkit-appearance: none;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+.bprm-settings-field-btn:hover{
+	border-color:#222;
+	background: #333;
+	color:#fff;
+}
+.bprm-settings-field-btn:active{
+	color:#fff!important;
+}
+/*end add new field style*/
+.bprm-add-new-form-container{
+  background-color: #666;
+  padding: 10px;
+  border-radius: 5px;
+}
+.bprm-new-form-input{
+  width: 24em;
+}
+.bprm-add-new-form-container .form-table input[type=radio]{
+  height: 1em;
+}
+.bprm-add-new-form-container .form-table input[type=checkbox]{
+  height: 1em;
+}
+.bprm-add-new-form-container .form-table th {
+	vertical-align: top;
+	text-align: left;
+	padding: 20px 10px 20px 0;
+	width: 200px;
+	line-height: 1.3;
+	font-weight: 600;
+	font-size: 12px;
+	color: #fff;
+}
+.bprm-add-new-form-container i.fa{
+  color: #41e2cc;
+  margin-right:1%;
+}
+.bprm-radio-text{
+  color:#fff;
+  font-size: 14px;
+  margin-right: 2%;
+}
+.bprm-nf-loader{
+  display: none;
+}
+.bprm-field-actions{
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  display: block;
+}
+.bprm-field-zone{
+  background: #fdfdfd;
+  padding: 15px;
+  border: 1px solid #eee;
+  margin: 15px 0 0 0;
+  display: none;
+  position: relative;
+}
+.bprm-groups-zone{
+  background: #fdfdfd;
+  padding: 15px;
+  border: 1px solid #eee;
+  position: relative;
+}
+.ui-sortable{
+  list-style: none;
+}
+.bprm-field-li{
+  position: relative;
+  left: 0px;
+  top: 0px;
+  width: auto;
+  width: 100%;
+  color: #444;
+  font-size: 12px;
+  padding: 6px 15px;
+  background: #fefefe;
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fefefe), to(#f5f5f5));
+  background: -moz-linear-gradient(0% 0% 270deg,#fefefe, #f5f5f5);
+  margin: 5px 0;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+  cursor: move;
+  position: relative;
+  list-style: none;
+}
+.bprm-field-actions a{
+  text-decoration: none;
+  color:#444;
+}
+.bprm-group-tab-link-container a{
+  color:#444;
+}
+.bprm-fld-onchange-optn-html{
+  display: none;
+}
+.border-alert{
+  border:1px solid red !important;
+}
+.bprm-onchange-type-loader{
+  display: none;
+}
+.bprm_nf_error{
+  color:red;
+  display: none;
+}
+.bprm_gp_error{
+  color:red;
+  display: none;
+}
+.bprm_field_section_title, .bprm_apprnc_section_field, .bprm_field_section_icon{
+  display: none;
+}
+.bprm-nf-oth-loader{
+  display: none;
+}
+.bprm-field-actions a, .bprm-group-actions a { 
+  padding: 3px;
+}
+.bprm-anchor-loader{
+  margin-right: 0!important;
+}
+/* Start hide repeater group setting for otrhers group */
+.bprm_grp_others .tr-repeater-group{
+  display: none;
+}
+.wbbpp-resume-display-tr{
+  display: none;
+}
+.wbbpp-group-display-area-tr{
+  display: none;
+}
+/* End hide repeater group setting for otrhers group */
+@media screen and (max-width: 767px) and (min-width: 320px){
+  .brpm_grp_name {
+    width: 60%;
+    display: inline-block;
+  }
+  .bprm-group-actions {
+    width: 22% !important;
+  }
+}

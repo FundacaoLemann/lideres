@@ -1,0 +1,612 @@
+/**
+ * All of the CSS for your public-facing functionality should be
+ * included in this file.
+ */
+/*----------  error message style  ----------*/
+.bprm-empty-error{
+width:98%;
+margin-top: 0px;
+margin-bottom: 10px;
+color:red;
+display: none;
+font-size: 12px;
+}
+
+/*----------  Empty Resumme Message Box  ----------*/
+.empty-resume-message {
+	padding: 20px;
+	background-color: #2196F3; /* Red */
+	color: white;
+	margin-bottom: 15px;
+}
+
+/* ==================== Form style sheet ==================== */
+.bprm_resume_form {
+  margin: 0 0 22px 0!important;
+  width: 100%;
+  padding-bottom: 30px;
+}
+
+.bprm_resume_form fieldset {
+  margin: 0 0 22px 0!important;
+  border: 1px solid #424242!important;
+  padding: 12px 17px!important;
+}
+.bprm_resume_form legend {
+  font-size: 1.1em;
+  background-color: #424242;
+  color: #FFFFFF;
+  font-weight: bold;
+  padding: 4px 8px;
+}
+.bprm_resume_form label {
+  display: block;
+  width: auto;
+  margin: 0 0 10px 0;
+}
+.bprm_resume_form input.inp-text,.bprm_resume_form textarea {
+  padding: 3px;
+}
+.bprm_resume_form input.inp-text {
+  margin: 0 0 8px 0;
+}
+.bprm_resume_form textarea {
+  margin: 0 0 12px 0;
+  display: block;
+}
+.bprm_resume_form select {
+  width: 96%;
+  margin: 0 0 12px 0;
+  display: block;
+}
+.bprm_resume_form input.submit-button {
+  font: 1.4em Georgia, "Times New Roman", Times, serif;
+  letter-spacing: 1px;
+  display: block;
+  margin: 23px 0 0 0;
+}
+
+/*=========================================
+=            form better style            =
+=========================================*/
+.bprm_resume_form input[type=text],.bprm_resume_form input[type=email], .bprm_resume_form input[type=url], .bprm_resume_form input[type=tel]{
+	background: transparent!important;
+	border: none!important;
+	border-bottom: 1px dashed #ddd!important;
+	outline: none;
+	-webkit-box-shadow:none;
+}
+.bprm_resume_form textarea{
+	background: transparent!important;
+	border: none!important;
+	border-bottom: 1px dashed #ddd!important;
+	outline: none;
+	-webkit-box-shadow:none;
+}
+.bprm_resume_form textarea:focus,
+.bprm_resume_form input[type=text]:focus,
+.bprm_resume_form input[type=email]:focus,
+.bprm_resume_form input[type=url]:focus,
+.bprm_resume_form input[type=tel]:focus{
+	border-bottom: 1px dashed #424242!important;
+}
+.bprm_resume_form input[type=submit]{
+  font-size: 16px!important;
+  color: #fff!important;
+  background: #424242!important;
+  border: none!important;
+  border-radius: 5px!important;
+  padding: 6px 30px!important;
+  border-radius: 4px!important;
+}
+.bprm_resume_form select{
+  background: transparent;
+  color:#737373;
+  font-size: 14px;
+  height: 32px;
+  padding: 5px;
+  -webkit-border-radius: 5px;
+   -moz-border-radius: 5px;
+   border-radius: 5px;
+}
+/*=====  End of form better style  ======*/
+/* ==================== Form style sheet END ==================== */
+
+/* ==================== Resume style sheet start ==================== */
+ul.list-unstyled{
+  list-style: none!important;
+  padding:0!important;
+  margin-bottom: 0!important;
+}
+.bprm-resume-wrapper h1,.bprm-resume-wrapper h2,.bprm-resume-wrapper h3,.bprm-resume-wrapper h4,.bprm-resume-wrapper h5,.bprm-resume-wrapper h6 {
+  font-weight: 700;
+}
+.bprm-resume-wrapper a {
+  color: #2d7788;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+}
+.bprm-resume-wrapper a:hover {
+  text-decoration: underline;
+  color: #1a454f;
+}
+.bprm-resume-wrapper a:focus {
+  text-decoration: none;
+}
+.bprm-resume-wrapper p {
+  line-height: 1.5;
+}
+.bprm-resume-wrapper {
+  -webkit-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  display: inline-flex;
+  width: 90%;
+}
+.bprm-resume-wrapper .sidebar-wrapper {
+  background: #42A8C0;
+  height: auto;
+  color: #fff;
+  width: 40%;
+}
+.bprm-resume-wrapper .sidebar-wrapper a {
+  color: #fff;
+}
+.bprm-resume-wrapper .main-wrapper {
+  background: #fff;
+  padding: 60px;
+  width: 60%;
+}
+/*start 24 nov */
+.bprm-field-wrap {
+  display: inline;
+  width:100%;
+}
+.bprm-field-wrap::after {
+  clear: both;
+  display: table;
+  content: "";
+}
+.bprm-field-label-wrap {
+  float: left;
+  width: 30%;
+}
+.bprm-field-inputs-wrap {
+  display: inline-grid;
+  float: right;
+  width: 65%;
+}
+/*24 nov end*/
+.bprm-add-repeater-field{
+  float: right;
+  font-size: 12px;
+  color:#444;
+}
+.bprm-add-repeater-field::after{
+  clear:right;
+}
+.bprm-field-contain {
+  width: 100%;
+}
+.bprm-checkbox-field {
+  width: 100%;
+}
+.bprm-checkbox-field span{
+  margin: 0 0 0 5px;
+}
+/*27 nov*/
+.selectize-input {
+  width: 100%;
+}
+.bprm-radio-field {
+  width: 100%;
+}
+.selectize-control {
+  position: relative;
+  width: 100%;
+}
+.bprm-repeater-link {
+  margin-bottom: 30px;
+}
+.bprm-radio-field span{
+  margin-left: 5%;
+}
+
+.bprm-container{
+  border:1px solid #8080804d;
+  padding: 10px;
+  margin-bottom: 5px;
+}
+
+/* 8 December 2017*/
+.sidebar-wrapper .field-title{
+  font-size: 14px;
+  margin-top: 0;
+  margin-bottom: 5px;
+  color:#fff !important;
+  line-height: 1.1;
+  padding-bottom: 0;
+}
+.main-wrapper .field-title{
+  font-size: 14px;
+  margin-top: 0;
+  margin-bottom: 5px;
+  color:#3F4650 !important;
+  line-height: 1.1;
+  padding-bottom: 0;
+}
+.bprm-resume-wrapper .sidebar-wrapper .fields-item {
+  margin-bottom: 15px;
+}
+.bprm-resume-wrapper .sidebar-wrapper .fields-item:last-child {
+  margin-bottom: 0;
+}
+.bprm-resume-wrapper .sidebar-wrapper .fields-item {
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 500;
+  margin-bottom: 0px;
+}
+.bprm-resume-wrapper .sidebar-wrapper {
+  background: #42A8C0;
+  height: auto;
+  color: #fff;
+}
+.resume-fields-data-wrap{
+  margin-bottom: 15px;
+}
+.bprm-resume-wrapper .sidebar-wrapper .bprm-group-title {
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #fff !important;
+  line-height: 1.1;
+  padding-bottom: 0;
+}
+.bprm-resume-wrapper .main-wrapper .bprm-group-title {
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #2d7788 !important;
+  line-height: 1.1;
+  padding-bottom: 0;
+}
+.bprm-resume-wrapper .fields-items ul {
+  list-style: none;
+}
+.bprm-resume-wrapper .sidebar-wrapper .fields-items .text-desc {
+  color: rgba(255, 255, 255, 0.6);
+}
+.bprm-resume-wrapper .main-wrapper .fields-items .level-bar,.profile-fields .level-bar {
+  height: 12px;
+  background: #f5f5f5;
+}
+.bprm-resume-wrapper .main-wrapper .fields-items .level-bar-inner,.profile-fields .level-bar-inner {
+  height: 12px;
+  background: #7bc2d3;
+}
+.bprm-resume-wrapper .main-wrapper .bprm-group-title .fa {
+  margin-right: 8px;
+  color: #fff;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  background: #2d7788;
+  padding: 8px;
+  font-size: 16px;
+}
+.bprm-resume-wrapper .sidebar-wrapper .bprm-group-title .fa {
+  margin-right: 8px;
+  color: #2d7788;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  background: #fff;
+  padding: 8px;
+  font-size: 16px;
+}
+/*11 december*/
+.bprm-group-title.bprm_grp_edu::before {
+  font-family: FontAwesome;
+  content: "\f19d";
+  color: #fff;
+  background: #2d7788;
+  border-radius: 50%;
+  font-size: 16px;
+  padding: 8px;
+  margin-right: 8px;
+}
+.bprm-group-title.bprm_grp_prof_exprnc::before{
+  font-family: FontAwesome;
+  content: "\f0b1";
+  color: #fff;
+  background: #2d7788;
+  border-radius: 50%;
+  font-size: 16px;
+  padding: 8px;
+  margin-right: 8px;
+  display: inline-block;
+}
+.fields-item ul li {
+  list-style: none !important;
+}
+.fields-item ul {
+  list-style: none !important;
+}
+.main-wrapper .fields-items.email::before {
+  color:#2d7788;
+  font-family: FontAwesome;
+  content: "\f0e0";
+  margin-right: 5px;
+  font-size: 12px;
+  display: inline-block;
+}
+.fields-items.email ul li::before {
+  font-family: FontAwesome;
+  content: "\f0e0";
+  margin-right: 5px;
+  font-size: 12px;
+  display: inline-block;
+}
+.fields-items.bprms_twit::before{
+  font-family: FontAwesome;
+  content: "\f099";
+  margin-right: 5px;
+  font-size: 12px;
+  display: inline-block;
+}
+.fields-items.bprms_cono::before{
+  font-family: FontAwesome;
+  content: "\f095";
+  margin-right: 5px;
+  font-size: 12px;
+  display: inline-block;
+}
+.fields-items.phone_number a::before{
+  font-family: FontAwesome;
+  content: "\f095";
+  margin-right: 5px;
+  font-size: 12px;
+  display: inline-block;
+}
+.main-wrapper .fields-items.phone_number::before{
+  color:#2d7788;
+  font-family: FontAwesome;
+  content: "\f095";
+  margin-right: 5px;
+  font-size: 12px;
+  display: inline-block;
+}
+.fields-items.url ul li::before{
+  font-family: FontAwesome;
+  content: "\f0c1";
+  margin-right: 5px;
+  font-size: 12px;
+  display: inline-block;
+}
+.main-wrapper .fields-items.url::before{
+  color:#2d7788;
+  font-family: FontAwesome;
+  content: "\f0c1";
+  margin-right: 5px;
+  font-size: 12px;
+  display: inline-block;
+}
+.fields-items.bprms_twit.url::before{
+  font-family: FontAwesome;
+  content: "\f099";
+  margin-right: 5px;
+  font-size: 12px;
+  display: inline-block;
+}
+.bprm-user-image-wrapper{
+  background-color: #2d7788;
+  text-align: center;
+  padding: 60px;
+}
+
+.bprm-sidebar-content {
+  padding: 60px 60px 60px 60px;
+}
+#bprm-mobile-view-sidebar{
+  display: none;
+}
+.bprm_remove_repeater_grp span {
+  float: right;
+  font-size: 20px;
+  color: #737373;
+}
+.bprm_add_repeater_grp {
+  float: right;
+  background-color: #424242;
+  color: #fff;
+  padding: 5px;
+}
+.inp-text.bprm_req_field {
+	width: 96% !important;
+	float: left;
+}
+.field-bprms_start.bprm-field-contain {
+	display: inline-block;
+}
+select.inp-text {
+	float: left;
+}
+.selectize-control.inp-text.multi {
+	float: left;
+	width: 96% !important;
+	margin-bottom: 2%;
+}
+.bprm_intrst.field-bprms_intrst.bprm-field-contain {
+	display: inline-block;
+}
+.field-bprms_dob.bprm-field-contain .inp-text{
+	float: left;
+	width: 96% !important;
+}
+.field-bprms_abtm.bprm-field-contain textarea{
+  width: 96% !important;
+  float: left;
+}
+.field-bprms_abtm.bprm-field-contain{
+  display: inline-block;
+}
+.bprm-field-contain input[type="checkbox"]:not(:first-child) {
+  margin-left: 2%;
+}
+.field-bprms_poswork.bprm-field-contain textarea{
+  width: 96% !important;
+  float: left;
+}
+.field-bprms_poswork.bprm-field-contain{
+  display: inline-block;
+}
+.bprm_add_repeater_grp:hover {
+  border: 1px solid #424242 ;
+  background-color: #fff;
+  color: #424242 ;
+}
+.bprm_remove_repeater_grp_div {
+	width: 100%;
+	float: right;
+}
+.bprm-remove-repeater-field {
+	float: right;
+}
+.bprm-resume-wrapper .fields-items ul {
+  list-style: none;
+  padding-left: 0px !important;
+}
+/* 8 December 2017*/
+
+/*start 6 February 2017*/
+.bprm-profile-fields .set-odd, .bp-widget.bprm_grp_edu .set-odd, .bp-widget.bprm_grp_prof_exprnc .set-odd{
+  background: #d3d3d31a;
+}
+td.data.fields-items ul {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+/*end 6 February 2017*/
+
+/* Start image field css*/
+.fields-image.image{
+  height:auto;
+  width:100px;
+}
+.bprm-resume-form-image{
+  height:auto;
+  width:100px;
+  padding:5px;
+}
+ul.bprm-profile-image-ul, .bprm-resume-image-container {
+    display: inline-block;
+    list-style-type: none;
+}
+ul.bprm-profile-image-ul:after, .bprm-resume-image-container:after{
+  content: " ";
+  display: table;
+  clear: both;
+}
+li.bprm-profile-image-li, .bprm-resume-image {
+    float: left;
+    margin-right: 10px;
+}
+/* End image field css*/
+
+/*start 13 dec responsive css*/
+@media screen and (max-width: 768px) and (min-width: 320px){
+  .bprm-field-label-wrap {
+	width: 100% !important;
+  }
+  .bprm-field-inputs-wrap {
+	width: 100% !important;
+  }
+  .inp-text.bprm_req_field {
+	width: 94% !important;
+  }
+  .field-bprms_dob.bprm-field-contain .inp-text {
+	width: 94% !important;
+  }
+}
+@media screen and (max-width: 992px) and (min-width: 880px){
+  .inp-text.bprm_req_field {
+	width: 95% !important;
+  }
+  .field-bprms_dob.bprm-field-contain .inp-text {
+	width: 95% !important;
+  }
+}
+/*end 13 dec responsive css*/
+
+/* Extra small devices (phones, less than 768px) */
+@media (max-width: 767px) {
+  .bprm-resume-wrapper .sidebar-wrapper {
+	position: static;
+	width: inherit;
+  }
+  .bprm-resume-wrapper .main-wrapper {
+	padding: 30px;
+  }
+  .bprm_resume_form {
+	margin: 0px;
+  }
+  .bprm_resume_form textarea
+  {
+	width: 100%;
+  }
+}
+/* ==================== Resume style sheet END ==================== */
+.bprm_resume_form label{
+  font-weight: 600!important;
+}
+.bprm_resume_form h5{
+  font-size:1em;
+  font-weight: 800;
+}
+.bprm-form-headng{
+  margin-bottom: 10px;
+}
+
+@media screen and (max-width: 420px) and (min-width: 280px){
+  .bprm-resume-wrapper {
+	-webkit-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+	box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+	display: block !important;
+	margin-top: 45px;
+	width: 100% !important;
+  }
+  .bprm-resume-wrapper .main-wrapper {
+	padding: 20px 2px 1px 10px;
+	width: 100% !important;
+  }
+  .sidebar-wrapper.bprm-mobile-view-sidebar{
+	display: block !important;
+  }
+  #bprm-sidebar-wrapper{
+	display: none !important;
+  }
+  #bprm-mobile-view-sidebar{
+	display: block !important;
+  }
+  .bprm-sidebar-content {
+	padding: 30px;
+  }
+}

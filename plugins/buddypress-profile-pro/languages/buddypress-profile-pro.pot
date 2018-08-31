@@ -1,0 +1,587 @@
+# Copyright (C) 2018 
+# This file is distributed under the same license as the  package.
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-19 10:06:34+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2018-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Varun Dubey\n"
+"Language-Team: Wbcom Designs\n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Country: United States\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: "
+"__;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;_nx_noop:1,2,3c;esc_"
+"attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;esc_html_x:1,2c;\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-Bookmarks: \n"
+"X-Textdomain-Support: yes\n"
+"X-Generator: grunt-wp-i18n1.0.1\n"
+
+#: admin/class-buddypress-profile-pro-admin.php:127
+msgid "BuddyPress Profile Pro Setting Page"
+msgstr ""
+
+#: admin/class-buddypress-profile-pro-admin.php:127
+msgid "Profile Pro"
+msgstr ""
+
+#: admin/class-buddypress-profile-pro-admin.php:140
+msgid "BuddyPress Profile Pro Settings"
+msgstr ""
+
+#: admin/class-buddypress-profile-pro-admin.php:145
+msgid "General"
+msgstr ""
+
+#: admin/class-buddypress-profile-pro-admin.php:146
+msgid "Group Settings"
+msgstr ""
+
+#: admin/class-buddypress-profile-pro-admin.php:147
+msgid "Field Settings"
+msgstr ""
+
+#: admin/class-buddypress-profile-pro-admin.php:148
+#: buddypress-profile-pro.php:186
+msgid "Support"
+msgstr ""
+
+#: admin/class-buddypress-profile-pro-admin.php:242
+#: admin/inc/wbbpp-setting-groups-tab.php:44
+#: admin/inc/wbbpp-setting-groups-tab.php:116
+msgid "Group Title"
+msgstr ""
+
+#: admin/class-buddypress-profile-pro-admin.php:249
+#: admin/inc/wbbpp-setting-groups-tab.php:51
+#: admin/inc/wbbpp-setting-groups-tab.php:125
+msgid "Group Description"
+msgstr ""
+
+#: admin/class-buddypress-profile-pro-admin.php:256
+#: admin/inc/wbbpp-setting-groups-tab.php:58
+msgid "Group Key"
+msgstr ""
+
+#: admin/class-buddypress-profile-pro-admin.php:263
+#: admin/inc/wbbpp-setting-groups-tab.php:65
+#: admin/inc/wbbpp-setting-groups-tab.php:134
+msgid "Group Display Area"
+msgstr ""
+
+#: admin/class-buddypress-profile-pro-admin.php:272
+#: admin/inc/wbbpp-setting-groups-tab.php:76
+#: admin/inc/wbbpp-setting-groups-tab.php:148
+msgid "Display Group at BuddyPress Profile"
+msgstr ""
+
+#: admin/class-buddypress-profile-pro-admin.php:279
+#: admin/inc/wbbpp-setting-groups-tab.php:83
+#: admin/inc/wbbpp-setting-groups-tab.php:155
+msgid "Display Group at Resume"
+msgstr ""
+
+#: admin/class-buddypress-profile-pro-admin.php:286
+#: admin/class-buddypress-profile-pro-admin.php:433
+#: admin/inc/wbbpp-setting-fields-tab.php:141
+#: admin/inc/wbbpp-setting-fields-tab.php:280
+#: admin/inc/wbbpp-setting-groups-tab.php:90
+#: admin/inc/wbbpp-setting-groups-tab.php:162
+msgid "Repeater"
+msgstr ""
+
+#: admin/class-buddypress-profile-pro-admin.php:342
+#: admin/class-buddypress-profile-pro-admin.php:482
+#: admin/class-buddypress-profile-pro-admin.php:523
+#: admin/inc/wbbpp-setting-fields-tab.php:98
+msgid "Field Options"
+msgstr ""
+
+#: admin/class-buddypress-profile-pro-admin.php:364
+msgid "Section Title"
+msgstr ""
+
+#: admin/class-buddypress-profile-pro-admin.php:371
+#: admin/inc/wbbpp-setting-fields-tab.php:156
+#: admin/inc/wbbpp-setting-fields-tab.php:255
+msgid "Appearence Section"
+msgstr ""
+
+#: admin/class-buddypress-profile-pro-admin.php:374
+#: admin/inc/wbbpp-setting-fields-tab.php:159
+#: admin/inc/wbbpp-setting-fields-tab.php:256
+msgid "Content Area"
+msgstr ""
+
+#: admin/class-buddypress-profile-pro-admin.php:376
+#: admin/inc/wbbpp-setting-fields-tab.php:161
+#: admin/inc/wbbpp-setting-fields-tab.php:257
+msgid "Sidebar"
+msgstr ""
+
+#: admin/class-buddypress-profile-pro-admin.php:380
+#: admin/inc/wbbpp-setting-fields-tab.php:165
+#: admin/inc/wbbpp-setting-fields-tab.php:262
+msgid "Field Section Icon"
+msgstr ""
+
+#: admin/class-buddypress-profile-pro-admin.php:393
+#: admin/inc/wbbpp-setting-fields-tab.php:72
+#: admin/inc/wbbpp-setting-fields-tab.php:209
+msgid "Field Title"
+msgstr ""
+
+#: admin/class-buddypress-profile-pro-admin.php:400
+#: admin/inc/wbbpp-setting-fields-tab.php:79
+#: admin/inc/wbbpp-setting-fields-tab.php:218
+msgid "Field Type"
+msgstr ""
+
+#: admin/class-buddypress-profile-pro-admin.php:410
+#: admin/inc/wbbpp-setting-fields-tab.php:115
+#: admin/inc/wbbpp-setting-fields-tab.php:233
+msgid "Field Group"
+msgstr ""
+
+#: admin/class-buddypress-profile-pro-admin.php:419
+#: admin/inc/wbbpp-setting-fields-tab.php:127
+#: admin/inc/wbbpp-setting-fields-tab.php:270
+msgid "Display"
+msgstr ""
+
+#: admin/class-buddypress-profile-pro-admin.php:426
+#: admin/inc/wbbpp-setting-fields-tab.php:134
+#: admin/inc/wbbpp-setting-fields-tab.php:275
+msgid "Required"
+msgstr ""
+
+#: admin/inc/wbbpp-resume-filter-functions.php:54
+#: buddypress-profile-pro-config.php:180
+msgid "Education"
+msgstr ""
+
+#: admin/inc/wbbpp-resume-filter-functions.php:55
+#: buddypress-profile-pro-config.php:181
+msgid "This group contains fields which will appear in Education section."
+msgstr ""
+
+#: admin/inc/wbbpp-resume-filter-functions.php:63
+#: buddypress-profile-pro-config.php:189
+msgid "Professional Experience"
+msgstr ""
+
+#: admin/inc/wbbpp-resume-filter-functions.php:64
+#: buddypress-profile-pro-config.php:190
+msgid ""
+"This group contains fields which will appear in Professional Experience "
+"section."
+msgstr ""
+
+#: admin/inc/wbbpp-resume-filter-functions.php:72
+#: buddypress-profile-pro-config.php:198
+msgid "Contact Details"
+msgstr ""
+
+#: admin/inc/wbbpp-resume-filter-functions.php:73
+#: buddypress-profile-pro-config.php:199
+msgid ""
+"This group contains fields which will appear in Personal Information "
+"section."
+msgstr ""
+
+#: admin/inc/wbbpp-setting-fields-tab.php:29
+msgid "BuddyPress Profile Fields"
+msgstr ""
+
+#: admin/inc/wbbpp-setting-fields-tab.php:149
+#: admin/inc/wbbpp-setting-fields-tab.php:246
+msgid "Field Section Title"
+msgstr ""
+
+#: admin/inc/wbbpp-setting-fields-tab.php:199
+#: admin/inc/wbbpp-setting-fields-tab.php:202
+msgid "Add New Field"
+msgstr ""
+
+#: admin/inc/wbbpp-setting-fields-tab.php:200
+msgid ""
+"You can add any field to your BuddyPress profile group such as City, "
+"Address, or anything else with below form."
+msgstr ""
+
+#: admin/inc/wbbpp-setting-fields-tab.php:213
+msgid "Enter title for this field."
+msgstr ""
+
+#: admin/inc/wbbpp-setting-fields-tab.php:214
+msgid "Please enter field name."
+msgstr ""
+
+#: admin/inc/wbbpp-setting-fields-tab.php:225
+msgid ""
+"The type of field, a user is going to enter this data (via text, selecting "
+"a choice from dropdown, etc)"
+msgstr ""
+
+#: admin/inc/wbbpp-setting-fields-tab.php:227
+msgid "Please select field type."
+msgstr ""
+
+#: admin/inc/wbbpp-setting-fields-tab.php:240
+msgid "Select the group which the field belongs to."
+msgstr ""
+
+#: admin/inc/wbbpp-setting-fields-tab.php:242
+msgid "Please select field group."
+msgstr ""
+
+#: admin/inc/wbbpp-setting-fields-tab.php:250
+msgid "Enter title for section of this field."
+msgstr ""
+
+#: admin/inc/wbbpp-setting-fields-tab.php:251
+msgid "Please enter section title for this field."
+msgstr ""
+
+#: admin/inc/wbbpp-setting-fields-tab.php:258
+msgid "Select field appearence section."
+msgstr ""
+
+#: admin/inc/wbbpp-setting-fields-tab.php:266
+msgid ""
+"Enter font awesome icon class for this field section(eg. fa "
+"fa-graduation-cap)."
+msgstr ""
+
+#: admin/inc/wbbpp-setting-fields-tab.php:272
+msgid "Check this option if you want to make this field available in resume form."
+msgstr ""
+
+#: admin/inc/wbbpp-setting-fields-tab.php:277
+msgid "Check this option if you want to make this field required in resume form."
+msgstr ""
+
+#: admin/inc/wbbpp-setting-fields-tab.php:282
+msgid ""
+"Check this option if you want to make this field as repeater field in "
+"resume form."
+msgstr ""
+
+#: admin/inc/wbbpp-setting-fields-tab.php:287
+#: admin/inc/wbbpp-setting-groups-tab.php:172
+msgid "Add"
+msgstr ""
+
+#: admin/inc/wbbpp-setting-fields-tab.php:288
+#: admin/inc/wbbpp-setting-groups-tab.php:173
+msgid "Cancel"
+msgstr ""
+
+#: admin/inc/wbbpp-setting-general-tab.php:25
+msgid ""
+"To use the Google Autocomplete Field Type in the resume, you must register "
+"your app project on the Google API Console and get a Google API key which "
+"you can add here."
+msgstr ""
+
+#: admin/inc/wbbpp-setting-general-tab.php:30
+msgid "Step 1: "
+msgstr ""
+
+#: admin/inc/wbbpp-setting-general-tab.php:31
+msgid "Get an API Key from the Google API Console."
+msgstr ""
+
+#: admin/inc/wbbpp-setting-general-tab.php:32
+msgid ""
+"( Click the GET A KEY in the link provided, which guides you through the "
+"process of registering a project in the Google API Console. )"
+msgstr ""
+
+#: admin/inc/wbbpp-setting-general-tab.php:35
+msgid "Step 2:"
+msgstr ""
+
+#: admin/inc/wbbpp-setting-general-tab.php:36
+msgid "Add the API key in the below field."
+msgstr ""
+
+#: admin/inc/wbbpp-setting-general-tab.php:40
+msgid "Google API Key"
+msgstr ""
+
+#: admin/inc/wbbpp-setting-general-tab.php:41
+msgid "API Key"
+msgstr ""
+
+#: admin/inc/wbbpp-setting-general-tab.php:41
+msgid ""
+"This API Key will help fetch the google places while setting place for work "
+"and education."
+msgstr ""
+
+#: admin/inc/wbbpp-setting-general-tab.php:42
+msgid "Get google API Key."
+msgstr ""
+
+#: admin/inc/wbbpp-setting-groups-tab.php:22
+msgid "BuddyPress Profile Groups"
+msgstr ""
+
+#: admin/inc/wbbpp-setting-groups-tab.php:109
+msgid "Add New Group"
+msgstr ""
+
+#: admin/inc/wbbpp-setting-groups-tab.php:110
+msgid ""
+"You can add new group to your extended fileds such as Sports Experience, "
+"Certifications, or anything else with below form."
+msgstr ""
+
+#: admin/inc/wbbpp-setting-groups-tab.php:120
+msgid "Enter title for this group."
+msgstr ""
+
+#: admin/inc/wbbpp-setting-groups-tab.php:121
+msgid "Please enter group title."
+msgstr ""
+
+#: admin/inc/wbbpp-setting-groups-tab.php:129
+#: admin/inc/wbbpp-setting-groups-tab.php:143
+msgid "Enter group description."
+msgstr ""
+
+#: admin/inc/wbbpp-setting-groups-tab.php:130
+msgid "Please enter group description."
+msgstr ""
+
+#: admin/inc/wbbpp-setting-groups-tab.php:144
+msgid "Please select group display area in resume."
+msgstr ""
+
+#: admin/inc/wbbpp-setting-groups-tab.php:151
+msgid ""
+"Check this option if you want to make this group available at BuddyPress "
+"pprofile view."
+msgstr ""
+
+#: admin/inc/wbbpp-setting-groups-tab.php:158
+msgid "Check this option if you want to make this group available in Resume."
+msgstr ""
+
+#: admin/inc/wbbpp-setting-groups-tab.php:166
+msgid "Check this option if you want to make this group as repeater group."
+msgstr ""
+
+#: admin/inc/wbbpp-setting-support-tab.php:14
+msgid "FAQ(s) "
+msgstr ""
+
+#: admin/inc/wbbpp-setting-support-tab.php:23
+msgid "Does BuddyPress Profile Pro plugin require BuddyPress?"
+msgstr ""
+
+#: admin/inc/wbbpp-setting-support-tab.php:27
+msgid ""
+"Yes, BuddyPress is a mandatory plugin, and It needs you to have BuddyPress "
+"installed and activated."
+msgstr ""
+
+#: admin/inc/wbbpp-setting-support-tab.php:35
+msgid "Where can I view and edit members extended fields?"
+msgstr ""
+
+#: admin/inc/wbbpp-setting-support-tab.php:39
+msgid ""
+"You can edit and view saved extended fields at BuddyPress profile under "
+"Profile menu tab."
+msgstr ""
+
+#: admin/inc/wbbpp-setting-support-tab.php:47
+msgid "What is the use of API Key option provided in general settings section?"
+msgstr ""
+
+#: admin/inc/wbbpp-setting-support-tab.php:51
+msgid ""
+"Inside Profile Pro we have options to add location fields and these fields "
+"can be filled with an auto-suggestion. Google Places API key is used to "
+"fill places with google autocomplete. "
+msgstr ""
+
+#: admin/inc/wbbpp-setting-support-tab.php:54
+msgid ""
+"To use the Google Autocomplete Field Type in the resume, you must register "
+"your app project on the Google API Console and get a Google API key which "
+"you can add there."
+msgstr ""
+
+#: admin/inc/wbbpp-setting-support-tab.php:62
+msgid "How to keep only desired fields in the form?"
+msgstr ""
+
+#: admin/inc/wbbpp-setting-support-tab.php:66
+msgid ""
+"You can set fields in the form by selecting desired fields in admin "
+"settings under Field Settings tab."
+msgstr ""
+
+#: admin/inc/wbbpp-setting-support-tab.php:74
+msgid "How can I create a new extended field the form ?"
+msgstr ""
+
+#: admin/inc/wbbpp-setting-support-tab.php:78
+msgid ""
+"You can create a new field in form with help of the form provided under "
+"Field Settings tab."
+msgstr ""
+
+#: admin/inc/wbbpp-setting-support-tab.php:86
+msgid "How can I keep some field required for the profile field?"
+msgstr ""
+
+#: admin/inc/wbbpp-setting-support-tab.php:90
+msgid ""
+"You can set required fields in form by checking Required setting for any "
+"invidual fields under Field Settings section."
+msgstr ""
+
+#: admin/inc/wbbpp-setting-support-tab.php:98
+msgid ""
+"What is the use of Repeater setting provided for fields under Field "
+"Settings section?"
+msgstr ""
+
+#: admin/inc/wbbpp-setting-support-tab.php:102
+msgid ""
+"Fields which are saved with Repeater option checked, provides option to "
+"users to fill data for that particular field multiple times."
+msgstr ""
+
+#: buddypress-profile-pro.php:116 buddypress-profile-pro.php:170
+msgid "%1$s is ineffective as it requires %2$s to be installed and active."
+msgstr ""
+
+#: buddypress-profile-pro.php:185
+msgid "Settings"
+msgstr ""
+
+#: edd-license/EDD_BPRM_Plugin_Updater.php:213
+msgid "There is a new version of %1$s available. %2$sView version %3$s details%4$s."
+msgstr ""
+
+#: edd-license/EDD_BPRM_Plugin_Updater.php:221
+msgid ""
+"There is a new version of %1$s available. %2$sView version %3$s details%4$s "
+"or %5$supdate now%6$s."
+msgstr ""
+
+#: edd-license/EDD_BPRM_Plugin_Updater.php:416
+msgid "You do not have permission to install plugin updates"
+msgstr ""
+
+#: edd-license/EDD_BPRM_Plugin_Updater.php:416
+msgid "Error"
+msgstr ""
+
+#: edd-license/edd-plugin-license.php:44
+msgid "License"
+msgstr ""
+
+#: edd-license/edd-plugin-license.php:53
+msgid "Plugin License Options"
+msgstr ""
+
+#: edd-license/edd-plugin-license.php:62
+msgid "License Key"
+msgstr ""
+
+#: edd-license/edd-plugin-license.php:66
+msgid "Enter your license key"
+msgstr ""
+
+#: edd-license/edd-plugin-license.php:72 edd-license/edd-plugin-license.php:83
+msgid "Activate License"
+msgstr ""
+
+#: edd-license/edd-plugin-license.php:76
+msgid "active"
+msgstr ""
+
+#: edd-license/edd-plugin-license.php:78
+msgid "Deactivate License"
+msgstr ""
+
+#: edd-license/edd-plugin-license.php:153
+#: edd-license/edd-plugin-license.php:192
+#: edd-license/edd-plugin-license.php:262
+msgid "An error occurred, please try again."
+msgstr ""
+
+#: edd-license/edd-plugin-license.php:165
+msgid "Your license key expired on %s."
+msgstr ""
+
+#: edd-license/edd-plugin-license.php:171
+msgid "Your license key has been disabled."
+msgstr ""
+
+#: edd-license/edd-plugin-license.php:175
+msgid "Invalid license."
+msgstr ""
+
+#: edd-license/edd-plugin-license.php:180
+msgid "Your license is not active for this URL."
+msgstr ""
+
+#: edd-license/edd-plugin-license.php:184
+msgid "This appears to be an invalid license key for %s."
+msgstr ""
+
+#: edd-license/edd-plugin-license.php:188
+msgid "Your license key has reached its activation limit."
+msgstr ""
+
+#: public/buddypress-template/wbbpp-add-profile.php:93
+msgid "%s is required."
+msgstr ""
+
+#: public/buddypress-template/wbbpp-add-profile.php:125
+msgid "Extended Fields Details"
+msgstr ""
+
+#: public/buddypress-template/wbbpp-add-profile.php:178
+#: public/buddypress-template/wbbpp-add-profile.php:289
+msgid "Add More "
+msgstr ""
+
+#: public/buddypress-template/wbbpp-add-profile.php:341
+msgid "Please set resume fields from plugin settings."
+msgstr ""
+
+#: public/buddypress-template/wbbpp-dropdown-options.php:244
+#: public/buddypress-template/wbbpp-dropdown-options.php:267
+#: public/buddypress-template/wbbpp-dropdown-options.php:288
+#: public/buddypress-template/wbbpp-dropdown-options.php:551
+#: public/buddypress-template/wbbpp-dropdown-options.php:576
+#: public/buddypress-template/wbbpp-dropdown-options.php:599
+msgid "Select"
+msgstr ""
+
+#: public/buddypress-template/wbbpp-show-profile.php:166
+msgid "Please build up your resume first."
+msgstr ""
+
+#: public/class-buddypress-profile-pro-public.php:152
+msgid "Extended Fields"
+msgstr ""
+
+#: public/class-buddypress-profile-pro-public.php:183
+msgid "Resume"
+msgstr ""
