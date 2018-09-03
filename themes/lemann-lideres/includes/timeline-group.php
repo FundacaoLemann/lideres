@@ -28,3 +28,25 @@ add_filter( 'bp_before_has_groups_parse_args', function ( $r ) {
     }
     return $r;
 } );
+
+/**
+ * Altera texto da "ação" da atividade, caso tenha sido publicação
+ * no grupo Timeline.
+ */
+add_filter( 'bp_get_activity_action', function( $data, $act, $r ) {
+    if ( 'groups' == $act->component && ghostpool_option( 'lemann_timeline_group' ) == $act->item_id ) {
+        return sprintf(
+            __( '%s publicou uma atualização na Timeline', 'lemann-lideres' ),
+            bp_core_get_userlink( $act->user_id )
+        );
+    }
+    return $data;
+}, 10, 3 );
+
+/**
+ * Força o usuário a fazer parte do grupo da Timeline a cada login.
+ * O próprio BuddyPress cuida da verificação de redundância.
+ */
+add_action( 'wp_login', function( $user_login, $user ) {
+    groups_join_group( ghostpool_option( 'lemann_timeline_group' ), $user->ID );
+}, 10, 2 );
