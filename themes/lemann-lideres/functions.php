@@ -26,6 +26,9 @@ require get_stylesheet_directory() . '/includes/bd-required-fields.php';
 // RT Media Gallery.
 require get_stylesheet_directory() . '/includes/rt-media-gallery.php';
 
+// Grupo Timeline.
+require get_stylesheet_directory() . '/includes/timeline-group.php';
+
 // Custom Post Types e seus campos.
 require get_stylesheet_directory() . '/post-types/index.php';
 

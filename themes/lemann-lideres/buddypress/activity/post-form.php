@@ -69,7 +69,9 @@
 						_e( 'Post in', 'buddypress' );
 					?></label>
 					<select id="whats-new-post-in" name="whats-new-post-in">
-						<option selected="selected" value="0"><?php _e( 'My Profile', 'buddypress' ); ?></option>
+						<option selected="selected" value="<?php echo ghostpool_option( 'lemann_timeline_group' ); ?>"><?php _e( 'Timeline', 'lemann-lideres' ); ?></option>
+
+						<option value="0"><?php _e( 'My Profile', 'buddypress' ); ?></option>
 
 						<?php if ( bp_has_groups( 'user_id=' . bp_loggedin_user_id() . '&type=alphabetical&max=100&per_page=100&populate_extras=0&update_meta_cache=0' ) ) :
 							while ( bp_groups() ) : bp_the_group(); ?>
