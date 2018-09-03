@@ -689,7 +689,7 @@ div.job_listings ul.job_listings li.job_listing a.position strong {
   height: 130px;
 }
 .single_job_listing .company img.company_logo {
-  border: 5px solid #F5F5F5;
+  border: 4px solid #E7E7E7;
   border-radius: 50%;
   height: 100px;
   margin-left: 10px;
