@@ -679,6 +679,10 @@ div.job_listings ul.job_listings li.job_listing a.position strong {
   font-weight: 600;
 }
 
+.single-job_listing .gp-entry-featured {
+  display: none;
+}
+
 .single_job_listing .job-listing-meta.meta a {
   color: #999;
 }

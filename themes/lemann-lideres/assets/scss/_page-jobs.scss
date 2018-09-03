@@ -70,6 +70,12 @@ div.job_listings {
     }
 }
 
+.single-job_listing {
+    .gp-entry-featured {
+        display: none;
+    }
+}
+
 .single_job_listing {
     .job-listing-meta.meta {
         a {
