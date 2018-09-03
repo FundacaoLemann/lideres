@@ -1063,19 +1063,30 @@ div.job_listings ul.job_listings li.job_listing .position h3 {
   line-height: 1.2;
 }
 
-#buddypress .profile #profile-edit-form ul.button-nav {
+#buddypress .profile #profile-edit-form ul.button-nav,
+#bprm_resume_form ul.button-nav {
   overflow: hidden;
   border-bottom: 2px solid #7ecad1;
-  margin-bottom: 20px !important;
+  margin: 15px 0 20px 0 !important;
 }
-#buddypress .profile #profile-edit-form ul.button-nav li:not(.current) a {
+#buddypress .profile #profile-edit-form ul.button-nav li:not(.current) a,
+#bprm_resume_form ul.button-nav li:not(.current) a {
   opacity: 1 !important;
   background-image: none !important;
   background: #eaeaea !important;
   color: #5aafc0 !important;
 }
-#buddypress .profile #profile-edit-form .editfield.field_1 {
+#buddypress .profile #profile-edit-form ul.button-nav a,
+#bprm_resume_form ul.button-nav a {
+  padding: 4px 8px !important;
+}
+#buddypress .profile #profile-edit-form .editfield.field_1,
+#bprm_resume_form .editfield.field_1 {
   margin-top: 20px;
+}
+
+#extended-fields-personal-li {
+  display: none;
 }
 
 .gp-team-member .gp-team-image {
