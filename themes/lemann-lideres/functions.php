@@ -20,14 +20,11 @@ define( 'LEMANN_BP_OUTROS', [
 // Cria as roles e capabilities personalizadas do site.
 require get_stylesheet_directory() . '/includes/roles-capabilities.php';
 
-// Verifica se o usuário preencheu os campos obrigatórios e exibe msg.
-require get_stylesheet_directory() . '/includes/bd-required-fields.php';
+// Inclui arquivo com as alterações do BuddyPress feitas via tema.
+require get_stylesheet_directory() . '/includes/buddypress/index.php';
 
 // RT Media Gallery.
 require get_stylesheet_directory() . '/includes/rt-media-gallery.php';
-
-// Grupo Timeline.
-require get_stylesheet_directory() . '/includes/timeline-group.php';
 
 // Custom Post Types e seus campos.
 require get_stylesheet_directory() . '/post-types/index.php';
