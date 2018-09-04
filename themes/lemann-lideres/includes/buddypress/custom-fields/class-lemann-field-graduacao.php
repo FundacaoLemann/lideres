@@ -189,7 +189,42 @@ class Lemann_Field_Graduacao extends BP_XProfile_Field_Type {
 
 	}
 
+	public static function pre_validate_filter( $field_value, $field_id = '' ) {
+		foreach ( (array) $field_value as $key => $value ) {
+			if (
+				empty( $value['curso'] ) &&
+				empty( $value['nivel'] ) &&
+				empty( $value['nivel_outros'] ) &&
+				empty( $value['inicio'] ) &&
+				empty( $value['fim'] ) &&
+				empty( $value['descricao'] ) &&
+				empty( $value['area'] ) &&
+				0 !== $key
+			) {
+				unset( $field_value[ $key ] );
+			}
+		}
+		return $field_value;
+	}
+
+
 	public function is_valid( $values ) {
+		if ( ! is_array( $values ) ) {
+			return false;
+		}
+
+		foreach ( $values as $value ) {
+			if (
+				empty( $value['curso'] ) ||
+				empty( $value['nivel'] ) ||
+				empty( $value['inicio'] ) ||
+				empty( $value['descricao'] ) ||
+				empty( $value['area'] )
+			) {
+				return false;
+			}
+		}
+
 		return true;
 	}
 

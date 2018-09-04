@@ -27,8 +27,13 @@
 						if ( 'undefined' != typeof for_id ) {
 							$( this ).attr( 'for', for_id.replace( '[0]', '[' + count + ']' ) );
 						}
-					} );
+					} )
+					.end()
+				.append( '<input type="button" class="lemann-campos-graduacao-remove" value="Remover">' );
 			$('.lemann-campos-graduacao').last().after( $new_group );
+			$( 'body' ).on( 'click', '.lemann-campos-graduacao-remove', function() {
+				$( this ).closest( '.lemann-campos-graduacao' ).remove();
+			} );
 		})
 	});
 }(jQuery));
