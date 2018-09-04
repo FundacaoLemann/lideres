@@ -220,8 +220,7 @@
 
 }
 
-#buddypress .profile #profile-edit-form,
-#bprm_resume_form {
+#buddypress .profile #profile-edit-form {
     ul.button-nav{
         overflow: hidden;
         border-bottom: 2px solid #7ecad1;
@@ -233,10 +232,6 @@
             background: #eaeaea !important;
             color: #5aafc0 !important;
         }
-
-        a {
-            padding: 4px 8px !important;
-        }
     }
 
     .editfield.field_1{
@@ -244,6 +239,7 @@
     }
 }
 
-#extended-fields-personal-li {
-    display: none;
+.lemann-campos-graduacao {
+    border: 1px solid #7ecad1;
+    padding: 1em;
 }

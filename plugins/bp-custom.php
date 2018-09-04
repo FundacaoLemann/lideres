@@ -42,19 +42,3 @@ add_filter( 'buddypress_locale_locations', function ( $val ) {
 	unload_textdomain( 'buddypress' );
 	return $val;
 });
-
-add_filter( 'xprofile_filter_profile_group_tabs', function ( $tabs ) {
-	$current = '';
-	if ( 'extended-fields' == bp_current_action() ) {
-		$current = ' class="current"';
-
-		$tabs[0] = str_replace( ' class="current"', '', $tabs[0] );
-	}
-	$tabs[] = sprintf(
-		'<li %1$s><a href="%2$s">%3$s</a></li>',
-		$current,
-		esc_url( bp_displayed_user_domain() . bp_get_profile_slug() . '/extended-fields/' ),
-		esc_html( __( 'Carreiras', 'lemann-lideres' ) )
-	);
-	return $tabs;
-} );

@@ -174,7 +174,7 @@ class Lemann_Field_Graduacao extends BP_XProfile_Field_Type {
 				<?php
 			}
 			?>
-			<input type="button" value="Adicionar">
+			<input type="button" class="lemann-campos-graduacao-add" value="Adicionar">
 		</div>
 
 		<?php
@@ -183,6 +183,8 @@ class Lemann_Field_Graduacao extends BP_XProfile_Field_Type {
 			<p class="description" id="<?php bp_the_profile_field_input_name(); ?>-3"><?php bp_the_profile_field_description(); ?></p>
 			<?php
 		}
+
+		wp_enqueue_script( 'lemann-field-graduacao', get_stylesheet_directory_uri() . '/assets/js/lemann-field-graduacao.js', [ 'jquery' ], null, true );
 	}
 
 	public function admin_field_html( array $raw_properties = array() ) {
