@@ -788,14 +788,21 @@ div.job_listings ul.job_listings {
   #gp-buddypress-header .vc_col-md-4 #gp-author-social-icons {
     margin-top: 10px; }
 
+<<<<<<< Updated upstream
 .notifications.gp-right-sidebar #gp-content, .activity.gp-right-sidebar #gp-content,
 .settings.gp-right-sidebar #gp-content, .friends.gp-right-sidebar #gp-content,
 .messages.gp-right-sidebar #gp-content {
   width: 100% !important; }
+=======
+>>>>>>> Stashed changes
 .notifications.gp-right-sidebar .gp-sidebar, .activity.gp-right-sidebar .gp-sidebar,
 .settings.gp-right-sidebar .gp-sidebar, .friends.gp-right-sidebar .gp-sidebar,
 .messages.gp-right-sidebar .gp-sidebar {
   width: 0; }
+
+#gp-content {
+  width: 100% !important;
+}
 
 #buddypress table.profile-fields tr.alt td {
   color: #333333 !important; }
@@ -803,6 +810,7 @@ div.job_listings ul.job_listings {
 #buddypress .profile .bp-widget {
   border: none !important;
   border-top: 1px solid #00B5AF !important;
+<<<<<<< Updated upstream
   box-shadow: 0px 2px 3px #F5F5F5;
   margin-top: 50px; }
   #buddypress .profile .bp-widget .label {
@@ -828,11 +836,50 @@ div.job_listings ul.job_listings {
     line-height: 1.6;
     font-size: 16px;
     padding-left: 15px; }
+=======
+  margin-top: 50px;
+}
+#buddypress .profile .bp-widget .label {
+  width: 30% !important;
+  font-size: 16px;
+  position: relative;
+  padding: 10px 5px;
+}
+#buddypress .profile .bp-widget .label:before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 8px solid #2CB781;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 6px;
+  margin-bottom: 3px;
+}
+@media only screen and (max-width: 767px) {
+  #buddypress .profile .bp-widget .label {
+    width: 100% !important;
+  }
+}
+#buddypress .profile .bp-widget .data {
+  line-height: 1.6;
+  font-size: 16px;
+  padding-left: 15px;
+}
+#buddypress .profile .bp-widget .field_facebook,
+#buddypress .profile .bp-widget .field_google,
+#buddypress .profile .bp-widget .field_linkedin,
+#buddypress .profile .bp-widget .field_twitter {
+  display: none;
+}
+>>>>>>> Stashed changes
 
 .profile .gp-right-sidebar #gp-content {
   width: 65%; }
 
 .profile .gp-sidebar {
+<<<<<<< Updated upstream
   border-top: 0;
   display: block;
   padding: 5px;
@@ -871,6 +918,13 @@ div.job_listings ul.job_listings {
       line-height: 1.2; }
 
 #buddypress .profile #profile-edit-form ul.button-nav {
+=======
+  display: none;
+}
+
+#buddypress .profile #profile-edit-form ul.button-nav,
+#bprm_resume_form ul.button-nav {
+>>>>>>> Stashed changes
   overflow: hidden;
   border-bottom: 2px solid #7ecad1;
   margin: 15px 0 20px 0 !important; }
