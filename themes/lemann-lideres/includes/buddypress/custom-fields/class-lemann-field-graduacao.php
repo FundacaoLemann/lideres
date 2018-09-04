@@ -20,9 +20,7 @@ class Lemann_Field_Graduacao extends BP_XProfile_Field_Type {
 
 		$values = bp_get_the_profile_field_edit_value();
 		if ( ! empty( $values ) ) {
-			$values = html_entity_decode( $values );
-			$values = html_entity_decode( $values );
-			$values = maybe_unserialize( $values );
+			$values = self::unserialize( $values );
 		} else {
 			$values = [
 				[
@@ -193,5 +191,33 @@ class Lemann_Field_Graduacao extends BP_XProfile_Field_Type {
 
 	public function is_valid( $values ) {
 		return true;
+	}
+
+	public static function display_filter( $field_value, $field_id = '' ) {
+		$values = BP_XProfile_ProfileData::get_value_byid( $field_id, bp_displayed_user_id() );
+		$values = self::unserialize( $values );
+		foreach ( $values as $graduacao ) {
+			$output .=
+				'<p>' .
+					'<strong>' . $graduacao['curso'] . '</strong> ' .
+					$graduacao['nivel'] . ' - ' .
+					$graduacao['nivel_outros'] . ' - ' .
+					$graduacao['inicio'] . ' - ' .
+					$graduacao['fim'] . ' - ' .
+					$graduacao['descricao'] . ' - ' .
+					implode( ', ', $graduacao['area'] ) .
+				'</p>';
+		}
+
+		return $output;
+	}
+
+	public static function unserialize( $string ) {
+		if ( ! empty( $string ) ) {
+			$string = html_entity_decode( $string );
+			$string = html_entity_decode( $string );
+			$string = maybe_unserialize( $string );
+		}
+		return (array) $string;
 	}
 }
