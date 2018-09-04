@@ -198,6 +198,12 @@
     }
 }
 
-.lemann-campos-graduacao {
+.lemann-campos-graduacao-wrapper {
+    background: #fafafa;
     padding: 1em;
+
+    & + p.field-visibility-settings-toggle {
+        background: #fafafa;
+        padding: 0 0 1em 1em;
+    }
 }

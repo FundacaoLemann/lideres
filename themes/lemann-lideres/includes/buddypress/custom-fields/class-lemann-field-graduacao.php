@@ -172,7 +172,7 @@ class Lemann_Field_Graduacao extends BP_XProfile_Field_Type {
 				<?php
 			}
 			?>
-			<input type="button" class="lemann-campos-graduacao-add" value="Adicionar">
+			<input type="button" class="lemann-campos-graduacao-add" value="Adicionar mais uma formação acadêmica">
 		</div>
 
 		<?php

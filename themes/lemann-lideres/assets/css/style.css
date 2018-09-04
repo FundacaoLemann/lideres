@@ -1095,8 +1095,13 @@ div.job_listings ul.job_listings li.job_listing a.position strong {
   margin-top: 20px;
 }
 
-.lemann-campos-graduacao {
+.lemann-campos-graduacao-wrapper {
+  background: #fafafa;
   padding: 1em;
+}
+.lemann-campos-graduacao-wrapper + p.field-visibility-settings-toggle {
+  background: #fafafa;
+  padding: 0 0 1em 1em;
 }
 
 .gp-team-member .gp-team-image {
