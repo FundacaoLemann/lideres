@@ -16,9 +16,21 @@ define( 'LEMANN_VAGAS_DE_PARA', [
 	'localizacao_geo'    => 1548,
 ] );
 
+/**
+ * User meta key usada para guardar os matches com as vagas.
+ */
 define( 'LEMANN_MATCHES_META_KEY', 'job_listings_matches' );
 
+/**
+ * Mínimo necessário para enviar um e-mail para o usuário.
+ */
 define( 'LEMANN_MATCH_MINIMO_EMAIL', 70 );
+
+/**
+ * ID do campo com o e-mail de contato para Vagas/Carreira.
+ * Se o campo estiver vazio usa o e-mail do usuário no WP.
+ */
+define( 'LEMANN_MATCH_BP_CAMPO_EMAIL', 1501 );
 
 /**
  * Define a porcentagem de correspondência entre uma vaga e um usuário.
@@ -82,9 +94,15 @@ function lemann_match( $post_id, $user_id, $send_email = false ) {
 	// To Do: Tirar esse teste com o ID do usuário.
 	if ( 1 == $user_id ) {
 		if ( $send_email && $match >= LEMANN_MATCH_MINIMO_EMAIL ) {
-			$user = get_user_by( 'id', $user_id );
+
+			$user_email = xprofile_get_field_data( LEMANN_MATCH_BP_CAMPO_EMAIL, $user_id );
+			if ( ! is_email( $user_email ) ) {
+				$user       = get_user_by( 'id', $user_id );
+				$user_email = $user->user_email;
+			}
+
 			wp_mail(
-				$user->user_email,
+				$user_email,
 				__( 'Nova vaga no Portal de Líderes da Fundação Lemann', 'lemann-lideres' ),
 				sprintf(
 					__(
