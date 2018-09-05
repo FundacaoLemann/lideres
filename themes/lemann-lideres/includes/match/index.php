@@ -8,7 +8,7 @@ defined( 'ABSPATH' ) || exit;
 define( 'LEMANN_VAGAS_DE_PARA', [
 	'setor_atuacao'      => 1502,
 	'area_atuacao'       => 1513,
-	'disponibilidade'    => 1526,
+	// 'disponibilidade'    => 1526,
 	'graduacao'          => 1497,
 	'experiencia'        => 1531,
 	'experiencia_gestao' => 1536,

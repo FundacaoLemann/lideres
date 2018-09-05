@@ -41,6 +41,12 @@ global $post;
 				<?php
 				$fields = lemann_wjm_custom_fields();
 				foreach ( $fields as $key => $field ) {
+					// Campos que não devem ser exibidos.
+					if ( in_array( $key, [ 'responsavel_nome', 'responsavel_email' ] ) ) {
+						continue;
+					}
+
+					// Exibido junto com graduação.
 					if ( 'graduacao_outros' == $key ) {
 						continue;
 					}
