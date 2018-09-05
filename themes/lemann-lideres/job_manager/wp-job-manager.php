@@ -26,6 +26,10 @@ function lemann_wjm_custom_fields() {
 				'Outros'                 => 'Outros',
 			],
 		],
+		'setor_atuacao_outros'   => [
+			'label' => __( 'Outro setor de atuação', 'lemann-lideres' ),
+			'type'  => 'text',
+		],
 		'area_atuacao'       => [
 			'label'    => __( 'Área de atuação', 'lemann-lideres' ),
 			'type'     => 'multiselect',
@@ -43,6 +47,10 @@ function lemann_wjm_custom_fields() {
 				'Desenvolvimento Econômico' => 'Desenvolvimento Econômico',
 				'Outros'                    => 'Outros',
 			],
+		],
+		'area_atuacao_outros'   => [
+			'label' => __( 'Outra área de atuação', 'lemann-lideres' ),
+			'type'  => 'text',
 		],
 		'disponibilidade'    => [
 			'label'    => __( 'Disponibilidade de início', 'lemann-lideres' ),
@@ -68,7 +76,7 @@ function lemann_wjm_custom_fields() {
 			],
 		],
 		'graduacao_outros'   => [
-			'label' => __( 'Outros (especifique)', 'lemann-lideres' ),
+			'label' => __( 'Outro nível de graduação', 'lemann-lideres' ),
 			'type'  => 'text',
 		],
 		'experiencia'        => [
@@ -76,10 +84,10 @@ function lemann_wjm_custom_fields() {
 			'type'     => 'select',
 			'required' => false,
 			'options'  => [
-				'Pequena (até 2 anos)'         => 'Pequena (até 2 anos)',
-				'Média (3 a 5 anos)'           => 'Média (3 a 5 anos)',
-				'Longa (6 a 9 anos)'           => 'Longa (6 a 9 anos)',
-				'Experiente (mais de 10 anos)' => 'Experiente (mais de 10 anos)',
+				'Até 2 anos'      => 'Até 2 anos',
+				'3 a 5 anos'      => '3 a 5 anos',
+				'6 a 9 anos'      => '6 a 9 anos',
+				'Mais de 10 anos' => 'Mais de 10 anos',
 			],
 		],
 		'experiencia_gestao' => [
@@ -87,34 +95,38 @@ function lemann_wjm_custom_fields() {
 			'type'     => 'select',
 			'required' => false,
 			'options'  => [
-				'Pequena (até 2 anos)'         => 'Pequena (até 2 anos)',
-				'Média (3 a 5 anos)'           => 'Média (3 a 5 anos)',
-				'Longa (6 a 9 anos)'           => 'Longa (6 a 9 anos)',
-				'Experiente (mais de 10 anos)' => 'Experiente (mais de 10 anos)',
+				'Nenhuma experiência' => 'Nenhuma experiência',
+				'Até 2 anos'      	  => 'Até 2 anos',
+				'3 a 5 anos'      	  => '3 a 5 anos',
+				'6 a 9 anos'      	  => '6 a 9 anos',
+				'Mais de 10 anos' 	  => 'Mais de 10 anos',
 			],
 		],
 		'faixa_salarial'     => [
-			'label'    => __( 'Faixa salarial', 'lemann-lideres' ),
+			'label'    => __( 'Faixa salarial (anual)', 'lemann-lideres' ),
 			'type'     => 'select',
 			'required' => false,
 			'options'  => [
-				'Menos de 5 mil reais'    => 'Menos de 5 mil reais',
-				'Entre 5 e 7 mil reais'   => 'Entre 5 e 7 mil reais',
-				'Entre 7 e 10 mil reais'  => 'Entre 7 e 10 mil reais',
-				'Entre 10 e 15 mil reais' => 'Entre 10 e 15 mil reais',
-				'Mais que 20 mil reais'   => 'Mais que 20 mil reais',
+				'Menos de 60 mil reais'    => 'Menos de 60 mil reais',
+				'Entre 60 e 84 mil reais'   => 'Entre 60 e 84 mil reais',
+				'Entre 84 e 120 mil reais'  => 'Entre 84 e 120 mil reais',
+				'Entre 120 e 180 mil reais' => 'Entre 120 e 180 mil reais',
+				'Mais que 180 mil reais'   => 'Mais que 180 mil reais',
 			],
 		],
-		'localizacao_geo'    => [
-			'label'    => __( 'Disponibilidade de localização geográfica', 'lemann-lideres' ),
-			'type'     => 'multiselect',
+		'localizacao_geo' => [
+			'label'    => __('Posição de trabalho', 'lemann-lideres'),
+			'type'     => 'select',
 			'required' => true,
 			'options'  => [
-				'Nacional'        => 'Nacional',
-				'Estado atual'    => 'Estado atual',
-				'Município atual' => 'Município atual',
-				'Não presencial'  => 'Não presencial',
+				'Presencial' => 'Presencial',
+				'Remoto'	 => 'Remoto',
 			],
+		],
+		'prazo_inscricao' => [
+			'label'	   => __('Prazo para inscrição', 'lemann-lideres'),
+			'type' 	   => 'date',
+			'required' => true,
 		],
 	];
 }

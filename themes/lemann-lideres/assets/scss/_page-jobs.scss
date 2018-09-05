@@ -121,3 +121,15 @@ div.job_listings {
         }
     }
 }
+
+form.job-manager-form {
+    h2 {
+        color: $c_primary-bg;
+    }
+
+    fieldset {
+        border: 0;
+        margin: 0 0 1.5em;
+        padding: 0;
+    }
+}
