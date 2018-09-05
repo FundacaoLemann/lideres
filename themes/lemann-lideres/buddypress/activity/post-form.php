@@ -69,7 +69,7 @@
 						_e( 'Post in', 'buddypress' );
 					?></label>
 					<select id="whats-new-post-in" name="whats-new-post-in">
-						<option selected="selected" value="<?php echo ghostpool_option( 'lemann_timeline_group' ); ?>"><?php _e( 'Timeline', 'lemann-lideres' ); ?></option>
+						<option selected="selected" value="<?php echo ghostpool_option( 'lemann_timeline_group' ); ?>"><?php _e( 'Mural', 'lemann-lideres' ); ?></option>
 
 						<option value="0"><?php _e( 'My Profile', 'buddypress' ); ?></option>
 
