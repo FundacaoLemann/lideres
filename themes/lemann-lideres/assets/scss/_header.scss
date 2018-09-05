@@ -19,9 +19,36 @@
 			padding: 1em;
 			text-align: center;
 
+			&.gp-profile-required-fields-complete {
+				background-color: $c_primary-bg !important;
+			}
+
 			a {
 				color: inherit;
 				text-decoration: underline;
+			}
+
+			.gp-profile-complete-levels {
+				align-items: stretch;
+				display: flex;
+				margin: 10px 0;
+
+				.gp-profile-complete-level {
+					flex-grow: 1;
+
+					&.active {
+						span:after {
+							background-color: $c_primary;
+							border: 2px solid white;
+							border-radius: 50%;
+							content: '';
+							display: block;
+							height: 10px;
+							margin: 0 auto;
+							width: 10px;
+						}
+					}
+				}
 			}
 		}
 

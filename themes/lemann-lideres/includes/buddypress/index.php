@@ -1,8 +1,8 @@
 <?php
 defined( 'ABSPATH' ) || exit;
 
-// Verifica se o usuário preencheu os campos obrigatórios e exibe msg.
-require 'required-fields.php';
+// Verifica o quão completo está o perfil de um usuário.
+require 'profile-complete.php';
 
 // Grupo Timeline.
 require 'timeline-group.php';

@@ -1,9 +1,25 @@
 <?php
 
-$user_required_field_group = lemann_check_required_fields();
-if ( $user_required_field_group ) {
-	$user_required_field_group = bp_loggedin_user_domain() . '/profile/edit/group/' . $user_required_field_group . '#buddypress';
+/*
+ * Determina se o usuário ainda precisa preencher alguma coisa do perfil.
+ * Se há algum campo *obrigatório* incompleto encaminha para lá,
+ * senão para o primeiro campo incompleto.
+ */
+$incomplete_profile_level = 'completo';
+$incomplete_field_group   = lemann_check_all_fields();
+if ( $incomplete_field_group ) {
+	$incomplete_profile_level = 'médio';
+	$group_to_complete        = $incomplete_field_group;
+
+	$required_field_group = lemann_check_required_fields();
+	if ( $required_field_group ) {
+		$incomplete_profile_level = 'insuficiente';
+		$group_to_complete        = $required_field_group;
+	}
+
+	$group_to_complete    = bp_loggedin_user_domain() . '/profile/edit/group/' . $group_to_complete . '#buddypress';
 }
+
 
 
 if ( ghostpool_option( 'profile_button' ) != 'gp-profile-button-disabled' OR ghostpool_option( 'search_button' ) != 'gp-search-button-disabled' OR ghostpool_option( 'cart_button' ) != 'gp-cart-button-disabled' OR has_nav_menu( 'gp-mobile-primary-nav' ) ) { ?>
@@ -35,9 +51,9 @@ if ( ghostpool_option( 'profile_button' ) != 'gp-profile-button-disabled' OR gho
 					</a>
 
 					<?php
-					if ( $user_required_field_group ) {
+					if ( 'completo' != $incomplete_profile_level ) {
 						?>
-						<a href="<?php echo $user_required_field_group; ?>" class="gp-notification-counter gp-notification-required-fields">!</a>
+						<a href="<?php echo $group_to_complete; ?>" class="gp-notification-counter gp-notification-required-fields">!</a>
 						<?php
 					}  elseif ( function_exists( 'bp_notifications_get_notifications_for_user' ) ) {
 						global $bp;
@@ -51,16 +67,40 @@ if ( ghostpool_option( 'profile_button' ) != 'gp-profile-button-disabled' OR gho
 
 					?>
 					<div class="sub-menu">
-						<?php
-
-						if ( $user_required_field_group ) {
-							?>
-							<div class="gp-profile-required-fields-warning">
-								Seu perfil está incompleto!<br>
-								<a href="<?php echo $user_required_field_group; ?>">Complete agora mesmo</a>
-							</div>
+						<div class="gp-profile-required-fields-warning<?php echo ( 'completo' == $incomplete_profile_level ) ? ' gp-profile-required-fields-complete' : ''; ?>">
 							<?php
-						}
+							if ( 'completo' != $incomplete_profile_level ) {
+								_e( 'Seu perfil está incompleto!', 'lemann-lideres' );
+							} else {
+								_e( 'Seu perfil está completo!', 'lemann-lideres' );
+							}
+							?>
+							<br>
+
+							<div class="gp-profile-complete-levels">
+								<?php
+								$levels = [ 'insuficiente', 'médio', 'completo' ];
+								foreach ( $levels as $level ) {
+									?>
+									<div class="gp-profile-complete-level<?php echo ( $incomplete_profile_level == $level ) ? ' active' : ''; ?>">
+										<span><?php echo $level; ?></span>
+									</div>
+									<?php
+								}
+								?>
+							</div>
+
+							<a href="<?php echo $group_to_complete; ?>">
+								<?php
+								if ( 'completo' != $incomplete_profile_level ) {
+									_e( 'Complete agora mesmo', 'lemann-lideres' );
+								} else {
+									_e( 'Atualize', 'lemann-lideres' );
+								}
+								?>
+							</a>
+						</div>
+						<?php
 
 						wp_nav_menu( array(
 							'theme_location' => 'gp-profile-nav',
