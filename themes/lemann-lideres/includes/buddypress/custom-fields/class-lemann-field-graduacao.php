@@ -54,7 +54,7 @@ class Lemann_Field_Graduacao extends BP_XProfile_Field_Type {
 				?>
 				<div class="lemann-campos-graduacao">
 					<div class="lemann-campos-graduacao-campo">
-						<label for="<?php echo $field_name . '_curso'; ?>"><?php _e( 'Curso', 'lemann-lideres' ); ?></label>
+						<label for="<?php echo $field_name . '_curso'; ?>"><?php _e( 'Curso', 'lemann-lideres' ); ?> *</label>
 						<input <?php echo $this->get_edit_field_html_elements( array_merge(
 							array(
 								'type'  => 'text',
@@ -66,7 +66,7 @@ class Lemann_Field_Graduacao extends BP_XProfile_Field_Type {
 						) ); ?> />
 					</div>
 					<div class="lemann-campos-graduacao-campo">
-						<label for="<?php echo $field_name . '_nivel'; ?>"><?php _e( 'Nível', 'lemann-lideres' ); ?></label>
+						<label for="<?php echo $field_name . '_nivel'; ?>"><?php _e( 'Nível', 'lemann-lideres' ); ?> *</label>
 						<select <?php echo $this->get_edit_field_html_elements( array_merge(
 							array(
 								'name'  => $field_name . '[nivel]',
@@ -104,7 +104,7 @@ class Lemann_Field_Graduacao extends BP_XProfile_Field_Type {
 						) ); ?> />
 					</div>
 					<div class="lemann-campos-graduacao-campo">
-						<label for="<?php echo $field_name . '_inicio'; ?>"><?php _e( 'Início', 'lemann-lideres' ); ?></label>
+						<label for="<?php echo $field_name . '_inicio'; ?>"><?php _e( 'Início', 'lemann-lideres' ); ?> *</label>
 						<input <?php echo $this->get_edit_field_html_elements( array_merge(
 							array(
 								'type'  => 'text',
@@ -128,7 +128,7 @@ class Lemann_Field_Graduacao extends BP_XProfile_Field_Type {
 						) ); ?> />
 					</div>
 					<div class="lemann-campos-graduacao-campo">
-						<label for="<?php echo $field_name . '_descricao'; ?>"><?php _e( 'Descrição', 'lemann-lideres' ); ?></label>
+						<label for="<?php echo $field_name . '_descricao'; ?>"><?php _e( 'Descrição', 'lemann-lideres' ); ?> *</label>
 						<textarea <?php echo $this->get_edit_field_html_elements( array_merge(
 							array(
 								'name'  => $field_name . '[descricao]',
@@ -138,7 +138,7 @@ class Lemann_Field_Graduacao extends BP_XProfile_Field_Type {
 						) ); ?>><?php echo esc_textarea( $value['descricao'] ); ?></textarea>
 					</div>
 					<div class="lemann-campos-graduacao-campo">
-						<div class="label"><?php _e( 'Área de formação', 'lemann-lideres' ); ?></div>
+						<div class="label"><?php _e( 'Área de formação', 'lemann-lideres' ); ?> *</div>
 						<?php
 						$name    = $field_name . '[area][]';
 						$options = [

@@ -23,6 +23,9 @@ require get_stylesheet_directory() . '/includes/roles-capabilities.php';
 // Inclui arquivo com as alterações do BuddyPress feitas via tema.
 require get_stylesheet_directory() . '/includes/buddypress/index.php';
 
+// Inclui arquivo com as funcionalidades do match.
+require get_stylesheet_directory() . '/includes/match/index.php';
+
 // RT Media Gallery.
 require get_stylesheet_directory() . '/includes/rt-media-gallery.php';
 

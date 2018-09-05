@@ -32,7 +32,15 @@ $truncate_text = function($string) {
 global $post;
 ?>
 <li <?php job_listing_class(); ?> data-longitude="<?php echo esc_attr( $post->geolocation_lat ); ?>" data-latitude="<?php echo esc_attr( $post->geolocation_long ); ?>">
-	<div class="match">Fit <strong>50%</strong></div>
+	<?php
+	$match = (array) get_user_meta( get_current_user_id(), LEMANN_MATCHES_META_KEY, true );
+	if ( isset( $match[ $post->ID ] ) && $match[ $post->ID ]['match'] ) {
+		$job_match = round( $match[ $post->ID ]['match'] );
+		?>
+		<div class="match">Fit <strong><?php echo $job_match; ?>%</strong></div>
+		<?php
+	}
+	?>
 	<?php the_company_logo(); ?>
 	<a class="position" href="<?php the_job_permalink(); ?>">
 		<h3><?php wpjm_the_job_title(); ?></h3>
