@@ -12,15 +12,22 @@
 		}
 
 		.gp-profile-required-fields-warning {
-			background-color: $c_warning !important;
 			color: white !important;
 			line-height: 1.3em;
 			margin: -10px 0 10px;
 			padding: 1em;
 			text-align: center;
 
-			&.gp-profile-required-fields-complete {
-				background-color: $c_primary-bg !important;
+			&.gp-profile-status {
+				&-completo {
+					background: $c_profile_completo;
+				}
+				&-medio {
+					background: $c_profile_medio;
+				}
+				&-insuficiente {
+					background: $c_profile_insuficiente;
+				}
 			}
 
 			a {

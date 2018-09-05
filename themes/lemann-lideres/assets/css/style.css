@@ -259,15 +259,20 @@ body a {
   width: 20px;
 }
 #gp-standard-header .gp-header-buttons .gp-profile-required-fields-warning {
-  background-color: #EF4123 !important;
   color: white !important;
   line-height: 1.3em;
   margin: -10px 0 10px;
   padding: 1em;
   text-align: center;
 }
-#gp-standard-header .gp-header-buttons .gp-profile-required-fields-warning.gp-profile-required-fields-complete {
-  background-color: #00B5AF !important;
+#gp-standard-header .gp-header-buttons .gp-profile-required-fields-warning.gp-profile-status-completo {
+  background: #51B413;
+}
+#gp-standard-header .gp-header-buttons .gp-profile-required-fields-warning.gp-profile-status-medio {
+  background: #FBB700;
+}
+#gp-standard-header .gp-header-buttons .gp-profile-required-fields-warning.gp-profile-status-insuficiente {
+  background: #EF4123;
 }
 #gp-standard-header .gp-header-buttons .gp-profile-required-fields-warning a {
   color: inherit;
