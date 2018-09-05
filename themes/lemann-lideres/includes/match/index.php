@@ -129,20 +129,40 @@ function lemann_match( $post_id, $user_id, $send_email = false ) {
 }
 
 /**
- * Ao salvar uma vaga, se ela estiver publicada
+ *  * Ao salvar uma vaga, se ela estiver publicada
  * faz a correspondência com todos os usuários líderes.
+ *
+ * @param int $post_id ID da vaga (job_listing).
  */
-add_action( 'save_post_job_listing', function( $post_id ) {
+function lemann_match_save_job_listing( $post_id ) {
 	if ( 'publish' == get_post_status( $post_id ) ) {
 		$users = get_users( [
 			'role__in' => [ 'lider', 'administrator' ],
 			'fields'   => 'ID',
+			'include'  => [ 1 ],
 		] );
 		foreach ( $users as $user_id ) {
 			lemann_match( $post_id, $user_id, true );
 		}
 	}
-} );
+}
+add_action( 'job_manager_save_job_listing', 'lemann_match_save_job_listing', 999 ); // Painel.
+add_action( 'job_manager_update_job_data', 'lemann_match_save_job_listing', 999 ); // Frontend.
+
+/**
+ * Executa quando o usuário aprova a vaga pela lista do Painel.
+ * Remove a action para que a função não seja executada duas vezes quando
+ * o usuário estiver editando uma vaga.
+ *
+ * Esta abordagem não pode ser usada na *criação* da vaga pelo Painel
+ * porque em save_post_job_listing ainda não temos os post_meta no lugar.
+ */
+add_action( 'save_post_job_listing', function( $post_id, $post, $update ) {
+	if ( $update ) {
+		lemann_match_save_job_listing( $post_id );
+		remove_action( 'job_manager_save_job_listing', 'lemann_match_save_job_listing', 999 );
+	}
+}, 10, 3 );
 
 /**
  * Ao atualizar o perfil, faz a correspondência com todas as vagas.
