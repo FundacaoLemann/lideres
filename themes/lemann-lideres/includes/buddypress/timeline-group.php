@@ -12,7 +12,7 @@ add_filter( 'redux/options/ghostpool_aardvark/section/bp_general_options', funct
     ) );
     array_unshift( $section['fields'], [
         'id'      => 'lemann_timeline_group',
-        'title'   => esc_html__( 'Grupo da Timeline', 'lemann-lideres' ),
+        'title'   => esc_html__( 'Grupo do Mural', 'lemann-lideres' ),
         'type'    => 'select',
         'options' => wp_list_pluck( $groups_list['groups'], 'name', 'id' ),
     ] );
@@ -36,7 +36,7 @@ add_filter( 'bp_before_has_groups_parse_args', function ( $r ) {
 add_filter( 'bp_get_activity_action', function( $data, $act, $r ) {
     if ( 'groups' == $act->component && ghostpool_option( 'lemann_timeline_group' ) == $act->item_id ) {
         return sprintf(
-            __( '%s publicou uma atualização na Timeline', 'lemann-lideres' ),
+            __( '%s publicou uma atualização no Mural', 'lemann-lideres' ),
             bp_core_get_userlink( $act->user_id )
         );
     }
