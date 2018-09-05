@@ -13,8 +13,8 @@ div.job_listings {
         display: flex;
         flex-wrap: wrap;
 
-        div.match {
-            background: #F65;
+        div.match-percentage {
+            background: #AAA;
             border-radius: 5px;
             color: white;
             font-size: 0.8em;
@@ -22,6 +22,10 @@ div.job_listings {
             position: absolute;
             right: 10px;
             top: 10px;
+
+            &.matched {
+                background: #F65;
+            }
         }
 
         li.job_listing {

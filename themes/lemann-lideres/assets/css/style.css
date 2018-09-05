@@ -653,8 +653,8 @@ div.job_listings ul.job_listings {
   display: flex;
   flex-wrap: wrap;
 }
-div.job_listings ul.job_listings div.match {
-  background: #F65;
+div.job_listings ul.job_listings div.match-percentage {
+  background: #AAA;
   border-radius: 5px;
   color: white;
   font-size: 0.8em;
@@ -662,6 +662,9 @@ div.job_listings ul.job_listings div.match {
   position: absolute;
   right: 10px;
   top: 10px;
+}
+div.job_listings ul.job_listings div.match-percentage.matched {
+  background: #F65;
 }
 div.job_listings ul.job_listings li.job_listing {
   border: 1px solid #eee;
