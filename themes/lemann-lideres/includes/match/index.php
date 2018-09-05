@@ -91,9 +91,16 @@ function lemann_match( $post_id, $user_id, $send_email = false ) {
 
 	$match = ( $real_matches / $possible_matches ) * 100;
 
+	$matches    = (array) get_user_meta( $user_id, LEMANN_MATCHES_META_KEY, true );
+	$email_sent = ( isset( $matches[ $post_id ] ) ) ? $matches[ $post_id ]['email_sent'] : false;
+
 	// To Do: Tirar esse teste com o ID do usuário.
 	if ( 1 == $user_id ) {
-		if ( $send_email && $match >= LEMANN_MATCH_MINIMO_EMAIL ) {
+		if (
+			$send_email &&
+			$match >= LEMANN_MATCH_MINIMO_EMAIL &&
+			! $email_sent
+		) {
 
 			$user_email = xprofile_get_field_data( LEMANN_MATCH_BP_CAMPO_EMAIL, $user_id );
 			if ( ! is_email( $user_email ) ) {
@@ -117,13 +124,15 @@ function lemann_match( $post_id, $user_id, $send_email = false ) {
 				),
 				[ 'Content-Type: text/html; charset=UTF-8' ]
 			);
+
+			$email_sent = true;
 		}
 	}
 
-	$matches = (array) get_user_meta( $user_id, LEMANN_MATCHES_META_KEY, true );
 	$matches[ $post_id ] = [
-		'match' => $match,
-		'date'  => date_i18n( 'c' ),
+		'match'      => $match,
+		'date'       => date_i18n( 'c' ),
+		'email_sent' => $email_sent,
 	];
 	update_user_meta( $user_id, LEMANN_MATCHES_META_KEY, $matches );
 }
@@ -139,7 +148,6 @@ function lemann_match_save_job_listing( $post_id ) {
 		$users = get_users( [
 			'role__in' => [ 'lider', 'administrator' ],
 			'fields'   => 'ID',
-			'include'  => [ 1 ],
 		] );
 		foreach ( $users as $user_id ) {
 			lemann_match( $post_id, $user_id, true );
