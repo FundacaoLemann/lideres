@@ -1098,6 +1098,18 @@ form.job-manager-form fieldset {
     width: 100% !important;
   }
 }
+#buddypress .profile .bp-widget .graduation:before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 8px solid #bff0dd;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 6px;
+  margin-bottom: 3px;
+}
 #buddypress .profile .bp-widget .data {
   line-height: 1.6;
   font-size: 16px;

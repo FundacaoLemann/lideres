@@ -160,6 +160,20 @@
             width: 100% !important;
         }
     }
+    .graduation {
+        &:before {
+            content:'';
+            width: 0;
+            height: 0;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+            border-left: 8px solid lighten($c_secondary-bg, 40%);
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 6px;
+            margin-bottom: 3px;
+        }
+    }
     .data {
         line-height: 1.6;
         font-size: 16px;
