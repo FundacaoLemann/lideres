@@ -11,5 +11,6 @@ COPY ["languages", "/var/www/html/languages"]
 RUN mkdir vendor
 RUN composer install
 
+COPY "compose/cron.sh" /cron.sh
 # Fix file permissions
 USER root

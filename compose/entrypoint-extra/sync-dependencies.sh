@@ -40,3 +40,5 @@ then
 fi
 
 cp -r /var/www/html/languages/. /var/www/html/wp-content/languages/
+
+nohup sh /cron.sh &

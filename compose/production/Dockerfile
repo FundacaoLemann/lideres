@@ -17,6 +17,8 @@ COPY ["themes", "/var/www/html/wp-content/themes"]
 COPY ["importer", "/importer"]
 COPY ["languages", "/var/www/html/languages"]
 
+COPY "compose/cron.sh" /cron.sh
+
 # Fix file permissions
 USER root
 RUN chown -R www-data: wp-content
