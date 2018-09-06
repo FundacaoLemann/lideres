@@ -188,6 +188,11 @@ add_action( 'xprofile_updated_profile', function( $user_id ) {
  *
  */
 function lemann_do_matches(){
+    if(!@_ENV['MATCH_ENABLED']){
+        _match_log('MATCH IS DISABLED', true);
+        return;
+    }
+
     /**
      * @var wpdb;
      */
