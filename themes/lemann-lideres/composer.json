@@ -1,0 +1,7 @@
+{
+    "name": "hacklab/lemann-lideres",
+    "description": "Lemann Líderes WordPress Theme",
+    "require": {
+        "mustache/mustache": "~2.5"
+    }
+}

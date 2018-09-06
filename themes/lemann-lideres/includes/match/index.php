@@ -53,7 +53,7 @@ function lemann_match( $post_id, $user_id ) {
 		} else {
 			$user_data = xprofile_get_field_data( $bp_id, $user_id );
         }
-        
+
         // var_Dump([$job_listing_data, $user_data]);
 
 		switch ( $wpjm_id ) {
@@ -69,7 +69,7 @@ function lemann_match( $post_id, $user_id ) {
                         if($first_match){
                             $real_matches++;
                             $first_match = false;
-                        } 
+                        }
                         $real_matches += .3;
 					}
 				}
@@ -95,7 +95,7 @@ function lemann_match( $post_id, $user_id ) {
 				break;
 		}
 	}
-    
+
     $match = ( $real_matches / $possible_matches ) * 100;
 
 	$matches    = (array) get_user_meta( $user_id, LEMANN_MATCHES_META_KEY, true );
@@ -108,31 +108,40 @@ function lemann_match( $post_id, $user_id ) {
             $user       = get_user_by( 'id', $user_id );
             $user_email = $user->user_email;
         }
-        
+
         // @todo comentar esta linha depois de testar e publicar em prod
         $user_email = @$_ENV['MATCH_EMAIL_TO'];
 
         if($user_email){
+            /*
+             * Pega o template e resolve as variáveis através do Mustache.
+             *
+             * @see https://github.com/bobthecow/mustache.php
+             */
+            require_once 'class-lemann-mustache.php';
+            $lemann_mustache  = Lemann_Mustache::get_instance();
+            $message_template = file_get_contents( get_stylesheet_directory() . '/includes/match/template-email.php' );
+            $message_vars     = [
+                'match'        => round( $match ),
+                'company_logo' => get_the_company_logo( $post_id, 'full' ),
+                'company_name' => get_the_company_name( $post_id ),
+                'job_title'    => get_the_title( $post_id ),
+                'location'     => get_the_job_location( $post_id ),
+                'description'  => get_post( $post_id )->post_content,
+                'job_url'      => get_the_permalink( $post_id ),
+            ];
+            $message_body     = $lemann_mustache->parse( $message_template, $message_vars );
+
             wp_mail(
                 $user_email,
                 __( 'Nova vaga no Portal de Líderes da Fundação Lemann', 'lemann-lideres' ),
-                sprintf(
-                    __(
-                        '<p>Temos uma nova vaga no Portal de Líderes da Fundação Lemann:</p>' .
-                        '<p><strong>%1$s</strong> na %2$s</p>' .
-                        '<p>Acesse: <a href="%3$s">%3$s</a></p>',
-                        'lemann-lideres'
-                    ),
-                    get_the_title( $post_id ),
-                    get_the_company_name( $post_id ),
-                    get_the_permalink( $post_id )
-                ),
+                $message_body,
                 [ 'Content-Type: text/html; charset=UTF-8' ]
             );
 
             $email_sent = true;
         }
-        
+
     }
 
 	$matches[ $post_id ] = [
@@ -170,7 +179,7 @@ function lemann_do_matches(){
      * @var wpdb;
      */
     global $wpdb;
-    
+
     $meta_key = 'awaiting-match';
 
     $awaiting_jobs = $wpdb->get_col("SELECT post_id FROM $wpdb->postmeta WHERE meta_key = '$meta_key'");
@@ -180,11 +189,11 @@ function lemann_do_matches(){
         'role__in' => [ 'lider', 'administrator' ],
         'fields'   => 'ID',
     ] );
-    
+
     $jobs = $wpdb->get_col("SELECT ID FROM $wpdb->posts WHERE post_type = 'job_listing' AND post_status = 'publish'");
-    
+
     $processed = [];
-    
+
     foreach($awaiting_jobs as $job_id){
         foreach($users as $user_id){
             $processed_key = "{$job_id}:{$user_id}";
