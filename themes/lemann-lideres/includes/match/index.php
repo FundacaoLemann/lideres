@@ -98,7 +98,10 @@ function lemann_match( $post_id, $user_id ) {
     
     $match = ( $real_matches / $possible_matches ) * 100;
 
-    if ( $match >= LEMANN_MATCH_MINIMO_EMAIL ) {
+	$matches    = (array) get_user_meta( $user_id, LEMANN_MATCHES_META_KEY, true );
+	$email_sent = ( isset( $matches[ $post_id ] ) ) ? $matches[ $post_id ]['email_sent'] : false;
+
+    if ( $match >= LEMANN_MATCH_MINIMO_EMAIL && ! $email_sent) {
 
         $user_email = xprofile_get_field_data( LEMANN_MATCH_BP_CAMPO_EMAIL, $user_id );
         if ( ! is_email( $user_email ) ) {
@@ -126,27 +129,23 @@ function lemann_match( $post_id, $user_id ) {
                 ),
                 [ 'Content-Type: text/html; charset=UTF-8' ]
             );
+
+            $email_sent = true;
         }
         
     }
-    
-	$matches = (array) get_user_meta( $user_id, LEMANN_MATCHES_META_KEY, true );
+
 	$matches[ $post_id ] = [
-		'match' => $match,
-		'date'  => date_i18n( 'c' ),
-    ];
-    
+		'match'      => $match,
+		'date'       => date_i18n( 'c' ),
+		'email_sent' => $email_sent,
+	];
 	update_user_meta( $user_id, LEMANN_MATCHES_META_KEY, $matches );
 }
 
 
 /**
- * Executa quando o usuário aprova a vaga pela lista do Painel.
- * Remove a action para que a função não seja executada duas vezes quando
- * o usuário estiver editando uma vaga.
- *
- * Esta abordagem não pode ser usada na *criação* da vaga pelo Painel
- * porque em save_post_job_listing ainda não temos os post_meta no lugar.
+* Ao atualizar o job define a flag que faz o match ser executado
  */
 add_action( 'save_post_job_listing', function( $post_id, $post, $update ) {
 	if ( $update ) {
@@ -155,14 +154,17 @@ add_action( 'save_post_job_listing', function( $post_id, $post, $update ) {
 }, 10, 3 );
 
 /**
- * Ao atualizar o perfil, faz a correspondência com todas as vagas.
+ * Ao atualizar o perfil define a flag que faz o match ser executado
  */
 add_action( 'xprofile_updated_profile', function( $user_id ) {
 	update_user_meta($user_id, 'awaiting-match', 1);
 } );
 
 
-
+/**
+ * Executa o match nos jobs e usuários que tiveram modidicações
+ *
+ */
 function lemann_do_matches(){
     /**
      * @var wpdb;

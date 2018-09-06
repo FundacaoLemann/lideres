@@ -233,12 +233,11 @@ class Lemann_Field_Graduacao extends BP_XProfile_Field_Type {
 		$values = self::unserialize( $values );
 		foreach ( $values as $graduacao ) {
 			$output .=
-				'<p>' .
+				'<p class="graduation">' .
 					'<strong>' . $graduacao['curso'] . '</strong> ' .
-					$graduacao['nivel'] . ' - ' .
-					$graduacao['nivel_outros'] . ' - ' .
-					$graduacao['inicio'] . ' - ' .
-					$graduacao['fim'] . ' - ' .
+					($graduacao['nivel'] ?: $graduacao['nivel_outros']) . ' (' .
+					$graduacao['inicio'] . '-' .
+					$graduacao['fim'] . ') - ' .
 					$graduacao['descricao'] . ' - ' .
 					implode( ', ', $graduacao['area'] ) .
 				'</p>';
