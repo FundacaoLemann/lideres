@@ -121,13 +121,14 @@ function lemann_match( $post_id, $user_id ) {
             require_once 'class-lemann-mustache.php';
             $lemann_mustache  = Lemann_Mustache::get_instance();
             $message_template = file_get_contents( get_stylesheet_directory() . '/includes/match/template-email.php' );
+            $job              = get_post( $post_id );
             $message_vars     = [
                 'match'        => round( $match ),
                 'company_logo' => get_the_company_logo( $post_id, 'full' ),
-                'company_name' => get_the_company_name( $post_id ),
+                'company_name' => get_post_meta( $post_id, '_company_name', true ),
                 'job_title'    => get_the_title( $post_id ),
-                'location'     => get_the_job_location( $post_id ),
-                'description'  => get_post( $post_id )->post_content,
+                'location'     => get_post_meta( $post_id, '_job_location', true ),
+                'description'  => $job->post_content,
                 'job_url'      => get_the_permalink( $post_id ),
             ];
             $message_body     = $lemann_mustache->parse( $message_template, $message_vars );
