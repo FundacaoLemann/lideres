@@ -84,10 +84,10 @@ function lemann_wjm_custom_fields() {
 			'type'     => 'select',
 			'required' => false,
 			'options'  => [
-				'Até 2 anos'      => 'Até 2 anos',
-				'3 a 5 anos'      => '3 a 5 anos',
-				'6 a 9 anos'      => '6 a 9 anos',
-				'Mais de 10 anos' => 'Mais de 10 anos',
+				'Pequena (até 2 anos)'          => 'Pequena (até 2 anos)',
+				'Média (3 a 5 anos)'            => 'Média (3 a 5 anos)',
+				'Longa (6 a 9 anos)'            => 'Longa (6 a 9 anos)',
+				'Experiente (mais de 10 anos)'  => 'Experiente (mais de 10 anos)',
 			],
 		],
 		'experiencia_gestao' => [
@@ -95,23 +95,23 @@ function lemann_wjm_custom_fields() {
 			'type'     => 'select',
 			'required' => false,
 			'options'  => [
-				'Nenhuma experiência' => 'Nenhuma experiência',
-				'Até 2 anos'      	  => 'Até 2 anos',
-				'3 a 5 anos'      	  => '3 a 5 anos',
-				'6 a 9 anos'      	  => '6 a 9 anos',
-				'Mais de 10 anos' 	  => 'Mais de 10 anos',
+				'Nenhuma experiência'           => 'Nenhuma experiência',
+				'Pequena (até 2 anos)'          => 'Pequena (até 2 anos)',
+				'Média (3 a 5 anos)'            => 'Média (3 a 5 anos)',
+				'Longa (6 a 9 anos)'            => 'Longa (6 a 9 anos)',
+				'Experiente (mais de 10 anos)' 	 => 'Experiente (mais de 10 anos)',
 			],
 		],
 		'faixa_salarial'     => [
-			'label'    => __( 'Faixa salarial (anual)', 'lemann-lideres' ),
+			'label'    => __( 'Faixa salarial (mensal)', 'lemann-lideres' ),
 			'type'     => 'select',
 			'required' => false,
 			'options'  => [
-				'Menos de 60 mil reais'    => 'Menos de 60 mil reais',
-				'Entre 60 e 84 mil reais'   => 'Entre 60 e 84 mil reais',
-				'Entre 84 e 120 mil reais'  => 'Entre 84 e 120 mil reais',
-				'Entre 120 e 180 mil reais' => 'Entre 120 e 180 mil reais',
-				'Mais que 180 mil reais'   => 'Mais que 180 mil reais',
+				'Menos de 5 mil reais'    => 'Menos de 5 mil reais',
+				'Entre 5 a 7 mil reais'   => 'Entre 5 a 7 mil reais',
+				'Entre 7 e 10 mil reais'  => 'Entre 7 e 10 mil reais',
+				'Entre 10 e 15 mil reais' => 'Entre 10 e 15 mil reais',
+				'Mais que 20 mil reais'   => 'Mais que 20 mil reais',
 			],
 		],
 		'localizacao_geo' => [
@@ -119,8 +119,10 @@ function lemann_wjm_custom_fields() {
 			'type'     => 'select',
 			'required' => true,
 			'options'  => [
-				'Presencial' => 'Presencial',
-				'Remoto'	 => 'Remoto',
+				'Nacional (país em que reside)' => 'Nacional (país em que reside)',
+				'Estado Atual em que reside'	=> 'Estado Atual em que reside',
+                'Municipio Atual em que reside' => 'Municipio Atual em que reside',
+                'Não presencial'                => 'Não presencial'
 			],
 		],
 		'prazo_inscricao' => [
