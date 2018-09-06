@@ -259,20 +259,15 @@ body a {
   width: 20px;
 }
 #gp-standard-header .gp-header-buttons .gp-profile-required-fields-warning {
+  background: #EF4123;
   color: white !important;
   line-height: 1.3em;
   margin: -10px 0 10px;
   padding: 1em;
   text-align: center;
 }
-#gp-standard-header .gp-header-buttons .gp-profile-required-fields-warning.gp-profile-status-completo {
+#gp-standard-header .gp-header-buttons .gp-profile-required-fields-warning.gp-profile-complete {
   background: #51B413;
-}
-#gp-standard-header .gp-header-buttons .gp-profile-required-fields-warning.gp-profile-status-medio {
-  background: #FBB700;
-}
-#gp-standard-header .gp-header-buttons .gp-profile-required-fields-warning.gp-profile-status-insuficiente {
-  background: #EF4123;
 }
 #gp-standard-header .gp-header-buttons .gp-profile-required-fields-warning a {
   color: inherit;
@@ -284,10 +279,10 @@ body a {
   margin: 10px 0;
 }
 #gp-standard-header .gp-header-buttons .gp-profile-required-fields-warning .gp-profile-complete-levels .gp-profile-complete-level {
-  flex-grow: 1;
+  width: 33.33%;
 }
 #gp-standard-header .gp-header-buttons .gp-profile-required-fields-warning .gp-profile-complete-levels .gp-profile-complete-level.active span:after {
-  background-color: #083050;
+  background: #FFDF0C;
   border: 2px solid white;
   border-radius: 50%;
   content: "";
@@ -295,6 +290,18 @@ body a {
   height: 10px;
   margin: 0 auto;
   width: 10px;
+}
+#gp-standard-header .gp-header-buttons .gp-profile-required-fields-warning .gp-profile-complete-levels .gp-profile-complete-level.active.gp-profile-status-insuficiente span:after {
+  background: #AA3C29;
+}
+#gp-standard-header .gp-header-buttons .gp-profile-required-fields-warning .gp-profile-complete-levels .gp-profile-complete-level.active.gp-profile-status-completo span:after {
+  background: #61DEEA;
+}
+#gp-standard-header .gp-header-buttons .gp-profile-required-fields-warning .gp-profile-completion-bar {
+  background: linear-gradient(to right, #AA3C29, #FFDF0C, #61DEEA);
+  border-radius: 2px;
+  height: 5px;
+  margin: -20px 16.66% 20px;
 }
 #gp-standard-header .gp-header-buttons #gp-profile-menu {
   list-style: none;

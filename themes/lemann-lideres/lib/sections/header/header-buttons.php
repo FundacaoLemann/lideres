@@ -8,7 +8,7 @@
 $incomplete_profile_level = 'completo';
 $incomplete_field_group   = lemann_check_all_fields();
 if ( $incomplete_field_group ) {
-	$incomplete_profile_level = 'medio';
+	$incomplete_profile_level = 'médio';
 	$group_to_complete        = $incomplete_field_group;
 
 	$required_field_group = lemann_check_required_fields();
@@ -67,7 +67,7 @@ if ( ghostpool_option( 'profile_button' ) != 'gp-profile-button-disabled' OR gho
 
 					?>
 					<div class="sub-menu">
-						<div class="gp-profile-required-fields-warning gp-profile-status-<?php echo $incomplete_profile_level; ?>">
+					<div class="gp-profile-required-fields-warning<?php ('completo' == $incomplete_field_group) ? ' gp-profile-complete' : '' ?>">
 							<?php
 							if ( 'completo' != $incomplete_profile_level ) {
 								_e( 'Seu perfil está incompleto!', 'lemann-lideres' );
@@ -79,16 +79,17 @@ if ( ghostpool_option( 'profile_button' ) != 'gp-profile-button-disabled' OR gho
 
 							<div class="gp-profile-complete-levels">
 								<?php
-								$levels = [ 'insuficiente', 'medio', 'completo' ];
+								$levels = [ 'insuficiente', 'médio', 'completo' ];
 								foreach ( $levels as $level ) {
 									?>
-									<div class="gp-profile-complete-level<?php echo ( $incomplete_profile_level == $level ) ? ' active' : ''; ?>">
+									<div class="gp-profile-complete-level gp-profile-status-<?php echo $level; echo ( $incomplete_profile_level == $level ) ? ' active' : ''; ?>">
 										<span><?php echo $level; ?></span>
 									</div>
 									<?php
 								}
 								?>
 							</div>
+							<div class="gp-profile-completion-bar"></div>
 
 							<a href="<?php echo $group_to_complete; ?>">
 								<?php

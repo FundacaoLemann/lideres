@@ -12,22 +12,15 @@
 		}
 
 		.gp-profile-required-fields-warning {
+			background: $c_warning;
 			color: white !important;
 			line-height: 1.3em;
 			margin: -10px 0 10px;
 			padding: 1em;
 			text-align: center;
 
-			&.gp-profile-status {
-				&-completo {
-					background: $c_profile_completo;
-				}
-				&-medio {
-					background: $c_profile_medio;
-				}
-				&-insuficiente {
-					background: $c_profile_insuficiente;
-				}
+			&.gp-profile-complete {
+				background: #51B413;
 			}
 
 			a {
@@ -41,11 +34,11 @@
 				margin: 10px 0;
 
 				.gp-profile-complete-level {
-					flex-grow: 1;
+					width: 33.33%;
 
 					&.active {
 						span:after {
-							background-color: $c_primary;
+							background: $c_profile_medio;
 							border: 2px solid white;
 							border-radius: 50%;
 							content: '';
@@ -54,8 +47,25 @@
 							margin: 0 auto;
 							width: 10px;
 						}
+
+						&.gp-profile-status {
+							&-insuficiente span:after {
+								background: $c_profile_insuficiente;
+							}
+
+							&-completo span:after {
+								background: $c_profile_completo;
+							}
+						}
 					}
 				}
+			}
+
+			.gp-profile-completion-bar {
+				background: linear-gradient(to right, $c_profile_insuficiente, $c_profile_medio, $c_profile_completo);
+				border-radius: 2px;
+				height: 5px;
+				margin: -20px 16.66% 20px;
 			}
 		}
 
