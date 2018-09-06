@@ -441,7 +441,7 @@ function lemann_retrieve_password_message( $message, $key, $user_login, $user_da
     $new_message[] = sprintf( __( 'Nome de usuário: %s'), $user_login );
     $new_message[] = __( 'Se foi um engano, apenas ignore este e-mail e nada acontecerá.', 'lemann-lideres' );
     $new_message[] = __( 'Para fazer o primeiro acesso ou redefinir sua senha, visite o seguinte endereço:', 'lemann-lideres' );
-    $new_message[] = network_site_url( "wp-login.php?action=rp&key=$key&login=" . rawurlencode( $user_login ), 'login' );
+    $new_message[] = network_site_url( "wp-login.php?action=reset_pwd&key=$key&login=" . rawurlencode( $user_login ), 'login' );
     $new_message[] = __( 'Você receberá um outro e-mail com a sua nova ou primeira senha.', 'lemann-lideres' );
 
     return implode( "\r\n\r\n", $new_message );
