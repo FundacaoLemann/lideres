@@ -65,7 +65,7 @@ function lemann_match( $post_id, $user_id ) {
                 $first_match = true;
 				foreach ( (array) $job_listing_data as $possible_value ) {
                     $possible_matches += .3;
-					if ( in_array( $possible_value, (array) $user_data ) ) {
+					if ( $user_data && in_array( $possible_value, (array) $user_data ) ) {
                         if($first_match){
                             $real_matches++;
                             $first_match = false;
@@ -77,7 +77,7 @@ function lemann_match( $post_id, $user_id ) {
 
 			case 'graduacao':
 				$possible_matches++;
-				if ( is_array( $user_data ) && ! empty( $user_data[0] ) ) {
+				if ( $user_data && is_array( $user_data ) && ! empty( $user_data[0] ) ) {
 					foreach ( $user_data as $graduacao ) {
 						if ( $graduacao['nivel'] == $job_listing_data ) {
 							$real_matches++;
@@ -89,7 +89,7 @@ function lemann_match( $post_id, $user_id ) {
 
 			default:
 				$possible_matches++;
-				if ( $job_listing_data == $user_data ) {
+				if ( $user_data &&  $job_listing_data == $user_data ) {
 					$real_matches++;
 				}
 				break;
