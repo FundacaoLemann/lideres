@@ -32,6 +32,13 @@ define( 'LEMANN_MATCH_MINIMO_EMAIL', 70 );
  */
 define( 'LEMANN_MATCH_BP_CAMPO_EMAIL', 1501 );
 
+function _match_log($message, $breakline = false){
+    $message = $breakline ? "\n\n{$message}" : " {$message}";
+    if(class_exists('WP_CLI')){
+        echo $message;
+    } 
+}
+
 /**
  * Define a porcentagem de correspondência entre uma vaga e um usuário.
  *
@@ -102,6 +109,7 @@ function lemann_match( $post_id, $user_id ) {
 	$email_sent = ( isset( $matches[ $post_id ] ) ) ? $matches[ $post_id ]['email_sent'] : false;
 
     if ( $match >= LEMANN_MATCH_MINIMO_EMAIL && ! $email_sent) {
+        _match_log('MATCH!!!!');
 
         $user_email = xprofile_get_field_data( LEMANN_MATCH_BP_CAMPO_EMAIL, $user_id );
         if ( ! is_email( $user_email ) ) {
@@ -140,6 +148,8 @@ function lemann_match( $post_id, $user_id ) {
                 [ 'Content-Type: text/html; charset=UTF-8' ]
             );
 
+            _match_log('[email sent]');
+
             $email_sent = true;
         }
 
@@ -151,6 +161,8 @@ function lemann_match( $post_id, $user_id ) {
 		'email_sent' => $email_sent,
 	];
 	update_user_meta( $user_id, LEMANN_MATCHES_META_KEY, $matches );
+
+    return $match;
 }
 
 
@@ -199,9 +211,10 @@ function lemann_do_matches(){
         foreach($users as $user_id){
             $processed_key = "{$job_id}:{$user_id}";
             if(!@$processed[$processed_key]){
-                echo "\n<br>\nmaching $job_id -- $user_id";
-                file_put_contents('/tmp/do-matches.log', "   <br>\nmaching $job_id <> $user_id", FILE_APPEND);
-                lemann_match($job_id, $user_id);
+                _match_log("MATCHING JOB $job_id WITH USER $user_id", true);
+                $match = lemann_match($job_id, $user_id);
+                _match_log(number_format($match,1) . '%');
+
                 delete_post_meta($job_id, $meta_key);
             }
             $processed[$processed_key] = true;
@@ -212,9 +225,10 @@ function lemann_do_matches(){
         foreach($jobs as $job_id){
             $processed_key = "{$job_id}:{$user_id}";
             if(!@$processed[$processed_key]){
-                echo "\n<br>\nmaching $job_id -- $user_id";
-                file_put_contents('/tmp/do-matches.log', "   <br>\nmaching $job_id <> $user_id", FILE_APPEND);
-                lemann_match($job_id, $user_id);
+                _match_log("MATCHING JOB $job_id WITH USER $user_id", true);
+                $match = lemann_match($job_id, $user_id);
+                _match_log(number_format($match,1) . '%');
+
                 delete_user_meta($user_id, $meta_key);
             }
             $processed[$processed_key] = true;
