@@ -37,9 +37,8 @@ define( 'LEMANN_MATCH_BP_CAMPO_EMAIL', 1501 );
  *
  * @param int  $post_id ID da vaga.
  * @param int  $user_id ID do usuário.
- * @param bool $send_email Se deve ou não enviar um e-mail para o usuário.
  */
-function lemann_match( $post_id, $user_id, $send_email = false ) {
+function lemann_match( $post_id, $user_id ) {
 	set_time_limit( 5 );
 
 	$possible_matches = 0;
@@ -53,17 +52,25 @@ function lemann_match( $post_id, $user_id, $send_email = false ) {
 			$user_data = Lemann_Field_Graduacao::unserialize( $user_data );
 		} else {
 			$user_data = xprofile_get_field_data( $bp_id, $user_id );
-		}
+        }
+        
+        // var_Dump([$job_listing_data, $user_data]);
 
 		switch ( $wpjm_id ) {
 			// Campos de vaga multivalorados.
 			case 'setor_atuacao':
 			case 'area_atuacao':
-			case 'localizacao_geo':
+            case 'localizacao_geo':
+                $possible_matches++;
+                $first_match = true;
 				foreach ( (array) $job_listing_data as $possible_value ) {
-					$possible_matches++;
+                    $possible_matches += .3;
 					if ( in_array( $possible_value, (array) $user_data ) ) {
-						$real_matches++;
+                        if($first_match){
+                            $real_matches++;
+                            $first_match = false;
+                        } 
+                        $real_matches += .3;
 					}
 				}
 				break;
@@ -88,66 +95,50 @@ function lemann_match( $post_id, $user_id, $send_email = false ) {
 				break;
 		}
 	}
+    
+    $match = ( $real_matches / $possible_matches ) * 100;
 
-	$match = ( $real_matches / $possible_matches ) * 100;
+    if ( $match >= LEMANN_MATCH_MINIMO_EMAIL ) {
 
-	// To Do: Tirar esse teste com o ID do usuário.
-	if ( 1 == $user_id ) {
-		if ( $send_email && $match >= LEMANN_MATCH_MINIMO_EMAIL ) {
+        $user_email = xprofile_get_field_data( LEMANN_MATCH_BP_CAMPO_EMAIL, $user_id );
+        if ( ! is_email( $user_email ) ) {
+            $user       = get_user_by( 'id', $user_id );
+            $user_email = $user->user_email;
+        }
+        
+        // @todo comentar esta linha depois de testar e publicar em prod
+        $user_email = @$_ENV['MATCH_EMAIL_TO'];
 
-			$user_email = xprofile_get_field_data( LEMANN_MATCH_BP_CAMPO_EMAIL, $user_id );
-			if ( ! is_email( $user_email ) ) {
-				$user       = get_user_by( 'id', $user_id );
-				$user_email = $user->user_email;
-			}
-
-			wp_mail(
-				$user_email,
-				__( 'Nova vaga no Portal de Líderes da Fundação Lemann', 'lemann-lideres' ),
-				sprintf(
-					__(
-						'<p>Temos uma nova vaga no Portal de Líderes da Fundação Lemann:</p>' .
-						'<p><strong>%1$s</strong> na %2$s</p>' .
-						'<p>Acesse: <a href="%3$s">%3$s</a></p>',
-						'lemann-lideres'
-					),
-					get_the_title( $post_id ),
-					get_the_company_name( $post_id ),
-					get_the_permalink( $post_id )
-				),
-				[ 'Content-Type: text/html; charset=UTF-8' ]
-			);
-		}
-	}
-
+        if($user_email){
+            wp_mail(
+                $user_email,
+                __( 'Nova vaga no Portal de Líderes da Fundação Lemann', 'lemann-lideres' ),
+                sprintf(
+                    __(
+                        '<p>Temos uma nova vaga no Portal de Líderes da Fundação Lemann:</p>' .
+                        '<p><strong>%1$s</strong> na %2$s</p>' .
+                        '<p>Acesse: <a href="%3$s">%3$s</a></p>',
+                        'lemann-lideres'
+                    ),
+                    get_the_title( $post_id ),
+                    get_the_company_name( $post_id ),
+                    get_the_permalink( $post_id )
+                ),
+                [ 'Content-Type: text/html; charset=UTF-8' ]
+            );
+        }
+        
+    }
+    
 	$matches = (array) get_user_meta( $user_id, LEMANN_MATCHES_META_KEY, true );
 	$matches[ $post_id ] = [
 		'match' => $match,
 		'date'  => date_i18n( 'c' ),
-	];
+    ];
+    
 	update_user_meta( $user_id, LEMANN_MATCHES_META_KEY, $matches );
 }
 
-/**
- *  * Ao salvar uma vaga, se ela estiver publicada
- * faz a correspondência com todos os usuários líderes.
- *
- * @param int $post_id ID da vaga (job_listing).
- */
-function lemann_match_save_job_listing( $post_id ) {
-	if ( 'publish' == get_post_status( $post_id ) ) {
-		$users = get_users( [
-			'role__in' => [ 'lider', 'administrator' ],
-			'fields'   => 'ID',
-			'include'  => [ 1 ],
-		] );
-		foreach ( $users as $user_id ) {
-			lemann_match( $post_id, $user_id, true );
-		}
-	}
-}
-add_action( 'job_manager_save_job_listing', 'lemann_match_save_job_listing', 999 ); // Painel.
-add_action( 'job_manager_update_job_data', 'lemann_match_save_job_listing', 999 ); // Frontend.
 
 /**
  * Executa quando o usuário aprova a vaga pela lista do Painel.
@@ -159,8 +150,7 @@ add_action( 'job_manager_update_job_data', 'lemann_match_save_job_listing', 999 
  */
 add_action( 'save_post_job_listing', function( $post_id, $post, $update ) {
 	if ( $update ) {
-		lemann_match_save_job_listing( $post_id );
-		remove_action( 'job_manager_save_job_listing', 'lemann_match_save_job_listing', 999 );
+        update_post_meta($post_id, 'awaiting-match', 1);
 	}
 }, 10, 3 );
 
@@ -168,11 +158,64 @@ add_action( 'save_post_job_listing', function( $post_id, $post, $update ) {
  * Ao atualizar o perfil, faz a correspondência com todas as vagas.
  */
 add_action( 'xprofile_updated_profile', function( $user_id ) {
-	$job_listings = get_posts( [
-		'post_type'   => 'job_listing',
-		'numberposts' => -1,
-	] );
-	foreach ( $job_listings as $job_listing ) {
-		lemann_match( $job_listing->ID, $user_id );
-	}
+	update_user_meta($user_id, 'awaiting-match', 1);
 } );
+
+
+
+function lemann_do_matches(){
+    /**
+     * @var wpdb;
+     */
+    global $wpdb;
+    
+    $meta_key = 'awaiting-match';
+
+    $awaiting_jobs = $wpdb->get_col("SELECT post_id FROM $wpdb->postmeta WHERE meta_key = '$meta_key'");
+    $awaiting_users = $wpdb->get_col("SELECT user_id FROM $wpdb->usermeta WHERE meta_key = '$meta_key'");
+
+    $users = get_users( [
+        'role__in' => [ 'lider', 'administrator' ],
+        'fields'   => 'ID',
+    ] );
+    
+    $jobs = $wpdb->get_col("SELECT ID FROM $wpdb->posts WHERE post_type = 'job_listing' AND post_status = 'publish'");
+    
+    $processed = [];
+    
+    foreach($awaiting_jobs as $job_id){
+        foreach($users as $user_id){
+            $processed_key = "{$job_id}:{$user_id}";
+            if(!@$processed[$processed_key]){
+                echo "\n<br>\nmaching $job_id -- $user_id";
+                file_put_contents('/tmp/do-matches.log', "   <br>\nmaching $job_id <> $user_id", FILE_APPEND);
+                lemann_match($job_id, $user_id);
+                delete_post_meta($job_id, $meta_key);
+            }
+            $processed[$processed_key] = true;
+        }
+    }
+
+    foreach($awaiting_users as $user_id){
+        foreach($jobs as $job_id){
+            $processed_key = "{$job_id}:{$user_id}";
+            if(!@$processed[$processed_key]){
+                echo "\n<br>\nmaching $job_id -- $user_id";
+                file_put_contents('/tmp/do-matches.log', "   <br>\nmaching $job_id <> $user_id", FILE_APPEND);
+                lemann_match($job_id, $user_id);
+                delete_user_meta($user_id, $meta_key);
+            }
+            $processed[$processed_key] = true;
+        }
+    }
+}
+
+if(class_exists('WP_CLI')){
+    WP_CLI::add_command( 'do-matches', 'lemann_do_matches');
+}
+
+if(isset($_GET['lemann-action']) && $_GET['lemann-action'] == 'do-matches'){
+    do_action('init', function(){
+        lemann_do_matches();
+    });
+}
