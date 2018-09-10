@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 global $job_manager;
 ?>
 
-<p>As informações compartilhadas nesse formulário serão compartilhadas dentro da nossa rede de líderes. Caso a vaga que você deseja divulgar seja sigilosa, favor não incluir informações sensíveis.</p>
+<p>As informações compartilhadas nesse formulário estarão disponíveis para nossa rede de líderes. Caso a vaga que você deseja divulgar seja sigilosa favor não incluir informações sensíveis.</p>
 
 <form action="<?php echo esc_url( $action ); ?>" method="post" id="submit-job-form" class="job-manager-form" enctype="multipart/form-data">
 
