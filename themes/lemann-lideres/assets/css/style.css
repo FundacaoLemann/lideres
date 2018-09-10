@@ -1098,7 +1098,7 @@ form.job-manager-form fieldset {
     width: calc(50% - 10px);
   }
 }
-#buddypress .profile .bp-widget.destaque-do-perfil {
+#buddypress .profile .bp-widget.destaques-do-perfil, #buddypress .profile .bp-widget.destaque-do-perfil {
   display: none;
 }
 #buddypress .profile .bp-widget.mini-bio, #buddypress .profile .bp-widget.necessidades-e-ofertas {
