@@ -1177,6 +1177,9 @@ form.job-manager-form fieldset {
 #buddypress #item-nav .item-list-tabs {
   padding: 20px 40px;
 }
+.xprofile #buddypress #item-body {
+  margin-left: 0;
+}
 .xprofile #buddypress #item-body .item-list-tabs#subnav {
   background: whitesmoke;
   margin: 0;
@@ -1213,6 +1216,13 @@ form.job-manager-form fieldset {
 .lemann-campos-graduacao-wrapper + p.field-visibility-settings-toggle {
   background: #fafafa;
   padding: 0 0 1em 1em;
+}
+
+#gp-content-wrapper {
+  padding: 0 !important;
+}
+#gp-content-wrapper #item-body {
+  margin-left: 3%;
 }
 
 .gp-team-member .gp-team-image {

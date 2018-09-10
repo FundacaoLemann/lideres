@@ -244,6 +244,8 @@
     }
 
     .xprofile & #item-body {
+        margin-left: 0;
+
         .item-list-tabs#subnav {
             background: whitesmoke;
             margin: 0;
@@ -285,5 +287,13 @@
     & + p.field-visibility-settings-toggle {
         background: #fafafa;
         padding: 0 0 1em 1em;
+    }
+}
+
+#gp-content-wrapper {
+    padding: 0 !important;
+
+    #item-body {
+        margin-left: 3%;
     }
 }
