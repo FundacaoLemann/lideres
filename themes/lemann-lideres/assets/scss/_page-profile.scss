@@ -9,6 +9,7 @@
 
     .header-cargo-empresa {
         font-size: 18px;
+        margin-bottom: 10px;
 
         .header-cargo, .header-empresa {
             font-weight: 600;
@@ -125,6 +126,14 @@
     }
 }
 
+.xprofile #gp-content-wrapper {
+    padding: 0 !important;
+
+    #gp-content {
+        background: whitesmoke;
+    }
+}
+
 #gp-content {
     width: 100% !important;
 }
@@ -132,52 +141,65 @@
 #buddypress table.profile-fields tr.alt td {
     color: #333333 !important;
 }
+
+// FIXME: Discover why BP styles are included later, requiring all those '!important' clauses.
 #buddypress .profile .bp-widget  {
-    border: none !important;
-    border-top: 1px solid $c_primary-bg !important;
-    margin-top: 50px;
-    // padding: 0 0 0 0 !important;
+    background: white;
+    box-shadow: 0px 0px 4px -2px rgba(0,0,0,0.5);
+    display: inline-block;
+    margin: 0 0 30px !important;
+    padding: 0 0 0 0 !important;
+    width: 100%;
+
+    @media screen and (min-width: 992px) {
+        width: calc(50% - 10px);
+    }
+
+    &.destaque-do-perfil {
+        display: none;
+    }
+    &.mini-bio, &.necessidades-e-ofertas {
+        float: left;
+        clear: left;
+    }
+    &.carreira {
+        float: right;
+    }
+
+    h2 {
+        background: $c_primary-bg !important;
+        border: 2px solid white;
+        border-radius: 7px;
+        display: block !important;
+        color: white;
+        font-weight: 500;
+        margin-bottom: 20px !important;
+        padding: 10px 20px 5px !important;
+        text-align: left;
+        top: 0 !important;
+        width: 100%;
+    }
+
+    .profile-fields {
+        margin: 20px;
+        width: calc(100% - 40px);
+    }
 
     .label {
-        width: 30% !important;
-        font-size: 16px;
+        color: $c_lightgray !important;
+        display: block;
+        width: 100% !important;
+        font-size: 0.8em;
         position: relative;
-        padding: 10px 5px;
-
-        &:before {
-            content:'';
-            width: 0;
-            height: 0;
-            border-top: 8px solid transparent;
-            border-bottom: 8px solid transparent;
-            border-left: 8px solid $c_secondary-bg;
-            display: inline-block;
-            vertical-align: middle;
-            margin-right: 6px;
-            margin-bottom: 3px;
-        }
-        @media only screen and (max-width: 767px)  {
-            width: 100% !important;
-        }
+        padding: 0;
     }
     .graduation {
-        &:before {
-            content:'';
-            width: 0;
-            height: 0;
-            border-top: 8px solid transparent;
-            border-bottom: 8px solid transparent;
-            border-left: 8px solid #CCC;
-            display: inline-block;
-            vertical-align: middle;
-            margin-right: 6px;
-            margin-bottom: 3px;
-        }
+        padding-left: 20px;
     }
     .data {
+        display: block;
         line-height: 1.6;
         font-size: 16px;
-        padding-left: 15px;
     }
     .field_facebook,
     .field_google,
@@ -209,6 +231,50 @@
 
     .editfield.field_1{
         margin-top: 20px;
+    }
+}
+
+#buddypress {
+    #item-nav {
+        background: white;
+
+        .item-list-tabs {
+            padding: 20px 40px;
+        }
+    }
+
+    .xprofile & #item-body {
+        .item-list-tabs#subnav {
+            background: whitesmoke;
+            margin: 0;
+            padding: 10px 0 25px;
+
+            ul {
+                display: flex;
+                justify-content: flex-end;
+
+                li {
+                    background: white;
+                    border-radius: 2px;
+                    font-weight: bold;
+                    margin: 0 0 10px 10px;
+                    padding: 7.5px 10px;
+
+                    a {
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+
+        .profile {
+            background: whitesmoke;
+            padding: 30px 10px;
+
+            @media screen and (min-width: 992px) {
+                padding: 30px 0;
+            }
+        }
     }
 }
 
