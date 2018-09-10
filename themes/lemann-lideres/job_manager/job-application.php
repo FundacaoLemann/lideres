@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<div class="job_application application">
 		<?php do_action( 'job_application_start', $apply ); ?>
 
-		<input type="button" class="application_button button" value="<?php esc_attr_e( 'Entrar em contato', 'lemann-lideres' ); ?>" />
+		<input type="button" class="application_button button" value="<?php esc_attr_e( 'Candidatar-se', 'lemann-lideres' ); ?>" />
 
 		<div class="application_details">
 			<?php
