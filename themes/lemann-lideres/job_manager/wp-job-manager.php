@@ -84,6 +84,7 @@ function lemann_wjm_custom_fields() {
 			'type'     => 'select',
 			'required' => false,
 			'options'  => [
+				'Nenhuma experiência'           => 'Nenhuma experiência',
 				'até 2 anos'          => 'até 2 anos',
 				'3 a 5 anos'            => '3 a 5 anos',
 				'6 a 9 anos'            => '6 a 9 anos',
