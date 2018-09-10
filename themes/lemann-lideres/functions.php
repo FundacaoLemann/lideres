@@ -107,6 +107,11 @@ add_action( 'wp_enqueue_scripts', function () {
 
 });
 
+add_action( 'admin_enqueue_scripts', function () {
+    wp_enqueue_script( 'lemann-countries-states-cities', get_stylesheet_directory_uri() . '/includes/countries-states-cities/countries-states-cities.js', array( 'jquery' ), null, true );
+    wp_enqueue_script( 'lemann-countries-states-cities-script', get_stylesheet_directory_uri() . '/includes/countries-states-cities/scripts.js', array( 'jquery', 'lemann-countries-states-cities' ), null, true );
+});
+
 /**
  * Redireciona o usuário para a paǵina de login colocando
  * a mensagem de erro em uma variável de sessão.

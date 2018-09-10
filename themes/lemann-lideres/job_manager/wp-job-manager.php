@@ -127,6 +127,18 @@ function lemann_wjm_custom_fields() {
                 'Não presencial'                => 'Não presencial'
 			],
 		],
+		'localizacao_pais' => [
+			'label'    => __( 'País', 'lemann-lideres' ),
+			'type'     => 'text',
+		],
+		'localizacao_estado' => [
+			'label'    => __( 'Estado', 'lemann-lideres' ),
+			'type'     => 'text',
+		],
+		'localizacao_cidade' => [
+			'label'    => __( 'Cidade', 'lemann-lideres' ),
+			'type'     => 'text',
+		],
 		'prazo_inscricao' => [
 			'label'	   => __('Prazo para inscrição', 'lemann-lideres'),
 			'type' 	   => 'date',
@@ -177,3 +189,19 @@ add_filter( 'script_loader_src', function ( $src, $handle ) {
 	}
 	return $src;
 }, 10, 2 );
+
+/**
+ * Preenche o campo de localização padrão do WP Job Manager
+ * com os campos personalizados de país, estado e cidade.
+ */
+add_action( 'init', function() {
+	if ( isset( $_POST['job_location'] ) && isset( $_POST['localizacao_pais'] ) ) {
+		$_POST['job_location'] = $_POST['localizacao_pais'];
+		if ( ! empty( $_POST['localizacao_estado'] ) ) {
+			$_POST['job_location'] .= ' - ' . $_POST['localizacao_estado'];
+			if ( ! empty( $_POST['localizacao_cidade'] ) ) {
+				$_POST['job_location'] .= ' - ' . $_POST['localizacao_cidade'];
+			}
+		}
+	}
+} );

@@ -105,7 +105,9 @@ if ( isset( $resume_edit ) && $resume_edit ) {
 
     <h2>Localização da vaga</h2>
     <?php $job_fields_locality = [
-        'job_location',
+        'localizacao_pais',
+        'localizacao_estado',
+        'localizacao_cidade',
         'localizacao_geo',
     ];
     foreach ( $job_fields_locality as $key ) : ?>
@@ -123,6 +125,7 @@ if ( isset( $resume_edit ) && $resume_edit ) {
     <?php do_action( 'submit_job_form_end' ); ?>
 
     <p>
+        <input type="hidden" name="job_location" value="" />
         <input type="hidden" name="job_manager_form" value="<?php echo esc_attr( $form ); ?>" />
         <input type="hidden" name="job_id" value="<?php echo esc_attr( $job_id ); ?>" />
         <input type="hidden" name="step" value="<?php echo esc_attr( $step ); ?>" />

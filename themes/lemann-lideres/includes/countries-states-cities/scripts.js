@@ -1,9 +1,9 @@
 (function ($) {
 	'use strict';
 	$(function () {
-		var $country_field = $( '#field_647' ),
-			$state_field   = $( '#field_648' ),
-			$city_field    = $( '#field_649' ),
+		var $country_field = $( '#field_647, #localizacao_pais, #_localizacao_pais' ),
+			$state_field   = $( '#field_648, #localizacao_estado, #_localizacao_estado' ),
+			$city_field    = $( '#field_649, #localizacao_cidade, #_localizacao_cidade' ),
 			country_value  = $country_field.val(),
 			state_value    = $state_field.val(),
 			city_value     = $city_field.val();
@@ -60,7 +60,6 @@
 			}
 		} ).trigger( 'change' );
 
-
-
+		$city_field.val( city_value );
 	});
 }(jQuery));
