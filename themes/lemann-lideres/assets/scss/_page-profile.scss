@@ -207,6 +207,20 @@
     .field_twitter {
         display: none;
     }
+
+    &.empty-carreira {
+        p {
+            color:#888;
+
+            margin: 3em;
+        }
+        a {
+            color:#00B5AF;
+            border:2px solid #00B5AF;
+            padding:15px 15px 10px 15px;
+            border-radius: 3px;
+        }
+    }
 }
 .profile .gp-right-sidebar #gp-content {
     width: 65%;
