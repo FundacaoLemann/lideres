@@ -24,7 +24,7 @@
         </div>
         <footer>
             <p style="padding: 20px 0 40px;">
-                <a href="https://lideres.fundacaolemann.org.br/vagas/" style="color: #083050; font-weight: bold; text-decoration: none;">Confira outras oportunidades</a>
+                <a href="https://lideres.fundacaolemann.org.br/vagas/" style="color: #083050; font-weight: bold; text-decoration: none;">Confira outras vagas</a>
             </p>
         </footer>
     </div>
