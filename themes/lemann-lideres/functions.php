@@ -51,6 +51,60 @@ add_action( 'wp_enqueue_scripts', function () {
     wp_enqueue_style( 'js_composer_front' );
 
     wp_enqueue_script( 'lemann-scripts', get_stylesheet_directory_uri() . '/assets/js/scripts.js', array( 'jquery' ), null, true );
+
+    /**
+     * Gera o js com os países, estados e cidades.
+     */
+    $countries_states_city = '/includes/countries-states-cities/countries-states-cities.js';
+    if ( ! file_exists( get_theme_file_path( $countries_states_city ) ) ) {
+        $countries = get_theme_file_path( '/includes/countries-states-cities/countries.json' );
+        $countries = file_get_contents( $countries );
+        $countries = json_decode( $countries );
+        $countries = $countries->countries;
+        $countries = wp_list_pluck( $countries, 'name' );
+        sort( $countries );
+        foreach ( $countries as $key => $country ) {
+            if ( 'Brazil' == $country ) {
+                $countries[ $key ] = 'Brasil';
+            }
+        }
+
+        $states_raw = get_theme_file_path( '/includes/countries-states-cities/states.csv' );
+        $states_raw = array_map( 'str_getcsv', file( $states_raw ) );
+        unset( $states_raw[0] );
+        $states_raw = wp_list_sort( $states_raw, '2' );
+        $states_tmp = [];
+        foreach ( $states_raw as $state ) {
+            $states_tmp[ $state[0] ] = [
+                'name'   => $state[1],
+                'code'   => trim( $state[2] ),
+                'cities' => [],
+            ];
+        }
+
+        $cities = get_theme_file_path( '/includes/countries-states-cities/cities.csv' );
+        $cities = array_map( 'str_getcsv', file( $cities ) );
+        $cities = wp_list_sort( $cities, '2' );
+        unset( $cities[0] );
+        foreach ( $cities as $city ) {
+            $states_tmp[ $city[0] ]['cities'][] = $city[2];
+        }
+
+        $states = [];
+        foreach ( $states_tmp as $state ) {
+            $states[ $state['code'] ] = $state['cities'];
+        }
+
+        $json = [
+            'countries'     => $countries,
+            'states-cities' => $states,
+        ];
+        $json = 'var lemann_coutries = ' . wp_json_encode( $json );
+        file_put_contents( get_stylesheet_directory() . $countries_states_city, $json );
+    }
+    wp_enqueue_script( 'lemann-countries-states-cities', get_stylesheet_directory_uri() . $countries_states_city, array( 'jquery' ), null, true );
+    wp_enqueue_script( 'lemann-countries-states-cities-script', get_stylesheet_directory_uri() . '/includes/countries-states-cities/scripts.js', array( 'jquery', 'lemann-countries-states-cities' ), null, true );
+
 });
 
 /**
