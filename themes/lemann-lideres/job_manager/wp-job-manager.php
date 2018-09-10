@@ -84,10 +84,10 @@ function lemann_wjm_custom_fields() {
 			'type'     => 'select',
 			'required' => false,
 			'options'  => [
-				'Pequena (até 2 anos)'          => 'Pequena (até 2 anos)',
-				'Média (3 a 5 anos)'            => 'Média (3 a 5 anos)',
-				'Longa (6 a 9 anos)'            => 'Longa (6 a 9 anos)',
-				'Experiente (mais de 10 anos)'  => 'Experiente (mais de 10 anos)',
+				'até 2 anos'          => 'até 2 anos',
+				'3 a 5 anos'            => '3 a 5 anos',
+				'6 a 9 anos'            => '6 a 9 anos',
+				'mais de 10 anos'  => 'mais de 10 anos',
 			],
 		],
 		'experiencia_gestao' => [
@@ -96,10 +96,10 @@ function lemann_wjm_custom_fields() {
 			'required' => false,
 			'options'  => [
 				'Nenhuma experiência'           => 'Nenhuma experiência',
-				'Pequena (até 2 anos)'          => 'Pequena (até 2 anos)',
-				'Média (3 a 5 anos)'            => 'Média (3 a 5 anos)',
-				'Longa (6 a 9 anos)'            => 'Longa (6 a 9 anos)',
-				'Experiente (mais de 10 anos)' 	 => 'Experiente (mais de 10 anos)',
+				'até 2 anos'          => 'até 2 anos',
+				'3 a 5 anos'            => '3 a 5 anos',
+				'6 a 9 anos'            => '6 a 9 anos',
+				'mais de 10 anos' 	 => 'mais de 10 anos',
 			],
 		],
 		'faixa_salarial'     => [
