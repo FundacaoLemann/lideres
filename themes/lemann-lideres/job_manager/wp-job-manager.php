@@ -131,6 +131,10 @@ function lemann_wjm_custom_fields() {
 			'type' 	   => 'date',
 			'required' => true,
 		],
+		'anexo' => [
+			'label' => __('Inclua um anexo para complementar a descrição da vaga', 'lemann-lideres'),
+			'type'  => 'file',
+		],
 	];
 }
 

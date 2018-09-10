@@ -89,6 +89,7 @@ if ( isset( $resume_edit ) && $resume_edit ) {
         'faixa_salarial',
         'disponibilidade',
         'job_description',
+        'anexo',
         'prazo_inscricao',
         'application',
     ];
