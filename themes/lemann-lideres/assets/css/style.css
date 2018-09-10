@@ -21,7 +21,7 @@ body a {
   line-height: 1.5;
 }
 
-.widget-title, .profile .bp-widget h2 {
+.widget-title {
   color: #083050 !important;
   font-family: "Effra" !important;
   font-size: 20px !important;
@@ -1073,6 +1073,9 @@ form.job-manager-form fieldset {
 .xprofile #gp-content-wrapper {
   padding: 0 !important;
 }
+.xprofile #gp-content-wrapper #gp-content {
+  background: whitesmoke;
+}
 
 #gp-content {
   width: 100% !important;
@@ -1083,49 +1086,60 @@ form.job-manager-form fieldset {
 }
 
 #buddypress .profile .bp-widget {
-  border: none !important;
-  border-top: 1px solid #00B5AF !important;
-  margin-top: 50px;
-}
-#buddypress .profile .bp-widget .label {
-  width: 30% !important;
-  font-size: 16px;
-  position: relative;
-  padding: 10px 5px;
-}
-#buddypress .profile .bp-widget .label:before {
-  content: "";
-  width: 0;
-  height: 0;
-  border-top: 8px solid transparent;
-  border-bottom: 8px solid transparent;
-  border-left: 8px solid #2CB781;
+  background: white;
+  box-shadow: 0px 0px 4px -2px rgba(0, 0, 0, 0.5);
   display: inline-block;
-  vertical-align: middle;
-  margin-right: 6px;
-  margin-bottom: 3px;
+  margin: 0 0 30px !important;
+  padding: 0 0 0 0 !important;
+  width: 100%;
 }
-@media only screen and (max-width: 767px) {
-  #buddypress .profile .bp-widget .label {
-    width: 100% !important;
+@media screen and (min-width: 992px) {
+  #buddypress .profile .bp-widget {
+    width: calc(50% - 10px);
   }
 }
-#buddypress .profile .bp-widget .graduation:before {
-  content: "";
-  width: 0;
-  height: 0;
-  border-top: 8px solid transparent;
-  border-bottom: 8px solid transparent;
-  border-left: 8px solid #CCC;
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: 6px;
-  margin-bottom: 3px;
+#buddypress .profile .bp-widget.destaque-do-perfil {
+  display: none;
+}
+#buddypress .profile .bp-widget.mini-bio, #buddypress .profile .bp-widget.necessidades-e-ofertas {
+  float: left;
+  clear: left;
+}
+#buddypress .profile .bp-widget.carreira {
+  float: right;
+}
+#buddypress .profile .bp-widget h2 {
+  background: #00B5AF !important;
+  border: 2px solid white;
+  border-radius: 7px;
+  display: block !important;
+  color: white;
+  font-weight: 500;
+  margin-bottom: 20px !important;
+  padding: 10px 20px 5px !important;
+  text-align: left;
+  top: 0 !important;
+  width: 100%;
+}
+#buddypress .profile .bp-widget .profile-fields {
+  margin: 20px;
+  width: calc(100% - 40px);
+}
+#buddypress .profile .bp-widget .label {
+  color: #888888 !important;
+  display: block;
+  width: 100% !important;
+  font-size: 0.8em;
+  position: relative;
+  padding: 0;
+}
+#buddypress .profile .bp-widget .graduation {
+  padding-left: 20px;
 }
 #buddypress .profile .bp-widget .data {
+  display: block;
   line-height: 1.6;
   font-size: 16px;
-  padding-left: 15px;
 }
 #buddypress .profile .bp-widget .field_facebook,
 #buddypress .profile .bp-widget .field_google,
@@ -1157,29 +1171,33 @@ form.job-manager-form fieldset {
   margin-top: 20px;
 }
 
+#buddypress #item-nav {
+  background: white;
+}
 #buddypress #item-nav .item-list-tabs {
   padding: 20px 40px;
 }
-#buddypress #item-body .item-list-tabs#subnav {
+.xprofile #buddypress #item-body .item-list-tabs#subnav {
   background: whitesmoke;
   margin: 0;
   padding: 10px 0 25px;
 }
-#buddypress #item-body .item-list-tabs#subnav ul {
+.xprofile #buddypress #item-body .item-list-tabs#subnav ul {
   display: flex;
   justify-content: flex-end;
 }
-#buddypress #item-body .item-list-tabs#subnav ul li {
+.xprofile #buddypress #item-body .item-list-tabs#subnav ul li {
   background: white;
   border-radius: 2px;
   font-weight: bold;
   margin: 0 0 10px 10px;
   padding: 7.5px 10px;
 }
-#buddypress #item-body .item-list-tabs#subnav ul li a {
+.xprofile #buddypress #item-body .item-list-tabs#subnav ul li a {
   font-weight: 500;
 }
-#buddypress #item-body .profile {
+.xprofile #buddypress #item-body .profile {
+  background: whitesmoke;
   padding: 30px;
 }
 
