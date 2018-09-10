@@ -108,6 +108,7 @@ function lemann_wjm_custom_fields() {
 			'type'     => 'select',
 			'required' => false,
 			'options'  => [
+				'NA'                      => 'NA',
 				'Menos de 5 mil reais'    => 'Menos de 5 mil reais',
 				'Entre 5 a 7 mil reais'   => 'Entre 5 a 7 mil reais',
 				'Entre 7 e 10 mil reais'  => 'Entre 7 e 10 mil reais',
