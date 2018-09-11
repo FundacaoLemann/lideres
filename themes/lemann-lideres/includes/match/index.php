@@ -6,14 +6,14 @@ defined( 'ABSPATH' ) || exit;
  * Valor: ID do campo no BuddyPress.
  */
 define( 'LEMANN_VAGAS_DE_PARA', [
-	'setor_atuacao'      => 1502,
-	'area_atuacao'       => 1513,
+	'setor_atuacao'      => 677,
+	'area_atuacao'       => 654,
 	// 'disponibilidade'    => 1526,
-	'graduacao'          => 1497,
-	'experiencia'        => 1531,
-	'experiencia_gestao' => 1536,
-	'faixa_salarial'     => 1542,
-	'localizacao_geo'    => 1548,
+	'graduacao'          => 693,
+	'experiencia'        => 694,
+	'experiencia_gestao' => 699,
+	'faixa_salarial'     => 815,
+	'localizacao_geo'    => 710,
 ] );
 
 /**
@@ -36,7 +36,7 @@ function _match_log($message, $breakline = false){
     $message = $breakline ? "\n\n{$message}" : " {$message}";
     if(class_exists('WP_CLI')){
         echo $message;
-    } 
+    }
 }
 
 /**
