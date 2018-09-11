@@ -507,3 +507,11 @@ function lemann_retrieve_password_message( $message, $key, $user_login, $user_da
 }
 add_filter( 'retrieve_password_message', 'lemann_retrieve_password_message', 10, 4 );
 add_filter( 'ghostpool_retrieve_password_message', 'lemann_retrieve_password_message', 10, 4 );
+
+
+add_action('job_application_form_fields_end', function(){
+    global $post;
+    $email = get_post_meta($post->ID, '_application', true);
+    
+    echo "<p>contato da vaga <a href=\"mailto:$email\">$email</a></p>";
+});
