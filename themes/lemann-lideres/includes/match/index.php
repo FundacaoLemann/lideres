@@ -128,9 +128,6 @@ function lemann_match( $post_id, $user_id ) {
             $user_email = $user->user_email;
         }
 
-        // @todo comentar esta linha depois de testar e publicar em prod
-        $user_email = @$_ENV['MATCH_EMAIL_TO'];
-
         if($user_email){
             /*
              * Pega o template e resolve as variáveis através do Mustache.
