@@ -762,6 +762,10 @@ form.job-manager-form fieldset {
   padding: 0;
 }
 
+.page-id-100000486:not(.logged-in) footer {
+  display: none !important;
+}
+
 .page-login {
   width: 100vw;
   height: 100vh;

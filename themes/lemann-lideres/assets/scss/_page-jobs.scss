@@ -137,3 +137,9 @@ form.job-manager-form {
         padding: 0;
     }
 }
+
+.page-id-100000486 { // /divulgue-sua-vaga/
+    &:not(.logged-in) footer {
+        display: none !important;
+    }
+}
