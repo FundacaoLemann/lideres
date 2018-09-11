@@ -5,7 +5,7 @@
             <img src="https://fundacaolemann.org.br/assets/site/images/general/lg__lemann.png" alt="Fundação Lemann" style="display: block; margin: auto;">
         </header>
         <div>
-            <h1 style="color: #FC0007; font-weight: bold; padding-top: 20px; text-transform: uppercase;">Encontramos uma vaga para você!</h1>
+            <h1 style="color: #FC0007; font-weight: bold; padding-top: 20px; text-transform: uppercase;">Encontramos uma vaga com o seu perfil</h1>
             <p style="margin-left: 20%; padding-bottom: 15px; width: 60%;">Nosso banco de oportunidades encontrou uma vaga de alta compatibilidade com o seu perfil. Confira as condições da vaga e boa sorte!</p>
         </div>
         <div style="background: white; padding: 30px;">
