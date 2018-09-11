@@ -63,6 +63,7 @@ div.job_listings {
 
                 h3 {
                     color: $c_primary;
+                    
                 }
 
                 strong {
@@ -72,6 +73,13 @@ div.job_listings {
             }
         }
     }
+}
+
+.job-manager-applications-applied-notice {
+    display: block;
+    float: none !important;
+    font-size: 0.9em;
+    margin:15px;
 }
 
 .single-job_listing {
