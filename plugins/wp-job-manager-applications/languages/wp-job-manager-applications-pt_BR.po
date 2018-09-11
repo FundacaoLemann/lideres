@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2018-09-11 12:54-0300\n"
+"PO-Revision-Date: 2018-09-11 16:51-0300\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "X-Generator: Poedit 2.1.1\n"
 "Last-Translator: \n"
@@ -810,7 +810,7 @@ msgstr "Seu interesse foi registrado com sucesso"
 
 #: templates/applied-notice.php:19
 msgid "You have already applied for this job."
-msgstr "Você já se candidatou a esta vaga."
+msgstr "Você já registrou seu interesse por esta vaga."
 
 #: templates/job-application-edit.php:40
 msgid "Save changes"
