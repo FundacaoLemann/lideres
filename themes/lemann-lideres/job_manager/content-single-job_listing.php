@@ -110,10 +110,13 @@ global $post;
 				</h3>
 				<div class="job_info_box--content">
 					<ul>
-						<li>
-							<strong>Descrição</strong>
-							<span><?php wpjm_the_job_description(); ?></span>
-						</li>
+						<?php $job_description = wpjm_get_the_job_description(); ?>
+						<?php if (! empty ($job_description) ): ?>
+							<li>
+								<strong>Descrição</strong>
+								<span><?php echo $job_description; ?></span>
+							</li>
+						<?php endif; ?>
 					</ul>
 				</div>
 			</div>
