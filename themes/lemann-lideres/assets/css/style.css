@@ -1110,6 +1110,7 @@ form.job-manager-form fieldset {
 }
 #buddypress .profile .bp-widget.carreira {
   float: right;
+  clear: right;
 }
 #buddypress .profile .bp-widget h2 {
   background: #00B5AF !important;
