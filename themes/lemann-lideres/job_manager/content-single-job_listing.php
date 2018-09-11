@@ -32,54 +32,96 @@ global $post;
 			do_action( 'single_job_listing_start' );
 		?>
 
-		<div class="job_description">
-			<?php wpjm_the_job_description(); ?>
-		</div>
+		<div class="job_info">
+		<?php $fields = lemann_wjm_custom_fields(); ?>
 
-		<div class="job_additional_info">
-			<ul>
-				<?php
-				$fields = lemann_wjm_custom_fields();
-				foreach ( $fields as $key => $field ) {
-					// Campos que não devem ser exibidos.
-					if ( in_array( $key, [ 'responsavel_nome', 'responsavel_email' ] ) ) {
-						continue;
-					}
+			<div class="job_info_box" id="informacoes-basicas">
+				<h3 class="job_info_box--title">
+					Informações básicas
+				</h3>
+				<div class="job_info_box--content">
+					<ul>
+					<?php $basic_fields_1 = ['setor_atuacao', 'area_atuacao'];
+					foreach ($basic_fields_1 as $key):
+						$meta_value = get_post_meta( get_the_ID(), "_{$key}", true)[0];
+						$outros = get_post_meta( get_the_ID(), "_{$key}_outros", true);
+						if ( ! empty( $meta_value ) ): ?>
+							<li>
+								<strong><?php echo $fields[$key]['label']; ?></strong>
+								<span><?php echo (! empty ($outros) ) ? $outros : $meta_value; ?></span>
+							</li>
+						<?php endif;
+					endforeach;
 
-					// Exibido junto com graduação.
-					if ( 'graduacao_outros' == $key ) {
-						continue;
-					}
+					$basic_fields_2 = ['localizacao_geo', 'localizacao_pais', 'localizacao_estado', 'localizacao_cidade'];
+					foreach ($basic_fields_2 as $key):
+						$meta_value = get_post_meta( get_the_ID(), "_{$key}", true);
+						if (! empty( $meta_value ) ): ?>
+							<li>
+								<strong><?php echo $fields[$key]['label']; ?></strong>
+								<span><?php echo is_array( $meta_value) ? $meta_value[0] : $meta_value; ?></span>
+							</li>
+						<?php endif;
+					endforeach;
 
-					$meta_value = get_post_meta( get_the_ID(), "_{$key}", true );
-					if ( ! empty( $meta_value ) ) {
-						?>
+					$link_anexo = get_post_meta( get_the_ID(), "_anexo", true);
+					if (! empty ( $link_anexo ) ): ?>
 						<li>
-							<strong><?php echo $field['label']; ?>:</strong>
-							<?php
-							if ( is_array( $meta_value ) ) {
-								echo implode( ', ', $meta_value );
-							} else {
-								if ( 'graduacao' == $key ) {
-									$outros = get_post_meta( get_the_ID(), '_graduacao_outros', true );
-									if ( ! empty( $outros ) ) {
-										$meta_value = $outros;
-									}
-								}
-								echo $meta_value;
-							}
-							?>
+							<strong>Anexo</strong>
+							<span><a href="<?php echo $link_anexo; ?>">Link pro anexo</a></span>
 						</li>
-						<?php
-					}
-				}
-				?>
-			</ul>
-		</div>
+					<?php endif; ?>
+					</ul>
+				</div>
+			</div>
 
-		<?php if ( candidates_can_apply() ) : ?>
-			<?php get_job_manager_template( 'job-application.php' ); ?>
-		<?php endif; ?>
+			<div class="job_info_box" id="pre-requisitos">
+				<h3 class="job_info_box--title">
+					Pré-requisitos para a vaga
+				</h3>
+				<div class="job_info_box--content">
+					<ul>
+					<?php $graduacao = get_post_meta( get_the_ID(), "_graduacao", true);
+					$graduacao_outros = get_post_meta( get_the_ID(), "_graduacao_outros", true);
+					if (! empty ($graduacao) ): ?>
+						<li>
+							<strong>Nível de graduação</strong>
+							<span><?php echo (! empty ($graduacao_outros) ) ? $graduacao_outros : $graduacao; ?></span>
+						</li>
+					<?php endif; ?>
+
+					<?php $requisites_fields = ['experiencia', 'experiencia_gestao', 'faixa_salarial', 'disponibilidade', 'prazo_inscricao'];
+					foreach ($requisites_fields as $key):
+						$meta_value = get_post_meta( get_the_ID(), "_{$key}", true);
+						if (! empty( $meta_value ) ): ?>
+							<li>
+								<strong><?php echo $fields[$key]['label']; ?></strong>
+								<span><?php echo is_array( $meta_value) ? $meta_value[0] : $meta_value; ?></span>
+							</li>
+						<?php endif;
+					endforeach; ?>
+					</ul>
+				</div>
+			</div>
+
+			<div class="job_info_box" id="sobre-a-vaga">
+				<h3 class="job_info_box--title">
+					Sobre a vaga
+				</h3>
+				<div class="job_info_box--content">
+					<ul>
+						<li>
+							<strong>Descrição</strong>
+							<span><?php wpjm_the_job_description(); ?></span>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<?php if ( candidates_can_apply() ) : ?>
+				<?php get_job_manager_template( 'job-application.php' ); ?>
+			<?php endif; ?>
+		</div>
 
 		<?php
 			/**
