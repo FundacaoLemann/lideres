@@ -204,8 +204,9 @@ div.job_listings {
     }
 
     .application {
+        align-items: center;
         display: flex;
-        justify-content: center;
+        flex-direction: column;
 
         .application_button {
             background: #FFA600;

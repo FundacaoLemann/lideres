@@ -819,8 +819,9 @@ div.job_listings ul.job_listings li.job_listing a.position strong {
   color: #00B5AF;
 }
 .single_job_listing .application {
+  align-items: center;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
 }
 .single_job_listing .application .application_button {
   background: #FFA600;
