@@ -192,7 +192,7 @@ do_action( 'bp_before_member_header' );
 				$_perfil = xprofile_get_field_data( 'Perfil' );
 				if ( $_perfil ) {
 					?>
-					<h2><i class="fa fa-id-card" aria-label="Perfil"></i></h2>
+					<h2>Rede de Líderes</h2>
 					<?php
 					echo is_array($_perfil) ? implode(', ', $_perfil) : $_perfil;
 				}
