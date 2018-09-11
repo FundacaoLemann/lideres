@@ -43,12 +43,15 @@ global $post;
 					<ul>
 					<?php $basic_fields_1 = ['setor_atuacao', 'area_atuacao'];
 					foreach ($basic_fields_1 as $key):
-						$meta_value = get_post_meta( get_the_ID(), "_{$key}", true)[0];
+						$meta_value = get_post_meta( get_the_ID(), "_{$key}", true);
 						$outros = get_post_meta( get_the_ID(), "_{$key}_outros", true);
-						if ( ! empty( $meta_value ) ): ?>
+						if ( ! empty( $meta_value ) ):
+							if (! empty ($outros)):
+								$meta_value = str_replace('Outros', $outros, $meta_value);
+							endif; ?>
 							<li>
 								<strong><?php echo $fields[$key]['label']; ?></strong>
-								<span><?php echo (! empty ($outros) ) ? $outros : $meta_value; ?></span>
+								<span><?php echo implode( ', ', $meta_value ); ?></span>
 							</li>
 						<?php endif;
 					endforeach;
@@ -59,7 +62,7 @@ global $post;
 						if (! empty( $meta_value ) ): ?>
 							<li>
 								<strong><?php echo $fields[$key]['label']; ?></strong>
-								<span><?php echo is_array( $meta_value) ? $meta_value[0] : $meta_value; ?></span>
+								<span><?php echo is_array( $meta_value) ? implode( ', ', $meta_value ) : $meta_value; ?></span>
 							</li>
 						<?php endif;
 					endforeach;
@@ -96,7 +99,7 @@ global $post;
 						if (! empty( $meta_value ) ): ?>
 							<li>
 								<strong><?php echo $fields[$key]['label']; ?></strong>
-								<span><?php echo is_array( $meta_value) ? $meta_value[0] : $meta_value; ?></span>
+								<span><?php echo is_array( $meta_value) ? implode( ', ', $meta_value ) : $meta_value; ?></span>
 							</li>
 						<?php endif;
 					endforeach; ?>
