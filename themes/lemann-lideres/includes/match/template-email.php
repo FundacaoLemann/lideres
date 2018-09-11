@@ -20,7 +20,6 @@
                 <p style="color: #222; font-weight: bold;">{{ job_title }}</p>
                 <div style="color: #888;">
                     <p>Oferecida por <strong style="color: #083050;">{{ company_name }}</strong> em <strong style="color: #083050;">{{ location }}</strong></p>
-                    <p>{{ description }} <a href="{{ job_url }}" style="color: #2CB781; text-decoration: none;">Ver</a></p>
                 </div>
             </div>
             <div>
