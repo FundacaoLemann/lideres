@@ -153,16 +153,20 @@ function lemann_match( $post_id, $user_id ) {
             ];
             $message_body     = $lemann_mustache->parse( $message_template, $message_vars );
 
-            wp_mail(
+            $ok = wp_mail(
                 $user_email,
                 __( 'Nova vaga no Portal de Líderes da Fundação Lemann', 'lemann-lideres' ),
                 $message_body,
                 [ 'Content-Type: text/html; charset=UTF-8' ]
             );
 
-            _match_log('[email sent]');
+            if($ok){
+                _match_log('[email sent]');
+                $email_sent = true;
+            } else {
+                _match_log('[email NOT sent]');
+            }
 
-            $email_sent = true;
         }
 
     }
