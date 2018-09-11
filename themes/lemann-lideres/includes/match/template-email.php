@@ -11,7 +11,12 @@
         <div style="background: white; padding: 30px;">
             <div style="border: 1px solid #EEE; margin: auto; padding: 20px; position: relative; width: 60%;">
                 <div style="background: #F65; border-radius: 5px; color: white; max-width: 100px; padding: 4px 8px; position: absolute; right: 10px; top: 10px;">Match <strong>{{ match }}%</strong></div>
+                {{#company_logo}}
                 <img src="{{ company_logo }}" alt="{{ company_name }}" style="border: 4px solid #E7E7E7; border-radius: 50%; height: 100px; width: 100px;">
+                {{/company_logo}}
+                {{^company_logo}}
+                <h3>{{ company_name }}</h3>
+                {{/company_logo}}
                 <p style="color: #222; font-weight: bold;">{{ job_title }}</p>
                 <div style="color: #888;">
                     <p>Oferecida por <strong style="color: #083050;">{{ company_name }}</strong> em <strong style="color: #083050;">{{ location }}</strong></p>
@@ -19,7 +24,7 @@
                 </div>
             </div>
             <div>
-                <p style="padding-top: 20px;"><a href="{{ job_url }}" style="background: #083050; border-radius: 5px; color: white; padding: 10px 20px; text-decoration: none;">Veja mais detalhes sobre esta vaga</a></p>
+                <p style="padding-top: 20px;"><a href="{{ job_url }}" style="background: #083050; border-radius: 5px; color: white; padding: 10px 20px; text-decoration: none;">Veja mais sobre a vaga</a></p>
             </div>
         </div>
         <footer>
