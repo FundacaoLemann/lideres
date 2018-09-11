@@ -1,6 +1,8 @@
 <?php
 defined( 'ABSPATH' ) || exit;
 
+define('LEMANN_FIELD_ABERTO_PARA_VAGAS', 648);
+
 /**
  * Índice: ID do campo no WP Job Manager,
  * Valor: ID do campo no BuddyPress.
@@ -70,14 +72,19 @@ function lemann_match( $post_id, $user_id ) {
             case 'localizacao_geo':
                 $possible_matches++;
                 $first_match = true;
-				foreach ( (array) $job_listing_data as $possible_value ) {
+
+                $job_listing_data = array_map(function ($item) { return strtolower($item); }, (array) $job_listing_data);
+                $user_data = array_map(function ($item) { return strtolower($item); }, (array) $user_data);
+
+				foreach ( $job_listing_data as $possible_value ) {
                     $possible_matches += .3;
-					if ( $user_data && in_array( $possible_value, (array) $user_data ) ) {
+					if ( $user_data && in_array( $possible_value, $user_data ) ) {
                         if($first_match){
                             $real_matches++;
                             $first_match = false;
                         }
                         $real_matches += .3;
+                        // _match_log("\t[match $wpjm_id ($possible_value)]", true);
 					}
 				}
 				break;
@@ -86,8 +93,9 @@ function lemann_match( $post_id, $user_id ) {
 				$possible_matches++;
 				if ( $user_data && is_array( $user_data ) && ! empty( $user_data[0] ) ) {
 					foreach ( $user_data as $graduacao ) {
-						if ( $graduacao['nivel'] == $job_listing_data ) {
-							$real_matches++;
+						if ( strtolower($graduacao['nivel']) == strtolower($job_listing_data) ) {
+                            $real_matches++;
+                            // _match_log("\t[match $wpjm_id ({$graduacao['nivel']})]", true);
 							break;
 						}
 					}
@@ -96,9 +104,10 @@ function lemann_match( $post_id, $user_id ) {
 
 			default:
 				$possible_matches++;
-				if ( $user_data &&  $job_listing_data == $user_data ) {
-					$real_matches++;
-				}
+				if ( $user_data &&  strtolower($job_listing_data) == strtolower($user_data) ) {
+                    $real_matches++;
+                    // _match_log("\t[match $wpjm_id ($user_data)]", true);
+				} 
 				break;
 		}
 	}
@@ -106,9 +115,11 @@ function lemann_match( $post_id, $user_id ) {
     $match = ( $real_matches / $possible_matches ) * 100;
 
 	$matches    = (array) get_user_meta( $user_id, LEMANN_MATCHES_META_KEY, true );
-	$email_sent = ( isset( $matches[ $post_id ] ) ) ? $matches[ $post_id ]['email_sent'] : false;
-
-    if ( $match >= LEMANN_MATCH_MINIMO_EMAIL && ! $email_sent) {
+    $email_sent = ( isset( $matches[ $post_id ] ) ) ? $matches[ $post_id ]['email_sent'] : false;
+    
+    $aberto_para_vagas = BP_XProfile_ProfileData::get_value_byid( LEMANN_FIELD_ABERTO_PARA_VAGAS, $user_id );
+    _match_log(" [[$aberto_para_vagas está aberto para vagas]]");
+    if ($aberto_para_vagas == 'Sim' && $match >= LEMANN_MATCH_MINIMO_EMAIL && ! $email_sent) {
         _match_log('MATCH!!!!');
 
         $user_email = xprofile_get_field_data( LEMANN_MATCH_BP_CAMPO_EMAIL, $user_id );
@@ -239,6 +250,8 @@ function lemann_do_matches(){
             $processed[$processed_key] = true;
         }
     }
+
+    _match_log("MATCH FINISHED\n", true);
 }
 
 if(class_exists('WP_CLI')){
