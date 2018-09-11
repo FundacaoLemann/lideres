@@ -14,6 +14,18 @@
 					}
 				} );
 			});
-		});
+        });
+        
+        $('input.application_button.button').on('click', function(){
+            var $button = $(this);
+            if(!$button.data('sent')){
+                $button.data('sent', true);
+                var $form = $('form.job-manager-application-form');
+                $button.val('Registrando seu interesse');
+                $.post($form.attr('action'), $form.serialize(), function(){
+                    $button.val('Seu interesse foi registrado')
+                });
+            }
+        });
 	});
 }(jQuery));

@@ -75,6 +75,10 @@ div.job_listings {
     }
 }
 
+.wp_job_manager_send_application_button {
+    display:none !important;
+}
+
 .job-manager-applications-applied-notice {
     display: block;
     float: none !important;
