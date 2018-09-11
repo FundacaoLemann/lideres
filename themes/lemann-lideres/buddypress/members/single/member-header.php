@@ -55,30 +55,6 @@ do_action( 'bp_before_member_header' );
 				<?php
 			}
 
-			// Localidade.
-			$pais = xprofile_get_field_data( 'País em que reside' );
-			if ( ! empty( $pais ) ) {
-				$estado = xprofile_get_field_data( 'Estado em que reside' );
-				$cidade = xprofile_get_field_data( 'Cidade em que reside' );
-				?>
-				<div class="header-localidade">
-					<span class="header-localidade--titulo">Localidade</span>
-					<span class="header-localidade--texto">
-						<?php
-						$output = $pais;
-						if ( ! empty( $estado ) ) {
-							$output = $estado . '.' . $output;
-						}
-						if ( ! empty( $cidade ) ) {
-							$output = $cidade . ' - ' . $output;
-						}
-						echo $output;
-						?>
-					</span>
-				</div>
-				<?php
-			}
-
 			$temas_id = xprofile_get_field_id_from_name( 'Temas de Interesse' );
 			$temas    = xprofile_get_field_data( $temas_id );
 			if ( isset( LEMANN_BP_OUTROS[ $temas_id ] ) ) {
@@ -148,24 +124,10 @@ do_action( 'bp_before_member_header' );
 				</div>
 				<?php
 			}
+
 			?>
-
-			<div class="responsive-column">
-			<?php
-
-			$_perfil = xprofile_get_field_data( 'Perfil' );
-			if ( $_perfil ) {
-				?>
-				<h2>Perfil</h2>
-				<?php
-				echo is_array($_perfil) ? implode(', ', $_perfil) : $_perfil;
-			}
-			?>
-
 			<div id="gp-author-social-icons">
-
 				<?php
-
 				// Profile fields.
 				$redes_sociais = [
 					'linkedin'   => [
@@ -198,6 +160,44 @@ do_action( 'bp_before_member_header' );
 				}
 				?>
 			</div>
+			<?php
+
+			// Localidade.
+			$pais = xprofile_get_field_data( 'País em que reside' );
+			if ( ! empty( $pais ) ) {
+				$estado = xprofile_get_field_data( 'Estado em que reside' );
+				$cidade = xprofile_get_field_data( 'Cidade em que reside' );
+				?>
+				<div class="responsive-column">
+					<h2>Localidade</h2>
+					<span class="header-localidade--texto">
+						<?php
+						$output = $pais;
+						if ( ! empty( $estado ) ) {
+							$output = $estado . '.' . $output;
+						}
+						if ( ! empty( $cidade ) ) {
+							$output = $cidade . ' - ' . $output;
+						}
+						echo $output;
+						?>
+					</span>
+				</div>
+				<?php
+			}
+			?>
+
+			<div class="responsive-column">
+			<?php
+
+			$_perfil = xprofile_get_field_data( 'Perfil' );
+			if ( $_perfil ) {
+				?>
+				<h2>Perfil</h2>
+				<?php
+				echo is_array($_perfil) ? implode(', ', $_perfil) : $_perfil;
+			}
+			?>
 			</div>
 		</div>
 	</div>
