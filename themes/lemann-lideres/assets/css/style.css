@@ -1046,16 +1046,17 @@ form.job-manager-form fieldset {
     padding-top: initial;
   }
   #gp-buddypress-header .vc_col-md-4 .responsive-column:not(:first-child) {
-    margin-top: 20px;
+    margin-top: 30px;
   }
 }
 #gp-buddypress-header .vc_col-md-4 h2 {
   color: white;
   font-size: 22px;
   font-weight: 600;
+  margin: 0;
 }
 #gp-buddypress-header .vc_col-md-4 h2:not(:first-child) {
-  margin-top: 20px;
+  margin-top: 30px;
 }
 #gp-buddypress-header .vc_col-md-4 a {
   text-decoration: none !important;
