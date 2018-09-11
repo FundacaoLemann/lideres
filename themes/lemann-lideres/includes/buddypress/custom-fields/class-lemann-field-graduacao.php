@@ -230,7 +230,8 @@ class Lemann_Field_Graduacao extends BP_XProfile_Field_Type {
 
 	public static function display_filter( $field_value, $field_id = '' ) {
 		$values = BP_XProfile_ProfileData::get_value_byid( $field_id, bp_displayed_user_id() );
-		$values = self::unserialize( $values );
+        $values = self::unserialize( $values );
+        $output = "";
 		foreach ( $values as $graduacao ) {
 			$output .=
 				'<p class="graduation">' .
