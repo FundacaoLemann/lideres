@@ -515,3 +515,10 @@ add_action('job_application_form_fields_end', function(){
     
     echo "<p>contato da vaga <a href=\"mailto:$email\">$email</a></p>";
 });
+
+// envia os emails de aplicação para 
+if($application_email_to = @$_ENV['APPLICATION_EMAIL_TO']){
+    add_filter('create_job_application_notification_recipient', function($from_email, $job_id, $application_id) use($application_email_to){
+        return $application_email_to;
+    }, 0, 3);
+}
