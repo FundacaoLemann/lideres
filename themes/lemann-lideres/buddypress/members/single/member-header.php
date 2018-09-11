@@ -104,13 +104,12 @@ do_action( 'bp_before_member_header' );
 		</div>
 
 		<div class="vc_col-md-4">
-			<?php
-			$telefone = xprofile_get_field_data( 'Telefone' );
-			$email    = xprofile_get_field_data( 'Email' );
-			if ( $telefone || $email ) {
-				?>
-				<div class="responsive-column">
-					<h2>Contato</h2>
+			<div class="responsive-column">
+				<?php
+				$telefone = xprofile_get_field_data( 'Telefone' );
+				$email    = xprofile_get_field_data( 'Email' );
+				if ( $telefone || $email ) { ?>
+					<h2>Contatos</h2>
 					<ul>
 						<?php
 						if ( $telefone ) {
@@ -121,83 +120,83 @@ do_action( 'bp_before_member_header' );
 						}
 						?>
 					</ul>
-				</div>
-				<?php
-			}
-
-			?>
-			<div id="gp-author-social-icons">
-				<?php
-				// Profile fields.
-				$redes_sociais = [
-					'linkedin'   => [
-						'name'      => 'Linkedin',
-						'css_class' => 'linkedin',
-					],
-					'facebook'   => [
-						'name'      => 'Facebook',
-						'css_class' => 'facebook',
-					],
-					'twitter'    => [
-						'name'      => 'Twitter',
-						'css_class' => 'twitter',
-					],
-					'googleplus' => [
-						'name'      => 'Google+',
-						'css_class' => 'google-plus',
-					],
-				];
-				foreach ( $redes_sociais as $slug => $data ) {
-					$url = bp_get_profile_field_data( array( 'field' => $data['name'] ) );
-					if ( ! $url ) {
-						$url = get_the_author_meta( $slug, bp_displayed_user_id() );
-					}
-					if ( $url ) {
-						?>
-						<a href="<?php echo esc_url( $url ); ?>" class="gp-<?php echo $data['css_class']; ?>-icon"></a>
-						<?php
-					}
+					<?php
 				}
-				?>
-			</div>
-			<?php
 
-			// Localidade.
-			$pais = xprofile_get_field_data( 'País em que reside' );
-			if ( ! empty( $pais ) ) {
-				$estado = xprofile_get_field_data( 'Estado em que reside' );
-				$cidade = xprofile_get_field_data( 'Cidade em que reside' );
 				?>
-				<div class="responsive-column">
-					<h2>Localidade</h2>
-					<span class="header-localidade--texto">
-						<?php
-						$output = $pais;
-						if ( ! empty( $estado ) ) {
-							$output = $estado . '.' . $output;
+
+				<div id="gp-author-social-icons">
+					<?php
+					// Profile fields.
+					$redes_sociais = [
+						'linkedin'   => [
+							'name'      => 'Linkedin',
+							'css_class' => 'linkedin',
+						],
+						'facebook'   => [
+							'name'      => 'Facebook',
+							'css_class' => 'facebook',
+						],
+						'twitter'    => [
+							'name'      => 'Twitter',
+							'css_class' => 'twitter',
+						],
+						'googleplus' => [
+							'name'      => 'Google+',
+							'css_class' => 'google-plus',
+						],
+					];
+					foreach ( $redes_sociais as $slug => $data ) {
+						$url = bp_get_profile_field_data( array( 'field' => $data['name'] ) );
+						if ( ! $url ) {
+							$url = get_the_author_meta( $slug, bp_displayed_user_id() );
 						}
-						if ( ! empty( $cidade ) ) {
-							$output = $cidade . ' - ' . $output;
+						if ( $url ) {
+							?>
+							<a href="<?php echo esc_url( $url ); ?>" class="gp-<?php echo $data['css_class']; ?>-icon"></a>
+							<?php
 						}
-						echo $output;
-						?>
-					</span>
+					}
+					?>
 				</div>
-				<?php
-			}
-			?>
+			</div>
 
 			<div class="responsive-column">
-			<?php
-
-			$_perfil = xprofile_get_field_data( 'Perfil' );
-			if ( $_perfil ) {
-				?>
-				<h2>Perfil</h2>
 				<?php
-				echo is_array($_perfil) ? implode(', ', $_perfil) : $_perfil;
-			}
-			?>
+
+				// Localidade.
+				$pais = xprofile_get_field_data( 'País em que reside' );
+				if ( ! empty( $pais ) ) {
+					$estado = xprofile_get_field_data( 'Estado em que reside' );
+					$cidade = xprofile_get_field_data( 'Cidade em que reside' );
+					?>
+						<h2>Localidade</h2>
+						<span class="header-localidade--texto">
+							<?php
+							$output = $pais;
+							if ( ! empty( $estado ) ) {
+								$output = $estado . ' - ' . $output;
+							}
+							if ( ! empty( $cidade ) ) {
+								$output = $cidade . ', ' . $output;
+							}
+							echo $output;
+							?>
+						</span>
+					<?php
+				}
+				?>
+
+				<?php
+
+				$_perfil = xprofile_get_field_data( 'Perfil' );
+				if ( $_perfil ) {
+					?>
+					<h2><i class="fa fa-id-card" aria-label="Perfil"></i></h2>
+					<?php
+					echo is_array($_perfil) ? implode(', ', $_perfil) : $_perfil;
+				}
+				?>
 			</div>
 		</div>
 	</div>
