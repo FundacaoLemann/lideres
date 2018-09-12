@@ -848,6 +848,11 @@ form.job-manager-form fieldset {
   margin: 0 0 1.5em;
   padding: 0;
 }
+@media screen and (max-width: 767px) {
+  form.job-manager-form fieldset label, form.job-manager-form fieldset .field {
+    width: 100%;
+  }
+}
 
 .page-id-100000486:not(.logged-in) footer {
   display: none !important;

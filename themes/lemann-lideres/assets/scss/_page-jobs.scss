@@ -240,6 +240,12 @@ form.job-manager-form {
         border: 0;
         margin: 0 0 1.5em;
         padding: 0;
+
+        @media screen and (max-width: 767px) {
+            label, .field {
+                width: 100%;
+            }
+        }
     }
 }
 
