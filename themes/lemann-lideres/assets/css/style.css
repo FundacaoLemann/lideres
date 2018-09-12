@@ -970,6 +970,7 @@ form.job-manager-form fieldset {
 }
 .page-login #loginform label[for=user_login]:after {
   content: "Endereço de e-mail";
+  float: left;
   font-size: 14px;
   left: -1000000px;
   position: relative;
