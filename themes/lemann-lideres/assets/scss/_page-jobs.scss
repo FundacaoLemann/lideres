@@ -6,6 +6,16 @@ div.job_listings {
         ul.job_types {
             display: none;
         }
+
+        .search_jobs {
+            div.search_keywords, div.search_location {
+                @media screen and (max-width: 700px) {
+                    float: initial;
+                    padding: 0 0 10px;
+                    width: 100%;
+                }
+            }
+        }
     }
 
     ul.job_listings {

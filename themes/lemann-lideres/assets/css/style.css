@@ -655,6 +655,13 @@ div.job_listings form.job_filters {
 div.job_listings form.job_filters ul.job_types {
   display: none;
 }
+@media screen and (max-width: 700px) {
+  div.job_listings form.job_filters .search_jobs div.search_keywords, div.job_listings form.job_filters .search_jobs div.search_location {
+    float: initial;
+    padding: 0 0 10px;
+    width: 100%;
+  }
+}
 div.job_listings ul.job_listings {
   border: 0;
   display: flex;
