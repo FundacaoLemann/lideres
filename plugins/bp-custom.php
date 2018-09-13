@@ -38,7 +38,29 @@ add_action( 'wp', 'lemann_remove_admin_bar' );
 /**
  * Faz o WP não carregar a tradução padrão (e usar a nossa).
  */
-add_filter( 'buddypress_locale_locations', function ( $val ) {
-	unload_textdomain( 'buddypress' );
-	return $val;
-});
+add_filter(
+	'buddypress_locale_locations',
+	function ( $val ) {
+		unload_textdomain( 'buddypress' );
+		return $val;
+	}
+);
+
+add_filter(
+	'bp_xprofile_get_visibility_levels',
+	function( $visibility_levels ) {
+		$order   = [ 'public', 'loggedin', 'friends', 'adminsonly' ];
+		$ordered = [];
+		foreach ( $order as $key ) {
+			$ordered[ $key ] = $visibility_levels[ $key ];
+			unset( $visibility_levels[ $key ] );
+		}
+		$ordered = $ordered + $visibility_levels;
+
+		$ordered['public']['label']     = 'Público para todos';
+		$ordered['adminsonly']['label'] = 'Privado';
+		$ordered['loggedin']['label']   = 'Público para líderes';
+		$ordered['friends']['label']    = 'Público para contatos';
+		return $ordered;
+	}
+);
