@@ -1372,9 +1372,28 @@ form.job-manager-form fieldset {
 .members #buddypress div.dir-search form input[type=text]::placeholder {
   color: #0C9B4A;
 }
+.members #buddypress .item-list-tabs.bps_header {
+  border-bottom: 0;
+}
+@media screen and (max-width: 767px) {
+  .members #buddypress .item-list-tabs.bps_header li.last {
+    clear: both;
+    float: left;
+  }
+}
+.members #buddypress .item-list-tabs.bps_header h4 {
+  color: #083050;
+  font-weight: 500;
+}
+.members #buddypress .item-list-tabs.bps_header + .bps_form {
+  background-color: #f7f7f7;
+  margin-bottom: 20px;
+  padding: 10px;
+}
 .members #buddypress .dir-form .item-list-tabs ul li a {
   font-size: 19px;
   color: #083050;
+  margin-top: 20px;
 }
 .members .gp-posts-masonry.gp-style-classic .gp-loop-content {
   border-width: 0 !important;
