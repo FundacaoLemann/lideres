@@ -1212,7 +1212,7 @@ form.job-manager-form fieldset {
 #buddypress .profile .bp-widget.destaques-do-perfil, #buddypress .profile .bp-widget.destaque-do-perfil {
   display: none;
 }
-#buddypress .profile .bp-widget.mini-bio, #buddypress .profile .bp-widget.necessidades-e-ofertas {
+#buddypress .profile .bp-widget.mini-bio, #buddypress .profile .bp-widget.bio, #buddypress .profile .bp-widget.necessidades-e-ofertas {
   float: left;
   clear: left;
 }
