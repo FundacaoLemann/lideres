@@ -305,6 +305,32 @@
     }
 }
 
+.gp-theme #gp-buddypress-header #message.bp-template-notice {
+    background-color: #eaeaea;
+    font-size: 1em;
+
+    p:before {
+        font-family: 'FontAwesome';
+        padding-right: 10px;
+    }
+
+    &.error {
+        color: red;
+
+        p:before {
+            content: '\f071';
+        }
+    }
+
+    &.updated {
+        color: $c_secondary;
+
+        p:before {
+            content: '\f00c';
+        }
+    }
+}
+
 .lemann-campos-graduacao-wrapper {
     background: #fafafa;
     padding: 1em;

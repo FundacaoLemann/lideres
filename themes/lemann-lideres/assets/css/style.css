@@ -1331,6 +1331,27 @@ form.job-manager-form fieldset {
   }
 }
 
+.gp-theme #gp-buddypress-header #message.bp-template-notice {
+  background-color: #eaeaea;
+  font-size: 1em;
+}
+.gp-theme #gp-buddypress-header #message.bp-template-notice p:before {
+  font-family: "FontAwesome";
+  padding-right: 10px;
+}
+.gp-theme #gp-buddypress-header #message.bp-template-notice.error {
+  color: red;
+}
+.gp-theme #gp-buddypress-header #message.bp-template-notice.error p:before {
+  content: "";
+}
+.gp-theme #gp-buddypress-header #message.bp-template-notice.updated {
+  color: #0C9B4A;
+}
+.gp-theme #gp-buddypress-header #message.bp-template-notice.updated p:before {
+  content: "";
+}
+
 .lemann-campos-graduacao-wrapper {
   background: #fafafa;
   padding: 1em;
