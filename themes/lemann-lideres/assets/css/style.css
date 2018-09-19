@@ -1332,21 +1332,23 @@ form.job-manager-form fieldset {
 }
 
 .gp-theme #gp-buddypress-header #message.bp-template-notice {
-  background-color: #eaeaea;
-  font-size: 1em;
+  font-size: 1.1em;
+  font-weight: 500;
 }
 .gp-theme #gp-buddypress-header #message.bp-template-notice p:before {
   font-family: "FontAwesome";
   padding-right: 10px;
 }
 .gp-theme #gp-buddypress-header #message.bp-template-notice.error {
-  color: red;
+  background-color: #ffcccc;
+  color: #cc0000;
 }
 .gp-theme #gp-buddypress-header #message.bp-template-notice.error p:before {
   content: "";
 }
 .gp-theme #gp-buddypress-header #message.bp-template-notice.updated {
-  color: #0C9B4A;
+  background-color: #adf9ce;
+  color: #086c33;
 }
 .gp-theme #gp-buddypress-header #message.bp-template-notice.updated p:before {
   content: "";
