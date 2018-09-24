@@ -41,7 +41,7 @@ global $post;
 		<?php
 	}
 	?>
-	<div class="company_logo" style="background-image: url('<?php echo get_the_company_logo() ?: '/wp-content/themes/lemann-lideres/assets/images/company_logo.png'; ?>')"></div>
+	<div class="company_logo" style="background-image: url('<?php echo get_the_company_logo() ?: get_option('siteurl') . '/wp-content/themes/lemann-lideres/assets/images/company_logo.png'; ?>')"></div>
 	<a class="position" href="<?php the_job_permalink(); ?>">
 		<h3><?php wpjm_the_job_title(); ?></h3>
 		<p>Oferecida por <strong><?php the_company_name(); ?></strong> em <strong><?php the_job_location( false ); ?></strong></p>
