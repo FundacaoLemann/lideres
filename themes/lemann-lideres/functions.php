@@ -26,6 +26,9 @@ require get_stylesheet_directory() . '/includes/buddypress/index.php';
 // Inclui arquivo com as funcionalidades do match.
 require get_stylesheet_directory() . '/includes/match/index.php';
 
+// Inclui o arquivo com a função que exibe o Posts Carousel do plugin Aardvark.
+require get_stylesheet_directory() . '/includes/carousel-posts.php';
+
 // RT Media Gallery.
 require get_stylesheet_directory() . '/includes/rt-media-gallery.php';
 
@@ -512,11 +515,11 @@ add_filter( 'ghostpool_retrieve_password_message', 'lemann_retrieve_password_mes
 add_action('job_application_form_fields_end', function(){
     global $post;
     $email = get_post_meta($post->ID, '_application', true);
-    
+
     echo "<p>contato da vaga <a href=\"mailto:$email\">$email</a></p>";
 });
 
-// envia os emails de aplicação para 
+// envia os emails de aplicação para
 if($application_email_to = @$_ENV['APPLICATION_EMAIL_TO']){
     add_filter('create_job_application_notification_recipient', function($from_email, $job_id, $application_id) use($application_email_to){
         return $application_email_to;
