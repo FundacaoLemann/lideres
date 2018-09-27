@@ -205,3 +205,29 @@ add_action( 'init', function() {
 		}
 	}
 } );
+
+/**
+ * Altera o parâmetro de ordenação na query das vagas para
+ * passar a usar o valor de match entre o usuário e as vagas.
+ */
+add_filter( 'job_manager_get_listings_args', function( $args ) {
+	$matches = get_user_meta( get_current_user_id(), LEMANN_MATCHES_META_KEY, true );
+	$matches = wp_list_sort( $matches, 'match', 'DESC', true );
+	$matches = array_keys( $matches );
+
+	$args['post__in'] = $matches;
+	$args['orderby']  = 'post__in';
+	$args['order']    = 'ASC';
+
+	return $args;
+} );
+
+/**
+ * Passa o parâmetro `post__in` para a query (ele é eliminado por padrão).
+ */
+add_filter( 'job_manager_get_listings', function( $query_args, $args ) {
+	if ( isset( $args['post__in'] ) ) {
+		$query_args['post__in'] = $args['post__in'];
+	}
+	return $query_args;
+}, 10, 2 );
