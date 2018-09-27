@@ -709,7 +709,7 @@ div.job_listings ul.job_listings li.job_listing img.company_logo {
   width: 128px;
 }
 div.job_listings ul.job_listings li.job_listing.job_position_featured a.position {
-  padding: 10px;
+  background: transparent;
 }
 div.job_listings ul.job_listings li.job_listing a.position {
   color: #888888;
