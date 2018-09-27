@@ -454,6 +454,15 @@ add_action( 'widgets_init', function() {
         'before_title'  => '<h3 class="widgettitle">',
         'after_title'   => '</h3>',
     ) );
+    register_sidebar( array(
+        'name'          => 'Jornadas',
+        'id'            => 'jornadas',
+        'description'   => 'Barra lateral da área de jornadas',
+        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'  => '</div>',
+        'before_title'  => '<h3 class="widgettitle">',
+        'after_title'   => '</h3>',
+    ) );
 } );
 
 /**
@@ -463,7 +472,7 @@ function ghostpool_custom_init_variables() {
     global $ghostpool_layout;
 
     // Exibe o conteúdo das oportunidades e das vagas no layout certo.
-    if ( is_singular( 'oportunidade' ) ) {
+    if ( is_singular( [ 'oportunidade', 'jornada' ] ) ) {
         $ghostpool_layout = 'gp-sidebar-right';
     } elseif ( is_singular( 'job_listing' ) ) {
         $ghostpool_layout = 'gp-no-sidebar';

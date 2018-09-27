@@ -75,7 +75,7 @@ $display_image = ghostpool_option( 'image' ) == 'default' ? ghostpool_option( 'p
 			get_template_part( 'lib/sections/post/author-info' );
 		} ?>
 
-		<?php if ( ! is_singular( [ 'oportunidade', 'job_listing' ] ) && function_exists( 'ghostpool_voting' ) && ghostpool_option( 'post_voting' ) == 'enabled' ) {
+		<?php if ( ! is_singular( [ 'oportunidade', 'jornada', 'job_listing' ] ) && function_exists( 'ghostpool_voting' ) && ghostpool_option( 'post_voting' ) == 'enabled' ) {
 			echo ghostpool_voting( '', '', ghostpool_option( 'post_voting_title' ) );
 		} ?>
 
