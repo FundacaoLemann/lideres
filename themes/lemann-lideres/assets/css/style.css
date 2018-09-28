@@ -648,6 +648,76 @@ a.btn-ver-mais:after:hover {
   color: #00B5AF !important;
 }
 
+.gp-slider .flex-control-nav {
+  margin-bottom: 30px;
+}
+.gp-slider .flex-control-nav li a {
+  background-color: lightslategray;
+  border: 0 !important;
+  height: 10px;
+  margin: 0 4px;
+  width: 10px;
+}
+.gp-slider .flex-control-nav li a.flex-active {
+  background-color: #083050;
+}
+.gp-slider .flex-control-nav li a:not(.flex-active):hover {
+  background: #405c75;
+}
+.gp-slider .flex-direction-nav {
+  display: none;
+}
+.gp-slider li.job_listing {
+  border: 2px solid #eee;
+  border-radius: 10px;
+  padding: 15px;
+  position: relative;
+  width: 100%;
+}
+.gp-slider li.job_listing div.match-percentage {
+  background: #AAA;
+  border-radius: 5px;
+  color: white;
+  font-size: 0.8em;
+  padding: 0 10px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+.gp-slider li.job_listing div.match-percentage.matched {
+  background: #F65;
+}
+.gp-slider li.job_listing img.company_logo {
+  border: 2px solid #E7E7E7;
+  border-radius: 50%;
+  display: block;
+  height: 100px;
+  margin: 10px auto 20px;
+  width: 100px;
+}
+.gp-slider li.job_listing a.position {
+  color: #888888;
+  font-size: 0.9em;
+  padding: 0;
+  text-align: center;
+  width: 100%;
+}
+.gp-slider li.job_listing a.position h3 {
+  color: #083050;
+}
+.gp-slider li.job_listing a.position strong {
+  color: #083050;
+  font-weight: 600;
+}
+.gp-slider li.job_listing p.details {
+  margin-top: 10px;
+  text-align: center;
+}
+.gp-slider li.job_listing p.details a {
+  color: #083050;
+  font-weight: 600;
+}
+
 div.job_listings form.job_filters {
   background: transparent;
   padding: 0;

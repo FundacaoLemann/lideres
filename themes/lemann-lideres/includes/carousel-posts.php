@@ -117,7 +117,7 @@ function ghostpool_carousel_posts( $atts, $content = null ) {
 					$gp_query->the_post();
 
 					if ( $is_vagas_slider ) {
-						get_template_part( 'job_manager/content-job_listing' );
+						get_template_part( 'job_manager/content-job_listing_carousel' );
 					} else {
 						?>
 
@@ -254,6 +254,7 @@ function ghostpool_carousel_posts( $atts, $content = null ) {
 							maxItems: getGridSize(),
 							start: function(slider){
 								flexslider = slider;
+								slider.resize();
 							}
 						});
 					});
