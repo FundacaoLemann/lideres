@@ -22,6 +22,7 @@ add_action( 'init', function() {
 	$args = [
 		'labels'              => $labels,
 		'public'              => true,
+		'show_in_rest'		  => true,
 		'exclude_from_search' => false,
 		'public_queryable'    => true,
 		'show_ui'             => true,
