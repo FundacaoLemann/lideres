@@ -1488,6 +1488,9 @@ form.job-manager-form fieldset {
   margin-bottom: 20px;
   padding: 10px;
 }
+.members #buddypress .item-list-tabs.bps_header + .bps_form .field_perfil label:nth-child(n+7) {
+  display: none;
+}
 .members #buddypress .dir-form .item-list-tabs ul li a {
   font-size: 19px;
   color: #083050;
