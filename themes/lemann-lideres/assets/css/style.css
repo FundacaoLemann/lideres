@@ -949,6 +949,54 @@ form.job-manager-form fieldset {
 .page-template-template-jornadas #gp-content-wrapper {
   padding-top: 0;
 }
+@media screen and (max-width: 991px) {
+  .page-template-template-jornadas .jornadas-carousel {
+    display: none;
+  }
+}
+.page-template-template-jornadas .jornadas-carousel .slide-wrapper {
+  background-position: center;
+  background-size: cover;
+  margin: 10px;
+  width: calc(100% - 20px);
+}
+.page-template-template-jornadas .jornadas-carousel .slide {
+  background-color: rgba(8, 48, 80, 0.6);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+.page-template-template-jornadas .jornadas-carousel .slide-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+}
+.page-template-template-jornadas .jornadas-carousel .slide-content strong, .page-template-template-jornadas .jornadas-carousel .slide-content span {
+  color: white;
+  padding: 0 10px;
+  text-align: center;
+  text-shadow: 3px 3px 12px #083050;
+}
+.page-template-template-jornadas .jornadas-carousel .slide-content strong {
+  font-size: 1.8em;
+  font-weight: 800;
+}
+.page-template-template-jornadas .jornadas-carousel .slide-content span {
+  font-size: 1.2em;
+}
+.page-template-template-jornadas .jornadas-carousel .slide:before {
+  content: "";
+  display: block;
+  padding-top: 30%;
+  width: 100%;
+}
 .page-template-template-jornadas .jornadas-list {
   display: flex;
   flex-wrap: wrap;
@@ -993,6 +1041,7 @@ form.job-manager-form fieldset {
   color: white;
   padding: 0 10px;
   text-align: center;
+  text-shadow: 2px 2px 8px #083050;
 }
 .page-template-template-jornadas .jornadas-list--item-content strong {
   font-size: 1.2em;
