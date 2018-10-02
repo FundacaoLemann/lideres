@@ -49,10 +49,29 @@ get_header(); ?>
 					$jornadas
 				);
 				?>
-				<script>
-				var jornadas = <?php echo json_encode( $jornadas ); ?>
-				</script>
 
+				<p>Conheça aqui as jornadas de destaque dos membros da nossa rede de líderes.</p>
+				<div class="jornadas-list"></div>
+
+				<script>
+					$('body').removeClass('gp-fullwidth');
+
+					var jornadas = <?php echo json_encode( $jornadas ); ?>;
+
+					var jornadasList = jornadas.map(function(jornada) {
+						if (!jornada.thumbnail) {
+							return '';
+						}
+
+						return '<div class="jornadas-list--item-wrapper" style="background-image: url(' + jornada.thumbnail + ')"><a href="' + jornada.url + '">' +
+							'<div class="jornadas-list--item"><div class="jornadas-list--item-content">' +
+								'<strong>' + jornada.title + '</strong>' +
+								'<span>' + jornada.excerpt + '</span>' +
+							'</div></div>' +
+						'</a></div>';
+					}).join('');
+					$('.jornadas-list').append(jornadasList);
+				</script>
 
 			</div>
 
