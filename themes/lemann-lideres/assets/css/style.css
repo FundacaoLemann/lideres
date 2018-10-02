@@ -1068,6 +1068,10 @@ form.job-manager-form fieldset {
   font-weight: 600;
 }
 
+.single-jornada .gp-entry-featured {
+  display: none;
+}
+
 .page-login {
   width: 100vw;
   height: 100vh;
