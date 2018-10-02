@@ -939,6 +939,10 @@ form.job-manager-form fieldset {
   display: none !important;
 }
 
+.fieldset-from_name, .fieldset-from_email {
+  display: none;
+}
+
 .page-template-template-jornadas {
   padding-top: 0;
 }
