@@ -1007,6 +1007,17 @@ form.job-manager-form fieldset {
   padding-top: 100%;
   width: 100%;
 }
+.page-template-template-jornadas .jornadas-pagination {
+  text-align: right;
+}
+.page-template-template-jornadas .jornadas-pagination li {
+  list-style: none;
+  padding: 5px;
+  display: inline-block;
+}
+.page-template-template-jornadas .jornadas-pagination .active {
+  font-weight: 600;
+}
 
 .page-login {
   width: 100vw;

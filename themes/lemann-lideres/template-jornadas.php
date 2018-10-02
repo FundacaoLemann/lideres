@@ -52,25 +52,53 @@ get_header(); ?>
 
 				<p>Conheça aqui as jornadas de destaque dos membros da nossa rede de líderes.</p>
 				<div class="jornadas-list"></div>
+				<div class="jornadas-pagination"></div>
 
 				<script>
 					$('body').removeClass('gp-fullwidth');
 
-					var jornadas = <?php echo json_encode( $jornadas ); ?>;
+					var jornadas = <?php echo json_encode( $jornadas ); ?>.filter(function(jornada) {
+						return !!jornada.thumbnail;
+					});
 
-					var jornadasList = jornadas.map(function(jornada) {
-						if (!jornada.thumbnail) {
+					var PAGE_SIZE = 16;
+					var pageNumber = 1;
+					var page = [];
+
+					function paginate(pageNumber) {
+						var count = Math.ceil(jornadas.length / PAGE_SIZE);
+						if (count === 1) {
 							return '';
 						}
+						var list = '<ul>';
+						for (var i = 1; i <= count; i++) {
+							if (i == pageNumber) {
+								list += '<li><span class="active">' + i + '</span></li>'
+							} else {
+								list += '<li><a onclick="javascript:showJornadasPage(' + i + ')">' + i + '</a></li>';
+							}
+						}
+						return list + '</ul>';
+					}
 
-						return '<div class="jornadas-list--item-wrapper" style="background-image: url(' + jornada.thumbnail + ')"><a href="' + jornada.url + '">' +
-							'<div class="jornadas-list--item"><div class="jornadas-list--item-content">' +
-								'<strong>' + jornada.title + '</strong>' +
-								'<span>' + jornada.excerpt + '</span>' +
-							'</div></div>' +
-						'</a></div>';
-					}).join('');
-					$('.jornadas-list').append(jornadasList);
+					function showJornadasPage(pageNumber) {
+						pageNumber = pageNumber;
+						page = jornadas.slice((pageNumber - 1) * PAGE_SIZE, pageNumber * PAGE_SIZE);
+
+						var list = page.map(function(jornada) {
+							return '<div class="jornadas-list--item-wrapper" style="background-image: url(' + jornada.thumbnail + ')"><a href="' + jornada.url + '">' +
+								'<div class="jornadas-list--item"><div class="jornadas-list--item-content">' +
+									'<strong>' + jornada.title + '</strong>' +
+									'<span>' + jornada.excerpt + '</span>' +
+								'</div></div>' +
+							'</a></div>';
+						}).join('');
+
+						$('.jornadas-list').html(list);
+						$('.jornadas-pagination').html(paginate(pageNumber));
+					}
+
+					showJornadasPage(1);
 				</script>
 
 			</div>

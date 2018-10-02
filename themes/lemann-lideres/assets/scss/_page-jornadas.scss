@@ -65,4 +65,18 @@
             }
         }
     }
+
+    .jornadas-pagination {
+        text-align: right;
+
+        li {
+            list-style: none;
+            padding: 5px;
+            display: inline-block;
+        }
+
+        .active {
+            font-weight: 600;
+        }
+    }
 }
