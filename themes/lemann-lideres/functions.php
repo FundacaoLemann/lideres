@@ -534,3 +534,23 @@ if($application_email_to = @$_ENV['APPLICATION_EMAIL_TO']){
         return $application_email_to;
     }, 0, 3);
 }
+
+// corrige candidaturas
+if(!get_option('_candidaturas_atualizadas')){
+    /**
+     * @var wpdb
+     */
+    global $wpdb;
+    
+    $posts = $wpdb->get_results("SELECT * FROM $wpdb->posts WHERE post_type = 'job_application'");
+    
+    foreach($posts as $p){
+        $p = (object) $p;
+        
+        $uid = get_post_meta($p->ID, '_candidate_user_id', true);
+        $user = get_user_by('ID', $uid);
+        $wpdb->query("UPDATE $wpdb->postmeta SET meta_value = '{$user->user_email}' WHERE post_id = $p->ID AND meta_key = '_candidate_email'");
+        $wpdb->query("UPDATE $wpdb->posts SET post_title = '{$user->display_name}' WHERE ID = $p->ID");
+    }
+    update_option('_candidaturas_atualizadas', true);
+}
