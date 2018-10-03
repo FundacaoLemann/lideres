@@ -162,10 +162,10 @@ a.btn-ver-mais {
 
             .lvca-button {
                 border-radius: 4px;
-                font-family: $f_title !important;
+                font-family: $f_title;
                 font-size: 14px;
                 letter-spacing: initial;
-                margin-top: 10px;
+                margin-top: 10px !important;
                 padding: 10px;
                 text-transform: none;
             }

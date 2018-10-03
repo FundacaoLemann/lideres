@@ -658,10 +658,10 @@ a.btn-ver-mais:after:hover {
 }
 .lvca-image-slider .lvca-slide .lvca-caption .lvca-button {
   border-radius: 4px;
-  font-family: "Effra" !important;
+  font-family: "Effra";
   font-size: 14px;
   letter-spacing: initial;
-  margin-top: 10px;
+  margin-top: 10px !important;
   padding: 10px;
   text-transform: none;
 }
