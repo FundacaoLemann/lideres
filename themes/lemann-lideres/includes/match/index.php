@@ -284,7 +284,7 @@ function get_matches_users($id, $min_match = LEMANN_MATCH_MINIMO_EMAIL){
     $result = [];
     foreach($matches as $user_id => $match){
         
-        if($match['match'] >= $min_match){
+        if(isset($match['match']) && $match['match'] >= $min_match){
             $match['user'] = get_user_by('id', $user_id);
             $result[] = $match;
         }
