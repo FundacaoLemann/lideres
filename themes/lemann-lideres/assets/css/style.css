@@ -648,6 +648,24 @@ a.btn-ver-mais:after:hover {
   color: #00B5AF !important;
 }
 
+.lvca-image-slider {
+  left: -30px;
+  width: calc(100% + 60px);
+}
+.lvca-image-slider .lvca-slide .lvca-caption .lvca-heading {
+  font-weight: 700;
+  text-shadow: 3px 3px 12px #083050;
+}
+.lvca-image-slider .lvca-slide .lvca-caption .lvca-button {
+  border-radius: 4px;
+  font-family: "Effra" !important;
+  font-size: 14px;
+  letter-spacing: initial;
+  margin-top: 10px;
+  padding: 10px;
+  text-transform: none;
+}
+
 .gp-slider .flex-control-nav {
   margin-bottom: 30px;
 }
