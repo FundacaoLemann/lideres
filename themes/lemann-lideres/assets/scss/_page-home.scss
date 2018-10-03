@@ -149,6 +149,29 @@ a.btn-ver-mais {
     }
 }
 
+.lvca-image-slider {
+    left: -30px;
+    width: calc(100% + 60px);
+
+    .lvca-slide {
+        .lvca-caption {
+            .lvca-heading {
+                font-weight: 700;
+                text-shadow: 3px 3px 12px $c_primary;
+            }
+
+            .lvca-button {
+                border-radius: 4px;
+                font-family: $f_title !important;
+                font-size: 14px;
+                margin-top: 10px;
+                padding: 10px;
+                text-transform: none;
+            }
+        }
+    }
+}
+
 .gp-slider {
     .flex-control-nav {
         margin-bottom: 30px;
