@@ -958,6 +958,7 @@ form.job-manager-form fieldset {
   background-position: center;
   background-size: cover;
   margin: 10px;
+  transition: background-image 0.3s ease;
   width: calc(100% - 20px);
 }
 .page-template-template-jornadas .jornadas-carousel .slide {
