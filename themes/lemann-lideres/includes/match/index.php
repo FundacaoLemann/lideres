@@ -176,7 +176,16 @@ function lemann_match( $post_id, $user_id ) {
 		'date'       => date_i18n( 'c' ),
 		'email_sent' => $email_sent,
 	];
-	update_user_meta( $user_id, LEMANN_MATCHES_META_KEY, $matches );
+    update_user_meta( $user_id, LEMANN_MATCHES_META_KEY, $matches );
+
+    $post_matches = (array) get_post_meta($post_id, LEMANN_MATCHES_META_KEY, true);
+
+    $post_matches[ $user_id ] = [
+        'match'      => $match,
+		'date'       => date_i18n( 'c' )
+    ];
+
+    update_post_meta($post_id, LEMANN_MATCHES_META_KEY, $post_matches);
 
     return $match;
 }
@@ -267,4 +276,46 @@ if(isset($_GET['lemann-action']) && $_GET['lemann-action'] == 'do-matches'){
     do_action('init', function(){
         lemann_do_matches();
     });
+}
+
+function get_matches_users($id, $min_match = LEMANN_MATCH_MINIMO_EMAIL){
+    $matches = get_post_meta($id, LEMANN_MATCHES_META_KEY, true);
+    
+    $result = [];
+    foreach($matches as $user_id => $match){
+        
+        if($match['match'] >= $min_match){
+            $match['user'] = get_user_by('id', $user_id);
+            $result[] = $match;
+        }
+    }
+
+    usort($result, function($a,$b){
+        if($a['match'] > $b['match']){
+            return -1;
+        } else if($a['match'] < $b['match']){
+            return 1;
+        } else {
+            return 0;
+        }
+    });
+
+    return $result;
+}
+
+// gera a lista de post_matches
+
+if(!get_option('_post_matches')){
+    add_option('_post_matches', true);
+
+    /**
+     * @var wpdb
+     */
+    global $wpdb;
+
+    $jobs = $wpdb->get_col("SELECT ID FROM $wpdb->posts WHERE post_type = 'job_listing' AND post_status = 'publish'");
+
+    foreach($jobs as $job_id){
+        add_post_meta($job_id, 'awaiting-match', 1);
+    }
 }

@@ -33,6 +33,39 @@ global $post;
 		?>
 
 		<div class="job_info">
+            <style>
+                .match-list li { margin-left:50px; line-height: 2em; padding:10px; }
+                .match-list li img { position:absolute; margin-left:-40px;}
+                .match-list--percent { color:red; font-weight: bold; }
+
+                .match-list .match-list--empty { padding:25px 50px; font-size: 1.5em; }
+            </style>
+            <?php if(current_user_can('administrator')): ?>
+                <div class="job_info_box match-list" id="matches-vaga">
+                    <h3 class="job_info_box--title" style="background-color:burlywood">
+                        Matches da Vaga
+                    </h3>
+                    <div class="job_info_box--content">
+                        <?php 
+                        $matches = get_matches_users(get_the_ID());
+                        if($matches):
+                        ?>
+                        <ul>
+                            <?php foreach($matches as $match): $u = $match['user']; ?>
+                                <li > 
+                                    <a href="/conheca-a-rede/<?php echo $u->user_nicename ?>">
+                                        <?php echo get_avatar($u->ID, 32) ?>
+                                        <?php echo $u->display_name ?> <span class="match-list--percent"><?php echo number_format($match['match'],1) ?>%</span> 
+                                    </a>
+                                </li>
+                            <?php endforeach; ?>
+                        </ul>
+                        <?php else: ?>
+                        <div class="match-list--empty">Não há matches para esta vaga</div>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            <?php endif; ?>
 		<?php $fields = lemann_wjm_custom_fields(); ?>
 
 			<div class="job_info_box" id="informacoes-basicas">
