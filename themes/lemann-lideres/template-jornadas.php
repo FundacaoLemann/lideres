@@ -51,7 +51,9 @@ get_header(); ?>
 				?>
 
 				<p>Conheça aqui as jornadas de destaque dos membros da nossa rede de líderes.</p>
-				<div class="jornadas-carousel"></div>
+				<div class="jornadas-carousel">
+					<div class="slide-wrapper"></div>
+				</div>
 				<div class="jornadas-list"></div>
 				<div class="jornadas-pagination"></div>
 
@@ -69,14 +71,14 @@ get_header(); ?>
 
 					function jornadasSlider(slideNumber) {
 						var jornada = page[slideNumber];
-						var slide = '<div class="slide-wrapper" style="background-image: url(' + jornada.thumbnail + ')"><a href="' + jornada.url + '">' +
-							'<div class="slide"><div class="slide-content">' +
+						var slide = '<a href="' + jornada.url + '"><div class="slide">' +
+							'<div class="slide-content">' +
 								'<strong>' + jornada.title + '</strong>' +
 								'<span>' + jornada.excerpt + '</span>' +
-							'</div></div>' +
-						'</a></div>';
+							'</div>' +
+						'</div></a>';
 
-						$('.jornadas-carousel').html(slide);
+						$('.slide-wrapper').html(slide).css('background-image', 'url(' + jornada.thumbnail + ')');
 					}
 
 					function paginate(pageNumber) {

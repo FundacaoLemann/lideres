@@ -648,6 +648,29 @@ a.btn-ver-mais:after:hover {
   color: #00B5AF !important;
 }
 
+.lvca-image-slider {
+  left: -30px;
+  width: calc(100% + 60px);
+}
+.lvca-image-slider .lvca-slide .lvca-caption .lvca-heading {
+  font-weight: 700;
+  text-shadow: 3px 3px 12px #083050;
+}
+.lvca-image-slider .lvca-slide .lvca-caption .lvca-button {
+  border-radius: 4px;
+  font-family: "Effra";
+  font-size: 14px;
+  letter-spacing: initial;
+  margin-top: 10px !important;
+  padding: 10px;
+  text-transform: none;
+}
+.lvca-image-slider ul.rslides_tabs {
+  position: relative;
+  top: -40px;
+  z-index: 100;
+}
+
 .gp-slider .flex-control-nav {
   margin-bottom: 30px;
 }
@@ -958,6 +981,7 @@ form.job-manager-form fieldset {
   background-position: center;
   background-size: cover;
   margin: 10px;
+  transition: background-image 0.3s ease;
   width: calc(100% - 20px);
 }
 .page-template-template-jornadas .jornadas-carousel .slide {
@@ -1066,6 +1090,10 @@ form.job-manager-form fieldset {
 }
 .page-template-template-jornadas .jornadas-pagination .active {
   font-weight: 600;
+}
+
+.single-jornada .gp-entry-featured {
+  display: none;
 }
 
 .page-login {
