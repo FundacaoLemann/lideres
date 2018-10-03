@@ -171,6 +171,12 @@ a.btn-ver-mais {
             }
         }
     }
+
+    ul.rslides_tabs {
+        position: relative;
+        top: -40px;
+        z-index: 100;
+    }
 }
 
 .gp-slider {

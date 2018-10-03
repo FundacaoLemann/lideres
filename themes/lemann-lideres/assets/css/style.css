@@ -665,6 +665,11 @@ a.btn-ver-mais:after:hover {
   padding: 10px;
   text-transform: none;
 }
+.lvca-image-slider ul.rslides_tabs {
+  position: relative;
+  top: -40px;
+  z-index: 100;
+}
 
 .gp-slider .flex-control-nav {
   margin-bottom: 30px;
