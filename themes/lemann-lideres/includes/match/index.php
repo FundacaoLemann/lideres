@@ -26,7 +26,7 @@ define( 'LEMANN_MATCHES_META_KEY', 'job_listings_matches' );
 /**
  * Mínimo necessário para enviar um e-mail para o usuário.
  */
-define( 'LEMANN_MATCH_MINIMO_EMAIL', 70 );
+define( 'LEMANN_MATCH_MINIMO_EMAIL', 40 );
 
 /**
  * ID do campo com o e-mail de contato para Vagas/Carreira.
