@@ -34,11 +34,15 @@ global $post;
 
 		<div class="job_info">
             <style>
+                .match-list { width: 49% !important; }
                 .match-list li { margin-left:50px; line-height: 2em; padding:10px; }
                 .match-list li img { position:absolute; margin-left:-40px;}
                 .match-list--percent { color:red; font-weight: bold; }
 
                 .match-list .match-list--empty { padding:25px 50px; font-size: 1.5em; }
+                @media screen and (min-width: 992px){
+                    #views-vaga{margin-left:20px;}
+                }
             </style>
             <?php if(current_user_can('administrator')): ?>
                 <div class="job_info_box match-list" id="matches-vaga">
@@ -57,6 +61,35 @@ global $post;
                                         <?php echo get_avatar($u->ID, 32) ?>
                                         <?php echo $u->display_name ?> <span class="match-list--percent"><?php echo number_format($match['match'],1) ?>%</span> 
                                     </a>
+                                </li>
+                            <?php endforeach; ?>
+                        </ul>
+                        <?php else: ?>
+                        <div class="match-list--empty">Não há matches para esta vaga</div>
+                        <?php endif; ?>
+                    </div>
+                </div>
+                <div class="job_info_box match-list" id="views-vaga">
+                    <h3 class="job_info_box--title" style="background-color:burlywood">
+                        Visualizações da Vaga
+                    </h3>
+                    <div class="job_info_box--content">
+                        <?php 
+                        $users = get_job_users_views(get_the_ID());
+                        if($users):
+                        ?>
+                        <ul>
+                            <?php foreach($users as $user): $u = $user['user']; ?>
+                                <li > 
+                                    <a href="/conheca-a-rede/<?php echo $u->user_nicename ?>">
+                                        <?php echo get_avatar($u->ID, 32) ?>
+                                        <?php echo $u->display_name ?> 
+                                    </a>
+                                    <?php if($user['views'] > 1): ?>
+                                        visitou <span class="match-list--percent"><?php echo $user['views'] ?></span> vezes e a última foi em <b><?php echo $user['last'] ?></b></string>
+                                    <?php else: ?>
+                                        visitou em <b><?php echo $user['last'] ?></b>
+                                    <?php endif; ?>
                                 </li>
                             <?php endforeach; ?>
                         </ul>

@@ -554,3 +554,53 @@ if(!get_option('_candidaturas_atualizadas')){
     }
     update_option('_candidaturas_atualizadas', true);
 }
+
+add_action('wp', function(){
+    if(is_singular('job_listing')){
+        $users = get_post_meta(get_the_ID(), '_user_views', true);
+
+        if(!$users){
+            $users = [];
+        }
+
+        $current_user_id = 'u:' . get_current_user_id();
+        
+        if(!isset($users[$current_user_id])){
+            $users[$current_user_id] = [];
+        }
+        $users[$current_user_id][date('Y-m-d.H')] = date('d/m/Y') . ' às ' . date('H:i');
+    
+        update_post_meta(get_the_ID(), '_user_views', $users);
+    }    
+});
+
+function get_job_users_views($post_id){
+    $users = get_post_meta(get_the_ID(), '_user_views', true);
+
+    if(!$users){
+        $users = [];
+    }
+    
+    $result = [];
+    foreach($users as $user_id => $views){
+        $user_id = substr($user_id, 2);
+        $result[] = [
+            'uid' => $user_id,
+            'user' => get_user_by('id', $user_id),
+            'views' => count($views),
+            'last' => array_pop($views)
+        ];
+    }
+
+    usort($result, function($a,$b){
+        if(count($a['views']) > count($b['views'])){
+            return -1;
+        } else if(count($a['views']) < count($b['views'])){
+            return 1;
+        } else {
+            return 0;
+        }
+    });
+
+    return $result;
+}
