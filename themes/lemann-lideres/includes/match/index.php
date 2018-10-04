@@ -87,8 +87,8 @@ function lemann_match( $post_id, $user_id ) {
                         // _match_log("\t[match $wpjm_id ($possible_value)]", true);
 					}
 				}
-				break;
-
+                break;
+            
 			case 'graduacao':
 				$possible_matches++;
 				if ( $user_data && is_array( $user_data ) && ! empty( $user_data[0] ) ) {
@@ -102,11 +102,17 @@ function lemann_match( $post_id, $user_id ) {
 				}
 				break;
 
-			default:
-				$possible_matches++;
-				if ( $user_data &&  strtolower($job_listing_data) == strtolower($user_data) ) {
+            default:
+                if(is_array($user_data)){
+                    $user_data = $user_data[0];
+                }
+                if(is_array($job_listing_data)){
+                    $job_listing_data = $job_listing_data[0];
+                }
+                $possible_matches++;
+                if ( $user_data &&  strtolower($job_listing_data) == strtolower($user_data) ) {
                     $real_matches++;
-                    // _match_log("\t[match $wpjm_id ($user_data)]", true);
+                     _match_log("\t[match $wpjm_id ", true);
 				} 
 				break;
 		}
