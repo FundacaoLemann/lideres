@@ -47,7 +47,7 @@ global $post;
                     </h3>
                     <div class="job_info_box--content">
                         <?php 
-                        $matches = get_matches_users(get_the_ID());
+                        $matches = get_matches_users(get_the_ID(),40);
                         if($matches):
                         ?>
                         <ul>
