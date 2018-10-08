@@ -149,7 +149,7 @@ a.btn-ver-mais {
     }
 }
 
-.lvca-image-slider {
+.lvca-container.lvca-image-slider {
     left: -30px;
     width: calc(100% + 60px);
 
@@ -172,10 +172,8 @@ a.btn-ver-mais {
         }
     }
 
-    ul.rslides_tabs {
-        position: relative;
-        top: -40px;
-        z-index: 100;
+    .lvca-flex-control-nav {
+        bottom: 15px;
     }
 }
 
