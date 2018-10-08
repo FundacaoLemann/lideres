@@ -26,7 +26,7 @@ define( 'LEMANN_MATCHES_META_KEY', 'job_listings_matches' );
 /**
  * Mínimo necessário para enviar um e-mail para o usuário.
  */
-define( 'LEMANN_MATCH_MINIMO_EMAIL', 70 );
+define( 'LEMANN_MATCH_MINIMO_EMAIL', 40 );
 
 /**
  * ID do campo com o e-mail de contato para Vagas/Carreira.
@@ -87,8 +87,8 @@ function lemann_match( $post_id, $user_id ) {
                         // _match_log("\t[match $wpjm_id ($possible_value)]", true);
 					}
 				}
-				break;
-
+                break;
+            
 			case 'graduacao':
 				$possible_matches++;
 				if ( $user_data && is_array( $user_data ) && ! empty( $user_data[0] ) ) {
@@ -102,11 +102,17 @@ function lemann_match( $post_id, $user_id ) {
 				}
 				break;
 
-			default:
-				$possible_matches++;
-				if ( $user_data &&  strtolower($job_listing_data) == strtolower($user_data) ) {
+            default:
+                if(is_array($user_data)){
+                    $user_data = $user_data[0];
+                }
+                if(is_array($job_listing_data)){
+                    $job_listing_data = $job_listing_data[0];
+                }
+                $possible_matches++;
+                if ( $user_data &&  strtolower($job_listing_data) == strtolower($user_data) ) {
                     $real_matches++;
-                    // _match_log("\t[match $wpjm_id ($user_data)]", true);
+                     _match_log("\t[match $wpjm_id ", true);
 				} 
 				break;
 		}
@@ -176,7 +182,16 @@ function lemann_match( $post_id, $user_id ) {
 		'date'       => date_i18n( 'c' ),
 		'email_sent' => $email_sent,
 	];
-	update_user_meta( $user_id, LEMANN_MATCHES_META_KEY, $matches );
+    update_user_meta( $user_id, LEMANN_MATCHES_META_KEY, $matches );
+
+    $post_matches = (array) get_post_meta($post_id, LEMANN_MATCHES_META_KEY, true);
+
+    $post_matches[ $user_id ] = [
+        'match'      => $match,
+		'date'       => date_i18n( 'c' )
+    ];
+
+    update_post_meta($post_id, LEMANN_MATCHES_META_KEY, $post_matches);
 
     return $match;
 }
@@ -267,4 +282,46 @@ if(isset($_GET['lemann-action']) && $_GET['lemann-action'] == 'do-matches'){
     do_action('init', function(){
         lemann_do_matches();
     });
+}
+
+function get_matches_users($id, $min_match = LEMANN_MATCH_MINIMO_EMAIL){
+    $matches = get_post_meta($id, LEMANN_MATCHES_META_KEY, true);
+    
+    $result = [];
+    foreach($matches as $user_id => $match){
+        
+        if(isset($match['match']) && $match['match'] >= $min_match){
+            $match['user'] = get_user_by('id', $user_id);
+            $result[] = $match;
+        }
+    }
+
+    usort($result, function($a,$b){
+        if($a['match'] > $b['match']){
+            return -1;
+        } else if($a['match'] < $b['match']){
+            return 1;
+        } else {
+            return 0;
+        }
+    });
+
+    return $result;
+}
+
+// gera a lista de post_matches
+
+if(!get_option('_post_matches')){
+    add_option('_post_matches', true);
+
+    /**
+     * @var wpdb
+     */
+    global $wpdb;
+
+    $jobs = $wpdb->get_col("SELECT ID FROM $wpdb->posts WHERE post_type = 'job_listing' AND post_status = 'publish'");
+
+    foreach($jobs as $job_id){
+        add_post_meta($job_id, 'awaiting-match', 1);
+    }
 }

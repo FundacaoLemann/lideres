@@ -37,7 +37,7 @@ global $post;
 	if ( isset( $match[ $post->ID ] ) && $match[ $post->ID ]['match'] ) {
 		$job_match = round( $match[ $post->ID ]['match'] );
 		?>
-		<div class="match-percentage<?php echo $job_match >= 70 ? ' matched' : ''; ?>">Match <strong><?php echo $job_match; ?>%</strong></div>
+		<div class="match-percentage<?php echo $job_match >= LEMANN_MATCH_MINIMO_EMAIL ? ' matched' : ''; ?>">Match <strong><?php echo $job_match; ?>%</strong></div>
 		<?php
 	}
 	?>
