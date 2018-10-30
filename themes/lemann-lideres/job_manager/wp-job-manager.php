@@ -205,15 +205,24 @@ add_action( 'init', function() {
 		}
 	}
 } );
-
 /**
  * Altera o parâmetro de ordenação na query das vagas para
  * passar a usar o valor de match entre o usuário e as vagas.
  */
 add_filter( 'job_manager_get_listings_args', function( $args ) {
-	$matches = get_user_meta( get_current_user_id(), LEMANN_MATCHES_META_KEY, true );
+    global $wpdb;
+
+    $ids = $wpdb->get_col("SELECT ID FROM $wpdb->posts WHERE post_type = 'job_listing' AND post_status = 'publish' ORDER BY ID DESC");
+    
+    $matches = get_user_meta( get_current_user_id(), LEMANN_MATCHES_META_KEY, true );
 	$matches = wp_list_sort( $matches, 'match', 'DESC', true );
-	$matches = array_keys( $matches );
+    $matches = array_keys( $matches );
+    
+    foreach($ids as $id){
+        if(!in_array($id, $matches)){
+            $matches[] = $id;
+        }
+    }
 
 	$args['post__in'] = $matches;
 	$args['orderby']  = 'post__in';
