@@ -648,15 +648,15 @@ a.btn-ver-mais:after:hover {
   color: #00B5AF !important;
 }
 
-.lvca-image-slider {
+.lvca-container.lvca-image-slider {
   left: -30px;
   width: calc(100% + 60px);
 }
-.lvca-image-slider .lvca-slide .lvca-caption .lvca-heading {
+.lvca-container.lvca-image-slider .lvca-slide .lvca-caption .lvca-heading {
   font-weight: 700;
   text-shadow: 3px 3px 12px #083050;
 }
-.lvca-image-slider .lvca-slide .lvca-caption .lvca-button {
+.lvca-container.lvca-image-slider .lvca-slide .lvca-caption .lvca-button {
   border-radius: 4px;
   font-family: "Effra";
   font-size: 14px;
@@ -665,10 +665,8 @@ a.btn-ver-mais:after:hover {
   padding: 10px;
   text-transform: none;
 }
-.lvca-image-slider ul.rslides_tabs {
-  position: relative;
-  top: -40px;
-  z-index: 100;
+.lvca-container.lvca-image-slider .lvca-flex-control-nav {
+  bottom: 15px;
 }
 
 .gp-slider .flex-control-nav {
