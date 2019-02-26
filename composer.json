@@ -8,7 +8,7 @@
         }
     ],
     "require": {
-        "wpackagist-plugin/cmb2":"2.4.*",
+        "wpackagist-plugin/cmb2":"2.6.*",
         "wpackagist-plugin/wordpress-seo": "*",
         "wpackagist-plugin/google-analytics-dashboard-for-wp": "*",
         "wpackagist-plugin/buddypress": "3.1.*",
