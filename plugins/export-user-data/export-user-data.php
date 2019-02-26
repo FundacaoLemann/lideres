@@ -612,6 +612,20 @@ if ( ! class_exists( 'Q_Export_User_Data' ) )
 
         }
 
+        /**
+         * JSON-encode an string if it's an associative array
+         *
+         * @return string
+         */
+        function json_encode_if_object( $value = null )
+        {
+            if ( is_array( $value ) )
+            {
+                return json_encode( $value );
+            }
+
+            return $value;
+        }
 
         /**
          * Attempt to generate the export file based on the passed arguements
@@ -989,8 +1003,11 @@ if ( ! class_exists( 'Q_Export_User_Data' ) )
 							 * configurable.
 							*/
 							if ( is_array( $value ) ) {
-								$value =  implode("::", $value );
-							}
+                                $value =  implode("::", array_map( 'self::json_encode_if_object', $value ) );
+                            }
+                            else {
+                                $value = $this->json_encode_if_object($value);
+                            }
 
                         }
 
