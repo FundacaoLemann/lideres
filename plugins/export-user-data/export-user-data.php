@@ -1041,7 +1041,7 @@ if ( ! class_exists( 'Q_Export_User_Data' ) )
                     {
 
                         // add "Role" as $value ##
-                        $value = isset( $user->roles[0] ) ? implode( $user->roles, '|' ) : '' ; // empty value if no role found - or flat array of user roles ##
+                        $value = isset( $user->roles[0] ) ? implode( '|', $user->roles ) : '' ; // empty value if no role found - or flat array of user roles ##
 
                     // include the user's BP group in the export ##
                     }
@@ -1073,7 +1073,7 @@ if ( ! class_exists( 'Q_Export_User_Data' ) )
                                 }
 
                                 // implode it ##
-                                $value = implode( $groups, '|' );
+                                $value = implode( '|', $groups );
 
                             }
 
