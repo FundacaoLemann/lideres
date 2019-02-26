@@ -46,7 +46,7 @@ if ( ! class_exists( 'Q_Export_User_Data' ) )
         /* properties */
         #protected $text_domain = 'export-user-data'; // for translation ##
         protected $debug = true; // debug ##
-        protected $q_eud_exports = ''; // export settings ##
+        protected $q_eud_exports = []; // export settings ##
         protected $usermeta_saved_fields = array();
         protected $bp_fields_saved_fields = array();
         protected $bp_fields_update_time_saved_fields = array();
@@ -1123,12 +1123,12 @@ if ( ! class_exists( 'Q_Export_User_Data' ) )
                     // wrap values in quotes and add to array ##
                     if ( $is_csv ) {
 
-                        $data[] = '"' . str_replace( '"', '""', $this->special_characters( $value ) ) . '"';
+                        $data[] = '"' . str_replace( '"', '""', $value ) . '"';
 
                     // just add to array ##
                     } else {
 
-                        $data[] = $this->special_characters( $value );
+                        $data[] = $value;
                     }
 
                 }
@@ -2231,29 +2231,6 @@ if ( ! class_exists( 'Q_Export_User_Data' ) )
             return $value;
 
         }
-
-
-		/**
-		 * Encode special characters
-		 *
-		 * @param		type		$string
-		 * @return		string		Encoding string
-		 * @since		1.2.3
-		 */
-		protected function special_characters( $string = null )
-		{
-
-			// sanity check ##
-			if ( is_null( $string ) ) {
-
-				return false;
-
-			}
-
-			// kick it back in a nicer format ##
-			return htmlentities( $string, ENT_COMPAT, 'UTF-8' );
-
-		}
 
 
     }
