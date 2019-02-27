@@ -576,7 +576,7 @@ if ( ! class_exists( 'Q_Export_User_Data' ) )
             $results = $wpdb->get_results(
                 $wpdb->prepare(
                     "
-                        SELECT g.id as field_group_id, g.name as field_group_name, f.id as field_id, f.name as field_name, f.type as field_type, d.value as field_data, u.user_login, u.user_nicename, u.user_email
+                        SELECT g.id as field_group_id, g.name as field_group_name, f.id as field_id, TRIM(f.name) as field_name, f.type as field_type, d.value as field_data, u.user_login, u.user_nicename, u.user_email
                         FROM {$bp->profile->table_name_groups} g
                             LEFT JOIN {$bp->profile->table_name_fields} f ON g.id = f.group_id
                             INNER JOIN {$bp->profile->table_name_data} d ON f.id = d.field_id LEFT JOIN {$wpdb->users} u ON d.user_id = u.ID
@@ -847,7 +847,7 @@ if ( ! class_exists( 'Q_Export_User_Data' ) )
 				,	$usermeta_fields // wp_user_meta fields ##
 				,	$bp_fields_passed // selected buddypress fields ##
 				,	$bp_fields_update_passed // update date for buddypress fields ##
-			);
+            );
 
             // test field array ##
             #$this->pr( $fields );
@@ -958,7 +958,8 @@ if ( ! class_exists( 'Q_Export_User_Data' ) )
                 // grab all user data ##
                 if (
                     $this->bp_data_available
-                    && ! $bp_data = BP_XProfile_ProfileData::get_all_for_user( $user->ID )
+                    //&& ! $bp_data = BP_XProfile_ProfileData::get_all_for_user( $user->ID )
+                    && ! $bp_data = $this->get_all_for_user($user->ID)
                 ) {
 
                     // null the data to be sure ##
