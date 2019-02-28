@@ -1353,6 +1353,10 @@ if ( ! class_exists( 'Q_Export_User_Data' ) )
 
                             foreach ( $meta_keys as $key ) {
 
+                                if ($key == LEMANN_MATCHES_META_KEY) {
+                                    continue;
+                                }
+
                                 #echo "\n\t<option value='" . esc_attr( $role ) . "'>$name</option>";
 
                                 // display $key ##
