@@ -11,6 +11,8 @@
 </head>
 <body <?php body_class(); ?>>
 
+<?php if ( function_exists( 'gtm4wp_the_gtm_tag' ) ) { gtm4wp_the_gtm_tag(); } ?>
+
 <?php if ( ghostpool_option( 'page_loader' ) == 'enabled' ) { ?>
 	<div id="gp-page-loader">
 		<div class="sk-folding-cube">
