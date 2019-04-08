@@ -8235,7 +8235,7 @@ msgstr "Você receberá um outro e-mail com a sua nova senha."
 
 #: ../lib/inc/login-functions.php:351
 msgid "Password reset request"
-msgstr "Solicitação de Primeiro Acesso ou Redefinição de senha"
+msgstr "Solicitação de redefinição de senha"
 
 #: ../lib/inc/login-functions.php:352 ../lib/inc/login-functions.php:384
 msgid "Email failed to send for some unknown reason."
