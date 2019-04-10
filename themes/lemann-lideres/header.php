@@ -7,6 +7,18 @@
 <?php if ( is_singular() && pings_open( get_queried_object() ) ) { ?>
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <?php } ?>
+<?php
+	$userId = get_current_user_id();
+	if ($userId != 0) {
+		$userNetwork = implode(', ', xprofile_get_field_data('Perfil', get_current_user_id()));
+		if (!empty($userNetwork)) { ?>
+			<script>
+				var dataLayer = dataLayer || [];
+				dataLayer.push({visitorNetwork: '<?= $userNetwork ?>'});
+			</script>
+		<?php }
+	}
+?>
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
