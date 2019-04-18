@@ -23,6 +23,7 @@
         "wpackagist-plugin/multiple-roles": "1.2.*",
         "wpackagist-plugin/wp-job-manager": "1.32.*",
         "wpackagist-plugin/buddypress-docs": "2.1.*",
+        "wpackagist-plugin/bp-profile-search": "5.0.*",
         "wpackagist-plugin/duracelltomi-google-tag-manager": "1.9.*"
     },
     "require-dev":{
