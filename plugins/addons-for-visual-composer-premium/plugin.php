@@ -50,7 +50,7 @@ if (!class_exists('Livemesh_VC_Addons')) :
          */
         public function __clone() {
             // Cloning instances of the class is forbidden
-            _doing_it_wrong(__FUNCTION__, __('Cheatin&#8217; huh?', 'livemesh-vc-addons'), '2.5');
+            _doing_it_wrong(__FUNCTION__, __('Cheatin&#8217; huh?', 'livemesh-vc-addons'), '2.5.2');
         }
 
         /**
@@ -59,7 +59,7 @@ if (!class_exists('Livemesh_VC_Addons')) :
          */
         public function __wakeup() {
             // Unserializing instances of the class is forbidden
-            _doing_it_wrong(__FUNCTION__, __('Cheatin&#8217; huh?', 'livemesh-vc-addons'), '2.5');
+            _doing_it_wrong(__FUNCTION__, __('Cheatin&#8217; huh?', 'livemesh-vc-addons'), '2.5.2');
         }
 
         private function setup_debug_constants() {
@@ -309,9 +309,6 @@ if (!class_exists('Livemesh_VC_Addons')) :
 
             wp_register_script('lvca-waypoints', LVCA_PLUGIN_URL . 'assets/js/jquery.waypoints' . $suffix . '.js', array('jquery'), LVCA_VERSION, true);
             wp_enqueue_script('lvca-waypoints');
-
-            wp_register_script('lvca-modernizr', LVCA_PLUGIN_URL . 'assets/js/modernizr-custom' . $suffix . '.js', array(), LVCA_VERSION, true);
-            wp_enqueue_script('lvca-modernizr');
 
             wp_register_script('lvca-frontend-scripts', LVCA_PLUGIN_URL . 'assets/js/lvca-frontend' . LVCA_JS_SUFFIX . '.js', array(), LVCA_VERSION, true);
             wp_enqueue_script('lvca-frontend-scripts');

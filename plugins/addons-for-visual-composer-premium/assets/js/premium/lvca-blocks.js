@@ -10,8 +10,6 @@ if (typeof (jQuery) != 'undefined') {
 
     var lvcaGrids;
 
-    jQuery.noConflict(); // Reverts '$' variable back to other JS libraries
-
     (function ($) {
         "use strict";
 
