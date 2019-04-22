@@ -598,7 +598,8 @@ function get_job_users_views($post_id){
         } else if($a['views'] < $b['views']){
             return 1;
         } else {
-            return 0;
+            $dateFormat = 'd/m/Y à\\s H:i';
+            return date_create_from_format($dateFormat, $b['last']) <=> date_create_from_format($dateFormat, $a['last']);
         }
     });
 
