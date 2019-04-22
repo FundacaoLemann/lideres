@@ -593,9 +593,9 @@ function get_job_users_views($post_id){
     }
 
     usort($result, function($a,$b){
-        if(count($a['views']) > count($b['views'])){
+        if($a['views'] > $b['views']){
             return -1;
-        } else if(count($a['views']) < count($b['views'])){
+        } else if($a['views'] < $b['views']){
             return 1;
         } else {
             return 0;
