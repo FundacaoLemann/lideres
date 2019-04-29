@@ -11,7 +11,7 @@
         "wpackagist-plugin/classic-editor": "1.4.*",
         "wpackagist-plugin/cmb2":"2.6.*",
         "wpackagist-plugin/wordpress-seo": "*",
-        "wpackagist-plugin/buddypress": "4.2.*",
+        "wpackagist-plugin/buddypress": "4.3.*",
         "wpackagist-plugin/activity-reactions-for-buddypress": "*",
         "wpackagist-plugin/bp-activity-shortcode": "*",
         "wpackagist-plugin/mailgun": "1.7.*",
