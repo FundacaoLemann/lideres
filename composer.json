@@ -15,7 +15,6 @@
         "wpackagist-plugin/activity-reactions-for-buddypress": "*",
         "wpackagist-plugin/bp-activity-shortcode": "*",
         "wpackagist-plugin/mailgun": "1.7.*",
-        "wpackagist-plugin/onesignal-free-web-push-notifications": "*",
         "wpackagist-plugin/wp-sentry-integration": "*",
         "wpackagist-plugin/w3-total-cache": "*",
         "wpackagist-plugin/sucuri-scanner": "*",
