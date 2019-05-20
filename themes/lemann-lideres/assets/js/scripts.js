@@ -28,4 +28,8 @@
             }
         });
 	});
+
+	setTimeout(function(){
+		$('#submit-job-form #prazo_inscricao').datepicker( "option", "dateFormat", 'dd/mm/yy' );
+	},2000);
 }(jQuery));
