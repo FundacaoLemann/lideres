@@ -1,14 +1,14 @@
 <?php
 
 /**
- * Plugin Name: Livemesh Addons for WPBakery Page Builder (Premium)
+ * Plugin Name: Livemesh Addons for WPBakery Page Builder Pro
  * Plugin URI: https://www.livemeshthemes.com/wpbakery-page-builder-addons
  * Description: A collection of premium quality addons or extensions for use in WPBakery Page Builder. WPBakery Page Builder must be installed and activated.
  * Author: Livemesh
  * Author URI: https://www.livemeshthemes.com/
  * License: GPL3
  * License URI: https://www.gnu.org/licenses/gpl-3.0.txt
- * Version: 2.5
+ * Version: 2.5.2
  * Text Domain: livemesh-vc-addons
  * Domain Path: languages
  *
@@ -37,7 +37,7 @@ if ( !defined( 'ABSPATH' ) ) {
 
 if ( !function_exists( 'lvca_fs' ) ) {
     // Plugin version
-    define( 'LVCA_VERSION', '2.5' );
+    define( 'LVCA_VERSION', '2.5.2' );
     // Plugin Root File
     define( 'LVCA_PLUGIN_FILE', __FILE__ );
     // Plugin Folder Path

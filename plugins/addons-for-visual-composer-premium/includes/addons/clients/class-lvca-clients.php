@@ -95,7 +95,7 @@ class LVCA_Clients {
             $output .= '<a href="' . esc_url($client_url['url'])
                 . ' " title="' . esc_html($client_url['title'])
                 . ' " target="' . esc_html($client_url['target'])
-                . '">' . wp_kses_post($client_name) . '</a>';
+                . '" rel="nofollow">' . wp_kses_post($client_name) . '</a>';
 
             $output .= '</div>';
 

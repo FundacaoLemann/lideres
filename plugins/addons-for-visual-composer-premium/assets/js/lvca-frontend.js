@@ -3,8 +3,6 @@
  */
 if (typeof (jQuery) != 'undefined') {
 
-    jQuery.noConflict(); // Reverts '$' variable back to other JS libraries
-
     (function ($) {
         "use strict";
 

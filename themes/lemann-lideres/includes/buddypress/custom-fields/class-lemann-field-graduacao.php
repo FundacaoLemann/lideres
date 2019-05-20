@@ -247,11 +247,23 @@ class Lemann_Field_Graduacao extends BP_XProfile_Field_Type {
 		return $output;
 	}
 
+	private static function multibyte_unserialize($string) {
+		$string = mb_convert_encoding($string, "UTF-8", mb_detect_encoding($string, "UTF-8, ISO-8859-1, ISO-8859-15", true));
+		$string = preg_replace_callback(
+			'/s:([0-9]+):"(.*?)";/',
+			function ($match) {
+				return "s:".strlen($match[2]).":\"".$match[2]."\";";
+			},
+			$string
+		);
+		return maybe_unserialize($string);
+	}
+
 	public static function unserialize( $string ) {
 		if ( ! empty( $string ) ) {
 			$string = html_entity_decode( $string );
 			$string = html_entity_decode( $string );
-			$string = maybe_unserialize( $string );
+			$string = self::multibyte_unserialize( $string );
 		}
 		return (array) $string;
 	}

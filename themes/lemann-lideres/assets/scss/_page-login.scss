@@ -145,22 +145,17 @@
     }
 
     .lost-password {
-        display: block;
-        max-width: 380px;
-        width: 100%;
-        text-align: center;
-        color: white;
-        margin: 10px auto;
-        text-decoration: underline;
-    }
-
-    .first-access {
         background-color: rgba(white, 0.8);
         border-radius: 5px;
         color: $c_primary;
+        display: block;
         font-weight: 600;
+        margin: 10px auto;
+        max-width: 380px;
         padding: 10px;
+        text-align: center;
         text-decoration: none;
+        width: 100%;
     }
 
     .login-error {

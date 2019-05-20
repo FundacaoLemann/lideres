@@ -492,7 +492,7 @@ add_filter( 'retrieve_password_title', function( $title ) {
 
     return sprintf(
         /* translators: Site name */
-        __( '[%s] Solicitação de Primeiro Acesso ou Redefinição de senha', 'lemann-lideres' ),
+        __( '[%s] Solicitação de redefinição de senha', 'lemann-lideres' ),
         $site_name
     );
 } );
@@ -508,11 +508,11 @@ add_filter( 'retrieve_password_title', function( $title ) {
  */
 function lemann_retrieve_password_message( $message, $key, $user_login, $user_data ) {
     $new_message   = [];
-    $new_message[] = __( 'Foi feita uma solicitação para que a senha da seguinte conta fosse redefinida ou para primeiro acesso do usuário na plataforma', 'lemann-lideres' );
+    $new_message[] = __( 'Foi feita uma solicitação para que a senha da seguinte conta fosse redefinida', 'lemann-lideres' );
     $new_message[] = network_site_url();
     $new_message[] = sprintf( __( 'Nome de usuário: %s'), $user_login );
     $new_message[] = __( 'Se foi um engano, apenas ignore este e-mail e nada acontecerá.', 'lemann-lideres' );
-    $new_message[] = __( 'Para fazer o primeiro acesso ou redefinir sua senha, visite o seguinte endereço:', 'lemann-lideres' );
+    $new_message[] = __( 'Para redefinir sua senha, visite o seguinte endereço:', 'lemann-lideres' );
     $new_message[] = network_site_url( "wp-login.php?action=reset_pwd&key=$key&login=" . rawurlencode( $user_login ), 'login' );
     $new_message[] = __( 'Você receberá um outro e-mail com a sua nova ou primeira senha.', 'lemann-lideres' );
 
@@ -542,12 +542,12 @@ if(!get_option('_candidaturas_atualizadas')){
      * @var wpdb
      */
     global $wpdb;
-    
+
     $posts = $wpdb->get_results("SELECT * FROM $wpdb->posts WHERE post_type = 'job_application'");
-    
+
     foreach($posts as $p){
         $p = (object) $p;
-        
+
         $uid = get_post_meta($p->ID, '_candidate_user_id', true);
         $user = get_user_by('ID', $uid);
         $wpdb->query("UPDATE $wpdb->postmeta SET meta_value = '{$user->user_email}' WHERE post_id = $p->ID AND meta_key = '_candidate_email'");
@@ -565,14 +565,14 @@ add_action('wp', function(){
         }
 
         $current_user_id = 'u:' . get_current_user_id();
-        
+
         if(!isset($users[$current_user_id])){
             $users[$current_user_id] = [];
         }
         $users[$current_user_id][date('Y-m-d.H')] = date('d/m/Y') . ' às ' . date('H:i');
-    
+
         update_post_meta(get_the_ID(), '_user_views', $users);
-    }    
+    }
 });
 
 function get_job_users_views($post_id){
@@ -581,7 +581,7 @@ function get_job_users_views($post_id){
     if(!$users){
         $users = [];
     }
-    
+
     $result = [];
     foreach($users as $user_id => $views){
         $user_id = substr($user_id, 2);
@@ -594,12 +594,13 @@ function get_job_users_views($post_id){
     }
 
     usort($result, function($a,$b){
-        if(count($a['views']) > count($b['views'])){
+        if($a['views'] > $b['views']){
             return -1;
-        } else if(count($a['views']) < count($b['views'])){
+        } else if($a['views'] < $b['views']){
             return 1;
         } else {
-            return 0;
+            $dateFormat = 'd/m/Y à\\s H:i';
+            return date_create_from_format($dateFormat, $b['last']) <=> date_create_from_format($dateFormat, $a['last']);
         }
     });
 

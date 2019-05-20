@@ -74,7 +74,7 @@
 
 		<div class="gp-lost-password-form-wrapper">
 
-			<h5 class="gp-login-title"><?php esc_html_e( 'Para Primeiro Acesso e Esqueci minha Senha', 'lemann-lideres' ); ?></h5>
+			<h5 class="gp-login-title"><?php esc_html_e( 'Solicitação de Redefinição de Senha', 'lemann-lideres' ); ?></h5>
 
 			<form name="lostpasswordform" class="gp-lost-password-form" action="#" method="post">
 

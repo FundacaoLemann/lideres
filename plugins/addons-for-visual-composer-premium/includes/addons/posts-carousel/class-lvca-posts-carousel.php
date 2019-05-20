@@ -233,7 +233,7 @@ class LVCA_Posts_Carousel {
 
         endif;
 
-        echo apply_filters('lvca_posts_carousel_output', $output, $settings);
+        return apply_filters('lvca_posts_carousel_output', $output, $settings);
     }
 
 
