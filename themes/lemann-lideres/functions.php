@@ -47,6 +47,9 @@ require get_stylesheet_directory() . '/job_manager/wp-job-manager.php';
 // Funções do cabeçalho.
 require get_stylesheet_directory() . '/lib/inc/page-header.php';
 
+// Migrações
+require get_stylesheet_directory() . '/includes/migrations.php';
+
 add_action( 'wp_enqueue_scripts', function () {
     wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
     wp_enqueue_style( 'custom-style', get_stylesheet_directory_uri() . '/assets/css/style.css' );
@@ -113,6 +116,7 @@ add_action( 'wp_enqueue_scripts', function () {
 add_action( 'admin_enqueue_scripts', function () {
     wp_enqueue_script( 'lemann-countries-states-cities', get_stylesheet_directory_uri() . '/includes/countries-states-cities/countries-states-cities.js', array( 'jquery' ), null, true );
     wp_enqueue_script( 'lemann-countries-states-cities-script', get_stylesheet_directory_uri() . '/includes/countries-states-cities/scripts.js', array( 'jquery', 'lemann-countries-states-cities' ), null, true );
+    wp_enqueue_script( 'lemann-admin', get_stylesheet_directory_uri() . '/assets/js/admin.js', array( 'jquery' ) );
 });
 
 /**

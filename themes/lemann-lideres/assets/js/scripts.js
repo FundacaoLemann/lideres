@@ -27,5 +27,11 @@
                 });
             }
         });
+	
+		setTimeout(function(){
+			if($('#submit-job-form #prazo_inscricao').length > 0){
+				$('#submit-job-form #prazo_inscricao').datepicker( "option", "dateFormat", 'dd/mm/yy' );
+			}
+		},2000);
 	});
 }(jQuery));

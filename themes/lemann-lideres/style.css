@@ -1,7 +1,19 @@
 /*
- Theme Name:   Rede de Líderes
- Author:       hacklab/
- Author URI:   http://hacklab.com.br
- Template:     aardvark
- Version:      1.0.0
+Theme Name:   Rede de Líderes
+Author:       hacklab/
+Author URI:   http://hacklab.com.br
+Template:     aardvark
+Version:      1.0.0
 */
+
+.btn-form-vagas {
+    float:right;
+    margin-top:-80px;
+    margin-bottom: -80px;
+}
+@media screen and (min-width: 767px) {
+    .btn-form-vagas {
+        margin-top:-90px;
+        margin-bottom: -90px;
+    }
+}

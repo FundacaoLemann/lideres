@@ -10,13 +10,19 @@
 <?php
 	$userId = get_current_user_id();
 	if ($userId != 0) {
-		$userNetwork = implode(', ', xprofile_get_field_data('Perfil', get_current_user_id()));
+		$_field = xprofile_get_field_data('Perfil', get_current_user_id());
+		if(is_array($_field)){
+			$userNetwork = implode(', ', $_field);
+		} else {
+			$userNetwork = $_field;
+		}
 		if (!empty($userNetwork)) { ?>
 			<script>
 				var dataLayer = dataLayer || [];
 				dataLayer.push({visitorNetwork: '<?= $userNetwork ?>'});
 			</script>
 		<?php }
+		
 	}
 ?>
 <?php wp_head(); ?>
