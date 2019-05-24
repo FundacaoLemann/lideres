@@ -23,15 +23,18 @@ wp_head();
             <p class="hide-for-mobile"> * Em caso de dúvidas, entre em contato via <a href="mailto:lideres@fundacaolemann.org.br">lideres@fundacaolemann.org.br</a></p>
         </div>
         <div class="col-md-6">
-            <?php
-            if ( ! empty( $_SESSION["login_error"] ) ) { ?>
+            <?php if ( ! empty( $_SESSION["linkedin_login_error"] ) ): ?>
+                <div class="login-error">
+                    <?php echo $_SESSION["linkedin_login_error"]; ?>
+                </div>
+                <?php unset( $_SESSION['linkedin_login_error'] ); ?>
+                
+            <?php elseif ( ! empty( $_SESSION["login_error"] ) ): ?>
                 <div class="login-error">
                     <?php echo $_SESSION["login_error"]; ?>
                 </div>
-                <?php
-                unset( $_SESSION['login_error'] );
-            }
-            ?>
+                <?php unset( $_SESSION['login_error'] ); ?>
+            <?php endif ?>
             <?php wp_login_form(); ?>
 
             <a href="#lost-password" class="lost-password lost-password-trigger lost-password_block">Esqueceu sua senha?</a>
