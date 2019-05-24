@@ -17,3 +17,16 @@ Version:      1.0.0
         margin-bottom: -90px;
     }
 }
+
+
+.linkedin-login-button {
+    display: block;
+    background-color: #083050;
+    border-radius: 3px;
+    text-align: center;
+    line-height: 2em;
+    color:white;
+    font-weight: bold;
+}
+.linkedin-login-button:hover { color:white; }
+.linkedin-login-button img { width:24px; margin-top:7px; margin-bottom: -7px; margin-right:5px; }
