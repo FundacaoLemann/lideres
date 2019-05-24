@@ -368,7 +368,7 @@ Class PkliLogin {
         */
 
         else {
-            $_SESSION['linkedin_login_error'] = "O email cadastrado no LinkedIn não está associado a nenhuma conta em nosso sistema.";
+            $_SESSION['linkedin_login_error'] = "O email de sua conta no LinkedIn não está associado a nenhum usuário da Rede de Líderes.";
         }
 
         // Does not exist, return false
