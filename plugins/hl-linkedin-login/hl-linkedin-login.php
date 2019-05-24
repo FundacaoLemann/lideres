@@ -1,28 +1,9 @@
 <?php
 /**
  * Plugin Name: LinkedIn Login
- * Description: Enables login with LinkedIn functionality for your website
  * Version: 1.0
- * Text Domain: linkedin-login
- * Domain Path: /languages 
  * License: GPL2
  */
-
-/*  Copyright 2014  Samer Bechara  (email : sam@thoughtengineer.com)
-
-    This program is free software; you can redistribute it and/or modify
-    it under the terms of the GNU General Public License, version 2, as 
-    published by the Free Software Foundation.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program; if not, write to the Free Software
-    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
-*/
 
 // Do not allow direct file access
 defined('ABSPATH') or die("No script kiddies please!");
