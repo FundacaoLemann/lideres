@@ -49,8 +49,17 @@ Class PkliLogin {
 
         add_filter('login_form_bottom', array($this, 'get_login_button'));
 
+        
         // This action processes any Ultimate LinkedIn Integration requests
-        add_action('init', array($this, 'process_login'));
+        add_action('init', function(){
+            $this->process_login();
+            if(get_user_meta(get_current_user_id(), 'pkli_access_token')){
+                add_action('bp_core_general_settings_after_submit', array($this, 'display_unlink_button'));
+            } else {
+                add_action('bp_core_general_settings_after_submit', array($this, 'display_link_button'));
+            }
+
+        });
         
         add_action( 'admin_enqueue_scripts', array($this, 'admin_enqueue') );
         
@@ -114,8 +123,43 @@ Class PkliLogin {
 
     }
 
-    public function get_login_button(){
+    public function get_unlink_button(){
+        $url = get_bloginfo('url') . $_SERVER['REQUEST_URI'] . "?action=linkedin-unlink";
+        return "
+        <div>
+        <a rel='nofollow' href='{$url}' class='linkedin-link-button'>
+            <img alt='LinkedIn' src='" . PKLI_URL . "includes/assets/img/In-White-96@2x.png' /> 
+            Desconectar do LinkedIn
+        </a><br>
+        <em>Utilize o botão acima para desativar o login com apena um clique</em>
+        </div>";
+    }
 
+    // This function displays the login button on the default WP login page
+    public function display_unlink_button() {
+        echo $this->get_unlink_button();
+
+    }
+
+    public function get_link_button(){
+        $url = get_bloginfo('url') . $_SERVER['REQUEST_URI'];
+        return "
+        <div>
+        <a rel='nofollow' href='" . $this->get_auth_url($url) . "' class='linkedin-link-button'>
+            <img alt='LinkedIn' src='" . PKLI_URL . "includes/assets/img/In-White-96@2x.png' /> 
+            Conectar com LinkedIn
+        </a><br>
+        <em>Conecte sua conta ao LinkeIn para fazer login com apena um clique</em>
+        </div>";
+    }
+
+    // This function displays the login button on the default WP login page
+    public function display_link_button() {
+        echo $this->get_link_button();
+
+    }
+
+    public function get_login_button(){
         // User is not logged in, display login button
         return "
         <a rel='nofollow' href='" . $this->get_auth_url() . "' class='linkedin-login-button'>
@@ -137,6 +181,14 @@ Class PkliLogin {
 
     // Logs in a user after he has authorized his LinkedIn account
     function process_login() {
+
+        if(isset($_GET['action']) && $_GET['action'] === 'linkedin-unlink'){
+            delete_usermeta(get_current_user_id(), 'pkli_access_token');
+            delete_usermeta(get_current_user_id(), 'pkli_linkedin_profile');
+            delete_usermeta(get_current_user_id(), 'pkli_linkedin_id');
+            wp_redirect(get_bloginfo('url') . $_SERVER['REDIRECT_URL']);
+            exit;
+        }
 
         // If this is not a linkedin sign-in request, do nothing
         if (!$this->is_linkedin_signin()) {
@@ -285,7 +337,7 @@ Class PkliLogin {
     private function authenticate_user($xml) {
 
         // Logout any logged in user before we start to avoid any issues arising
-        wp_logout();
+        // wp_logout();
 
         // Set default redirect URL to the URL provided by shortcode and stored in session
         $this->user_redirect = $_SESSION['li_api_redirect'];
@@ -296,9 +348,14 @@ Class PkliLogin {
         // Get the user's application-specific LinkedIn ID
         $linkedin_id = (string) $xml->{'id'};
 
-        // See if a user with the above LinkedIn ID exists in our database
-        $user_by_id = get_users(array('meta_key' => 'pkli_linkedin_id',
-            'meta_value' => $linkedin_id));
+        if(is_user_logged_in()){
+            $user_by_id = get_users( ['include' => [get_current_user_id()]]);
+            
+        } else {
+            // See if a user with the above LinkedIn ID exists in our database
+            $user_by_id = get_users(array('meta_key' => 'pkli_linkedin_id',
+                'meta_value' => $linkedin_id));
+        }
 
         // If he exists, return his ID
         if (count($user_by_id) == 1) {

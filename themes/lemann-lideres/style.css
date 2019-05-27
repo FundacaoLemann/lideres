@@ -19,8 +19,7 @@ Version:      1.0.0
 }
 
 
-.linkedin-login-button {
-    display: block;
+.linkedin-login-button, .linkedin-link-button {
     background-color: #083050;
     border-radius: 3px;
     text-align: center;
@@ -28,5 +27,13 @@ Version:      1.0.0
     color:white;
     font-weight: bold;
 }
-.linkedin-login-button:hover { color:white; }
-.linkedin-login-button img { width:24px; margin-top:7px; margin-bottom: -7px; margin-right:5px; }
+.linkedin-link-button {
+    display: inline-block;
+    padding: 0 5px;
+    margin-top:2em;
+}
+.linkedin-login-button {
+    display: block;
+}
+.linkedin-login-button:hover, .linkedin-link-button:hover { color:white; }
+.linkedin-login-button img, .linkedin-link-button img { width:24px; margin-top:7px; margin-bottom: -7px; margin-right:5px; }
