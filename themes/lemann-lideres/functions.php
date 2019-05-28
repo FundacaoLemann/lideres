@@ -53,10 +53,13 @@ require get_stylesheet_directory() . '/includes/migrations.php';
 add_action( 'wp_enqueue_scripts', function () {
     wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
     wp_enqueue_style( 'custom-style', get_stylesheet_directory_uri() . '/assets/css/style.css' );
+    wp_enqueue_style( 'vue-multiselect', get_stylesheet_directory_uri() . '/assets/css/vue-multiselect.min.css' );
 
     wp_enqueue_style( 'js_composer_front' );
 
     wp_enqueue_script( 'lemann-scripts', get_stylesheet_directory_uri() . '/assets/js/scripts.js', array( 'jquery' ), null, true );
+    wp_enqueue_script( 'vue', get_stylesheet_directory_uri() . '/assets/js/vue/vue.min.js', [], '2.6.10', true );
+    wp_enqueue_script( 'vue-multiselect', get_stylesheet_directory_uri() . '/assets/js/vue/vue-multiselect.min.js', ['vue'], '2.1.0', true );
 
     /**
      * Gera o js com os países, estados e cidades.
@@ -609,3 +612,16 @@ function get_job_users_views($post_id){
 
     return $result;
 }
+
+add_filter ('bp_get_template_stack', 'bps_template_stack_lemann', 20);
+function bps_template_stack_lemann ($stack)
+{
+	$stack[] = __DIR__ . '/bps-templates';
+	return $stack;
+}
+
+function bps_templates_lemann ($templates)
+{
+    return array_merge($templates, ['lemann/lideres']);
+}
+add_filter('bps_templates', 'bps_templates_lemann');
