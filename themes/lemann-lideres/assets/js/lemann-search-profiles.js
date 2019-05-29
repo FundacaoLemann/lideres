@@ -4,7 +4,7 @@ var profileFiltersVM = new Vue({
     el: window.profileFilters.formId,
     data: function() {
         return {
-            vueModel: window.profileFilters.initialValues,
+            vueModel: window.profileFilters.initialValues
         }
     }
 });
