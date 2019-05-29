@@ -118,62 +118,36 @@
 			bps_autocomplete_script ($f);
 			break;
 
-		case 'selectbox':
-			echo "<label for='$f->code'>$f->label</label>\n";
-			echo "<select name='$f->code' id='$f->code'>\n";
-
-			$no_selection = apply_filters ('bps_field_selectbox_no_selection', '', $f);
-			if (is_string ($no_selection))
-				echo "<option  value=''>$no_selection</option>\n";
-
-			foreach ($f->options as $key => $label)
-			{
-				$selected = in_array ($key, $f->values)? "selected='selected'": "";
-				echo "<option $selected value='$key'>$label</option>\n";
-			}
-			echo "</select>\n";
-			break;
-
-		case 'multiselectbox':
-			echo "<label for='$f->code'>$f->label</label>\n";
-			echo "<select name='{$f->code}[]' id='$f->code' multiple='multiple'>\n";
-
-			foreach ($f->options as $key => $label)
-			{
-				$selected = in_array ($key, $f->values)? "selected='selected'": "";
-				echo "<option $selected value='$key'>$label</option>\n";
-			}
-			echo "</select>\n";
-			break;
-
 		case 'radio':
-			echo "<div class='radio'>\n";
-			echo "<span class='label'>$f->label</span>\n";
-			echo "<div id='$f->code'>\n";
-
-			foreach ($f->options as $key => $label)
-			{
-				$checked = in_array ($key, $f->values)? "checked='checked'": "";
-				echo "<label><input $checked type='radio' name='$f->code' value='$key'>$label</label>\n";
-			}
-			echo "</div>\n";
-			echo "<a style='display: inline;' class='clear-value' href='javascript:clear(\"$f->code\");'>". __('Clear', 'buddypress'). "</a>\n";
-			echo "</div>\n";
-			break;
-
-		case 'checkbox':
+		case 'selectbox':
 			$options = [];
 			foreach ($f->options as $key => $label) {
 				$options[] = $key;
-			}
+			} ?>
+			<div class="radio">
+				<span class="label"><?= $f->label ?></span>
+				<vue-multiselect v-model="vueModel.<?= $f->code ?>" :options='<?= json_encode($options) ?>' :searchable="false" :multiple="false" :taggable="true"
+				@input="updateInput('<?= $f->code ?>', $event)">
+				</vue-multiselect>
+				<input type="hidden" name="<?= $f->code ?>">
+			</div>
+			<?php
+			break;
 
-			echo "<div class='checkbox'>\n";
-			echo "<span class='label'>$f->label</span>\n";
-			echo "<vue-multiselect v-model='vueModel.$f->code' :options='".json_encode($options)."' :searchable='false' :multiple='true' :taggable='true' ";
-			echo "@input='updateInput(\"{$f->code}[]\", \$event)'>";
-			echo "</vue-multiselect>\n";
-			echo "<input type='hidden' name='{$f->code}[]'>\n";
-			echo "</div>\n";
+		case 'checkbox':
+		case 'multiselectbox':
+			$options = [];
+			foreach ($f->options as $key => $label) {
+				$options[] = $key;
+			} ?>
+			<div class="checkbox">
+				<span class="label"><?= $f->label ?></span>
+				<vue-multiselect v-model="vueModel.<?= $f->code ?>" :options='<?= json_encode($options) ?>' :searchable="false" :multiple="true" :taggable="true"
+				@input="updateInput('<?= $f->code ?>[]', $event)">
+				</vue-multiselect>
+				<input type="hidden" name="<?= $f->code ?>[]">
+			</div>
+			<?php
 			break;
 
 		default:
