@@ -6,10 +6,5 @@ var profileFiltersVM = new Vue({
         return {
             vueModel: {},
         }
-    },
-    methods: {
-        updateInput: function(target, value) {
-            document.querySelector('input[name="'+target+'"]').value = value;
-        }
     }
 });
