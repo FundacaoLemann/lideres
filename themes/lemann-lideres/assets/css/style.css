@@ -1231,7 +1231,7 @@ form.job-manager-form fieldset {
   border-radius: 5px;
   color: #083050;
   display: block;
-  font-weight: 500;
+  font-weight: 600;
   margin: 10px auto;
   max-width: 380px;
   padding: 10px;
@@ -1638,6 +1638,12 @@ form.job-manager-form fieldset {
   background-color: #f7f7f7;
   margin-bottom: 20px;
   padding: 10px;
+}
+.members #buddypress .item-list-tabs.bps_header + .bps_form .radio, .members #buddypress .item-list-tabs.bps_header + .bps_form .checkbox {
+  margin-bottom: 10px;
+}
+.members #buddypress .item-list-tabs.bps_header + .bps_form .radio .multiselect__tag, .members #buddypress .item-list-tabs.bps_header + .bps_form .checkbox .multiselect__tag {
+  background-color: #00B5AF;
 }
 .members #buddypress .item-list-tabs.bps_header + .bps_form .field_perfil label:nth-child(n+7) {
   display: none;

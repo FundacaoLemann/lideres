@@ -28,6 +28,14 @@
             margin-bottom: 20px;
             padding: 10px;
 
+            .radio, .checkbox {
+                margin-bottom: 10px;
+
+                .multiselect__tag {
+                    background-color: $c_primary-bg;
+                }
+            }
+
             .field_perfil label:nth-child(n+7) {
                 display: none;
             }
