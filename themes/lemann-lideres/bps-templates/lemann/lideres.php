@@ -9,6 +9,8 @@
  *
  */
 
+	$initialValues = [];
+
 	$F = bps_escaped_form_data ();
 
 	$toggle_id = 'bps_toggle'. $F->id;
@@ -123,7 +125,9 @@
 			$options = [];
 			foreach ($f->options as $key => $label) {
 				$options[] = $key;
-			} ?>
+			}
+			$initialValues[$f->code] = $f->values;
+			?>
 			<div class="radio">
 				<span class="label"><?= $f->label ?></span>
 				<vue-multiselect v-model="vueModel.<?= $f->code ?>" :options='<?= json_encode($options) ?>' :searchable="false" :multiple="false" :taggable="true"></vue-multiselect>
@@ -139,7 +143,9 @@
 			$options = [];
 			foreach ($f->options as $key => $label) {
 				$options[] = $key;
-			} ?>
+			}
+			$initialValues[$f->code] = $f->values;
+			?>
 			<div class="checkbox">
 				<span class="label"><?= $f->label ?></span>
 				<vue-multiselect v-model="vueModel.<?= $f->code ?>" :options='<?= json_encode($options) ?>' :searchable="false" :multiple="true" :taggable="true"></vue-multiselect>
@@ -174,7 +180,8 @@
 
 <script>
 	window.profileFilters = {
-		formId: '#<?= $form_id ?>'
+		formId: '#<?= $form_id ?>',
+		initialValues: <?= json_encode($initialValues) ?>
 	};
 </script>
 
