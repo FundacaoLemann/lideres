@@ -1639,8 +1639,20 @@ form.job-manager-form fieldset {
   margin-bottom: 20px;
   padding: 10px;
 }
-.members #buddypress .item-list-tabs.bps_header + .bps_form .radio, .members #buddypress .item-list-tabs.bps_header + .bps_form .checkbox {
-  margin-bottom: 10px;
+.members #buddypress .item-list-tabs.bps_header + .bps_form .column-6, .members #buddypress .item-list-tabs.bps_header + .bps_form .column-12 {
+  display: inline-flex;
+  flex-direction: column;
+  margin: 10px;
+  width: calc(100% - 25px);
+}
+@media (min-width: 992px) {
+  .members #buddypress .item-list-tabs.bps_header + .bps_form .column-6 {
+    width: calc(50% - 25px);
+  }
+}
+.members #buddypress .item-list-tabs.bps_header + .bps_form .editfield input {
+  margin: 0;
+  width: 100%;
 }
 .members #buddypress .item-list-tabs.bps_header + .bps_form .multiselect__content {
   margin: 0;
@@ -1661,8 +1673,8 @@ form.job-manager-form fieldset {
 .members #buddypress .item-list-tabs.bps_header + .bps_form .multiselect__tag-icon:hover {
   background-color: #00827e;
 }
-.members #buddypress .item-list-tabs.bps_header + .bps_form .field_perfil label:nth-child(n+7) {
-  display: none;
+.members #buddypress .item-list-tabs.bps_header + .bps_form .submit {
+  margin: 10px;
 }
 .members #buddypress .dir-form .item-list-tabs ul li a {
   font-size: 19px;

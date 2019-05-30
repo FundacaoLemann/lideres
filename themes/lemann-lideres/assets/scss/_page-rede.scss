@@ -28,8 +28,24 @@
             margin-bottom: 20px;
             padding: 10px;
 
-            .radio, .checkbox {
-                margin-bottom: 10px;
+            .column-6, .column-12 {
+                display: inline-flex;
+                flex-direction: column;
+                margin: 10px;
+                width: calc(100% - 25px);
+            }
+
+            .column-6 {
+                @media (min-width: 992px) {
+                    width: calc(50% - 25px);
+                }
+            }
+
+            .editfield {
+                input {
+                    margin: 0;
+                    width: 100%;
+                }
             }
 
             .multiselect {
@@ -63,8 +79,8 @@
                 }
             }
 
-            .field_perfil label:nth-child(n+7) {
-                display: none;
+            .submit {
+                margin: 10px;
             }
         }
     }
