@@ -126,7 +126,9 @@
 			foreach ($f->options as $key => $label) {
 				$options[] = $key;
 			}
-			$initialValues[$f->code] = $f->values;
+			$initialValues[$f->code] = array_filter($f->values, function ($value) {
+				return value != '';
+			});
 			?>
 			<div class="radio">
 				<span class="label"><?= $f->label ?></span>
