@@ -41,7 +41,7 @@ global $post;
 		<?php
 	}
 	?>
-	<?php the_company_logo(); ?>
+	<?php company_logo_div(); ?>
 	<a class="position" href="<?php the_job_permalink(); ?>">
 		<h3><?php wpjm_the_job_title(); ?></h3>
 		<p>Oferecida por <strong><?php the_company_name(); ?></strong> em <strong><?php the_job_location( false ); ?></strong></p>
