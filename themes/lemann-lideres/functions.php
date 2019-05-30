@@ -510,14 +510,17 @@ add_filter( 'retrieve_password_title', function( $title ) {
  * @return sring
  */
 function lemann_retrieve_password_message( $message, $key, $user_login, $user_data ) {
+
+    $user = get_user_by('login', $user_login);
+    $key = get_password_reset_key( $user );
+
     $new_message   = [];
     $new_message[] = __( 'Foi feita uma solicitação para que a senha da seguinte conta fosse redefinida', 'lemann-lideres' );
     $new_message[] = network_site_url();
     $new_message[] = sprintf( __( 'Nome de usuário: %s'), $user_login );
     $new_message[] = __( 'Se foi um engano, apenas ignore este e-mail e nada acontecerá.', 'lemann-lideres' );
     $new_message[] = __( 'Para redefinir sua senha, visite o seguinte endereço:', 'lemann-lideres' );
-    $new_message[] = network_site_url( "wp-login.php?action=reset_pwd&key=$key&login=" . rawurlencode( $user_login ), 'login' );
-    $new_message[] = __( 'Você receberá um outro e-mail com a sua nova ou primeira senha.', 'lemann-lideres' );
+    $new_message[] = network_site_url( "wp-login.php?action=rp&key=$key&login=" . rawurlencode( $user_login ), 'login' );
 
     return implode( "\r\n\r\n", $new_message );
 }
