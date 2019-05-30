@@ -682,3 +682,6 @@ function send_welcome_email_message($user_login) {
 
     return true;
 }
+add_action('after_setup_theme', function(){
+    remove_action('init', 'ghostpool_login_redirect');
+},1000);
