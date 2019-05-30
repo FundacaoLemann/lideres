@@ -127,7 +127,7 @@
 				$options[] = $key;
 			}
 			$initialValues[$f->code] = array_filter($f->values, function ($value) {
-				return value != '';
+				return $value != '';
 			});
 			?>
 			<div class="radio">
@@ -150,7 +150,9 @@
 					$options[] = $key;
 				}
 			}
-			$initialValues[$f->code] = $f->values;
+			$initialValues[$f->code] = array_filter($f->values, function ($value) {
+				return $value != '';
+			});
 			?>
 			<div class="checkbox">
 				<span class="label"><?= $f->label ?></span>
