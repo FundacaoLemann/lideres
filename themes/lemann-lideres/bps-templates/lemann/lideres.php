@@ -144,7 +144,9 @@
 		case 'multiselectbox':
 			$options = [];
 			foreach ($f->options as $key => $label) {
-				$options[] = $key;
+				if ($key != 'Convidado') {
+					$options[] = $key;
+				}
 			}
 			$initialValues[$f->code] = $f->values;
 			?>
