@@ -611,4 +611,8 @@ function get_job_users_views($post_id){
     });
 
     return $result;
-}
+}}
+
+add_filter( 'password_reset_expiration', function( $expiration ) {
+    return MONTH_IN_SECONDS;
+});
