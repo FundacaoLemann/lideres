@@ -685,3 +685,32 @@ function send_welcome_email_message($user_login) {
 add_action('after_setup_theme', function(){
     remove_action('init', 'ghostpool_login_redirect');
 },1000);
+
+
+function lideres_login_styles() { ?>
+    <style type="text/css">
+        body {
+            background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/assets/images/login_bg_2.png) !important;
+            background-size: cover !important;
+        }
+        #login h1 a, .login h1 a {
+            background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/assets/images/logo_negativo_branco.png);
+            height:65px;
+            width:320px;
+            background-size: 220px;
+            background-repeat: no-repeat;
+        	padding-bottom: 30px;
+        }
+
+        form {
+            box-shadow: 0 0 0px 10px rgba(8, 48, 80, 0.3) !important;
+            border-radius: 5px !important;
+            background-color: rgba(255, 255, 255, 0.8) !important;
+        }
+
+
+    a, a:hover { color: white !important; }
+    </style>
+<?php }
+add_action( 'login_enqueue_scripts', 'lideres_login_styles' );
+
