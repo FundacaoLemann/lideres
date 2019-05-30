@@ -31,8 +31,14 @@
             .radio, .checkbox {
                 margin-bottom: 10px;
 
-                .multiselect__tag {
-                    background-color: $c_primary-bg;
+                .multiselect {
+                    &__content {
+                        margin: 0;
+                    }
+
+                    &__tag {
+                        background-color: $c_primary-bg;
+                    }
                 }
             }
 
