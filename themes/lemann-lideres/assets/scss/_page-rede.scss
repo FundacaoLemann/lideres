@@ -30,14 +30,35 @@
 
             .radio, .checkbox {
                 margin-bottom: 10px;
+            }
 
-                .multiselect {
-                    &__content {
-                        margin: 0;
+            .multiselect {
+                &__content {
+                    margin: 0;
+                }
+
+                &__option {
+                    &--highlight, &--highlight:after {
+                        background-color: $c_primary-bg;
                     }
 
-                    &__tag {
-                        background-color: $c_primary-bg;
+                    &--highlight.multiselect__option--selected, &--highlight.multiselect__option--selected:after {
+                        background-color: #ff6a6a;
+                    }
+                }
+
+                &__tag {
+                    background-color: $c_primary-bg;
+                }
+
+                &__tag-icon {
+                    &:after {
+                        color: white;
+                        font-size: 18px;
+                    }
+
+                    &:hover {
+                        background-color: darken($c_primary-bg, 10%);
                     }
                 }
             }

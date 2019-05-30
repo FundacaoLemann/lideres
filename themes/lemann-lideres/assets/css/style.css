@@ -1642,11 +1642,24 @@ form.job-manager-form fieldset {
 .members #buddypress .item-list-tabs.bps_header + .bps_form .radio, .members #buddypress .item-list-tabs.bps_header + .bps_form .checkbox {
   margin-bottom: 10px;
 }
-.members #buddypress .item-list-tabs.bps_header + .bps_form .radio .multiselect__content, .members #buddypress .item-list-tabs.bps_header + .bps_form .checkbox .multiselect__content {
+.members #buddypress .item-list-tabs.bps_header + .bps_form .multiselect__content {
   margin: 0;
 }
-.members #buddypress .item-list-tabs.bps_header + .bps_form .radio .multiselect__tag, .members #buddypress .item-list-tabs.bps_header + .bps_form .checkbox .multiselect__tag {
+.members #buddypress .item-list-tabs.bps_header + .bps_form .multiselect__option--highlight, .members #buddypress .item-list-tabs.bps_header + .bps_form .multiselect__option--highlight:after {
   background-color: #00B5AF;
+}
+.members #buddypress .item-list-tabs.bps_header + .bps_form .multiselect__option--highlight.multiselect__option--selected, .members #buddypress .item-list-tabs.bps_header + .bps_form .multiselect__option--highlight.multiselect__option--selected:after {
+  background-color: #ff6a6a;
+}
+.members #buddypress .item-list-tabs.bps_header + .bps_form .multiselect__tag {
+  background-color: #00B5AF;
+}
+.members #buddypress .item-list-tabs.bps_header + .bps_form .multiselect__tag-icon:after {
+  color: white;
+  font-size: 18px;
+}
+.members #buddypress .item-list-tabs.bps_header + .bps_form .multiselect__tag-icon:hover {
+  background-color: #00827e;
 }
 .members #buddypress .item-list-tabs.bps_header + .bps_form .field_perfil label:nth-child(n+7) {
   display: none;
