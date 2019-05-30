@@ -130,7 +130,9 @@
 			?>
 			<div class="radio">
 				<span class="label"><?= $f->label ?></span>
-				<vue-multiselect v-model="vueModel.<?= $f->code ?>" :options='<?= json_encode($options) ?>' :searchable="false" :multiple="false" :taggable="true"></vue-multiselect>
+				<vue-multiselect v-model="vueModel.<?= $f->code ?>" :options='<?= json_encode($options) ?>' :searchable="false" :multiple="false" :taggable="true"
+				placeholder="Selecionar opção" select-label="Aperte Enter para selecionar" selected-label="Opção selecionada" deselect-label="Aperte Enter para remover">
+				</vue-multiselect>
 				<template v-if="vueModel.<?= $f->code ?>">
 					<input :value="vueModel.<?= $f->code ?>" type="hidden" name="<?= $f->code ?>">
 				</template>
@@ -148,7 +150,9 @@
 			?>
 			<div class="checkbox">
 				<span class="label"><?= $f->label ?></span>
-				<vue-multiselect v-model="vueModel.<?= $f->code ?>" :options='<?= json_encode($options) ?>' :searchable="false" :multiple="true" :taggable="true"></vue-multiselect>
+				<vue-multiselect v-model="vueModel.<?= $f->code ?>" :options='<?= json_encode($options) ?>' :searchable="false" :multiple="true" :taggable="true"
+				placeholder="Selecionar opção" select-label="Aperte Enter para selecionar" selected-label="Opção selecionada" deselect-label="Aperte Enter para remover">
+				</vue-multiselect>
 				<template v-if="Array.isArray(vueModel.<?= $f->code ?>)">
 					<input v-for="option in vueModel.<?= $f->code ?>" :key="option" :value="option" type="hidden" name="<?= $f->code ?>[]">
 				</template>
