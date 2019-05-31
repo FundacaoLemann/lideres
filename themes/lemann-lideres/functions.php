@@ -625,3 +625,20 @@ function bps_templates_lemann ($templates)
     return array_merge($templates, ['lemann/lideres']);
 }
 add_filter('bps_templates', 'bps_templates_lemann');
+
+function company_logo_div ($size = 'thumbnail', $default = null, $post = null) {
+    $logo = get_the_company_logo($post, $size);
+	if (has_post_thumbnail($post)) {
+		echo '<div class="company_logo" style="background-image: url(' . esc_url($logo) . '"></div>';
+		// Before 1.24.0, logo URLs were stored in post meta.
+	} elseif (!empty($logo) && (strstr($logo, 'http') || file_exists($logo))) {
+		if ('full' !== $size) {
+			$logo = job_manager_get_resized_image($logo, $size);
+		}
+		echo '<div class="company_logo" style="background-image: url(' . esc_url($logo) . ')"></div>';
+	} elseif ($default) {
+		echo '<div class="company_logo" style="background-image: url(' . esc_url($default) . ')"></div>';
+	} else {
+		echo '<div class="company_logo" style="background-image: url(' . get_stylesheet_directory_uri() . '/assets/images/company-placeholder.png)"></div>';
+	}
+}

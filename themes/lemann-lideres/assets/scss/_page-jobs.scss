@@ -56,13 +56,15 @@ div.job_listings {
                 width: calc(33.333% - 1.4em);
             }
 
-            img.company_logo {
-                border: 2px solid #E7E7E7;
-                border-radius: 50%;
-                display: block;
-                height: 128px;
-                margin: 10px auto 20px;
-                width: 128px;
+            .company_logo {
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: contain;
+                border: 1px solid #E7E7E7;
+                border-radius: 5px;
+                margin: 0 10px 10px;
+                padding-top: calc(56.25% - 12px);
+                width: calc(100% - 20px);
             }
 
             &.job_position_featured {
@@ -80,7 +82,7 @@ div.job_listings {
 
                 h3 {
                     color: $c_primary;
-                    padding-bottom: 1em;
+                    padding-bottom: 10px;
                 }
 
                 strong {
