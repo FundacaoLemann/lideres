@@ -510,14 +510,17 @@ add_filter( 'retrieve_password_title', function( $title ) {
  * @return sring
  */
 function lemann_retrieve_password_message( $message, $key, $user_login, $user_data ) {
+
+    $user = get_user_by('login', $user_login);
+    $key = get_password_reset_key( $user );
+
     $new_message   = [];
     $new_message[] = __( 'Foi feita uma solicitação para que a senha da seguinte conta fosse redefinida', 'lemann-lideres' );
     $new_message[] = network_site_url();
     $new_message[] = sprintf( __( 'Nome de usuário: %s'), $user_login );
     $new_message[] = __( 'Se foi um engano, apenas ignore este e-mail e nada acontecerá.', 'lemann-lideres' );
     $new_message[] = __( 'Para redefinir sua senha, visite o seguinte endereço:', 'lemann-lideres' );
-    $new_message[] = network_site_url( "wp-login.php?action=reset_pwd&key=$key&login=" . rawurlencode( $user_login ), 'login' );
-    $new_message[] = __( 'Você receberá um outro e-mail com a sua nova ou primeira senha.', 'lemann-lideres' );
+    $new_message[] = network_site_url( "wp-login.php?action=rp&key=$key&login=" . rawurlencode( $user_login ), 'login' );
 
     return implode( "\r\n\r\n", $new_message );
 }
@@ -608,4 +611,127 @@ function get_job_users_views($post_id){
     });
 
     return $result;
+}}
+
+add_filter( 'password_reset_expiration', function( $expiration ) {
+    return MONTH_IN_SECONDS;
+});
+
+/**
+ * Handles sending password retrieval email to user.
+ *
+ * @uses $wpdb WordPress Database object
+ * @param int $user_id User ID
+ * @return bool true on success false on error
+ */
+function send_activation_email_message($user_id) {
+    if(!current_user_can('manage_options')){
+        return false;
+    }
+    
+    $user_data = get_user_by( 'id', trim( $user_id ) );
+    
+    if ( !$user_data ) return false;
+    
+    // redefining user_login ensures we return the right case in the email
+    $user_login = $user_data->user_login;
+    $user_email = $user_data->user_email;
+
+    do_action('lostpassword_post');
+
+    do_action('retreive_password', $user_login);  // Misspelled and deprecated
+    do_action('retrieve_password', $user_login);
+
+    $allow = apply_filters('allow_password_reset', true, $user_data->ID);
+
+    if ( ! $allow )
+        return false;
+    else if ( is_wp_error($allow) )
+        return false;
+    
+    $key = get_password_reset_key( $user_data );
+    do_action('retrieve_password_key', $user_login, $key);
+    
+    $message = __('Seja benvindo à rede de Líderes da Fundação Lemann:') . "\r\n\r\n";
+    $message .= network_home_url( '/' ) . "\r\n\r\n";
+    $message .= sprintf(__('Seu nome de usuário é: %s'), $user_login) . "\r\n\r\n";
+    $message .= __('Para definir sua senha acesse o link abaixo:') . "\r\n\r\n";
+    $message .= network_site_url("wp-login.php?action=rp&key=$key&login=" . rawurlencode($user_login), 'login') . "\r\n";
+    if ( is_multisite() )
+    $blogname = $GLOBALS['current_site']->site_name;
+    else
+    // The blogname option is escaped with esc_html on the way into the database in sanitize_option
+    // we want to reverse this for the plain text arena of emails.
+    $blogname = wp_specialchars_decode(get_option('blogname'), ENT_QUOTES);
+    
+    $title = sprintf( __('[%s] Seja Benvindo'), $blogname );
+
+    if($_mail = @$_ENV['MATCH_EMAIL_TO']){
+        $user_email = $_mail;
+    }
+
+    if (wp_mail($user_email, $title, $message) ){
+        update_user_meta($user_id, '_activation_email_datetime', date('d/m/Y') . ' às ' . date('H:i:s'));
+        return ['ID'=>$user_id, 'email' => $user_email, 'name' => $user_data->display_name, 'datetime' => date('d/m/Y') . ' às ' . date('H:i:s')];
+    } 
+
+    return false;
 }
+add_action('after_setup_theme', function(){
+    remove_action('init', 'ghostpool_login_redirect');
+},1000);
+
+
+add_action('admin_menu', function(){
+    add_users_page('Ativação de usuários inativos', 'Ativação de usuários inativos', 'manage_options', 'ativacao-usuarios-inativos', 'page_ativacao_usuarios');
+});
+
+function page_ativacao_usuarios(){
+    $users = get_users(['role' => 'inativo']);
+
+    if(isset($_POST['action']) && $_POST['action'] === 'send-activation-email'){
+        set_time_limit(0);
+        $users_log = [];
+        foreach($_POST['users'] as $user_id){
+            if($user = send_activation_email_message($user_id)){
+                $users_log[] = (object) $user;
+            }
+        }
+        $logs = get_option('_activation_email_logs', []);
+        
+        $logs[] = (object)['datetime'=>date('d/m/Y H:i:s'), 'current_user_id' => get_current_user_id(), 'users' => $users_log];
+        update_option('_activation_email_logs', $logs, false);
+
+    }
+
+    include __DIR__ . '/includes/admin-ativacao-usuarios.php';
+}
+
+
+
+function lideres_login_styles() { ?>
+    <style type="text/css">
+        body {
+            background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/assets/images/login_bg_2.png) !important;
+            background-size: cover !important;
+        }
+        #login h1 a, .login h1 a {
+            background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/assets/images/logo_negativo_branco.png);
+            height:65px;
+            width:320px;
+            background-size: 220px;
+            background-repeat: no-repeat;
+        	padding-bottom: 30px;
+        }
+
+        form {
+            box-shadow: 0 0 0px 10px rgba(8, 48, 80, 0.3) !important;
+            border-radius: 5px !important;
+            background-color: rgba(255, 255, 255, 0.8) !important;
+        }
+
+
+    a, a:hover { color: white !important; }
+    </style>
+<?php }
+add_action( 'login_enqueue_scripts', 'lideres_login_styles' );
