@@ -621,34 +621,23 @@ add_filter( 'password_reset_expiration', function( $expiration ) {
  * Handles sending password retrieval email to user.
  *
  * @uses $wpdb WordPress Database object
- * @param string $user_login User Login or Email
+ * @param int $user_id User ID
  * @return bool true on success false on error
  */
-function send_welcome_email_message($user_login) {
+function send_activation_email_message($user_id) {
     if(!current_user_can('manage_options')){
         return false;
     }
-    global $wpdb, $current_site;
-
-    if ( empty( $user_login) ) {
-        return false;
-    } else if ( strpos( $user_login, '@' ) ) {
-        $user_data = get_user_by( 'email', trim( $user_login ) );
-        if ( empty( $user_data ) )
-           return false;
-    } else {
-        $login = trim($user_login);
-        $user_data = get_user_by('login', $login);
-    }
-
-    do_action('lostpassword_post');
-
-
+    
+    $user_data = get_user_by( 'id', trim( $user_id ) );
+    
     if ( !$user_data ) return false;
-
+    
     // redefining user_login ensures we return the right case in the email
     $user_login = $user_data->user_login;
     $user_email = $user_data->user_email;
+
+    do_action('lostpassword_post');
 
     do_action('retreive_password', $user_login);  // Misspelled and deprecated
     do_action('retrieve_password', $user_login);
@@ -677,14 +666,47 @@ function send_welcome_email_message($user_login) {
     
     $title = sprintf( __('[%s] Seja Benvindo'), $blogname );
 
-    if ( $message && !wp_mail($user_email, $title, $message) )
-        wp_die( __('The e-mail could not be sent.') . "<br />\n" . __('Possible reason: your host may have disabled the mail() function...') );
+    if($_mail = @$_ENV['MATCH_EMAIL_TO']){
+        $user_email = $_mail;
+    }
 
-    return true;
+    if (wp_mail($user_email, $title, $message) ){
+        update_user_meta($user_id, '_activation_email_datetime', date('d/m/Y') . ' às ' . date('H:i:s'));
+        return ['ID'=>$user_id, 'email' => $user_email, 'name' => $user_data->display_name, 'datetime' => date('d/m/Y') . ' às ' . date('H:i:s')];
+    } 
+
+    return false;
 }
 add_action('after_setup_theme', function(){
     remove_action('init', 'ghostpool_login_redirect');
 },1000);
+
+
+add_action('admin_menu', function(){
+    add_users_page('Ativação de usuários inativos', 'Ativação de usuários inativos', 'manage_options', 'ativacao-usuarios-inativos', 'page_ativacao_usuarios');
+});
+
+function page_ativacao_usuarios(){
+    $users = get_users(['role' => 'inativo']);
+
+    if(isset($_POST['action']) && $_POST['action'] === 'send-activation-email'){
+        set_time_limit(0);
+        $users_log = [];
+        foreach($_POST['users'] as $user_id){
+            if($user = send_activation_email_message($user_id)){
+                $users_log[] = (object) $user;
+            }
+        }
+        $logs = get_option('_activation_email_logs', []);
+        
+        $logs[] = (object)['datetime'=>date('d/m/Y H:i:s'), 'current_user_id' => get_current_user_id(), 'users' => $users_log];
+        update_option('_activation_email_logs', $logs, false);
+
+    }
+
+    include __DIR__ . '/includes/admin-ativacao-usuarios.php';
+}
+
 
 
 function lideres_login_styles() { ?>
@@ -713,4 +735,3 @@ function lideres_login_styles() { ?>
     </style>
 <?php }
 add_action( 'login_enqueue_scripts', 'lideres_login_styles' );
-
