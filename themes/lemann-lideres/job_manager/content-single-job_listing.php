@@ -33,33 +33,22 @@ global $post;
 		?>
 
 		<div class="job_info">
-            <style>
-                .match-list { width: 49% !important; }
-                .match-list li { margin-left:50px; line-height: 2em; padding:10px; }
-                .match-list li img { position:absolute; margin-left:-40px;}
-                .match-list--percent { color:red; font-weight: bold; }
-
-                .match-list .match-list--empty { padding:25px 50px; font-size: 1.5em; }
-                @media screen and (min-width: 992px){
-                    #views-vaga{margin-left:20px;}
-                }
-            </style>
             <?php if(current_user_can('administrator')): ?>
                 <div class="job_info_box match-list" id="matches-vaga">
                     <h3 class="job_info_box--title" style="background-color:burlywood">
                         Matches da Vaga
                     </h3>
                     <div class="job_info_box--content">
-                        <?php 
+                        <?php
                         $matches = get_matches_users(get_the_ID());
                         if($matches):
                         ?>
                         <ul>
                             <?php foreach($matches as $match): $u = $match['user']; ?>
-                                <li > 
+                                <li >
                                     <a href="/conheca-a-rede/<?php echo $u->user_nicename ?>">
                                         <?php echo get_avatar($u->ID, 32) ?>
-                                        <?php echo $u->display_name ?> <span class="match-list--percent"><?php echo number_format($match['match'],1) ?>%</span> 
+                                        <?php echo $u->display_name ?> <span class="match-list--percent"><?php echo number_format($match['match'],1) ?>%</span>
                                     </a>
                                 </li>
                             <?php endforeach; ?>
@@ -74,16 +63,16 @@ global $post;
                         Visualizações da Vaga
                     </h3>
                     <div class="job_info_box--content">
-                        <?php 
+                        <?php
                         $users = get_job_users_views(get_the_ID());
                         if($users):
                         ?>
                         <ul>
                             <?php foreach($users as $user): $u = $user['user']; ?>
-                                <li > 
+                                <li >
                                     <a href="/conheca-a-rede/<?php echo $u->user_nicename ?>">
                                         <?php echo get_avatar($u->ID, 32) ?>
-                                        <?php echo $u->display_name ?> 
+                                        <?php echo $u->display_name ?>
                                     </a>
                                     <?php if($user['views'] > 1): ?>
                                         visitou <span class="match-list--percent"><?php echo $user['views'] ?></span> vezes e a última foi em <b><?php echo $user['last'] ?></b></string>

@@ -873,36 +873,26 @@ div.job_listings ul.job_listings li.job_listing a.position strong {
 }
 .single_job_listing .job_info {
   background: whitesmoke;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 1fr [end];
   left: -30px;
   padding: 30px 0;
   position: relative;
   width: calc(100% + 60px);
 }
+@media screen and (min-width: 992px) {
+  .single_job_listing .job_info {
+    grid-template-columns: 1fr 1fr [end];
+  }
+}
 .single_job_listing .job_info .job_info_box {
   background: white;
   box-shadow: 0px 0px 4px -2px rgba(0, 0, 0, 0.5);
-  display: inline-block;
-  margin: 0 20px 30px;
-  width: calc(100% - 40px);
+  width: 100%;
 }
-@media screen and (min-width: 992px) {
-  .single_job_listing .job_info .job_info_box {
-    margin: 0 0 30px;
-    width: 100%;
-  }
-}
-@media screen and (min-width: 992px) {
-  .single_job_listing .job_info .job_info_box#informacoes-basicas, .single_job_listing .job_info .job_info_box#pre-requisitos {
-    width: calc(50% - 10px);
-  }
-}
-.single_job_listing .job_info .job_info_box#informacoes-basicas {
-  float: left;
-  clear: left;
-}
-.single_job_listing .job_info .job_info_box#pre-requisitos {
-  float: right;
-  clear: right;
+.single_job_listing .job_info .job_info_box#sobre-a-vaga {
+  grid-column: 1/span end;
 }
 .single_job_listing .job_info .job_info_box--title {
   background: #00B5AF;
@@ -911,10 +901,15 @@ div.job_listings ul.job_listings li.job_listing a.position strong {
   display: block;
   color: white;
   font-weight: 600;
-  margin-bottom: 20px;
   padding: 10px 20px 5px;
   text-align: left;
   width: 100%;
+}
+.single_job_listing .job_info .job_info_box--content {
+  padding: 25px;
+}
+.single_job_listing .job_info .job_info_box--content ul {
+  margin: 0;
 }
 .single_job_listing .job_info .job_info_box--content ul li {
   list-style: none;
@@ -931,10 +926,30 @@ div.job_listings ul.job_listings li.job_listing a.position strong {
 .single_job_listing .job_info .job_info_box--content ul li span a {
   color: #00B5AF;
 }
+.single_job_listing .job_info .job_info_box.match-list li {
+  padding-bottom: 10px;
+  padding-left: 40px;
+}
+.single_job_listing .job_info .job_info_box.match-list li:first-line {
+  line-height: 32px;
+}
+.single_job_listing .job_info .job_info_box.match-list li img {
+  margin-left: -42px;
+  position: absolute;
+}
+.single_job_listing .job_info .job_info_box.match-list .match-list--percent {
+  color: red;
+  font-weight: bold;
+}
+.single_job_listing .job_info .job_info_box.match-list .match-list--empty {
+  font-size: 1.5em;
+  padding: 25px 50px;
+}
 .single_job_listing .application {
   align-items: center;
   display: flex;
   flex-direction: column;
+  grid-column: 1/span end;
 }
 .single_job_listing .application .application_button {
   background: #FFA600;
