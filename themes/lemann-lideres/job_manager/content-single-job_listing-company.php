@@ -23,15 +23,15 @@ if ( ! get_the_company_name() ) {
 }
 ?>
 <div class="company">
-	<?php the_company_logo(); ?>
+	<?php company_logo_div(); ?>
 
-	<p class="name">
-        <?php the_company_name( '<strong>', '</strong>' ); ?>
+	<div class="name">
+		<?php the_company_name('<strong>', '</strong>'); ?>
         <?php if ( $website = get_the_company_website() ) : ?>
 			<a class="website" href="<?php echo esc_url( $website ); ?>" target="_blank" rel="nofollow"><?php esc_html_e( 'Website', 'wp-job-manager' ); ?></a>
 		<?php endif; ?>
 		<?php the_company_twitter(); ?>
-	</p>
+	</div>
 	<?php the_company_tagline( '<p class="tagline">', '</p>' ); ?>
 	<?php the_company_video(); ?>
 </div>

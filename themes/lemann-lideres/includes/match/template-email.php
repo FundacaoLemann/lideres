@@ -12,7 +12,7 @@
             <div style="border: 1px solid #EEE; margin: auto; padding: 20px; position: relative; width: 60%;">
                 <div style="background: #F65; border-radius: 5px; color: white; max-width: 100px; padding: 4px 8px; position: absolute; right: 10px; top: 10px;">Match <strong>{{ match }}%</strong></div>
                 {{#company_logo}}
-                <img src="{{ company_logo }}" alt="{{ company_name }}" style="border: 4px solid #E7E7E7; border-radius: 50%; height: 100px; width: 100px;">
+                <div style="background-image: url({{ company_logo }}); border: 1px solid #E7E7E7; border-radius: 5px; height: 90px; margin: auto; width: 160px;"></div>
                 {{/company_logo}}
                 {{^company_logo}}
                 <h3>{{ company_name }}</h3>

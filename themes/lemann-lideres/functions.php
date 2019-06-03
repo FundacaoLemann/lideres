@@ -53,10 +53,13 @@ require get_stylesheet_directory() . '/includes/migrations.php';
 add_action( 'wp_enqueue_scripts', function () {
     wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
     wp_enqueue_style( 'custom-style', get_stylesheet_directory_uri() . '/assets/css/style.css' );
+    wp_enqueue_style( 'vue-multiselect', get_stylesheet_directory_uri() . '/assets/css/vue-multiselect.min.css' );
 
     wp_enqueue_style( 'js_composer_front' );
 
     wp_enqueue_script( 'lemann-scripts', get_stylesheet_directory_uri() . '/assets/js/scripts.js', array( 'jquery' ), null, true );
+    wp_enqueue_script( 'vue', get_stylesheet_directory_uri() . '/assets/js/vue/vue.min.js', [], '2.6.10', true );
+    wp_enqueue_script( 'vue-multiselect', get_stylesheet_directory_uri() . '/assets/js/vue/vue-multiselect.min.js', ['vue'], '2.1.0', true );
 
     /**
      * Gera o js com os países, estados e cidades.
@@ -611,7 +614,7 @@ function get_job_users_views($post_id){
     });
 
     return $result;
-}}
+}
 
 add_filter( 'password_reset_expiration', function( $expiration ) {
     return MONTH_IN_SECONDS;
@@ -677,6 +680,7 @@ function send_activation_email_message($user_id) {
 
     return false;
 }
+
 add_action('after_setup_theme', function(){
     remove_action('init', 'ghostpool_login_redirect');
 },1000);
@@ -707,9 +711,8 @@ function page_ativacao_usuarios(){
     include __DIR__ . '/includes/admin-ativacao-usuarios.php';
 }
 
-
-
-function lideres_login_styles() { ?>
+function lideres_login_styles() { 
+    ?>
     <style type="text/css">
         body {
             background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/assets/images/login_bg_2.png) !important;
@@ -733,5 +736,36 @@ function lideres_login_styles() { ?>
 
     a, a:hover { color: white !important; }
     </style>
-<?php }
+    <?php 
+}
 add_action( 'login_enqueue_scripts', 'lideres_login_styles' );
+
+function bps_template_stack_lemann ($stack)
+{
+    $stack[] = __DIR__ . '/bps-templates';
+	return $stack;
+}
+add_filter ('bp_get_template_stack', 'bps_template_stack_lemann', 20);
+
+function bps_templates_lemann ($templates)
+{
+    return array_merge($templates, ['lemann/lideres']);
+}
+add_filter('bps_templates', 'bps_templates_lemann');
+
+function company_logo_div ($size = 'thumbnail', $default = null, $post = null) {
+    $logo = get_the_company_logo($post, $size);
+	if (has_post_thumbnail($post)) {
+		echo '<div class="company_logo" style="background-image: url(' . esc_url($logo) . '"></div>';
+		// Before 1.24.0, logo URLs were stored in post meta.
+	} elseif (!empty($logo) && (strstr($logo, 'http') || file_exists($logo))) {
+		if ('full' !== $size) {
+			$logo = job_manager_get_resized_image($logo, $size);
+		}
+		echo '<div class="company_logo" style="background-image: url(' . esc_url($logo) . ')"></div>';
+	} elseif ($default) {
+		echo '<div class="company_logo" style="background-image: url(' . esc_url($default) . ')"></div>';
+	} else {
+		echo '<div class="company_logo" style="background-image: url(' . get_stylesheet_directory_uri() . '/assets/images/company-placeholder.png)"></div>';
+	}
+}
