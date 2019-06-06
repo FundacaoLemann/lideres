@@ -690,6 +690,28 @@ add_action('admin_menu', function(){
     add_users_page('Ativação de usuários inativos', 'Ativação de usuários inativos', 'manage_options', 'ativacao-usuarios-inativos', 'page_ativacao_usuarios');
 });
 
+add_action('admin_head', 'remove_admin');
+function remove_admin(){
+    if (in_array('lider', (array) wp_get_current_user()->roles)
+        || ($_GET['hide_menu'] && $_GET['hide_menu'] == '1')) { ?>
+        <style type="text/css">
+            body { margin: 0; }
+            .block-editor__container .components-navigate-regions { height: auto; }
+            .edit-post-layout__content { margin-left: 0 !important; }
+            .auto-fold .edit-post-header { left: 0; }
+            #wpcontent, #footer { margin-left: 0px; }
+        </style>
+        <script type="text/javascript">
+            jQuery(document).ready( function($) {
+                $('#wpadminbar').remove();
+                $('#adminmenuback, #adminmenuwrap').remove();
+            });
+        </script>
+        <script type="text/javascript" src="https://unpkg.com/iframe-resizer@4.1.1/js/iframeResizer.contentWindow.min.js"></script>
+    <?php
+    }
+}
+
 function page_ativacao_usuarios(){
     $users = get_users(['role' => 'inativo']);
 
