@@ -840,6 +840,9 @@ div.job_listings ul.job_listings li.job_listing a.position strong {
 .single-job_listing .gp-entry-featured {
   display: none;
 }
+.single-job_listing p.gp-post-form-submit {
+  margin-bottom: 20px;
+}
 
 .single_job_listing .job-listing-meta.meta a {
   color: #999;
@@ -1323,6 +1326,10 @@ form.job-manager-form fieldset {
     text-align: center;
   }
 }
+#gp-content-wrapper.gp-container.contain-embed {
+  padding-top: 0;
+}
+
 #gp-buddypress-header .vc_col-md-8 {
   display: flex;
   flex-direction: column;
