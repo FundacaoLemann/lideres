@@ -655,11 +655,11 @@ function send_activation_email_message($user_id) {
     $key = get_password_reset_key( $user_data );
     do_action('retrieve_password_key', $user_login, $key);
     
-    $message = __('Seja benvindo à rede de Líderes da Fundação Lemann:') . "\r\n\r\n";
-    $message .= network_home_url( '/' ) . "\r\n\r\n";
-    $message .= sprintf(__('Seu nome de usuário é: %s'), $user_login) . "\r\n\r\n";
-    $message .= __('Para definir sua senha acesse o link abaixo:') . "\r\n\r\n";
-    $message .= network_site_url("wp-login.php?action=rp&key=$key&login=" . rawurlencode($user_login), 'login') . "\r\n";
+    $message = __('Seja benvindo à rede de Líderes da Fundação Lemann:') . "<br><br>";
+    $message .= network_home_url( '/' ) . "<br><br>";
+    $message .= sprintf(__('Seu nome de usuário é: %s'), $user_login) . "<br><br>";
+    $message .= __('Para definir sua senha acesse o link abaixo:') . "<br><br>";
+    $message .= network_site_url("wp-login.php?action=rp&key=$key&login=" . rawurlencode($user_login), 'login') . "<br>";
     if ( is_multisite() )
     $blogname = $GLOBALS['current_site']->site_name;
     else
@@ -673,7 +673,7 @@ function send_activation_email_message($user_id) {
         $user_email = $_mail;
     }
 
-    if (wp_mail($user_email, $title, $message) ){
+    if (wp_mail($user_email, $title, $message, 'Content-Type: text/html; charset=UTF-8') ){
         update_user_meta($user_id, '_activation_email_datetime', date('d/m/Y') . ' às ' . date('H:i:s'));
         return ['ID'=>$user_id, 'email' => $user_email, 'name' => $user_data->display_name, 'datetime' => date('d/m/Y') . ' às ' . date('H:i:s')];
     } 
