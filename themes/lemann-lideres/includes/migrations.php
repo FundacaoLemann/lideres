@@ -19,7 +19,7 @@ $migrations = [
         $table_name = $wpdb->prefix . 'bp_xprofile_data';
 
         $vals = $wpdb->get_results("select * from $table_name where field_id in (80, 715) order by user_id asc");
-
+    
         $users = [];
 
         foreach($vals as $val){
@@ -28,11 +28,11 @@ $migrations = [
             }
             $users[$val->user_id][$val->field_id] = $val;
         }
-
+        
         foreach($users as $user_id => $fields){
             $field_715 = isset($fields[715]) ? $fields[715] : null;
             $field_80 = isset($fields[80]) ? $fields[80] : null;
-
+            
             if($field_715 && !$field_80){
                 $wpdb->query("UPDATE $table_name SET field_id = 80 WHERE id = {$field_715->id}");
 
@@ -43,14 +43,8 @@ $migrations = [
                 $wpdb->query("DELETE FROM $table_name WHERE id = {$field_715->id}");
             }
         }
-
+        
         $wpdb->query("delete from wp_bp_xprofile_fields where id = 715");
-    },
-    'add_oportunidade_cap_001' => function () {
-        $roles = ['equipe', 'parceiro', 'palestrante', 'contratante', 'moderador', 'lider'];
-        foreach ($roles as $role) {
-            remove_role($role);
-        }
     }
 
 ];

@@ -38,8 +38,6 @@ add_action( 'init', function() {
 		],
 		'menu_icon'           => 'dashicons-megaphone',
 		'has_archive'         => false,
-		'capability_type'     => ['oportunidade', 'oportunidades'],
-		'map_meta_cap'        => true,
 	];
 
 	register_post_type( 'oportunidade', $args );
