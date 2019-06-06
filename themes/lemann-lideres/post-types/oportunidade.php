@@ -25,7 +25,6 @@ add_action( 'init', function() {
 		'exclude_from_search' => false,
 		'public_queryable'    => true,
 		'show_ui'             => true,
-		'show_in_rest'		  => true,
 		'query_var'           => true,
 		'rewrite'             => true,
 		'hierarchical'        => false,
