@@ -32,7 +32,6 @@ add_action( 'init', function() {
 		'supports'            => [
 			'title',
 			'editor',
-			'comments',
 			'author',
 			'excerpt',
 			'thumbnail',
