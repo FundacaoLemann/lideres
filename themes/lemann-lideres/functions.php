@@ -655,7 +655,7 @@ function send_activation_email_message($user_id) {
     $key = get_password_reset_key( $user_data );
     do_action('retrieve_password_key', $user_login, $key);
     
-    $message = __('Seja benvindo à rede de Líderes da Fundação Lemann:') . "\r\n\r\n";
+    $message = __('Seja bem-vindo à rede de Líderes da Fundação Lemann:') . "\r\n\r\n";
     $message .= network_home_url( '/' ) . "\r\n\r\n";
     $message .= sprintf(__('Seu nome de usuário é: %s'), $user_login) . "\r\n\r\n";
     $message .= __('Para definir sua senha acesse o link abaixo:') . "\r\n\r\n";
@@ -667,7 +667,7 @@ function send_activation_email_message($user_id) {
     // we want to reverse this for the plain text arena of emails.
     $blogname = wp_specialchars_decode(get_option('blogname'), ENT_QUOTES);
     
-    $title = sprintf( __('[%s] Seja Benvindo'), $blogname );
+    $title = sprintf( __('[%s] Seja Bem-vindo'), $blogname );
 
     if($_mail = @$_ENV['MATCH_EMAIL_TO']){
         $user_email = $_mail;
