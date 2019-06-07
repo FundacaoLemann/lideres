@@ -631,11 +631,11 @@ function send_activation_email_message($user_id) {
     if(!current_user_can('manage_options')){
         return false;
     }
-    
+
     $user_data = get_user_by( 'id', trim( $user_id ) );
-    
+
     if ( !$user_data ) return false;
-    
+
     // redefining user_login ensures we return the right case in the email
     $user_login = $user_data->user_login;
     $user_email = $user_data->user_email;
@@ -651,10 +651,10 @@ function send_activation_email_message($user_id) {
         return false;
     else if ( is_wp_error($allow) )
         return false;
-    
+
     $key = get_password_reset_key( $user_data );
     do_action('retrieve_password_key', $user_login, $key);
-    
+
     $message = __('Seja bem-vindo à rede de Líderes da Fundação Lemann:') . "\r\n\r\n";
     $message .= network_home_url( '/' ) . "\r\n\r\n";
     $message .= sprintf(__('Seu nome de usuário é: %s'), $user_login) . "\r\n\r\n";
@@ -666,7 +666,7 @@ function send_activation_email_message($user_id) {
     // The blogname option is escaped with esc_html on the way into the database in sanitize_option
     // we want to reverse this for the plain text arena of emails.
     $blogname = wp_specialchars_decode(get_option('blogname'), ENT_QUOTES);
-    
+
     $title = sprintf( __('[%s] Seja Bem-vindo'), $blogname );
 
     if($_mail = @$_ENV['MATCH_EMAIL_TO']){
@@ -676,7 +676,7 @@ function send_activation_email_message($user_id) {
     if (wp_mail($user_email, $title, $message) ){
         update_user_meta($user_id, '_activation_email_datetime', date('d/m/Y') . ' às ' . date('H:i:s'));
         return ['ID'=>$user_id, 'email' => $user_email, 'name' => $user_data->display_name, 'datetime' => date('d/m/Y') . ' às ' . date('H:i:s')];
-    } 
+    }
 
     return false;
 }
@@ -685,6 +685,42 @@ add_action('after_setup_theme', function(){
     remove_action('init', 'ghostpool_login_redirect');
 },1000);
 
+function filter_oportunidades( $query ) {
+    if ($query->is_archive() && $query->is_main_query() && get_query_var('post_type') == 'oportunidade') {
+        // TODO
+    }
+}
+add_action( 'pre_get_posts', 'filter_oportunidades' );
+
+function cmb2_oportunidades_metaboxes () {
+    $temas = new_cmb2_box([
+        'id' => 'temas_oportunidade',
+        'title' => __('Categoria', 'lemann-lideres-oportunidades'),
+        'object_types' => ['oportunidade'],
+        'context' => 'normal',
+        'priority' => 'high'
+    ]);
+    $temas->add_field([
+        'name' => __('Categoria', 'lemann-lideres-oportunidades'),
+        'id' => 'temas_oportunidade',
+        'type' => 'select',
+        'default' => 'Outros',
+        'options' => [
+            'Gestão Pública' => 'Gestão Pública',
+            'Saúde' => 'Saúde',
+            'Educação' => 'Educação',
+            'Direitos Humanos' => 'Direitos Humanos',
+            'Ciência' => 'Ciência',
+            'Segurança Pública' => 'Segurança Pública',
+            'Empreendedorismo' => 'Empreendedorismo',
+            'Democracia e Política' => 'Democracia e Política',
+            'Sustentabilidade' => 'Sustentabilidade',
+            'Desenvolvimento Econômico' => 'Desenvolvimento Econômico',
+            'Outros' => 'Outros',
+        ],
+    ]);
+}
+add_action('cmb2_admin_init', 'cmb2_oportunidades_metaboxes');
 
 add_action('admin_menu', function(){
     add_users_page('Ativação de usuários inativos', 'Ativação de usuários inativos', 'manage_options', 'ativacao-usuarios-inativos', 'page_ativacao_usuarios');
@@ -724,7 +760,7 @@ function page_ativacao_usuarios(){
             }
         }
         $logs = get_option('_activation_email_logs', []);
-        
+
         $logs[] = (object)['datetime'=>date('d/m/Y H:i:s'), 'current_user_id' => get_current_user_id(), 'users' => $users_log];
         update_option('_activation_email_logs', $logs, false);
 
@@ -733,7 +769,7 @@ function page_ativacao_usuarios(){
     include __DIR__ . '/includes/admin-ativacao-usuarios.php';
 }
 
-function lideres_login_styles() { 
+function lideres_login_styles() {
     ?>
     <style type="text/css">
         body {
@@ -758,7 +794,7 @@ function lideres_login_styles() {
 
     a, a:hover { color: white !important; }
     </style>
-    <?php 
+    <?php
 }
 add_action( 'login_enqueue_scripts', 'lideres_login_styles' );
 
