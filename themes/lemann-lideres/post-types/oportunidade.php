@@ -37,7 +37,7 @@ add_action( 'init', function() {
 			'thumbnail',
 		],
 		'menu_icon'           => 'dashicons-megaphone',
-		'has_archive'         => false,
+		'has_archive'         => true,
 		'capability_type'     => ['oportunidade', 'oportunidades'],
 		'map_meta_cap'        => true,
 	];
