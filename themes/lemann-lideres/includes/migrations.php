@@ -51,6 +51,7 @@ $migrations = [
         foreach ($roles as $role) {
             remove_role($role);
         }
+        return false;
     }
 
 ];
