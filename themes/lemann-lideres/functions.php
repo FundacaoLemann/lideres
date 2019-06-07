@@ -697,8 +697,8 @@ function cmb2_oportunidades_metaboxes () {
         'id' => 'temas_oportunidade',
         'title' => __('Categoria', 'lemann-lideres-oportunidades'),
         'object_types' => ['oportunidade'],
-        'context' => 'normal',
-        'priority' => 'high'
+        'context' => 'side',
+        'priority' => 'default'
     ]);
     $temas->add_field([
         'name' => __('Categoria', 'lemann-lideres-oportunidades'),
