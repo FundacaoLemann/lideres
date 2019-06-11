@@ -687,40 +687,44 @@ add_action('after_setup_theme', function(){
 
 function filter_oportunidades( $query ) {
     if ($query->is_archive() && $query->is_main_query() && get_query_var('post_type') == 'oportunidade') {
-        // TODO
+        if ($_GET['cat']) {
+            $query->set('tax_query', [
+                [
+                    'taxonomy' => 'temas_oportunidade',
+                    'field'    => 'slug',
+                    'terms'    => $_GET['cat']
+                ]
+            ]);
+        }
     }
 }
 add_action( 'pre_get_posts', 'filter_oportunidades' );
 
-function cmb2_oportunidades_metaboxes () {
-    $temas = new_cmb2_box([
-        'id' => 'temas_oportunidade',
-        'title' => __('Categoria', 'lemann-lideres-oportunidades'),
-        'object_types' => ['oportunidade'],
-        'context' => 'side',
-        'priority' => 'default'
-    ]);
-    $temas->add_field([
-        'name' => __('Categoria', 'lemann-lideres-oportunidades'),
-        'id' => 'temas_oportunidade',
-        'type' => 'select',
-        'default' => 'Outros',
-        'options' => [
-            'Gestão Pública' => 'Gestão Pública',
-            'Saúde' => 'Saúde',
-            'Educação' => 'Educação',
-            'Direitos Humanos' => 'Direitos Humanos',
-            'Ciência' => 'Ciência',
-            'Segurança Pública' => 'Segurança Pública',
-            'Empreendedorismo' => 'Empreendedorismo',
-            'Democracia e Política' => 'Democracia e Política',
-            'Sustentabilidade' => 'Sustentabilidade',
-            'Desenvolvimento Econômico' => 'Desenvolvimento Econômico',
-            'Outros' => 'Outros',
+function temas_interesse_taxonomy () {
+    $term = 'temas_oportunidade';
+    register_taxonomy($term, ['oportunidade'], [
+        'hierarchical'          => false,
+        'labels'                => [
+            'name'          => __('Categorias', 'lemann-lideres-oportunidades'),
+            'singular_name' => __('Categoria', 'lemann-lideres-oportunidades')
         ],
+        'show_ui'               => true,
+		'show_admin_column'     => true,
+		'query_var'             => true,
     ]);
+    wp_insert_term('Gestão Pública', $term, ['description' => 'Gestão Pública', 'slug' => 'gestao-publica']);
+    wp_insert_term('Saúde', $term, ['description' => 'Saúde', 'slug' => 'saude']);
+    wp_insert_term('Educação', $term, ['description' => 'Educação', 'slug' => 'educacao']);
+    wp_insert_term('Direitos Humanos', $term, ['description' => 'Direitos Humanos', 'slug' => 'direitos-humanos']);
+    wp_insert_term('Ciência', $term, ['description' => 'Ciência', 'slug' => 'ciencia']);
+    wp_insert_term('Segurança Pública', $term, ['description' => 'Segurança Pública', 'slug' => 'seguranca-publica']);
+    wp_insert_term('Empreendedorismo', $term, ['description' => 'Empreendedorismo', 'slug' => 'empreendedorismo']);
+    wp_insert_term('Democracia e Política', $term, ['description' => 'Democracia e Política', 'slug' => 'democracia']);
+    wp_insert_term('Sustentabilidade', $term, ['description' => 'Sustentabilidade', 'slug' => 'sustentabilidade']);
+    wp_insert_term('Desenvolvimento Econômico', $term, ['description' => 'Desenvolvimento Econômico', 'slug' => 'desenvolvimento-economico']);
+    wp_insert_term('Outros', $term, ['description' => 'Outros', 'slug' => 'outros']);
 }
-add_action('cmb2_admin_init', 'cmb2_oportunidades_metaboxes');
+add_action('init', 'temas_interesse_taxonomy');
 
 add_action('admin_menu', function(){
     add_users_page('Ativação de usuários inativos', 'Ativação de usuários inativos', 'manage_options', 'ativacao-usuarios-inativos', 'page_ativacao_usuarios');
