@@ -696,6 +696,24 @@ function filter_oportunidades( $query ) {
                 ]
             ]);
         }
+        $meta_query = ['relation' => 'AND'];
+        if ($_GET['data_inicial']) {
+            $meta_query[] = [
+                'key' => 'data_inicial',
+                'value' => $_GET['data_inicial'],
+                'compare' => '>=',
+                'type' => 'DATE',
+            ];
+        }
+        if ($_GET['data_final']) {
+            $meta_query[] = [
+                'key' => 'data_final',
+                'value' => $_GET['data_final'],
+                'compare' => '<=',
+                'type' => 'DATE',
+            ];
+        }
+        $query->set('meta_query', $meta_query);
     }
 }
 add_action( 'pre_get_posts', 'filter_oportunidades' );
@@ -725,6 +743,40 @@ function temas_interesse_taxonomy () {
     wp_insert_term('Outros', $term, ['description' => 'Outros', 'slug' => 'outros']);
 }
 add_action('init', 'temas_interesse_taxonomy');
+
+function cmb2_oportunidades_metaboxes () {
+    $cmb2_oportunidade = new_cmb2_box([
+        'id'           => 'oportunidade_periodo',
+        'title'        => __('Período', 'lemann-lideres-oportunidades'),
+        'object_types' => ['oportunidade'],
+        'context'      => 'side',
+        'priority'     => 'default',
+    ]);
+    $cmb2_oportunidade->add_field([
+        'name'        => __('Data inicial', 'lemann-lideres-oportunidades'),
+        'id'          => 'data_inicial',
+        'type'        => 'text_date',
+        'date_format' => 'Y-m-d',
+        'attributes'  => [
+            'data-datepicker' => [
+                'formatDate' => 'yy-mm-dd',
+            ]
+        ],
+    ]);
+    $cmb2_oportunidade->add_field([
+        'name'        => __('Data final', 'lemann-lideres-oportunidades'),
+        'description' => __('Pode ser a mesma da data inicial.', 'lemann-lideres-oportunidades'),
+        'id'          => 'data_final',
+        'type'        => 'text_date',
+        'date_format' => 'Y-m-d',
+        'attributes'  => [
+            'data-datepicker' => [
+                'formatDate' => 'yy-mm-dd',
+            ]
+        ],
+    ]);
+}
+add_action('cmb2_admin_init', 'cmb2_oportunidades_metaboxes');
 
 add_action('admin_menu', function(){
     add_users_page('Ativação de usuários inativos', 'Ativação de usuários inativos', 'manage_options', 'ativacao-usuarios-inativos', 'page_ativacao_usuarios');

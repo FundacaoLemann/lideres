@@ -44,6 +44,9 @@ $temas_interesse = get_terms([
 ]);
 $tema_url = $_GET['cat'];
 $term = get_term_by('slug', $tema_url, 'temas_oportunidade');
+
+$data_inicial = $_GET['data_inicial'];
+$data_final = $_GET['data_final'];
 ?>
 
 <?php ghostpool_page_header(
@@ -53,7 +56,7 @@ $term = get_term_by('slug', $tema_url, 'temas_oportunidade');
 	$height = ghostpool_option( 'cat_page_header_height', 'height' )
 ); ?>
 
-<?php ghostpool_page_title( 'Oportunidades', $header ); ?>
+<?php ghostpool_page_title( '', $header ); ?>
 <div id="gp-content-wrapper" class="gp-container">
 
 	<?php do_action( 'ghostpool_begin_content_wrapper' ); ?>
@@ -62,12 +65,23 @@ $term = get_term_by('slug', $tema_url, 'temas_oportunidade');
 
 		<div id="gp-content">
 
-			<form method="GET" action="">
-				<?php if ($tema_url): ?>
-					<p>Exibindo resultados para "<strong><?= $term->name ?></strong>"</p>
+			<form id="filters" method="GET" action="">
+				<?php if ($tema_url || $data_inicial || $data_final): ?>
+					<p>Exibindo resultados
+					<?php if ($tema_url) : ?>
+						para "<strong><?= $term->name ?></strong>"
+					<?php endif;
+					if ($data_inicial) : ?>
+						desde <?= date_format(date_create($data_inicial), 'd/m/Y') ?>
+					<?php endif;
+					if ($data_final) : ?>
+						até <?= date_format(date_create($data_final), 'd/m/Y') ?>
+					<?php endif; ?>
+					</p>
 				<?php endif; ?>
 
-				<select name="cat">
+				<label for="cat">Categoria</label>
+				<select id="cat" name="cat">
 					<?php if ($tema_url): ?>
 						<option value="">--- Remover filtro ---</option>
 					<?php else: ?>
@@ -78,6 +92,13 @@ $term = get_term_by('slug', $tema_url, 'temas_oportunidade');
 						<option value="<?= $tema->slug ?>" <?= $tema_url == $tema->slug ? 'selected' : '' ?>><?= $tema->name ?></option>
 					<?php endforeach; ?>
 				</select>
+
+				<label for="data_inicial">Data inicial</label>
+				<input type="date" id="data_inicial" name="data_inicial" value="<?= $data_inicial ?>">
+
+				<label for="data_final">Data final</label>
+				<input type="date" id="data_final" name="data_final" value="<?= $data_final ?>">
+
 				<button type="submit">Enviar</button>
 			</form>
 
@@ -110,9 +131,9 @@ $term = get_term_by('slug', $tema_url, 'temas_oportunidade');
 
 		</div>
 
-		<?php get_sidebar( 'left' ); ?>
+		<?php // get_sidebar( 'left' ); ?>
 
-		<?php get_sidebar( 'right' ); ?>
+		<?php // get_sidebar( 'right' ); ?>
 
 	</div>
 
