@@ -56,7 +56,11 @@ $data_final = $_GET['data_final'];
 	$height = ghostpool_option( 'cat_page_header_height', 'height' )
 ); ?>
 
-<?php ghostpool_page_title( '', $header ); ?>
+<?php
+add_filter('ghostpool_archives_title', function () {
+	return 'Oportunidades';
+});
+ghostpool_page_title( '', $header ); ?>
 <div id="gp-content-wrapper" class="gp-container">
 
 	<?php do_action( 'ghostpool_begin_content_wrapper' ); ?>
