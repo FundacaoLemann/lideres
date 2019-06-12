@@ -1347,6 +1347,47 @@ form.job-manager-form fieldset {
     width: 100%;
   }
 }
+.post-type-archive-oportunidade .oportunidade-cards {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  padding: 5px;
+}
+.post-type-archive-oportunidade .oportunidade-cards .oportunidade-card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #EEE;
+  line-height: 1.4;
+}
+.post-type-archive-oportunidade .oportunidade-cards .oportunidade-card__content {
+  padding: 15px;
+}
+.post-type-archive-oportunidade .oportunidade-cards .oportunidade-card__excerpt {
+  font-size: 0.9em;
+}
+.post-type-archive-oportunidade .oportunidade-cards .oportunidade-card__image {
+  background-position: center;
+  background-size: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  display: block;
+  padding-top: 56.25%;
+  width: 100%;
+}
+.post-type-archive-oportunidade .oportunidade-cards .oportunidade-card__links {
+  color: gray;
+  font-size: 0.9em;
+  margin-bottom: 10px;
+}
+.post-type-archive-oportunidade .oportunidade-cards .oportunidade-card__links a {
+  color: gray;
+}
+.post-type-archive-oportunidade .oportunidade-cards .oportunidade-card__title {
+  color: #083050;
+  display: block;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
 
 #gp-buddypress-header .vc_col-md-8 {
   display: flex;

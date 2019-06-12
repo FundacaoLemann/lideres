@@ -123,10 +123,24 @@ ghostpool_page_title( '', $header ); ?>
 					<?php if ( have_posts() ) : ?>
 
 						<div class="gp-section-loop-inner">
-							<?php if ( $format == 'gp-posts-masonry' ) { ?><div class="gp-gutter-size"></div><?php } ?>
-							<?php while ( have_posts() ) : the_post(); ?>
-								<?php if ( function_exists( 'ghostpool_post_loop' ) ) { ghostpool_post_loop( $format, $style, $image_size, $content_display, $excerpt_length, $meta_author, $meta_date, $meta_comment_count, $meta_views, $meta_likes, $meta_cats, $meta_tags, $read_more_link ); } ?>
-							<?php endwhile; ?>
+							<div class="oportunidade-cards">
+								<?php while ( have_posts() ) : the_post(); ?>
+									<article class="oportunidade-card">
+										<a class="oportunidade-card__image" href="<?= get_the_permalink() ?>" style="background-image: url(<?= get_the_post_thumbnail_url(get_the_ID(), 'medium_large')?>)"></a>
+										<div class="oportunidade-card__content">
+											<a class="oportunidade-card__title" href="<?= get_the_permalink(); ?>"><?= get_the_title() ?></a>
+											<div class="oportunidade-card__links">
+												<?php $cat = get_the_terms(get_the_ID(), 'temas_oportunidade');
+												if (is_array($cat)): ?>
+													<?= $cat[0]->name ?> &sdot;
+												<?php endif; ?>
+												<?= ghostpool_author_name($meta_author) ?>
+											</div>
+											<div class="oportunidade-card__excerpt"><?= ghostpool_excerpt($excerpt_length, $read_more_link, $style) ?></div>
+										</div>
+									</article>
+								<?php endwhile; ?>
+							</div>
 						</div>
 
 						<?php echo ghostpool_pagination( $wp_query->max_num_pages, $pagination ); ?>

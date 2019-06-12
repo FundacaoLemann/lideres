@@ -23,4 +23,53 @@
             }
         }
     }
+
+    .oportunidade-cards {
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        padding: 5px;
+
+        .oportunidade-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #EEE;
+            line-height: 1.4;
+
+            &__content {
+                padding: 15px;
+            }
+
+            &__excerpt {
+                font-size: 0.9em;
+            }
+
+            &__image {
+                background-position: center;
+                background-size: cover;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+                display: block;
+                padding-top: 56.25%;
+                width: 100%;
+            }
+
+            &__links {
+                color: gray;
+                font-size: 0.9em;
+                margin-bottom: 10px;
+
+                a {
+                    color: gray;
+                }
+            }
+
+            &__title {
+                color: $c_primary;
+                display: block;
+                font-weight: bold;
+                margin-bottom: 10px;
+            }
+        }
+    }
 }
