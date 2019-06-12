@@ -84,26 +84,34 @@ ghostpool_page_title( '', $header ); ?>
 					</p>
 				<?php endif; ?>
 
-				<label for="cat">Categoria</label>
-				<select id="cat" name="cat">
-					<?php if ($tema_url): ?>
-						<option value="">--- Remover filtro ---</option>
-					<?php else: ?>
-						<option value="">--- Selecionar opção ---</option>
-					<?php endif; ?>
+				<div class="field-group">
+					<label for="cat">Categoria</label>
+					<select id="cat" name="cat">
+						<?php if ($tema_url): ?>
+							<option value="">--- Remover filtro ---</option>
+						<?php else: ?>
+							<option value="">--- Selecionar opção ---</option>
+						<?php endif; ?>
 
-					<?php foreach ($temas_interesse as $tema): ?>
-						<option value="<?= $tema->slug ?>" <?= $tema_url == $tema->slug ? 'selected' : '' ?>><?= $tema->name ?></option>
-					<?php endforeach; ?>
-				</select>
+						<?php foreach ($temas_interesse as $tema): ?>
+							<option value="<?= $tema->slug ?>" <?= $tema_url == $tema->slug ? 'selected' : '' ?>><?= $tema->name ?></option>
+						<?php endforeach; ?>
+					</select>
+				</div>
 
-				<label for="data_inicial">Data inicial</label>
-				<input type="date" id="data_inicial" name="data_inicial" value="<?= $data_inicial ?>">
+				<div class="field-group">
+					<label for="data_inicial">Data inicial</label>
+					<input type="date" id="data_inicial" name="data_inicial" value="<?= $data_inicial ?>">
+				</div>
 
-				<label for="data_final">Data final</label>
-				<input type="date" id="data_final" name="data_final" value="<?= $data_final ?>">
+				<div class="field-group">
+					<label for="data_final">Data final</label>
+					<input type="date" id="data_final" name="data_final" value="<?= $data_final ?>">
+				</div>
 
-				<button type="submit">Enviar</button>
+				<div class="field-group field-group--button">
+					<button type="submit">Filtrar</button>
+				</div>
 			</form>
 
 			<div class="<?php echo esc_attr( $css_classes ); ?>" data-type="<?php if ( is_home() ) { ?>home<?php } else { ?>taxonomy<?php } ?>"<?php if ( function_exists( 'ghostpool_filter_variables' ) ) { echo ghostpool_filter_variables( '', '', '', $format, $style, $orderby, $per_page, $offset, $image_size, $content_display, $excerpt_length, $meta_author, $meta_date, $meta_comment_count, $meta_views, $meta_likes, $meta_cats, $meta_tags, $read_more_link, $pagination ); } ?>>
