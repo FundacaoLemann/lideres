@@ -38,6 +38,7 @@
 
             &__category {
                 color: $c_secondary;
+                font-size: 0.9em;
             }
 
             &__content {
@@ -72,7 +73,7 @@
                 color: $c_primary;
                 display: block;
                 font-weight: bold;
-                margin-bottom: 5px;
+                margin-bottom: 3px;
             }
         }
     }

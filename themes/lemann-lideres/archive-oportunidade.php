@@ -128,12 +128,12 @@ ghostpool_page_title( '', $header ); ?>
 									<article class="oportunidade-card">
 										<a class="oportunidade-card__image" href="<?= get_the_permalink() ?>" style="background-image: url(<?= get_the_post_thumbnail_url(get_the_ID(), 'medium_large')?>)"></a>
 										<div class="oportunidade-card__content">
+											<?php $cat = get_the_terms(get_the_ID(), 'temas_oportunidade');
+											if (is_array($cat)): ?>
+												<span class="oportunidade-card__category"><?= $cat[0]->name ?></span>
+											<?php endif; ?>
 											<a class="oportunidade-card__title" href="<?= get_the_permalink(); ?>"><?= get_the_title() ?></a>
 											<div class="oportunidade-card__details">
-												<?php $cat = get_the_terms(get_the_ID(), 'temas_oportunidade');
-												if (is_array($cat)): ?>
-													<span class="oportunidade-card__category"><?= $cat[0]->name ?></span> &sdot;
-												<?php endif; ?>
 												<?= ghostpool_author_name($meta_author) ?>
 											</div>
 											<div class="oportunidade-card__excerpt"><?= ghostpool_excerpt($excerpt_length, $read_more_link, $style) ?></div>
