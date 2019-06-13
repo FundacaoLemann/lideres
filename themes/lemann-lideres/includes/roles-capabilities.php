@@ -96,6 +96,15 @@ function lemann_roles_capabilities() {
     $editor->add_cap('edit_others_oportunidades');
     $editor->add_cap('delete_others_oportunidades');
 
+    $equipe = $wp_roles->get_role('equipe');
+    $equipe->add_cap('edit_oportunidades');
+    $equipe->add_cap('publish_oportunidades');
+    $equipe->add_cap('edit_published_oportunidades');
+    $equipe->add_cap('delete_oportunidades');
+    $equipe->add_cap('delete_published_oportunidades');
+
+    $equipe->add_cap('edit_others_oportunidades');
+    $equipe->add_cap('delete_others_oportunidades');
 }
 
 add_action('init', 'lemann_roles_capabilities');
