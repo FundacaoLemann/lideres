@@ -124,13 +124,25 @@ ghostpool_page_title( '', $header ); ?>
 
 						<div class="gp-section-loop-inner">
 							<div class="oportunidade-cards">
-								<?php while ( have_posts() ) : the_post(); ?>
+								<?php while ( have_posts() ) : the_post();
+									$post_id = get_the_ID();
+									$item_cat = get_the_terms($post_id, 'temas_oportunidade');
+									$item_data_inicial = get_post_meta($post_id, 'data_inicial', true);
+									$item_data_final = get_post_meta($post_id, 'data_final', true);
+								?>
 									<article class="oportunidade-card">
-										<a class="oportunidade-card__image" href="<?= get_the_permalink() ?>" style="background-image: url(<?= get_the_post_thumbnail_url(get_the_ID(), 'medium_large')?>)"></a>
+										<a class="oportunidade-card__image" href="<?= get_the_permalink() ?>" style="background-image: url(<?= get_the_post_thumbnail_url($post_id, 'medium_large')?>)"></a>
 										<div class="oportunidade-card__content">
-											<?php $cat = get_the_terms(get_the_ID(), 'temas_oportunidade');
-											if (is_array($cat)): ?>
-												<span class="oportunidade-card__category"><?= $cat[0]->name ?></span>
+											<?php if (is_array($item_cat)): ?>
+												<span class="oportunidade-card__category"><?= $item_cat[0]->name ?></span>
+											<?php endif; ?>
+											<?php if ($item_data_inicial): ?>
+												<span class="oportunidade-card__date">
+													<?= date_format(date_create($item_data_inicial), 'd/m/Y') ?>
+													<?php if ($item_data_inicial != $item_data_final): ?>
+														a <?= date_format(date_create($item_data_final), 'd/m/Y') ?>
+													<?php endif; ?>
+												</span>
 											<?php endif; ?>
 											<a class="oportunidade-card__title" href="<?= get_the_permalink(); ?>"><?= get_the_title() ?></a>
 											<div class="oportunidade-card__details">

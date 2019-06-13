@@ -41,6 +41,17 @@
                 font-size: 0.9em;
             }
 
+            &__date {
+                color: gray;
+                font-size: 0.9em;
+            }
+
+            &__category + .oportunidade-card__date {
+                &:before {
+                    content: ' · ';
+                }
+            }
+
             &__content {
                 padding: 15px;
             }
