@@ -136,15 +136,15 @@ ghostpool_page_title( '', $header ); ?>
 											<?php if (is_array($item_cat)): ?>
 												<span class="oportunidade-card__category"><?= $item_cat[0]->name ?></span>
 											<?php endif; ?>
-											<?php if ($item_data_inicial): ?>
-												<span class="oportunidade-card__date">
-													<?= date_format(date_create($item_data_inicial), 'd/m/Y') ?>
-													<?php if ($item_data_inicial != $item_data_final): ?>
-														a <?= date_format(date_create($item_data_final), 'd/m/Y') ?>
-													<?php endif; ?>
-												</span>
-											<?php endif; ?>
 											<a class="oportunidade-card__title" href="<?= get_the_permalink(); ?>"><?= get_the_title() ?></a>
+											<?php if ($item_data_inicial): ?>
+												<div class="oportunidade-card__details">
+													<?= date_format(date_create($item_data_inicial), 'd/m/y') ?>
+													<?php if ($item_data_inicial != $item_data_final): ?>
+														a <?= date_format(date_create($item_data_final), 'd/m/y') ?>
+													<?php endif; ?>
+												</div>
+											<?php endif; ?>
 											<div class="oportunidade-card__details">
 												<?= ghostpool_author_name($meta_author) ?>
 											</div>

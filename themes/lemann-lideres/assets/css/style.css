@@ -1363,26 +1363,19 @@ form.job-manager-form fieldset {
   color: #0C9B4A;
   font-size: 0.9em;
 }
-.post-type-archive-oportunidade .oportunidade-cards .oportunidade-card__date {
-  color: gray;
-  font-size: 0.9em;
-}
-.post-type-archive-oportunidade .oportunidade-cards .oportunidade-card__category + .oportunidade-card__date:before {
-  content: " · ";
-}
 .post-type-archive-oportunidade .oportunidade-cards .oportunidade-card__content {
   padding: 15px;
 }
 .post-type-archive-oportunidade .oportunidade-cards .oportunidade-card__details {
   color: gray;
   font-size: 0.9em;
-  margin-bottom: 15px;
 }
 .post-type-archive-oportunidade .oportunidade-cards .oportunidade-card__details a {
   color: gray;
 }
 .post-type-archive-oportunidade .oportunidade-cards .oportunidade-card__excerpt {
   font-size: 0.9em;
+  margin-top: 15px;
 }
 .post-type-archive-oportunidade .oportunidade-cards .oportunidade-card__image {
   background-position: center;
