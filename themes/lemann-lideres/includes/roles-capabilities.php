@@ -18,6 +18,8 @@ function lemann_roles_capabilities() {
         'edit_published_oportunidades' => true,
         'delete_oportunidades' => true,
         'delete_published_oportunidades' => true,
+        'edit_others_oportunidades' => true,
+        'delete_others_oportunidades' => true,
     ));
     add_role('parceiro', 'Parceiro', array(
         'read' => true,
