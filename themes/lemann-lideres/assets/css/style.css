@@ -844,6 +844,14 @@ div.job_listings ul.job_listings li.job_listing a.position strong {
   margin-bottom: 20px;
 }
 
+.single_job_listing .button.btn-edit-listing {
+  margin: -70px 0;
+}
+@media screen and (min-width: 768px) {
+  .single_job_listing .button.btn-edit-listing {
+    float: right;
+  }
+}
 .single_job_listing .job-listing-meta.meta a {
   color: #999;
 }

@@ -19,6 +19,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 global $post;
 ?>
 <div class="single_job_listing">
+	<?php if (current_user_can('edit_posts')): ?>
+		<a href="?editar_vaga=1" class="button btn-edit-listing">Editar</a>
+	<?php endif; ?>
+
 	<?php if ( get_option( 'job_manager_hide_expired_content', 1 ) && 'expired' === $post->post_status ) : ?>
 		<div class="job-manager-info"><?php _e( 'This listing has expired.', 'wp-job-manager' ); ?></div>
 	<?php else : ?>

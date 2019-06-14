@@ -120,6 +120,14 @@ div.job_listings {
 }
 
 .single_job_listing {
+    .button.btn-edit-listing {
+        margin: -70px 0;
+
+        @media screen and (min-width: 768px) {
+            float: right;
+        }
+    }
+
     .job-listing-meta.meta {
         a {
             color: #999;
