@@ -24,6 +24,14 @@
         }
     }
 
+    .btn-enviar-oportunidade {
+        margin: -75px 0;
+
+        @media screen and (min-width: 375px) {
+            float: right;
+        }
+    }
+
     .oportunidade-cards {
         display: grid;
         grid-gap: 20px;
