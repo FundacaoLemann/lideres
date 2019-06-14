@@ -1347,6 +1347,14 @@ form.job-manager-form fieldset {
     width: 100%;
   }
 }
+.post-type-archive-oportunidade .btn-enviar-oportunidade {
+  margin: -75px 0;
+}
+@media screen and (min-width: 375px) {
+  .post-type-archive-oportunidade .btn-enviar-oportunidade {
+    float: right;
+  }
+}
 .post-type-archive-oportunidade .oportunidade-cards {
   display: grid;
   grid-gap: 20px;

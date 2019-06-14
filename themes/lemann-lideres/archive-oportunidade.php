@@ -62,6 +62,7 @@ add_filter('ghostpool_archives_title', function () {
 });
 ghostpool_page_title( '', $header ); ?>
 <div id="gp-content-wrapper" class="gp-container">
+	<a class="button btn-enviar-oportunidade" href="/enviar-oportunidade">Enviar oportunidade</a>
 
 	<?php do_action( 'ghostpool_begin_content_wrapper' ); ?>
 
