@@ -886,8 +886,6 @@ function company_logo_div ($size = 'thumbnail', $default = null, $post = null) {
 
 function capture_job_listing_edition() {
     if (isset($_GET['editar_vaga']) && $_GET['editar_vaga'] == '1') {
-        global $wp_query;
-        $post_id = $wp_query->post->ID;
         get_template_part( 'page-editar-vaga' );
     }
 }

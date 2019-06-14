@@ -976,6 +976,9 @@ div.job_listings ul.job_listings li.job_listing a.position strong {
   padding-right: 100px;
 }
 
+form.job-manager-form {
+  margin-bottom: 15px;
+}
 form.job-manager-form h2 {
   color: #00B5AF;
 }
