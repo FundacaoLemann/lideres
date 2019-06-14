@@ -1330,6 +1330,69 @@ form.job-manager-form fieldset {
   padding-top: 0;
 }
 
+.post-type-archive-oportunidade form#filters {
+  align-items: flex-end;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+.post-type-archive-oportunidade form#filters .field-group {
+  padding: 5px;
+}
+.post-type-archive-oportunidade form#filters .field-group label {
+  display: block;
+}
+@media screen and (max-width: 767px) {
+  .post-type-archive-oportunidade form#filters .field-group--button {
+    width: 100%;
+  }
+}
+.post-type-archive-oportunidade .oportunidade-cards {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  padding: 5px;
+}
+.post-type-archive-oportunidade .oportunidade-cards .oportunidade-card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #EEE;
+  line-height: 1.4;
+}
+.post-type-archive-oportunidade .oportunidade-cards .oportunidade-card__category {
+  color: #0C9B4A;
+  font-size: 0.9em;
+}
+.post-type-archive-oportunidade .oportunidade-cards .oportunidade-card__content {
+  padding: 15px;
+}
+.post-type-archive-oportunidade .oportunidade-cards .oportunidade-card__details {
+  color: gray;
+  font-size: 0.9em;
+}
+.post-type-archive-oportunidade .oportunidade-cards .oportunidade-card__details a {
+  color: gray;
+}
+.post-type-archive-oportunidade .oportunidade-cards .oportunidade-card__excerpt {
+  font-size: 0.9em;
+  margin-top: 15px;
+}
+.post-type-archive-oportunidade .oportunidade-cards .oportunidade-card__image {
+  background-position: center;
+  background-size: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  display: block;
+  padding-top: 56.25%;
+  width: 100%;
+}
+.post-type-archive-oportunidade .oportunidade-cards .oportunidade-card__title {
+  color: #083050;
+  display: block;
+  font-weight: bold;
+  margin-bottom: 3px;
+}
+
 #gp-buddypress-header .vc_col-md-8 {
   display: flex;
   flex-direction: column;

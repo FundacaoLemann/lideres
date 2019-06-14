@@ -18,6 +18,8 @@ function lemann_roles_capabilities() {
         'edit_published_oportunidades' => true,
         'delete_oportunidades' => true,
         'delete_published_oportunidades' => true,
+        'edit_others_oportunidades' => true,
+        'delete_others_oportunidades' => true,
     ));
     add_role('parceiro', 'Parceiro', array(
         'read' => true,
@@ -76,13 +78,35 @@ function lemann_roles_capabilities() {
 
     add_role('inativo', 'Inativo', []);
 
-    get_role('administrator')->add_cap('');
     $administrator = $wp_roles->get_role('administrator');
     $administrator->add_cap('edit_oportunidades');
     $administrator->add_cap('publish_oportunidades');
     $administrator->add_cap('edit_published_oportunidades');
     $administrator->add_cap('delete_oportunidades');
     $administrator->add_cap('delete_published_oportunidades');
+
+    $administrator->add_cap('edit_others_oportunidades');
+    $administrator->add_cap('delete_others_oportunidades');
+
+    $editor = $wp_roles->get_role('editor');
+    $editor->add_cap('edit_oportunidades');
+    $editor->add_cap('publish_oportunidades');
+    $editor->add_cap('edit_published_oportunidades');
+    $editor->add_cap('delete_oportunidades');
+    $editor->add_cap('delete_published_oportunidades');
+
+    $editor->add_cap('edit_others_oportunidades');
+    $editor->add_cap('delete_others_oportunidades');
+
+    $equipe = $wp_roles->get_role('equipe');
+    $equipe->add_cap('edit_oportunidades');
+    $equipe->add_cap('publish_oportunidades');
+    $equipe->add_cap('edit_published_oportunidades');
+    $equipe->add_cap('delete_oportunidades');
+    $equipe->add_cap('delete_published_oportunidades');
+
+    $equipe->add_cap('edit_others_oportunidades');
+    $equipe->add_cap('delete_others_oportunidades');
 }
 
 add_action('init', 'lemann_roles_capabilities');

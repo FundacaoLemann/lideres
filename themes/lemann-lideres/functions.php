@@ -685,6 +685,98 @@ add_action('after_setup_theme', function(){
     remove_action('init', 'ghostpool_login_redirect');
 },1000);
 
+function filter_oportunidades( $query ) {
+    if ($query->is_archive() && $query->is_main_query() && get_query_var('post_type') == 'oportunidade') {
+        if ($_GET['cat']) {
+            $query->set('tax_query', [
+                [
+                    'taxonomy' => 'temas_oportunidade',
+                    'field'    => 'slug',
+                    'terms'    => $_GET['cat']
+                ]
+            ]);
+        }
+        $meta_query = ['relation' => 'AND'];
+        if ($_GET['data_inicial']) {
+            $meta_query[] = [
+                'key' => 'data_inicial',
+                'value' => $_GET['data_inicial'],
+                'compare' => '>=',
+                'type' => 'DATE',
+            ];
+        }
+        if ($_GET['data_final']) {
+            $meta_query[] = [
+                'key' => 'data_final',
+                'value' => $_GET['data_final'],
+                'compare' => '<=',
+                'type' => 'DATE',
+            ];
+        }
+        $query->set('meta_query', $meta_query);
+    }
+}
+add_action( 'pre_get_posts', 'filter_oportunidades' );
+
+function temas_interesse_taxonomy () {
+    $term = 'temas_oportunidade';
+    register_taxonomy($term, ['oportunidade'], [
+        'hierarchical'          => false,
+        'labels'                => [
+            'name'          => __('Categorias', 'lemann-lideres-oportunidades'),
+            'singular_name' => __('Categoria', 'lemann-lideres-oportunidades')
+        ],
+        'show_ui'               => true,
+		'show_admin_column'     => true,
+		'query_var'             => true,
+    ]);
+    wp_insert_term('Gestão Pública', $term, ['description' => 'Gestão Pública', 'slug' => 'gestao-publica']);
+    wp_insert_term('Saúde', $term, ['description' => 'Saúde', 'slug' => 'saude']);
+    wp_insert_term('Educação', $term, ['description' => 'Educação', 'slug' => 'educacao']);
+    wp_insert_term('Direitos Humanos', $term, ['description' => 'Direitos Humanos', 'slug' => 'direitos-humanos']);
+    wp_insert_term('Ciência', $term, ['description' => 'Ciência', 'slug' => 'ciencia']);
+    wp_insert_term('Segurança Pública', $term, ['description' => 'Segurança Pública', 'slug' => 'seguranca-publica']);
+    wp_insert_term('Empreendedorismo', $term, ['description' => 'Empreendedorismo', 'slug' => 'empreendedorismo']);
+    wp_insert_term('Democracia e Política', $term, ['description' => 'Democracia e Política', 'slug' => 'democracia']);
+    wp_insert_term('Sustentabilidade', $term, ['description' => 'Sustentabilidade', 'slug' => 'sustentabilidade']);
+    wp_insert_term('Desenvolvimento Econômico', $term, ['description' => 'Desenvolvimento Econômico', 'slug' => 'desenvolvimento-economico']);
+    wp_insert_term('Outros', $term, ['description' => 'Outros', 'slug' => 'outros']);
+}
+add_action('init', 'temas_interesse_taxonomy');
+
+function cmb2_oportunidades_metaboxes () {
+    $cmb2_oportunidade = new_cmb2_box([
+        'id'           => 'oportunidade_periodo',
+        'title'        => __('Período', 'lemann-lideres-oportunidades'),
+        'object_types' => ['oportunidade'],
+        'context'      => 'side',
+        'priority'     => 'default',
+    ]);
+    $cmb2_oportunidade->add_field([
+        'name'        => __('Data inicial', 'lemann-lideres-oportunidades'),
+        'id'          => 'data_inicial',
+        'type'        => 'text_date',
+        'date_format' => 'Y-m-d',
+        'attributes'  => [
+            'data-datepicker' => [
+                'formatDate' => 'yy-mm-dd',
+            ]
+        ],
+    ]);
+    $cmb2_oportunidade->add_field([
+        'name'        => __('Data final', 'lemann-lideres-oportunidades'),
+        'description' => __('Pode ser a mesma da data inicial.', 'lemann-lideres-oportunidades'),
+        'id'          => 'data_final',
+        'type'        => 'text_date',
+        'date_format' => 'Y-m-d',
+        'attributes'  => [
+            'data-datepicker' => [
+                'formatDate' => 'yy-mm-dd',
+            ]
+        ],
+    ]);
+}
+add_action('cmb2_admin_init', 'cmb2_oportunidades_metaboxes');
 
 add_action('admin_menu', function(){
     add_users_page('Ativação de usuários inativos', 'Ativação de usuários inativos', 'manage_options', 'ativacao-usuarios-inativos', 'page_ativacao_usuarios');
