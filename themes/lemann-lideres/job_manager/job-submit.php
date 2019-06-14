@@ -51,8 +51,7 @@ if ( isset( $resume_edit ) && $resume_edit ) {
         'company_logo',
     ];
     foreach ( $job_fields_institution as $key ) :
-        $field = $job_fields[$key];
-        $field['value'] = get_post_meta($job_id, '_'.$key, true); ?>
+        $field = $job_fields[$key]; ?>
         <fieldset class="fieldset-<?php echo esc_attr( $key ); ?>">
             <label for="<?php echo esc_attr( $key ); ?>"><?php echo wp_kses_post( $field['label'] ) . wp_kses_post( apply_filters( 'submit_job_form_required_label', $field['required'] ? '' : ' <small>' . __( '(opcional)', 'wp-job-manager' ) . '</small>', $field ) ); ?></label>
             <div class="field <?php echo $field['required'] ? 'required-field' : ''; ?>">
@@ -68,8 +67,7 @@ if ( isset( $resume_edit ) && $resume_edit ) {
         'responsavel_email',
     ];
     foreach ( $job_fields_identification as $key ) :
-        $field = $job_fields[$key];
-        $field['value'] = get_post_meta($job_id, '_'.$key, true); ?>
+        $field = $job_fields[$key]; ?>
         <fieldset class="fieldset-<?php echo esc_attr( $key ); ?>">
             <label for="<?php echo esc_attr( $key ); ?>"><?php echo wp_kses_post( $field['label'] ) . wp_kses_post( apply_filters( 'submit_job_form_required_label', $field['required'] ? '' : ' <small>' . __( '(optional)', 'wp-job-manager' ) . '</small>', $field ) ); ?></label>
             <div class="field <?php echo $field['required'] ? 'required-field' : ''; ?>">
@@ -96,8 +94,7 @@ if ( isset( $resume_edit ) && $resume_edit ) {
         'application',
     ];
     foreach ( $job_fields_opportunity as $key ) :
-        $field = $job_fields[$key];
-        $field['value'] = get_post_meta($job_id, '_'.$key, true); ?>
+        $field = $job_fields[$key]; ?>
         <fieldset class="fieldset-<?php echo esc_attr( $key ); ?>">
             <label for="<?php echo esc_attr( $key ); ?>"><?php echo wp_kses_post( $field['label'] ) . wp_kses_post( apply_filters( 'submit_job_form_required_label', $field['required'] ? '' : ' <small>' . __( '(optional)', 'wp-job-manager' ) . '</small>', $field ) ); ?></label>
             <div class="field <?php echo $field['required'] ? 'required-field' : ''; ?>">
@@ -113,10 +110,8 @@ if ( isset( $resume_edit ) && $resume_edit ) {
         'localizacao_cidade',
         'localizacao_geo',
     ];
-    foreach ( $job_fields_locality as $key ) : ?>
-        <?php $field = $job_fields[$key];
-                $field['value'] = get_post_meta($job_id, '_'.$key, true);
-?>
+    foreach ( $job_fields_locality as $key ) :
+        $field = $job_fields[$key]; ?>
         <fieldset class="fieldset-<?php echo esc_attr( $key ); ?>">
             <label for="<?php echo esc_attr( $key ); ?>"><?php echo wp_kses_post( $field['label'] ) . wp_kses_post( apply_filters( 'submit_job_form_required_label', $field['required'] ? '' : ' <small>' . __( '(optional)', 'wp-job-manager' ) . '</small>', $field ) ); ?></label>
             <div class="field <?php echo $field['required'] ? 'required-field' : ''; ?>">
