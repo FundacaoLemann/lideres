@@ -35,7 +35,8 @@ $perfil_rede = [
     'Talento da Saúde',
     'Talento da Educação',
     'Lemann Fellow',
-    'Líder Público'
+    'Líder Público',
+    'Terceiro Setor Transforma'
 ];
 
 $columns = array_shift($array_data);
@@ -43,7 +44,7 @@ $columns = array_shift($array_data);
 $logins = [];
 
 foreach($array_data as $data){
-    
+
     if(!$data || !count($data)){
         continue;
     }
@@ -97,7 +98,7 @@ foreach($array_data as $data){
         if(in_array('Parceiro', $perfis)){
             $roles[] = 'parceiro';
         }
-        
+
         if(in_array('Equipe', $perfis) || in_array('Equipe Fundação Lemann', $perfis)){
             $roles[] = 'equipe';
         }
@@ -172,9 +173,9 @@ foreach($array_data as $data){
     }
 
     $logins[] = $login;
-    
+
     $user_data['user_login'] = $login;
-    
+
     $user_id = wp_insert_user($user_data);
 
     if($user_id instanceof WP_Error){
@@ -192,11 +193,11 @@ foreach($array_data as $data){
         }
 
         $value = esc_sql("$value");
-        
+
         $field_id = $bp_field_ids[$meta];
 
         $wpdb->query("INSERT INTO {$wpdb->prefix}bp_xprofile_data (field_id, user_id, value) VALUES ($field_id, $user_id, '$value')");
-        
+
         echo "\n ---- > $meta";
     }
 
