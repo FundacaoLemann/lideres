@@ -37,7 +37,7 @@ global $post;
 		?>
 
 		<div class="job_info">
-            <?php if(current_user_can('administrator')): ?>
+            <?php if (current_user_can('administrator') || get_current_user_id() == $post->post_author): ?>
                 <div class="job_info_box match-list" id="matches-vaga">
                     <h3 class="job_info_box--title" style="background-color:burlywood">
                         Matches da Vaga
