@@ -64,7 +64,7 @@
 		$alt = ($j++ % 2)? 'alt': '';
 		$class = "editfield $f->code field_$name $alt";
 
-		echo "<div class='$class " . ($name == 'perfil' ? 'column-12' : 'column-6') . "'>\n";
+		echo "<div class='$class column-6'>\n";
 
 		switch ($f->display)
 		{
