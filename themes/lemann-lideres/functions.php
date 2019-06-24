@@ -727,8 +727,9 @@ function temas_interesse_taxonomy () {
             'singular_name' => __('Categoria', 'lemann-lideres-oportunidades')
         ],
         'show_ui'               => true,
-		'show_admin_column'     => true,
-		'query_var'             => true,
+        'show_admin_column'     => true,
+        'show_in_rest'          => true,
+        'query_var'             => true,
     ]);
     wp_insert_term('Gestão Pública', $term, ['description' => 'Gestão Pública', 'slug' => 'gestao-publica']);
     wp_insert_term('Saúde', $term, ['description' => 'Saúde', 'slug' => 'saude']);
