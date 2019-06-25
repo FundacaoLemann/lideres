@@ -70,21 +70,21 @@ ghostpool_page_title( '', $header ); ?>
 
 		<div id="gp-content">
 
-			<form id="filters" method="GET" action="">
-				<?php if ($tema_url || $data_inicial || $data_final): ?>
-					<p>Exibindo resultados
-					<?php if ($tema_url) : ?>
-						para "<strong><?= $term->name ?></strong>"
-					<?php endif;
-					if ($data_inicial) : ?>
-						desde <?= date_format(date_create($data_inicial), 'd/m/Y') ?>
-					<?php endif;
-					if ($data_final) : ?>
-						até <?= date_format(date_create($data_final), 'd/m/Y') ?>
-					<?php endif; ?>
-					</p>
+			<?php if ($tema_url || $data_inicial || $data_final): ?>
+				<p>Exibindo resultados
+				<?php if ($tema_url) : ?>
+					para "<strong><?= $term->name ?></strong>"
+				<?php endif;
+				if ($data_inicial) : ?>
+					desde <?= date_format(date_create($data_inicial), 'd/m/Y') ?>
+				<?php endif;
+				if ($data_final) : ?>
+					até <?= date_format(date_create($data_final), 'd/m/Y') ?>
 				<?php endif; ?>
+				</p>
+			<?php endif; ?>
 
+			<form id="filters" method="GET" action="">
 				<div class="field-group">
 					<label for="cat">Categoria</label>
 					<select id="cat" name="cat">
@@ -140,9 +140,9 @@ ghostpool_page_title( '', $header ); ?>
 											<a class="oportunidade-card__title" href="<?= get_the_permalink(); ?>"><?= get_the_title() ?></a>
 											<?php if ($item_data_inicial): ?>
 												<div class="oportunidade-card__details">
-													<?= date_format(date_create($item_data_inicial), 'd/m/y') ?>
+													<?= date_format(date_create($item_data_inicial), 'd/m/Y') ?>
 													<?php if ($item_data_inicial != $item_data_final): ?>
-														a <?= date_format(date_create($item_data_final), 'd/m/y') ?>
+														a <?= date_format(date_create($item_data_final), 'd/m/Y') ?>
 													<?php endif; ?>
 												</div>
 											<?php endif; ?>

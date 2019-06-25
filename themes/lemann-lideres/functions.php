@@ -761,9 +761,9 @@ function cmb2_oportunidades_metaboxes () {
         'type'        => 'text_date',
         'date_format' => 'Y-m-d',
         'attributes'  => [
-            'data-datepicker' => [
+            'data-datepicker' => json_encode([
                 'formatDate' => 'yy-mm-dd',
-            ]
+            ])
         ],
     ]);
     $cmb2_oportunidade->add_field([
@@ -773,9 +773,9 @@ function cmb2_oportunidades_metaboxes () {
         'type'        => 'text_date',
         'date_format' => 'Y-m-d',
         'attributes'  => [
-            'data-datepicker' => [
+            'data-datepicker' => json_encode([
                 'formatDate' => 'yy-mm-dd',
-            ]
+            ])
         ],
     ]);
 }
