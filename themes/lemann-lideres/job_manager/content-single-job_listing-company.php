@@ -23,7 +23,7 @@ if ( ! get_the_company_name() ) {
 }
 ?>
 <div class="company">
-	<?php company_logo_div(); ?>
+	<?php company_logo_div('medium'); ?>
 
 	<div class="name">
 		<?php the_company_name('<strong>', '</strong>'); ?>
