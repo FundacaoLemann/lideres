@@ -1000,6 +1000,9 @@ form.job-manager-form fieldset {
     width: 100%;
   }
 }
+form.job-manager-form input.job-manager-datepicker {
+  width: 100%;
+}
 
 .page-id-100000486:not(.logged-in) footer {
   display: none !important;
