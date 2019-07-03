@@ -8,7 +8,7 @@
         }
     ],
     "require": {
-        "wpackagist-plugin/classic-editor": "1.4.*",
+        "wpackagist-plugin/classic-editor": "1.5.*",
         "wpackagist-plugin/cmb2":"2.6.*",
         "wpackagist-plugin/wordpress-seo": "*",
         "wpackagist-plugin/buddypress": "4.3.*",
@@ -20,7 +20,7 @@
         "wpackagist-plugin/sucuri-scanner": "*",
         "wpackagist-plugin/google-captcha": "*",
         "wpackagist-plugin/multiple-roles": "1.2.*",
-        "wpackagist-plugin/wp-job-manager": "1.32.*",
+        "wpackagist-plugin/wp-job-manager": "1.33.*",
         "wpackagist-plugin/buddypress-docs": "2.1.*",
         "wpackagist-plugin/bp-profile-search": "5.0.*",
         "wpackagist-plugin/duracelltomi-google-tag-manager": "1.9.*"
