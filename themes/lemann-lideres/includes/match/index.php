@@ -88,7 +88,7 @@ function lemann_match( $post_id, $user_id ) {
 					}
 				}
                 break;
-            
+
 			case 'graduacao':
 				$possible_matches++;
 				if ( $user_data && is_array( $user_data ) && ! empty( $user_data[0] ) ) {
@@ -113,7 +113,7 @@ function lemann_match( $post_id, $user_id ) {
                 if ( $user_data &&  strtolower($job_listing_data) == strtolower($user_data) ) {
                     $real_matches++;
                      _match_log("\t[match $wpjm_id ", true);
-				} 
+				}
 				break;
 		}
 	}
@@ -122,7 +122,7 @@ function lemann_match( $post_id, $user_id ) {
 
 	$matches    = (array) get_user_meta( $user_id, LEMANN_MATCHES_META_KEY, true );
     $email_sent = ( isset( $matches[ $post_id ] ) ) ? $matches[ $post_id ]['email_sent'] : false;
-    
+
     $aberto_para_vagas = BP_XProfile_ProfileData::get_value_byid( LEMANN_FIELD_ABERTO_PARA_VAGAS, $user_id );
     _match_log(" [[$aberto_para_vagas está aberto para vagas]]");
     if ($aberto_para_vagas == 'Sim' && $match >= LEMANN_MATCH_MINIMO_EMAIL && ! $email_sent) {
@@ -286,10 +286,14 @@ if(isset($_GET['lemann-action']) && $_GET['lemann-action'] == 'do-matches'){
 
 function get_matches_users($id, $min_match = LEMANN_MATCH_MINIMO_EMAIL){
     $matches = get_post_meta($id, LEMANN_MATCHES_META_KEY, true);
-    
+
     $result = [];
+
+    if (!is_array($matches)) {
+        return $result;
+    }
     foreach($matches as $user_id => $match){
-        
+
         if(isset($match['match']) && $match['match'] >= $min_match){
             $match['user'] = get_user_by('id', $user_id);
             $result[] = $match;
