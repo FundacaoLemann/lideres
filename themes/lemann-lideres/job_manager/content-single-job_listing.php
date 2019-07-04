@@ -158,7 +158,12 @@ global $post;
 						if (! empty( $meta_value ) ): ?>
 							<li>
 								<strong><?php echo $fields[$key]['label']; ?></strong>
-								<span><?php echo is_array( $meta_value) ? implode( ', ', $meta_value ) : $meta_value; ?></span>
+								<?php $meta_value = is_array($meta_value) ? implode(', ', $meta_value) : $meta_value; ?>
+								<?php if ($key == 'prazo_inscricao'): ?>
+									<span><?php echo preg_replace('/(\d{4})-(\d{2})-(\d{2})/', '$3/$2/$1', $meta_value); ?>
+								<?php else: ?>
+									<span><?php echo $meta_value; ?></span>
+								<?php endif; ?>
 							</li>
 						<?php endif;
 					endforeach; ?>
