@@ -756,6 +756,9 @@ div.job_listings form.job_filters ul.job_types {
     width: 100%;
   }
 }
+div.job_listings form.job_filters .search_jobs input[type=submit] {
+  width: auto;
+}
 div.job_listings ul.job_listings {
   border: 0;
   display: flex;
