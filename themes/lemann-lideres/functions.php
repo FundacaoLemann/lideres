@@ -787,8 +787,7 @@ add_action('admin_menu', function(){
 
 add_action('admin_head', 'remove_admin');
 function remove_admin(){
-    if (in_array('lider', (array) wp_get_current_user()->roles)
-        || ($_GET['hide_menu'] && $_GET['hide_menu'] == '1')) { ?>
+    if ($_GET['hide_menu'] && $_GET['hide_menu'] == '1') { ?>
         <style type="text/css">
             body { margin: 0; }
             .block-editor__container .components-navigate-regions { height: auto; }
